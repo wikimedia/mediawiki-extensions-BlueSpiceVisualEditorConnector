@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Markus Glaser <glaser@hallowelt.com>"
+		]
+	},
+	"bs-visualeditorconnector-desc": "Connects BlueSpice with VisualEditor",
+	"bs-visualeditorconnector-enable-visualeditor": "Enable VisualEditor for BlueSpice extensions",
+	"bs-visualeditorconnector-cancel-edit": "Cancel edit",
+	"bs-visualeditor-nsm-label": "Visual editor",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Common",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Advanced",
+	"bs-visualeditorconnector-converter-url": "Parsoid URL for VisualEditor"
+}

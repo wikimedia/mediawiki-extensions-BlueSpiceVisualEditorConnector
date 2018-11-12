@@ -1,0 +1,12 @@
+{
+	"name": "bluespice/visualeditorconnector",
+	"type": "mediawiki-extension",
+	"description": "Enable VisualEditor for BlueSpice extensions",
+	"license": "GPL-3.0-only",
+	"extra": {
+		"installer-name": "BlueSpiceVisualEditorConnector"
+	},
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

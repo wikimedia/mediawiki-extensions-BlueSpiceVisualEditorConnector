@@ -1,0 +1,14 @@
+{
+	"@metadata": {
+		"authors": [
+			"Markus Glaser <glaser@hallowelt.com>"
+		]
+	},
+	"bs-visualeditorconnector-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of BlueSpice Visual Editor Connector extension.",
+	"bs-visualeditorconnector-enable-visualeditor": "Label for preference to enable VisualEditor for BlueSpice extensions",
+	"bs-visualeditorconnector-cancel-edit": "Label for visual editor tool to stop editing and go back to view mode",
+	"bs-visualeditor-nsm-label": "Label for visual editor setting in namespace manager",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Label for inspector tab for commonly used parameters",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Label for inspector tab for advanced parameters",
+	"bs-visualeditorconnector-converter-url": "Label for formfield for Parsoid URL"
+}
