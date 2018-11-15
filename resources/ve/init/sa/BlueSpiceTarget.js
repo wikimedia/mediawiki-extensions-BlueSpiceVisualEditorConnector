@@ -80,3 +80,13 @@ ve.init.sa.BlueSpiceTarget.prototype.setupToolbar = function ( surface ) {
 ve.init.sa.BlueSpiceTarget.prototype.getContentApi = function ( doc, options ) {
 	return new mw.Api( options );
 };
+
+ve.init.sa.BlueSpiceTarget.prototype.parseWikitextFragment = function ( wikitext, pst ) {
+	return new mw.Api().post( {
+		action: 'visualeditor',
+		paction: 'parsefragment',
+		page: this.pageName,
+		wikitext: wikitext,
+		pst: pst
+	} );
+};
