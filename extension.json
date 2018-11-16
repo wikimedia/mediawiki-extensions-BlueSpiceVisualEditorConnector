@@ -27,6 +27,11 @@
 			"PluginModules": [],
 			"TagDefinitions": []
 		},
+		"BlueSpiceSimpleFarmer": {
+			"DynamicConfigurationFactories": {
+				"virtualrestparsoiddomain": "\\BlueSpice\\VisualEditorConnector\\SimpleFarmer\\DynamicConfiguration\\VirtualRestConfig::factory"
+			}
+		},
 		"VisualEditor": {
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.plugin"
