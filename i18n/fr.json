@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Wladek92"
+		]
+	},
+	"bs-visualeditorconnector-enable-visualeditor": "Activer l'Editeur visuel pour les extensions BlueSpice",
+	"bs-visualeditorconnector-cancel-edit": "Annuler les modifications",
+	"bs-visualeditor-nsm-label": "Éditeur visuel",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Commun",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancé"
+}
