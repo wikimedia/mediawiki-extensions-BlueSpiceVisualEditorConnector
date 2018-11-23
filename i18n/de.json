@@ -2,13 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Markus Glaser <glaser@hallowelt.com>",
-			"Metalhead64"
+			"Metalhead64",
+			"Sushi"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Verbindet BlueSpice mit dem VisualEditor",
 	"bs-visualeditorconnector-enable-visualeditor": "VisualEditor für BlueSpice-Erweiterungen aktivieren",
 	"bs-visualeditorconnector-cancel-edit": "Bearbeitung abbrechen",
-	"bs-visualeditor-nsm-label": "Visueller Editor",
+	"bs-visualeditor-nsm-label": "Visuelle Bearbeitung",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allgemein",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweitert",
 	"bs-visualeditorconnector-converter-url": "Parsoid-URL für den VisualEditor"
