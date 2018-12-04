@@ -32,7 +32,7 @@
 }
 
 .ve-init-sa-desktopTarget span.ve-ce-branchNode-slug {
-	display: inline;
+	display: inline-block;
 }
 
 .ve-init-sa-desktopTarget section.ve-ce-branchNode {

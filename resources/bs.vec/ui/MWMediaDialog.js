@@ -22,3 +22,24 @@ bs.vec.ui.MWMediaDialog.prototype.runComponentPlugins = function() {
 		callback( this );
 	}
 };
+
+bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchRequery ) {
+	if( panel !== 'search' ) {
+		bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
+	} else {
+		this.setSize( 'larger' );
+		this.selectedImageInfo = null;
+		if ( !stopSearchRequery ) {
+			this.search.getQuery().setValue( '*' );
+			this.search.getQuery().focus().select();
+		}
+		// Set the edit panel
+		this.panels.setItem( this.mediaSearchPanel );
+		this.searchTabs.setTabPanel( 'search' );
+		this.searchTabs.toggleMenu( true );
+		this.actions.setMode( this.imageModel ? 'change' : 'select' );
+		// Layout pending items
+		this.search.runLayoutQueue();
+	}
+	this.currentPanel = panel || 'imageinfo';
+};
