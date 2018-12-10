@@ -29,6 +29,25 @@
  */
 namespace BlueSpice\VisualEditorConnector;
 
+use MediaWiki\MediaWikiServices;
+
 class Extension extends \BlueSpice\Extension {
 
+	/**
+	 *
+	 * @return void
+	 */
+	public static function onRegistration() {
+		// Setup our Restbase Mock API to allow switching from WikiText editor to VE
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+		if( $config->get( 'VisualEditorFullRestbaseURL' ) !== false ) {
+			return;
+		}
+
+		$server = $config->get( 'Server' );
+		$scriptPath = $config->get( 'ScriptPath' );
+		$actionApiBase = '/api.php?action=bs-vec-restbase-mock&path=';
+
+		$GLOBALS['wgVisualEditorFullRestbaseURL'] = $server . $scriptPath . $actionApiBase;
+	}
 }
