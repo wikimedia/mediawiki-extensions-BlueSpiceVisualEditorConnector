@@ -39,7 +39,3 @@
 	/* fix for IE to hide resize handles */
 	pointer-events: none;
 }
-
-.oo-ui-icon-bluespice {
-	background-image: url(/bluespice/extensions/BlueSpiceChecklist/resources/images/ve-icon/check-icon.png?030df);
-}
