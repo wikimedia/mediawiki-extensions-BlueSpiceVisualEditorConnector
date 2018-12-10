@@ -76,9 +76,6 @@
 				"ext.bluespice.oojs",
 				"oojs-ui",
 				"mediawiki.api"
-			],
-			"messages": [
-
 			]
 		},
 		"ext.visualEditor.standalone": {
@@ -112,7 +109,6 @@
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
-			"@note": "Keep in sync with `bluespice.visualEditorConnector.overrides.js`",
 			"scripts": [
 				"bs.vec/ui/MWLinkAnnotationInspector.js",
 				"bs.vec/ui/MWMediaDialog.js",
@@ -120,34 +116,27 @@
 				"bs.vec/ui/MWTableDialog.js",
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
-			"scripts": "bluespice.visualEditorConnector.overrides.js",
-			"@note": "Having 'ext.visualEditor.desktopArticleTarget.init' as a dependency is okay, as it is loaded by VE at every page load",
+			"scripts": [
+				"bluespice.visualEditorConnector.overrides.js"
+			],
 			"dependencies": [
 				"ext.visualEditor.desktopArticleTarget.init"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.tags.classes": {
-			"@note": "Keep in sync with `bluespice.visualEditorConnector.tags.js`",
 			"scripts": [
 				"bs.vec/util/tag/Definition.js",
 				"bs.vec/util/tag/Registry.js",
 				"bs.vec/ui/widget/GroupListInputWidget.js"
-			],
-			"targets": [
-				"desktop",
-				"mobile"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.tags": {
-			"scripts": "bluespice.visualEditorConnector.tags.js",
-			"@note": "Having 'ext.visualEditor.desktopArticleTarget.init' as a dependency is okay, as it is loaded by VE at every page load",
+			"scripts": [
+				"bluespice.visualEditorConnector.tags.js"
+			],
 			"dependencies": [
 				"ext.visualEditor.desktopArticleTarget.init"
 			],
