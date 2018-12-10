@@ -73,51 +73,36 @@
 	}
 
 	function _transformToWikiText( fromHtml ) {
-		var converterUrl = mw.config.get( 'bsgVisualEditorConnectorWikiTextConverterUrl', '' )
-				+ "v3/transform/html/to/wikitext/";
-
 		var dfd = $.Deferred();
-
-		$.ajax({
-			type: "POST",
-			url: converterUrl,
-			data: {
-				html: fromHtml
-			},
-			success: function( data ) {
-				dfd.resolve( data );
-			},
-			failure: function(){
-				dfd.reject();
-			}
+		var api = new mw.Api();
+		api.postWithToken( 'csrf', {
+			action: 'bs-vec-transformtowikitext',
+			html: fromHtml
+		} )
+		.done( function( response ) {
+			dfd.resolve( response.wikitext );
+		})
+		.fail( function() {
+			dfd.reject();
 		});
-
 		return dfd.promise();
 	}
 
 	function _transformToHtml( fromWikiText ) {
-		var converterUrl = mw.config.get( 'bsgVisualEditorConnectorWikiTextConverterUrl', '' )
-				+ "v3/transform/wikitext/to/html/";
-
 		var dfd = $.Deferred();
-
-		$.ajax({
-			type: "POST",
-			url: converterUrl,
-			data: {
-				wikitext: fromWikiText
-			},
-			success: function( data ) {
-				dfd.resolve( data );
-			},
-			failure: function() {
-				dfd.reject();
-			}
+		var api = new mw.Api();
+		api.postWithToken( 'csrf', {
+			action: 'bs-vec-transformtohtml',
+			wikitext: fromWikiText
+		} )
+		.done( function( response ) {
+			dfd.resolve( response.html );
+		})
+		.fail( function() {
+			dfd.reject();
 		});
-
 		return dfd.promise();
 	}
-
 
 	/**
 	 * HINT:https://www.mediawiki.org/w/index.php?title=VisualEditor/Gadgets&oldid=2776161#Checking_if_VisualEditor_is_in_regular_'visual'_mode_or_'source'_mode
