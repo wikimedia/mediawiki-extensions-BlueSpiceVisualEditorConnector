@@ -6,10 +6,11 @@
 'use strict';
 
 exports.setup = function(parsoidConfig) {
- parsoidConfig.dynamicConfig = function(domain) {
-    parsoidConfig.setMwApi({
-      uri: 'http://httpd/' + domain + '/api.php',
-      domain: domain
-    });
-  }
+	parsoidConfig.dynamicConfig = function(domain) {
+		var baseUrl = Buffer.from( domain, 'base64').toString();
+		parsoidConfig.setMwApi({
+			uri: baseUrl + '/api.php',
+			domain: domain
+		});
+	}
 };
