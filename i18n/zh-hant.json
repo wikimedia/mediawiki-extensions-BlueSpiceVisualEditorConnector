@@ -9,6 +9,5 @@
 	"bs-visualeditorconnector-cancel-edit": "取消編輯",
 	"bs-visualeditor-nsm-label": "視覺化編輯器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "一般",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "進階",
-	"bs-visualeditorconnector-converter-url": "視覺化編輯器的 Parsoid URL"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "進階"
 }
