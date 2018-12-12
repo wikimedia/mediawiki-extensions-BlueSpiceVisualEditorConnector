@@ -20,8 +20,7 @@
 					"status": "beta",
 					"package": "BlueSpice Pro",
 					"configDefinitions": {
-						"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance",
-						"VisualEditorConnectorWikiTextConverterUrl": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\WikiTextConverterUrl::getInstance"
+						"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance"
 					}
 				}
 			}
@@ -40,6 +39,12 @@
 				"ext.bluespice.visualEditorConnector.plugin"
 			]
 		}
+	},
+	"callback":  "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
+	"APIModules": {
+		"bs-vec-transformtowikitext": "BlueSpice\\VisualEditorConnector\\Api\\TransformToWikiText",
+		"bs-vec-transformtohtml": "BlueSpice\\VisualEditorConnector\\Api\\TransformToHtml",
+		"bs-vec-restbase-mock": "BlueSpice\\VisualEditorConnector\\Api\\RestbaseMock"
 	},
 	"AutoloadNamespaces": {
 		"BlueSpice\\VisualEditorConnector\\": "src/"
@@ -155,10 +160,6 @@
 		"VisualEditorConnectorEnableVisualEditor": {
 			"value": true,
 			"descriptionmsg": "bs-visualeditorconnector-enable-visualeditor",
-			"public": true
-		},
-		"VisualEditorConnectorWikiTextConverterUrl": {
-			"value": "http://localhost:8000/httpd/",
 			"public": true
 		}
 	},
