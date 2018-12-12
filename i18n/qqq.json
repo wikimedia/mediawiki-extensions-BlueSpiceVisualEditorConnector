@@ -10,5 +10,12 @@
 	"bs-visualeditor-nsm-label": "Label for visual editor setting in namespace manager",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Label for inspector tab for commonly used parameters",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Label for inspector tab for advanced parameters",
-	"bs-visualeditorconnector-converter-url": "Label for formfield for Parsoid URL"
+	"apihelp-bs-vec-transformtowikitext-description": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtowikitext-summary": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtohtml-description": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtohtml-summary": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtowikitext-param-html": "Description of a parameter that contains the WikiText, that should be transformed to Visual Editor HTML",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "Description of a parameter that contains the VisualEditor HTML, that should be transformed to WikiText",	"apihelp-bs-vec-restbase-mock-description": "Description for an API endpoint that acts as a mock for an actual RESTbase setup",
+	"apihelp-bs-vec-restbase-mock-summary": "Description for an API endpoint that acts as a mock for an actual RESTbase setup",
+	"apihelp-bs-vec-restbase-mock-param-path": "Description of a parameter that contains the path of an RESTbase endpoint to mock"
 }

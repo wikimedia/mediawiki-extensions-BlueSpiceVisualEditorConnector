@@ -12,5 +12,12 @@
 	"bs-visualeditor-nsm-label": "Visuelle Bearbeitung",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allgemein",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweitert",
-	"bs-visualeditorconnector-converter-url": "Parsoid-URL für den VisualEditor"
+	"apihelp-bs-vec-transformtowikitext-description": "Transformiert VisualEditor HTML nach WikiText",
+	"apihelp-bs-vec-transformtowikitext-summary": "Transformiert VisualEditor HTML nach WikiText",
+	"apihelp-bs-vec-transformtohtml-description": "Transformiert WikiText nach VisualEditor HTML",
+	"apihelp-bs-vec-transformtohtml-summary": "Transformiert WikiText nach VisualEditor HTML",
+	"apihelp-bs-vec-transformtowikitext-param-html": "VisualEditor HTML, welches nach WikiText transformiert werden soll",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiText, welcher nach VisualEditor HTML transformiert werden soll",	"apihelp-bs-vec-restbase-mock-description": "Stellt eine Attrappe für RESTBase-Aufrufe des VisualEditor bereit",
+	"apihelp-bs-vec-restbase-mock-summary": "Stellt eine Attrappe für RESTBase-Aufrufe des VisualEditor bereit",
+	"apihelp-bs-vec-restbase-mock-param-path": "Der RESTBase-Pfad, für den eine Attrappe bereitgestellt werden soll"
 }
