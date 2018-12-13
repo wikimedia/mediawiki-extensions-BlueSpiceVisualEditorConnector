@@ -8,6 +8,14 @@ class RestbaseMock extends ApiFormatBase {
 
 	/**
 	 *
+	 * @param \ApiMain $main
+	 */
+	public function __construct( \ApiMain $main ) {
+		parent::__construct( $main, 'restbasemock' );
+	}
+
+	/**
+	 *
 	 */
 	public function execute() {
 		$data = $this->getResult()->getResultData();
