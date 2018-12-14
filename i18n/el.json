@@ -10,6 +10,5 @@
 	"bs-visualeditorconnector-cancel-edit": "Ακύρωση επεξεργασίας",
 	"bs-visualeditor-nsm-label": "Έκδοση εικόνας",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Κοινό",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Προχωρημένο",
-	"bs-visualeditorconnector-converter-url": "Parsoid URL για VisualEditor"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Προχωρημένο"
 }

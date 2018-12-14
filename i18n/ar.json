@@ -10,6 +10,5 @@
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
 	"bs-visualeditor-nsm-label": "محرر مرئي",
 	"bs-visualeditorconnector-inspector-tab-common-name": "شائع",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم",
-	"bs-visualeditorconnector-converter-url": "مسار Parsoid للمحرر المرئي"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم"
 }
