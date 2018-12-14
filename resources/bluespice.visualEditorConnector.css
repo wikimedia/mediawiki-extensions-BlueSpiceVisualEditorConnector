@@ -39,3 +39,9 @@
 	/* fix for IE to hide resize handles */
 	pointer-events: none;
 }
+
+.bs-visualeditorconnector-cancel-edit {
+	vertical-align: middle;
+	border-left: 1px solid #c8ccd1;
+	padding: 5px;
+}

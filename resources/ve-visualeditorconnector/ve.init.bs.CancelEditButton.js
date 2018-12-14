@@ -11,6 +11,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 				label: '',
 				icon: 'clear',
 				iconTitle: mw.msg( 'bs-visualeditorconnector-cancel-edit' ),
+				classes: [ 'bs-visualeditorconnector-cancel-edit' ],
 				framed: false,
 				disabled: false,
 				active: true
