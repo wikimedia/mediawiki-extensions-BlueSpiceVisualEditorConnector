@@ -10,5 +10,14 @@
 	"bs-visualeditorconnector-cancel-edit": "Annuler les modifications",
 	"bs-visualeditor-nsm-label": "Éditeur visuel",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Commun",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancé"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancé",
+	"apihelp-bs-vec-transformtowikitext-description": "Transforme le HTML de l'Editeur Visuel en texte wiki",
+	"apihelp-bs-vec-transformtowikitext-summary": "Transforme le HTML de l'Editeur Visuel en texte wiki",
+	"apihelp-bs-vec-transformtohtml-description": "Transforme le texte wiki en HTML pour l'Editeur Visuel",
+	"apihelp-bs-vec-transformtohtml-summary": "Transforme le texte wiki en HTML pour l'Editeur Visuel",
+	"apihelp-bs-vec-transformtowikitext-param-html": "HTML de l'Editeur Visuel, à transformer en texte wiki",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "Texte wiki à transformer en HTML pour l'Editeur Visuel",
+	"apihelp-bs-vec-restbase-mock-description": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
+	"apihelp-bs-vec-restbase-mock-summary": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
+	"apihelp-bs-vec-restbase-mock-param-path": "chemin vers RESTBase à simuler"
 }

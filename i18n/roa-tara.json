@@ -9,5 +9,7 @@
 	"bs-visualeditorconnector-cancel-edit": "Annulle 'u cangiamende",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comune",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzate"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzate",
+	"apihelp-bs-vec-transformtowikitext-summary": "Trasforme l'HTML de VisualEditor jndr'à UicchiTeste",
+	"apihelp-bs-vec-transformtohtml-description": "Trasforme 'u UicchiTeste jndr'à HTML de VisualEditor"
 }

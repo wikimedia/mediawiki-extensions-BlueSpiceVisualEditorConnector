@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Markus Glaser <glaser@hallowelt.com>"
+			"Markus Glaser <glaser@hallowelt.com>",
+			"Wladek92"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of BlueSpice Visual Editor Connector extension.",
@@ -16,7 +17,7 @@
 	"apihelp-bs-vec-transformtohtml-summary": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
 	"apihelp-bs-vec-transformtowikitext-param-html": "Description of a parameter that contains the WikiText, that should be transformed to Visual Editor HTML",
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "Description of a parameter that contains the VisualEditor HTML, that should be transformed to WikiText",
-	"apihelp-bs-vec-restbase-mock-description": "Description for an API endpoint that acts as a mock for an actual RESTbase setup",
-	"apihelp-bs-vec-restbase-mock-summary": "Description for an API endpoint that acts as a mock for an actual RESTbase setup",
+	"apihelp-bs-vec-restbase-mock-description": "Description for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: for stub procedure; do not translate this word.",
+	"apihelp-bs-vec-restbase-mock-summary": "Description for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
 	"apihelp-bs-vec-restbase-mock-param-path": "Description of a parameter that contains the path of an RESTbase endpoint to mock"
 }

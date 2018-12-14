@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hedda"
+			"Hedda",
+			"Sucsuzz"
 		]
 	},
 	"bs-visualeditorconnector-desc": "VisualEditor ile BlueSpice'a bağlan",
@@ -9,5 +10,8 @@
 	"bs-visualeditorconnector-cancel-edit": "Düzenlemeyi iptal et",
 	"bs-visualeditor-nsm-label": "Görsel Düzenleyici",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Genel",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Gelişmiş"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Gelişmiş",
+	"apihelp-bs-vec-transformtowikitext-summary": "HTML Görsel Düzenleyiciyi, WikiKaynağa çevirir",
+	"apihelp-bs-vec-transformtohtml-description": "WikiKaynağı, HTML Görsel Düzenleyiciye çevirir",
+	"apihelp-bs-vec-transformtohtml-summary": "WikiKaynağı, HTML Görsel Düzenleyiciye çevirir"
 }

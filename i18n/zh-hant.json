@@ -9,5 +9,14 @@
 	"bs-visualeditorconnector-cancel-edit": "取消編輯",
 	"bs-visualeditor-nsm-label": "視覺化編輯器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "一般",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "進階"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "進階",
+	"apihelp-bs-vec-transformtowikitext-description": "轉換視覺化編輯器 HTML 成 wiki 文字",
+	"apihelp-bs-vec-transformtowikitext-summary": "轉換視覺化編輯器 HTML 成 wiki 文字",
+	"apihelp-bs-vec-transformtohtml-description": "轉換 wiki 文字成視覺化編輯器 HTML",
+	"apihelp-bs-vec-transformtohtml-summary": "轉換 wiki 文字成視覺化編輯器 HTML",
+	"apihelp-bs-vec-transformtowikitext-param-html": "視覺化編輯器 HTML 應轉換成 wiki 文字",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "wiki 文字應轉換成視覺化編輯器 HTML",
+	"apihelp-bs-vec-restbase-mock-description": "提供視覺化編輯器的 RESTBase 呼叫模擬",
+	"apihelp-bs-vec-restbase-mock-summary": "提供視覺化編輯器的 RESTBase 呼叫模擬",
+	"apihelp-bs-vec-restbase-mock-param-path": "要模擬的 RESTBase 路徑"
 }
