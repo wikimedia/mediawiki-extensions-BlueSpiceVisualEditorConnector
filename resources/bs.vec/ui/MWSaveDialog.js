@@ -38,6 +38,14 @@ bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 		plugin.getActionProcess( parentProcess, action );
 	}
 
+	if( action === 'save' ) {
+		parentProcess.done( function( response ) {
+			window.location = mw.util.getUrl(
+				mw.config.get( 'wgPageName' )
+			);
+		} );
+	}
+
 	return parentProcess;
 };
 
