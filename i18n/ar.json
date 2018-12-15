@@ -10,5 +10,11 @@
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
 	"bs-visualeditor-nsm-label": "محرر مرئي",
 	"bs-visualeditorconnector-inspector-tab-common-name": "شائع",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم",
+	"apihelp-bs-vec-transformtowikitext-description": "يحول HTML المحرر المرئي إلى نص الويكي",
+	"apihelp-bs-vec-transformtowikitext-summary": "يحول HTML المحرر المرئي إلى نص الويكي",
+	"apihelp-bs-vec-transformtohtml-description": "يحول نص الويكي إلى HTML المحرر المرئي",
+	"apihelp-bs-vec-transformtohtml-summary": "يحول نص الويكي إلى HTML المحرر المرئي",
+	"apihelp-bs-vec-transformtowikitext-param-html": "HTML المحرر المرئي، التي ينبغي تحويلها إلى نص الويكي",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "نص الويكي، الذي ينبغي تحويله إلى HTML المحرر المرئي"
 }
