@@ -39,7 +39,7 @@ bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 	}
 
 	if( action === 'save' ) {
-		parentProcess.done( function( response ) {
+		parentProcess.next( function() {
 			window.location = mw.util.getUrl(
 				mw.config.get( 'wgPageName' )
 			);
