@@ -159,4 +159,20 @@
 	bs.vec.getCategoriesFromTarget = getCategoriesFromTarget;
 	bs.vec.getCategoriesFromMetadata = getCategoriesFromMetadata;
 
+	// Hide QM tab
+	var $qmControls;
+
+	mw.hook( 've.activationComplete' ).add( function () {
+		if( !$qmControls ) {
+			$qmControls = $( '#bs-qualitymanagement-panel, a[href="#bs-qualitymanagement-panel"]' );
+		}
+		$qmControls.hide();
+	} );
+
+	mw.hook( 've.deactivationComplete' ).add( function () {
+		if( $qmControls ) {
+			$qmControls.show();
+		}
+	} );
+
 })( mediaWiki, jQuery, blueSpice );
