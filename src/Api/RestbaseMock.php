@@ -3,9 +3,8 @@
 namespace BlueSpice\VisualEditorConnector\Api;
 
 use ApiVisualEditor;
-use ConfigFactory;
 use ApiBase;
-use WikiPage;
+use MediaWiki\MediaWikiServices;
 use Title;
 use WikitextContent;
 use BlueSpice\VisualEditorConnector\Api\Format\RestbaseMock as RestbaseMockFormat;
@@ -18,7 +17,7 @@ class RestbaseMock extends ApiVisualEditor {
 	 * @param string $name
 	 */
 	public function __construct( \ApiMain $main, $name ) {
-		$config = ConfigFactory::getDefaultInstance()->makeConfig( 'visualeditor' );
+		$config = MediaWikiServices::getInstance()->getConfigFactory()->makeConfig( 'visualeditor' );
 		parent::__construct( $main, $name, $config );
 	}
 
@@ -52,11 +51,11 @@ class RestbaseMock extends ApiVisualEditor {
 	}
 
 	private function mockWikiTextToHtml( $pageName ) {
-		$title = Title::newFromText( $pageName );
 		$wikitext = $this->getParameter( 'wikitext' );
+
 		$html = $this->requestRestbase(
 			'POST',
-			'transform/wikitext/to/html/' . urlencode( $title->getPrefixedDBkey() ),
+			'transform/wikitext/to/html/' . urlencode( $pageName ),
 			[
 				'wikitext' => $wikitext
 			]
@@ -66,23 +65,19 @@ class RestbaseMock extends ApiVisualEditor {
 	}
 
 	private function mockGetPageHtml( $pageName ) {
-		$result = $this->getResult();
-
-		$pageNameParts = explode( '?', $pageName, 2 );
-		$actualPageName = $pageNameParts[0];
-
-		$title = Title::newFromText( $actualPageName );
-
-		if( $title instanceof Title === false ) {
+		$revision = $this->revisionFromPageName( $pageName );
+		if ( $revision === null ) {
 			return;
 		}
 
+		$result = $this->getResult();
+
+		$title = \Title::newFromID( $revision->getPageId() );
 		if ( !$title->userCan( 'read' ) ) {
 			return;
 		}
 
-		$wikiPage = WikiPage::factory( $title );
-		$content = $wikiPage->getContent();
+		$content = $revision->getContent( 'main' );
 
 		if ( $content instanceof WikitextContent ) {
 			$rawWikiText = $content->getNativeData();
@@ -95,6 +90,76 @@ class RestbaseMock extends ApiVisualEditor {
 			);
 			$result->addValue( null, 'html', $html );
 		}
+	}
+
+	/**
+	 * @param string $pageName
+	 * @return \MediaWiki\Storage\RevisionRecord|null
+	 */
+	protected function revisionFromPageName( $pageName ) {
+		$pageNameParts = explode( '?', $pageName, 2 );
+		$pageName = array_shift( $pageNameParts );
+		$pageNameParts = explode( '>', $pageName, 2 );
+		$pageName = array_shift( $pageNameParts );
+
+		$pageNameParts = explode( "/", $pageName );
+
+		$title = null;
+		$oldId = 0;
+		if ( count( $pageNameParts ) === 1 ) {
+			$title = \Title::newFromText( $pageNameParts[0] );
+		} else {
+			$hasOldId = $this->hasOldId( $pageNameParts );
+			if ( $hasOldId ) {
+				$oldId = array_pop( $pageNameParts );
+				$title = \Title::newFromText( implode( '/', $pageNameParts ) );
+			} else {
+				$title = \Title::newFromText( implode( '/', $pageNameParts ) );
+			}
+		}
+
+		if( $title instanceof Title === false || $title->exists() === false ) {
+			return null;
+		}
+
+		$revId = $oldId ?: $title->getLatestRevID();
+
+		return \MediaWiki\MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+			$revId
+		);
+	}
+
+	/**
+	 * Checks if path contains oldid param for given page
+	 *
+	 * @param array $parts
+	 * @return bool
+	 */
+	protected function hasOldId( $parts ) {
+		$oldId = array_pop( $parts );
+		if ( !is_numeric( $oldId ) ) {
+			return false;
+		}
+		$oldId = intval( $oldId );
+		$title = \Title::newFromText( implode( '/', $parts ) );
+
+		if ( !$title instanceof \Title || !$title->exists() ) {
+			return false;
+		}
+
+		$revision = MediaWikiServices::getInstance()->getRevisionStore()->getRevisionById(
+			$oldId
+		);
+
+		if ( $revision === null ) {
+			return false;
+		}
+
+		if ( $revision->getPageId() === $title->getArticleID() ) {
+			return true;
+		}
+
+		return false;
 	}
 
 	/**
