@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Markus Glaser <glaser@hallowelt.com>",
-			"Wladek92"
+			"Wladek92",
+			"Umherirrender"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of BlueSpice Visual Editor Connector extension.",
@@ -11,13 +12,13 @@
 	"bs-visualeditor-nsm-label": "Label for visual editor setting in namespace manager",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Label for inspector tab for commonly used parameters",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Label for inspector tab for advanced parameters",
-	"apihelp-bs-vec-transformtowikitext-description": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
-	"apihelp-bs-vec-transformtowikitext-summary": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
-	"apihelp-bs-vec-transformtohtml-description": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
-	"apihelp-bs-vec-transformtohtml-summary": "Description for an API endpoint that transforms VisualEditor HTML to WikiText",
-	"apihelp-bs-vec-transformtowikitext-param-html": "Description of a parameter that contains the WikiText, that should be transformed to Visual Editor HTML",
-	"apihelp-bs-vec-transformtohtml-param-wikitext": "Description of a parameter that contains the VisualEditor HTML, that should be transformed to WikiText",
-	"apihelp-bs-vec-restbase-mock-description": "Description for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: for stub procedure; do not translate this word.",
-	"apihelp-bs-vec-restbase-mock-summary": "Description for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
-	"apihelp-bs-vec-restbase-mock-param-path": "Description of a parameter that contains the path of an RESTbase endpoint to mock"
+	"apihelp-bs-vec-transformtowikitext-description": "{{doc-apihelp-description|bs-vec-transformtowikitext}}\nDescription for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtowikitext-summary": "{{doc-apihelp-summary|bs-vec-transformtowikitext}}\nDescription for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtohtml-description": "{{doc-apihelp-description|bs-vec-transformtohtml}}\nDescription for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtohtml-summary": "{{doc-apihelp-summary|bs-vec-transformtohtml}}\nDescription for an API endpoint that transforms VisualEditor HTML to WikiText",
+	"apihelp-bs-vec-transformtowikitext-param-html": "{{doc-apihelp-param|bs-vec-transformtowikitext|html}}\nDescription of a parameter that contains the WikiText, that should be transformed to Visual Editor HTML",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "{{doc-apihelp-param|bs-vec-transformtohtml|wikitext}}\nDescription of a parameter that contains the VisualEditor HTML, that should be transformed to WikiText",
+	"apihelp-bs-vec-restbase-mock-description": "{{doc-apihelp-description|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: for stub procedure; do not translate this word.",
+	"apihelp-bs-vec-restbase-mock-summary": "{{doc-apihelp-summary|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
+	"apihelp-bs-vec-restbase-mock-param-path": "{{doc-apihelp-param|bs-vec-restbase-mock|path}}\nDescription of a parameter that contains the path of an RESTbase endpoint to mock"
 }
