@@ -1,10 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Piramidion"
 		]
 	},
+	"bs-visualeditorconnector-desc": "З'єднує BlueSpice із Візуальним редактором",
+	"bs-visualeditorconnector-enable-visualeditor": "Увімкнути Візуальний редактор для розширень BlueSpice",
 	"bs-visualeditorconnector-cancel-edit": "Скасувати редагування",
 	"bs-visualeditor-nsm-label": "Візуальний редактор",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Розширені"
+	"bs-visualeditorconnector-inspector-tab-common-name": "Загальне",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Розширені",
+	"apihelp-bs-vec-transformtowikitext-description": "Конвертує HTML Візуального редактора у вікірозмітку",
+	"apihelp-bs-vec-transformtowikitext-summary": "Конвертує HTML Візуального редактора у вікірозмітку",
+	"apihelp-bs-vec-transformtohtml-description": "Конвертує вікірозмітку в HTML Візуального редактора",
+	"apihelp-bs-vec-transformtohtml-summary": "Конвертує вікірозмітку в HTML Візуального редактора",
+	"apihelp-bs-vec-transformtowikitext-param-html": "HTML Візуального редактора, який треба конвертувати у вікірозмітку",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "Вікірозмітка, яку треба конвертувати в HTML Візуального редактора",
+	"apihelp-bs-vec-restbase-mock-description": "Надає макет для викликів RESTBase у Візуальному редакторі",
+	"apihelp-bs-vec-restbase-mock-summary": "Надає макет для викликів RESTBase у Візуальному редакторі",
+	"apihelp-bs-vec-restbase-mock-param-path": "Шлях RESTBase, макет якого треба зробити"
 }
