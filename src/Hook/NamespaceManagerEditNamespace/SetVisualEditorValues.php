@@ -9,8 +9,7 @@ class SetVisualEditorValues extends NamespaceManagerEditNamespace {
 	protected function doProcess() {
 		if ( !$this->useInternalDefaults && isset( $this->additionalSettings['visualeditor'] ) ) {
 			$this->namespaceDefinition[$this->nsId][ 'visualeditor' ] = $this->additionalSettings['visualeditor'];
-		}
-		else {
+		} else {
 			$this->namespaceDefinition[$this->nsId][ 'visualeditor' ] = false;
 		}
 

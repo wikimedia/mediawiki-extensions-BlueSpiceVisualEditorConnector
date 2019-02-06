@@ -6,7 +6,7 @@ use BlueSpice\NamespaceManager\Hook\NamespaceManagerWriteNamespaceConfiguration;
 
 class WriteToConfiguration extends NamespaceManagerWriteNamespaceConfiguration {
 	protected function skipProcessing() {
-		if( $this->ns === null ) {
+		if ( $this->ns === null ) {
 			return true;
 		}
 		return false;
@@ -40,7 +40,7 @@ class WriteToConfiguration extends NamespaceManagerWriteNamespaceConfiguration {
 			$explicitlyActivated = true;
 		}
 
-		if( ( $currentlyActivated && !$explicitlyDeactivated ) || $explicitlyActivated ) {
+		if ( ( $currentlyActivated && !$explicitlyDeactivated ) || $explicitlyActivated ) {
 			$this->saveContent .= "\$GLOBALS['wg$configVar'][{$this->constName}] = true;\n";
 		} else {
 			$this->saveContent .= "\$GLOBALS['wg$configVar'][{$this->constName}] = false;\n";

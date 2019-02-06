@@ -1,12 +1,12 @@
 <?php
-$specialPageAliases = array();
+$specialPageAliases = [];
 
 /** English */
-$specialPageAliases['en'] = array(
-	'VisualEditorConnector' => array( 'VisualEditorConnector' ),
-);
+$specialPageAliases['en'] = [
+	'VisualEditorConnector' => [ 'VisualEditorConnector' ],
+];
 
 /** German (Deutsch) */
-$specialPageAliases['de'] = array(
-	'VisualEditorConnector' => array( 'VisualEditorConnector' ),
-);
+$specialPageAliases['de'] = [
+	'VisualEditorConnector' => [ 'VisualEditorConnector' ],
+];

@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice\VisualEditorConnector\Hook\BSSocialModuleDepths;
+
 use BlueSpice\Social\Hook\BSSocialModuleDepths;
 
 class AddVECModules extends BSSocialModuleDepths {
