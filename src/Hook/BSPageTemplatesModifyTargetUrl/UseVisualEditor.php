@@ -1,5 +1,6 @@
 <?php
 namespace BlueSpice\VisualEditorConnector\Hook\BSPageTemplatesModifyTargetUrl;
+
 use BlueSpice\PageTemplates\Hook\BSPageTemplatesModifyTargetUrl;
 
 class UseVisualEditor extends BSPageTemplatesModifyTargetUrl {

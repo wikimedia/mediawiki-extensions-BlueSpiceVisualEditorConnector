@@ -13,7 +13,7 @@ class AddModules extends BeforePageDisplay {
 		);
 
 		$pluginModules = [];
-		foreach( $registry->getAllKeys()  as $key ) {
+		foreach ( $registry->getAllKeys()  as $key ) {
 			$moduleName = $registry->getValue( $key );
 			$pluginModules[] = $moduleName;
 		}
@@ -27,7 +27,7 @@ class AddModules extends BeforePageDisplay {
 			'BlueSpiceVisualEditorConnectorTagDefinitions'
 		);
 		$tagDefinitions = [];
-		foreach( $tagRegistry->getAllKeys()  as $key ) {
+		foreach ( $tagRegistry->getAllKeys()  as $key ) {
 			$moduleName = $tagRegistry->getValue( $key );
 			$tagDefinitions[] = $moduleName;
 		}

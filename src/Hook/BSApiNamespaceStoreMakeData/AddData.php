@@ -7,7 +7,7 @@ use BlueSpice\NamespaceManager\Hook\BSApiNamespaceStoreMakeData;
 class AddData extends BSApiNamespaceStoreMakeData {
 
 	protected function doProcess() {
-		foreach( $this->results as $key => &$result ) {
+		foreach ( $this->results as $key => &$result ) {
 
 			$result['visualeditor'] = [
 				'value' => $this->checkAvailability( $result ),
@@ -27,7 +27,7 @@ class AddData extends BSApiNamespaceStoreMakeData {
 
 		if ( isset( $enabledNamespaces[$nsInfo['id']] ) && $enabledNamespaces[$nsInfo['id']] === true ) {
 			return true;
-		} else if ( isset( $enabledNamespaces[$nsInfo['name']] ) && $enabledNamespaces[$nsInfo['name']] === true ) {
+		} elseif ( isset( $enabledNamespaces[$nsInfo['name']] ) && $enabledNamespaces[$nsInfo['name']] === true ) {
 			return true;
 		}
 

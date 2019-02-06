@@ -118,7 +118,7 @@ class RestbaseMock extends ApiVisualEditor {
 			}
 		}
 
-		if( $title instanceof Title === false || $title->exists() === false ) {
+		if ( $title instanceof Title === false || $title->exists() === false ) {
 			return null;
 		}
 
