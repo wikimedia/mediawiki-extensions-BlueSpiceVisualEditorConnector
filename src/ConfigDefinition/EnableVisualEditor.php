@@ -4,6 +4,10 @@ namespace BlueSpice\VisualEditorConnector\ConfigDefinition;
 
 class EnableVisualEditor extends \BlueSpice\ConfigDefinition\BooleanSetting {
 
+	/**
+	 *
+	 * @return array
+	 */
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_EDITOR . '/BlueSpiceVisualEditor',
@@ -12,10 +16,18 @@ class EnableVisualEditor extends \BlueSpice\ConfigDefinition\BooleanSetting {
 		];
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
 	public function getLabelMessageKey() {
 		return 'bs-visualeditorconnector-enable-visualeditor';
 	}
 
+	/**
+	 *
+	 * @return bool
+	 */
 	public function isRLConfigVar() {
 		return true;
 	}

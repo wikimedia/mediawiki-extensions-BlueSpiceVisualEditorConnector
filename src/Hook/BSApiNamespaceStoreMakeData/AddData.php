@@ -19,6 +19,11 @@ class AddData extends BSApiNamespaceStoreMakeData {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param array $nsInfo
+	 * @return bool
+	 */
 	protected function checkAvailability( $nsInfo ) {
 		$enabledNamespaces = $this->getConfig()->get( 'VisualEditorAvailableNamespaces' );
 		// OMG, this array mixes canonical names and ids. In the VisualEditor implementation, numeric
@@ -27,7 +32,8 @@ class AddData extends BSApiNamespaceStoreMakeData {
 
 		if ( isset( $enabledNamespaces[$nsInfo['id']] ) && $enabledNamespaces[$nsInfo['id']] === true ) {
 			return true;
-		} elseif ( isset( $enabledNamespaces[$nsInfo['name']] ) && $enabledNamespaces[$nsInfo['name']] === true ) {
+		} elseif ( isset( $enabledNamespaces[$nsInfo['name']] ) &&
+			$enabledNamespaces[$nsInfo['name']] === true ) {
 			return true;
 		}
 
