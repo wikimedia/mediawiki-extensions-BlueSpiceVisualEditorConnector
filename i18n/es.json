@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Fitoschido"
+		]
+	},
+	"bs-visualeditorconnector-cancel-edit": "Cancelar edición",
+	"bs-visualeditor-nsm-label": "Editor visual",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas"
+}
