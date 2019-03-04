@@ -32,7 +32,6 @@ namespace BlueSpice\VisualEditorConnector;
 use MediaWiki\MediaWikiServices;
 
 class Extension extends \BlueSpice\Extension {
-
 	/**
 	 *
 	 * @return void

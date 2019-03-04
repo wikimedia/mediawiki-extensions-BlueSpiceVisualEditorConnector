@@ -120,16 +120,15 @@
 				"bs.vec/ui/MWSaveDialog.js",
 				"bs.vec/ui/MWTableDialog.js",
 				"bs.vec/ui/plugin/MWSaveDialog.js",
-				"bs.vec/ui/plugin/MWTableDialog.js"
+				"bs.vec/ui/plugin/MWTableDialog.js",
+				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
 			"scripts": [
 				"bluespice.visualEditorConnector.overrides.js"
 			],
-			"dependencies": [
-				"ext.visualEditor.desktopArticleTarget.init"
-			]
+			"group": "bsvec-override"
 		},
 		"ext.bluespice.visualEditorConnector.tags.classes": {
 			"scripts": [
@@ -160,6 +159,11 @@
 		"VisualEditorConnectorEnableVisualEditor": {
 			"value": true,
 			"descriptionmsg": "bs-visualeditorconnector-enable-visualeditor",
+			"public": true
+		},
+		"VisualEditorConnectorUploadDialogType": {
+			"value": "original",
+			"descriptionmsg": "bs-visualeditorconnector-upload-dialog-type",
 			"public": true
 		}
 	},

@@ -36,6 +36,9 @@ class AddModules extends BeforePageDisplay {
 			'ext.bluespice.visualEditorConnector.tags'
 		);
 		$this->out->addJsConfigVars( 'bsVECTagDefinitions', $tagDefinitions );
+
+		$uploadType = $this->getConfig()->get( 'VisualEditorConnectorUploadDialogType' );
+		$this->out->addJsConfigVars( 'bsVECUploadType', $uploadType );
 	}
 
 }
