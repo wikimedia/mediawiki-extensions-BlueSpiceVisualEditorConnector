@@ -15,7 +15,9 @@
 	"apihelp-bs-vec-transformtohtml-description": "Transforms WikiText to VisualEditor HTML",
 	"apihelp-bs-vec-transformtohtml-summary": "Transforms WikiText to VisualEditor HTML",
 	"apihelp-bs-vec-transformtowikitext-param-html": "VisualEditor HTML, that should be transformed to WikiText",
-	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiText, that should be transformed to VisualEditor HTML",	"apihelp-bs-vec-restbase-mock-description": "Provides a mock for RESTBase calls of VisualEditor",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiText, that should be transformed to VisualEditor HTML",
+	"apihelp-bs-vec-restbase-mock-description": "Provides a mock for RESTBase calls of VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Provides a mock for RESTBase calls of VisualEditor",
-	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase path to be mocked"
+	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase path to be mocked",
+	"bs-visualeditorconnector-upload-dialog-type": "Workflow for uploading files in MediaDialog"
 }

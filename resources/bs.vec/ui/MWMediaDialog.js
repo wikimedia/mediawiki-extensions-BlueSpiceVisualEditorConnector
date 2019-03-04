@@ -2,12 +2,37 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.MWMediaDialog = function BsVecUiMWMediaDialog( config ) {
 	bs.vec.ui.MWMediaDialog.super.call( this, config );
+
+	this.uploadType = mw.config.get( 'bsVECUploadType' );
 };
 
 OO.inheritClass( bs.vec.ui.MWMediaDialog, ve.ui.MWMediaDialog );
 
 bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
 	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
+
+	if ( this.uploadType !== 'original' ) {
+		this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayout( {
+			$overlay: this.$overlay,
+			uploadType: this.uploadType
+		} );
+
+		this.mediaUploadBooklet.connect( this, {
+			set: 'onMediaUploadBookletSet',
+			uploadValid: 'onUploadValid',
+			infoValid: 'onInfoValid'
+		} );
+
+		var uploadTab = this.searchTabs.getTabPanel( 'upload' );
+		this.searchTabs.removeTabPanels( [ uploadTab ] );
+
+		this.searchTabs.addTabPanels( [
+			new OO.ui.TabPanelLayout( 'upload', {
+				label: ve.msg( 'visualeditor-dialog-media-search-tab-upload' ),
+				content: [ this.mediaUploadBooklet ]
+			} )
+		] );
+	}
 
 	this.runComponentPlugins();
 };
@@ -42,4 +67,16 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 		this.search.runLayoutQueue();
 	}
 	this.currentPanel = panel || 'imageinfo';
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
+	if ( action === 'upload' && this.uploadType !== 'original' ) {
+		if ( this.uploadType === 'simple' ) {
+			return new OO.ui.Process( this.mediaUploadBooklet.uploadFile() );
+		} else if ( this.uploadType === 'one-click' ) {
+			return new OO.ui.Process( this.mediaUploadBooklet.uploadSingleStep() );
+		}
+	} else {
+		return bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
+	}
 };
