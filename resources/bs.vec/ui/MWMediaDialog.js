@@ -37,6 +37,18 @@ bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
 	this.runComponentPlugins();
 };
 
+bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
+	return bs.vec.ui.MWMediaDialog.super.prototype.getReadyProcess.call( this, data )
+		.next( function () {
+			if ( data.hasOwnProperty( 'file' ) ) {
+				// If there is file set (like on paste),
+				// switch to upload panel
+				this.searchTabs.setTabPanel( 'upload' );
+				this.sizeWidget.validateDimensions();
+			}
+		}, this );
+};
+
 bs.vec.ui.MWMediaDialog.prototype.runComponentPlugins = function() {
 	var pluginCallbacks = bs.vec.getComponentPlugins(
 			bs.vec.components.MEDIA_DIALOG
@@ -67,6 +79,18 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 		this.search.runLayoutQueue();
 	}
 	this.currentPanel = panel || 'imageinfo';
+};
+
+bs.vec.ui.MWMediaDialog.prototype.uploadPageNameSet = function ( pageName ) {
+	var imageInfo;
+	if ( pageName === 'insert' ) {
+		imageInfo = this.mediaUploadBooklet.upload.getImageInfo();
+		this.selectedImageInfo = imageInfo;
+		this.confirmSelectedImage();
+		this.switchPanels( 'edit' );
+	} else {
+		bs.vec.ui.MWMediaDialog.parent.prototype.uploadPageNameSet.call( this, pageName );
+	}
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
