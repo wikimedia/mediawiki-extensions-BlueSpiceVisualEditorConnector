@@ -161,6 +161,8 @@
 		this.uploadFile().done( function() {
 			this.saveFile().then( function() {
 				dfd.resolve();
+			}.bind( this ), function( error ) {
+				dfd.reject( error );
 			} );
 		}.bind( this ) ).fail( function() {
 			dfd.reject();
