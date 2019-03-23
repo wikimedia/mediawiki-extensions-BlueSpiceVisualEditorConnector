@@ -18,5 +18,6 @@
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "wiki 文字應轉換成視覺化編輯器 HTML",
 	"apihelp-bs-vec-restbase-mock-description": "提供視覺化編輯器的 RESTBase 呼叫模擬",
 	"apihelp-bs-vec-restbase-mock-summary": "提供視覺化編輯器的 RESTBase 呼叫模擬",
-	"apihelp-bs-vec-restbase-mock-param-path": "要模擬的 RESTBase 路徑"
+	"apihelp-bs-vec-restbase-mock-param-path": "要模擬的 RESTBase 路徑",
+	"bs-visualeditorconnector-upload-dialog-type": "用於在 MediaDialog 上傳檔案的工作流"
 }

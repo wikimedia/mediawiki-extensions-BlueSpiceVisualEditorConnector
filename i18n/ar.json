@@ -19,5 +19,6 @@
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "نص الويكي، الذي ينبغي تحويله إلى HTML المحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-description": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-summary": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
-	"apihelp-bs-vec-restbase-mock-param-path": "مسار RESTBase لمحاكاته"
+	"apihelp-bs-vec-restbase-mock-param-path": "مسار RESTBase لمحاكاته",
+	"bs-visualeditorconnector-upload-dialog-type": "سير العمل لرفع الملفات في MediaDialog"
 }

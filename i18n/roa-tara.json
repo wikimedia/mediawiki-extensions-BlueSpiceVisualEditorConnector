@@ -18,5 +18,6 @@
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "UicchiTeste, ca avessa essere trasformate jndr'à VisualEditor HTML",
 	"apihelp-bs-vec-restbase-mock-description": "Dèje 'nu mock pe le chiamate RESTBase de VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Dèje 'nu mock pe le chiamate RESTBase de VisualEditor",
-	"apihelp-bs-vec-restbase-mock-param-path": "Percorse de RESTBase ca adda essere mockate"
+	"apihelp-bs-vec-restbase-mock-param-path": "Percorse de RESTBase ca adda essere mockate",
+	"bs-visualeditorconnector-upload-dialog-type": "Flusse de fatìe pe le scarecaminde de le file jndr'à MediaDialog"
 }
