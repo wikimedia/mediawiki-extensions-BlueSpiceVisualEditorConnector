@@ -148,6 +148,17 @@
 				"bs-visualeditorconnector-inspector-tab-common-name",
 				"bs-visualeditorconnector-inspector-tab-advanced-name"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.SaveProcessOverride": {
+			"scripts": [
+				"bluespice.visualEditorConnector.SaveProcessOverride.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
+			],
+			"targets": [
+				"desktop"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -165,12 +176,20 @@
 			"value": "original",
 			"descriptionmsg": "bs-visualeditorconnector-upload-dialog-type",
 			"public": true
+		},
+		"VisualEditorConnectorSimpleSaveProcess": {
+			"value": true,
+			"descriptionmsg": "bs-visualeditorconnector-simple-save-process",
+			"public": true
 		}
 	},
 	"Hooks": {
 		"BSSocialModuleDepths": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSSocialModuleDepths\\AddVECModules::callback",
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
-		"BeforePageDisplay": "\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddModules::callback",
+		"BeforePageDisplay": [
+			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddModules::callback",
+			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddSaveProcessOverride::callback"
+		],
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
