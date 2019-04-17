@@ -21,5 +21,6 @@
 	"apihelp-bs-vec-restbase-mock-description": "Bietet einen Mock für RESTBase-Aufrufe des visuellen Editors",
 	"apihelp-bs-vec-restbase-mock-summary": "Stellt einen Mock für RESTBase-Aufrufe des visuellen Editors bereit",
 	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase-Pfad, der gemockt werden soll",
-	"bs-visualeditorconnector-upload-dialog-type": "Arbeitsablauf zum Hochladen von Dateien in MediaDialog"
+	"bs-visualeditorconnector-upload-dialog-type": "Arbeitsablauf zum Hochladen von Dateien in MediaDialog",
+	"bs-visualeditorconnector-simple-save-process": "Konfigurationsvariable zur Nutzung eines vereinfachten Speicherungsprozesses"
 }

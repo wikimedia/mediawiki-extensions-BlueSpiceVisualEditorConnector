@@ -20,5 +20,6 @@
 	"apihelp-bs-vec-restbase-mock-description": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-summary": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-param-path": "مسار RESTBase لمحاكاته",
-	"bs-visualeditorconnector-upload-dialog-type": "سير العمل لرفع الملفات في MediaDialog"
+	"bs-visualeditorconnector-upload-dialog-type": "سير العمل لرفع الملفات في MediaDialog",
+	"bs-visualeditorconnector-simple-save-process": "إعداد متغير لاستخدام عملية حفظ مبسطة"
 }
