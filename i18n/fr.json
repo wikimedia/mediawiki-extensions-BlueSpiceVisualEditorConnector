@@ -20,5 +20,6 @@
 	"apihelp-bs-vec-restbase-mock-description": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
 	"apihelp-bs-vec-restbase-mock-summary": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
 	"apihelp-bs-vec-restbase-mock-param-path": "chemin vers RESTBase à simuler",
-	"bs-visualeditorconnector-upload-dialog-type": "Flux de travail pour téléverser des fichiers dans MediaDialog"
+	"bs-visualeditorconnector-upload-dialog-type": "Flux de travail pour téléverser des fichiers dans MediaDialog",
+	"bs-visualeditorconnector-simple-save-process": "Variable de configuration pour utiliser un processus de sauvegarde simplifié"
 }
