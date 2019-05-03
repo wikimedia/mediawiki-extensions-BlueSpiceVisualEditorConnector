@@ -173,6 +173,45 @@
 				"bs-visualeditorconnector-ve-style-option-description",
 				"bs-visualeditorconnector-ve-style-option"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.styleInspector": {
+			"scripts": [
+				"bs.vec/ui/styleTool/ButtonTool.js",
+				"bs.vec/ui/styleTool/Bold.js",
+				"bs.vec/ui/styleTool/Italic.js",
+				"bs.vec/ui/styleTool/Color.js",
+				"bs.vec/ui/styleTool/Code.js",
+				"bs.vec/ui/styleTool/Small.js",
+				"bs.vec/ui/styleTool/Big.js",
+				"bs.vec/ui/styleTool/Strikethrough.js",
+				"bs.vec/ui/styleTool/Underline.js",
+				"bs.vec/TextStyleToolRegistry.js",
+				"bs.vec/ui/widget/TextStylePopup.js",
+				"bluespice.visualEditorConnector.styleInspector.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.core"
+			],
+			"messages": [
+				"bs-visualeditorconnector-text-style-tool-italic-label",
+				"bs-visualeditorconnector-text-style-tool-bold-label"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.textColor": {
+			"scripts": [
+				"ve/ColorAnnotationCommand.js",
+				"ve/ColorAnnotationTool.js",
+				"ve/dm/bs.dm.ColorAnnotation.js",
+				"ve/ce/bs.ce.ColorAnnotation.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.core",
+				"ext.oOJSPlus.widgets.colorPicker"
+			],
+			"messages": [
+				"bs-visualeditorconnector-text-style-tool-color-label",
+				"bs-visualeditorconnector-color-annotation-desc"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -208,6 +247,10 @@
 				"Greyscale":"greyscale",
 				"Greyscale (narrow)":"greyscale-narrow"
 			}
+		},
+		"VisualEditorConnectorColorPickerColors": {
+			"@note": "Usage described in docs/custom_text_colors.md",
+			"value": []
 		}
 	},
 	"Hooks": {
