@@ -45,3 +45,19 @@
 	border-left: 1px solid #c8ccd1;
 	padding: 5px;
 }
+
+.bs-vec-text-color-current {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+	line-height: 0;
+	font-size: 40px;
+	overflow: hidden;
+}
+
+.bs-vec-text-color-current:before {
+	content: "\25A0";
+	margin-left: -10px;
+}

@@ -25,5 +25,8 @@
 	"apihelp-bs-vec-restbase-mock-summary": "{{doc-apihelp-summary|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
 	"apihelp-bs-vec-restbase-mock-param-path": "{{doc-apihelp-param|bs-vec-restbase-mock|path}}\nDescription of a parameter that contains the path of an RESTbase endpoint to mock",
 	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour",
-	"bs-visualeditorconnector-simple-save-process": "Configuration variable determining the behaviour of the saving process"
+	"bs-visualeditorconnector-simple-save-process": "Configuration variable determining the behaviour of the saving process",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
+	"bs-visualeditorconnector-color-annotation-desc": "Description of ve.ui.ColorAnnotation class"
+
 }
