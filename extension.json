@@ -148,6 +148,29 @@
 				"bs-visualeditorconnector-inspector-tab-common-name",
 				"bs-visualeditorconnector-inspector-tab-advanced-name"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.backports.classes": {
+			"scripts": [
+				"bs.vec/ce/Surface.js",
+				"bs.vec/ui/AnnotationContextItem.js",
+				"bs.vec/ui/LinkContextItem.js",
+				"bs.vec/ui/MWInternalLinkContextItem.js"
+			],
+			"styles": [
+				"bs.vec/styles/LinkContextItem.css"
+			],
+			"messages": [
+				"visualeditor-linkcontext-label-label",
+				"visualeditor-linkcontext-label-change"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.backports": {
+			"scripts": [
+				"bluespice.visualEditorConnector.backports.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.desktopArticleTarget.init"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
