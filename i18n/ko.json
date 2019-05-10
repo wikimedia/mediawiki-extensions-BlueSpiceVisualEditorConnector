@@ -10,6 +10,8 @@
 	"bs-visualeditor-nsm-label": "시각편집기",
 	"bs-visualeditorconnector-inspector-tab-common-name": "공통",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "고급",
+	"bs-visualeditorconnector-ve-style-option-description": "표 스타일 선택",
+	"bs-visualeditorconnector-ve-style-option": "표 스타일",
 	"apihelp-bs-vec-transformtowikitext-description": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtowikitext-summary": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtohtml-description": "위키텍스트를 시각편집기 HTML로 변환합니다",
