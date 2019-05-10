@@ -211,6 +211,7 @@
 		}
 	},
 	"Hooks": {
+		"APIAfterExecute": "\\BlueSpice\\VisualEditorConnector\\Hook\\APIAfterExecute\\WrapPreloadText::callback",
 		"BSSocialModuleDepths": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSSocialModuleDepths\\AddVECModules::callback",
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
