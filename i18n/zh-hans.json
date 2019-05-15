@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"A Chinese Wikipedian",
-			"佛壁灯"
+			"佛壁灯",
+			"科劳"
 		]
 	},
 	"bs-visualeditorconnector-desc": "将 VisualEditor 与 BlueSpice 相连",
@@ -11,6 +12,7 @@
 	"bs-visualeditor-nsm-label": "可视化编辑器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "普通",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "高级",
+	"bs-visualeditorconnector-ve-style-option": "表格样式",
 	"apihelp-bs-vec-transformtowikitext-description": "将 VisualEditor HTML 转化为 Wiki 文本",
 	"apihelp-bs-vec-transformtowikitext-summary": "将 VisualEditor HTML 转化为 Wiki 文本",
 	"apihelp-bs-vec-transformtohtml-description": "将 Wiki 文本 转化为 VisualEditor HTML",
