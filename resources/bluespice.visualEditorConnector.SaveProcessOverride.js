@@ -39,7 +39,9 @@ mw.hook( 've.activationComplete' ).add( function () {
 		$frame.css( 'transition', 'none' );
 
 		$frame.offset( {
-			top: offset.top + $button.outerHeight() + 10,
+			// By calculating diff between current button offset
+			// and scroll offset we get it's relative position
+			top: offset.top - window.scrollY + $button.outerHeight() + 10,
 			left: offset.left - 500 + $button.outerWidth()
 		} );
 		$frame.css( 'position', 'absolute' );
