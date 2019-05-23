@@ -100,7 +100,8 @@
 		"ext.bluespice.visualEditorConnector.plugin": {
 			"scripts": [
 				"ve-visualeditorconnector/ve.init.bs.CancelEditButton.js",
-				"ve-visualeditorconnector/ve.init.bs.HideAfterContent.js"
+				"ve-visualeditorconnector/ve.init.bs.HideAfterContent.js",
+				"ve-visualeditorconnector/ve.init.bs.PreventCellEditInTableSelectionInIE11.js"
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore"
