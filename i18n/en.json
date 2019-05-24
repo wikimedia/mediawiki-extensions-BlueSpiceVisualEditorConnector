@@ -23,5 +23,7 @@
 	"apihelp-bs-vec-restbase-mock-summary": "Provides a mock for RESTBase calls of VisualEditor",
 	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase path to be mocked",
 	"bs-visualeditorconnector-upload-dialog-type": "Workflow for uploading files in MediaDialog",
-	"bs-visualeditorconnector-simple-save-process": "Configuration variable to use a simplified save process"
+	"bs-visualeditorconnector-simple-save-process": "Configuration variable to use a simplified save process",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Text color",
+	"bs-visualeditorconnector-color-annotation-desc": "Adds colors to text by assigning \"color\" or \"class\" property"
 }

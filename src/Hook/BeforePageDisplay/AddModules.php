@@ -29,6 +29,15 @@ class AddModules extends BeforePageDisplay {
 			$pluginModules[] = $moduleName;
 		}
 
+		$this->out->addModules( [
+			"ext.bluespice.visualEditorConnector.styleInspector",
+			'ext.bluespice.visualEditorConnector.textColor'
+		] );
+		$this->out->addJsConfigVars(
+			'bsVECColorPickerColors',
+			$this->getConfig()->get( 'VisualEditorConnectorColorPickerColors' )
+		);
+
 		$this->out->addModules(
 			'ext.bluespice.visualEditorConnector.overrides'
 		);
