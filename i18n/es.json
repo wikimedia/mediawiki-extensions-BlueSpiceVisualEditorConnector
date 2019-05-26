@@ -1,11 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Fitoschido"
+			"Fitoschido",
+			"Unai01"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit": "Cancelar edición",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Color del texto"
 }

@@ -25,5 +25,6 @@
 	"apihelp-bs-vec-restbase-mock-summary": "Надає макет для викликів RESTBase у Візуальному редакторі",
 	"apihelp-bs-vec-restbase-mock-param-path": "Шлях RESTBase, макет якого треба зробити",
 	"bs-visualeditorconnector-upload-dialog-type": "Робочий процес завантаження файлів у медіадіалозі",
-	"bs-visualeditorconnector-simple-save-process": "Конфігураційна змінна для використання спрощеного процесу збереження"
+	"bs-visualeditorconnector-simple-save-process": "Конфігураційна змінна для використання спрощеного процесу збереження",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Колір тексту"
 }

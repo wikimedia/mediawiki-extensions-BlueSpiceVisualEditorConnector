@@ -16,5 +16,6 @@
 	"apihelp-bs-vec-transformtowikitext-description": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtowikitext-summary": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtohtml-description": "위키텍스트를 시각편집기 HTML로 변환합니다",
-	"apihelp-bs-vec-transformtohtml-summary": "위키텍스트를 시각편집기 HTML로 변환합니다"
+	"apihelp-bs-vec-transformtohtml-summary": "위키텍스트를 시각편집기 HTML로 변환합니다",
+	"bs-visualeditorconnector-text-style-tool-color-label": "텍스트 색"
 }

@@ -24,5 +24,7 @@
 	"apihelp-bs-vec-restbase-mock-summary": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-param-path": "مسار RESTBase لمحاكاته",
 	"bs-visualeditorconnector-upload-dialog-type": "سير العمل لرفع الملفات في MediaDialog",
-	"bs-visualeditorconnector-simple-save-process": "إعداد متغير لاستخدام عملية حفظ مبسطة"
+	"bs-visualeditorconnector-simple-save-process": "إعداد متغير لاستخدام عملية حفظ مبسطة",
+	"bs-visualeditorconnector-text-style-tool-color-label": "لون النص",
+	"bs-visualeditorconnector-color-annotation-desc": "يضيف الألوان إلى نص عن طريق تعيين خاصية \"اللون\" أو \"الفئة"
 }
