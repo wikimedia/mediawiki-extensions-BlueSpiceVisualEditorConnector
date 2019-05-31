@@ -29,6 +29,23 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
 	"bs-visualeditorconnector-color-annotation-desc": "Description of ve.ui.ColorAnnotation class",
 	"bs-visualeditorconnector-dialog-media-link": "Label for button to link the selected file",
-	"bs-visualeditorconnector-dialog-media-embed": "Label for button to embed the selected file"
-
+	"bs-visualeditorconnector-dialog-media-embed": "Label for button to embed the selected file",
+	"bs-vec-table-inspector-column": "Section title in table inspector for columns",
+	"bs-vec-table-inspector-row": "Section title in table inspector for rows",
+	"bs-vec-table-inspector-cell": "Section title in table inspector for cells",
+	"bs-vec-table-style-column-width": "Label for table style tool that sets column width",
+	"bs-vec-table-style-row-height": "Label for table style tool that sets row height",
+	"bs-vec-contextitem-cell-style-add-options-title": "Title for additional cell tools dialog",
+	"bs-vec-contextitem-column-style-add-options-title": "Title for additional column tools dialog",
+	"bs-vec-contextitem-row-style-add-options-title": "Title for additional row tools dialog",
+	"bs-vec-contextitem-row-duplicate": "Label for table style tool that duplicates a row",
+	"bs-vec-contextitem-column-duplicate": "Label for table style tool that duplicates a column",
+	"bs-vec-contextitem-table-additional-options": "Label for button in table inspector that opens the dialog",
+	"bs-vec-dialog-table-create-number-of-rows": "Label for input for specifying number of rows a table should have, in table creation dialog",
+	"bs-vec-dialog-table-create-number-of-columns": "Label for input for specifying number of columns a table should have, in table creation dialog",
+	"bs-vec-dialog-action-done": "Process dialog \"save\" action button",
+	"bs-vec-dialog-action-safe": "Process dialog \"safe\" action button",
+	"bs-vec-dialog-create-table-title": "Title for the dialog that inserts the table",
+	"bs-vec-widget-text-direction-tooltip": "Label for table style tool that changes text orientation in a table cell",
+	"bs-vec-row-duplicate-has-merged": "Warning when user tries to duplicated row containing multi-row cells"
 }

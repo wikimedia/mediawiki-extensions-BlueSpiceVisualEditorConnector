@@ -21,6 +21,10 @@ mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 						ve.ui.windowFactory.register( bs.vec.ui.MWMediaDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWSaveDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
+						ve.dm.modelRegistry.register( bs.vec.dm.TableRowNode );
+						ve.dm.modelRegistry.register( bs.vec.dm.TableCellNode );
+						ve.ce.nodeFactory.register( bs.vec.ce.TableRowNode );
+						ve.ce.nodeFactory.register( bs.vec.ce.TableCellNode );
 
 						//Step 2: Load all plugin modules that may want to register to
 						//those classes

@@ -1,5 +1,5 @@
 mw.hook( 've.activationComplete' ).add( function () {
-	var surface, surfaceModel, earlySelection, selection, position, popup;
+	var surface, surfaceModel, earlySelection, selection, position = {}, popup;
 
 	surface = ve.init.target.getSurface();
 	if ( surface.getMode() !== 'visual' ) {

@@ -61,3 +61,89 @@
 	content: "\25A0";
 	margin-left: -10px;
 }
+
+.bs-vec-color-widget {
+	text-align: left;
+}
+
+.bs-vec-styleInspector .oo-ui-popupWidget-popup .oo-ui-clippableElement-clippable {
+	height: auto !important;
+}
+
+.bs-vec-ui-tableContextItem .ve-ui-linearContextItem-actions {
+	display: inline-block;
+	width: 300px;
+	text-align: right;
+}
+
+.bs-vec-ui-tableContextItem .ve-ui-linearContextItem-actions .oo-ui-buttonWidget {
+	display: inline-block;
+}
+
+.bs-vec-ui-tableContextItem .ve-ui-linearContextItem-title {
+	display: inline-block;
+	width: 100px;
+}
+
+.bs-vec-command-widget {
+	display: inline;
+}
+
+.bs-vec-command-widget.bs-vec-number-widget:not( .bs-vec-unit-selectable ) .oo-ui-numberInputWidget{
+	width: 120px;
+}
+
+.bs-vec-command-widget.bs-vec-number-widget .oo-ui-buttonWidget {
+	margin: 0;
+}
+
+.bs-vec-command-widget.bs-vec-number-widget .oo-ui-numberInputWidget input {
+	width: 50px;
+}
+
+.dialog-header {
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	z-index: 6 !important;
+}
+
+.dialog-header .dialog-header-title {
+	font-size: 1.2em;
+}
+
+.dialog-header .dialog-header-close {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+}
+
+.dialog-body {
+	padding-top: 50px;
+}
+
+.bs-vec-table-options-dialog-item {
+	padding: 10px;
+}
+
+.bs-vec-table-options-dialog-item label{
+	display: inline-block;
+}
+
+.bs-vec-table-options-dialog-item > .oo-ui-widget:not( .oo-ui-labelWidget ) {
+	float: right;
+	display: inline-block;
+}
+
+.bs-vec-unit-selectable {
+	width: 230px;
+}
+
+.bs-vec-unit-selectable .oo-ui-dropdownInputWidget {
+	width: 100px;
+	display: inline-block;
+}
+
+.bs-vec-unit-selectable .oo-ui-numberInputWidget {
+	width: 120px;
+}
