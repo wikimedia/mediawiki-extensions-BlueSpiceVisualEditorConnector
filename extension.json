@@ -47,7 +47,7 @@
 			]
 		}
 	},
-	"callback":  "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
+	"callback": "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
 	"APIModules": {
 		"bs-vec-transformtowikitext": "BlueSpice\\VisualEditorConnector\\Api\\TransformToWikiText",
 		"bs-vec-transformtohtml": "BlueSpice\\VisualEditorConnector\\Api\\TransformToHtml",
@@ -123,7 +123,9 @@
 				"bs.vec/ui/MWTableDialog.js",
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js",
-				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js"
+				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js",
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
@@ -213,6 +215,22 @@
 			"messages": [
 				"bs-visualeditorconnector-text-style-tool-color-label",
 				"bs-visualeditorconnector-color-annotation-desc"
+			]
+		},
+		"bs.vec.ui.InternalUrlPlainTextStringTransferHandler": {
+			"scripts": [
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
+			]
+		},
+		"bs.vec.ui.InternalUrlHTMLStringTransferHandler": {
+			"scripts": [
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
 			]
 		}
 	},
