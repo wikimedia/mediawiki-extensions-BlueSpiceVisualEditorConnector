@@ -44,6 +44,11 @@
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.plugin"
 			]
+		},
+		"BlueSpiceSaferEdit": {
+			"EnvironmentCheckers": {
+				"veaction": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VeActionChecker::factory"
+			}
 		}
 	},
 	"callback": "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
