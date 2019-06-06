@@ -38,6 +38,11 @@
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.plugin"
 			]
+		},
+		"BlueSpiceSaferEdit": {
+			"EnvironmentCheckers": {
+				"veedit": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VEEdit::factory"
+			}
 		}
 	},
 	"callback":  "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
