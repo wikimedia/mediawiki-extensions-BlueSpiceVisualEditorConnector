@@ -19,5 +19,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "{{doc-apihelp-description|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: for stub procedure; do not translate this word.",
 	"apihelp-bs-vec-restbase-mock-summary": "{{doc-apihelp-summary|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
 	"apihelp-bs-vec-restbase-mock-param-path": "{{doc-apihelp-param|bs-vec-restbase-mock|path}}\nDescription of a parameter that contains the path of an RESTbase endpoint to mock",
-	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour"
+	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour",
+	"visualeditor-linkcontext-label-change": "Text for the change label button. This sets the current selection to the entire contents of the link, so it can be easily edited.",
+	"visualeditor-linkcontext-label-label": "Label for the \"label\" field of a link\n{{Identical|Label}}"
 }
