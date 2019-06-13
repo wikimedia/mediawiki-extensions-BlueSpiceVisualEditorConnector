@@ -194,10 +194,6 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.core"
-			],
-			"messages": [
-				"bs-visualeditorconnector-text-style-tool-italic-label",
-				"bs-visualeditorconnector-text-style-tool-bold-label"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.textColor": {
