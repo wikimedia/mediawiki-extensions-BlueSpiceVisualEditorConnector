@@ -41,7 +41,7 @@
 		},
 		"BlueSpiceSaferEdit": {
 			"EnvironmentCheckers": {
-				"veedit": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VEEdit::factory"
+				"veaction": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VeActionChecker::factory"
 			}
 		}
 	},

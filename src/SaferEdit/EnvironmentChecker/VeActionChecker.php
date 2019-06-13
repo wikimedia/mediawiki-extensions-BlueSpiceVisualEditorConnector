@@ -4,7 +4,7 @@ namespace BlueSpice\VisualEditorConnector\SaferEdit\EnvironmentChecker;
 
 use BlueSpice\SaferEdit\EnvironmentChecker\Base;
 
-class VEEdit extends Base {
+class VeActionChecker extends Base {
 
 	public function isEditMode( &$result ) {
 		$veAction = $this->context->getRequest()->getText( 'veaction', '' );
