@@ -25,5 +25,7 @@
 	"bs-visualeditorconnector-upload-dialog-type": "Workflow for uploading files in MediaDialog",
 	"bs-visualeditorconnector-simple-save-process": "Configuration variable to use a simplified save process",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Text color",
-	"bs-visualeditorconnector-color-annotation-desc": "Adds colors to text by assigning \"color\" or \"class\" property"
+	"bs-visualeditorconnector-color-annotation-desc": "Adds colors to text by assigning \"color\" or \"class\" property",
+	"bs-visualeditorconnector-dialog-media-link": "Link this file",
+	"bs-visualeditorconnector-dialog-media-embed": "Embed this file"
 }

@@ -137,6 +137,10 @@
 			"scripts": [
 				"bluespice.visualEditorConnector.overrides.js"
 			],
+			"messages": [
+				"bs-visualeditorconnector-dialog-media-link",
+				"bs-visualeditorconnector-dialog-media-embed"
+			],
 			"group": "bsvec-override"
 		},
 		"ext.bluespice.visualEditorConnector.tags.classes": {
