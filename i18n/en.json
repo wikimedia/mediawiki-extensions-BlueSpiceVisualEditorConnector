@@ -21,5 +21,7 @@
 	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase path to be mocked",
 	"bs-visualeditorconnector-upload-dialog-type": "Workflow for uploading files in MediaDialog",
 	"visualeditor-linkcontext-label-change": "Change label",
-	"visualeditor-linkcontext-label-label": "Label"
+	"visualeditor-linkcontext-label-label": "Label",
+	"bs-visualeditorconnector-dialog-media-link": "Link this file",
+	"bs-visualeditorconnector-dialog-media-embed": "Embed this file"
 }
