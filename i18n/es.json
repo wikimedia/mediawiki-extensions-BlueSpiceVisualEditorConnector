@@ -9,5 +9,7 @@
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas",
-	"bs-visualeditorconnector-text-style-tool-color-label": "Color del texto"
+	"bs-visualeditorconnector-text-style-tool-color-label": "Color del texto",
+	"bs-visualeditorconnector-dialog-media-link": "Enlazar este archivo",
+	"bs-visualeditorconnector-dialog-media-embed": "Incrustar este archivo"
 }

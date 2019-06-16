@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Chrumps"
+			"Chrumps",
+			"Railfail536"
 		]
 	},
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Zaawansowane"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Zaawansowane",
+	"bs-visualeditorconnector-dialog-media-link": "Linkuj ten plik",
+	"bs-visualeditorconnector-dialog-media-embed": "Osadź ten plik"
 }

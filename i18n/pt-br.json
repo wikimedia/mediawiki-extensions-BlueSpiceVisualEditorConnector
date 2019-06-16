@@ -25,5 +25,7 @@
 	"bs-visualeditorconnector-upload-dialog-type": "Fluxo de trabalho para carregar arquivos no MediaDialog",
 	"bs-visualeditorconnector-simple-save-process": "Variável de configuração para usar um processo de salvamento simplificado",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Cor do texto",
-	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\""
+	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\"",
+	"bs-visualeditorconnector-dialog-media-link": "Vincular este arquivo",
+	"bs-visualeditorconnector-dialog-media-embed": "Incorporar este arquivo"
 }
