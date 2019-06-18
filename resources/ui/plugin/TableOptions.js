@@ -100,7 +100,6 @@ bs.ui.plugin.TableOptions.prototype.getSetupProcess = function ( parentProcess, 
 					}
 				}
 			}
-			;
 			if ( activeclass ) {
 				var selected = this.component.TableOptions.getMenu().findItemFromData( activeclass );
 				this.component.TableOptions.getMenu().selectItem( selected );
