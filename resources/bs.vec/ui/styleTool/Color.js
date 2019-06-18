@@ -1,19 +1,28 @@
 bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.ColorStyleTool = function( config ) {
-	this.$currentColorShow = $( '<div>' ).addClass( 'bs-vec-text-color-current' );
-	bs.vec.ui.ColorStyleTool.parent.call( this, config );
-	this.$currentColorShow.insertBefore( this.$icon );
-	this.colorPicker = null;
-	this.value = '';
+	var pickerCfg, customColors;
 
+	this.value = {};
+	pickerCfg = {
+		framed: false
+	};
+	customColors = mw.config.get( 'bsVECColorPickerColors' );
+	if ( customColors && customColors.length > 0 ) {
+		pickerCfg.colors = customColors;
+	}
+	this.colorPicker = new OOJSPlus.widget.ColorPickerWidget( pickerCfg );
+	bs.vec.ui.ColorStyleTool.parent.call( this, config );
+
+	this.colorPicker.connect( this, {
+		clear: 'onPickerClear',
+		colorSelected: 'onPickerColorSelected',
+		togglePicker: 'onPickerToggle'
+	} );
 	this.disconnect( this, {
 		click: 'annotate'
 	} );
-	this.connect( this, {
-		click: 'togglePicker'
-	} );
-
+	this.$element = this.colorPicker.$element;
 };
 
 OO.inheritClass( bs.vec.ui.ColorStyleTool, bs.vec.ui.ButtonStyleTool );
@@ -30,45 +39,15 @@ bs.vec.ui.ColorStyleTool.prototype.getLabel = function() {
 	return OO.ui.deferMsg( "bs-visualeditorconnector-text-style-tool-color-label" );
 };
 
-bs.vec.ui.ColorStyleTool.prototype.togglePicker = function( show ) {
-	if ( !this.colorPicker ) {
-		let pickerCfg = {
-			value: this.value
-		};
-		let customColors = mw.config.get( 'bsVECColorPickerColors' );
-		if ( customColors && customColors.length > 0 ) {
-			pickerCfg.colors = customColors;
-		}
-		this.colorPicker = new OOJSPlus.widget.ColorPickerEmbeddable( pickerCfg );
-		this.colorPicker.connect( this, {
-			clear: 'onPickerClear',
-			colorSelected: 'onPickerColorSelected'
-		} );
-		this.popup.$body.append( this.colorPicker.$element );
-		this.colorPicker.$element.hide();
-	}
-	if ( show === true ) {
-		return this.colorPicker.$element.show();
-	} else if ( show === false ) {
-		return this.colorPicker.$element.hide();
-	}
-	this.colorPicker.$element.slideToggle();
-};
-
 bs.vec.ui.ColorStyleTool.prototype.onPickerColorSelected = function( data ) {
-	if ( data.hasOwnProperty( 'code' ) ) {
-		this.$currentColorShow.css( 'color', data.code );
-	}
+	data = data.length > 0 ? data[0] : {};
 	this.data = data;
 	this.clearAnnotation();
 	this.annotate();
-	this.togglePicker();
 };
 
 bs.vec.ui.ColorStyleTool.prototype.onPickerClear = function() {
-	this.$currentColorShow.css( 'color', 'black' );
 	this.clearAnnotation();
-	this.togglePicker();
 };
 
 bs.vec.ui.ColorStyleTool.prototype.getData = function() {
@@ -88,18 +67,21 @@ bs.vec.ui.ColorStyleTool.prototype.changeActive = function() {
 		if ( this.colorPicker ) {
 			this.colorPicker.setValue( attr );
 		}
-		if ( attr.hasOwnProperty( 'code' ) ) {
-			this.$currentColorShow.css( 'color', attr.code );
-		} else if ( attr.hasOwnProperty( 'class' ) ) {
-			this.$currentColorShow.addClass( attr.class );
-			this.$currentColorShow.removeAttr( 'style' );
-		}
 	} else {
-		this.$currentColorShow.css( 'color', 'black' );
+		this.colorPicker.setValue( {} );
 	}
 };
 
 
 bs.vec.ui.ColorStyleTool.prototype.getMethod = function() {
 	return 'set';
+};
+
+bs.vec.ui.ColorStyleTool.prototype.onPickerToggle = function( visible ) {
+	var $mainPopup = this.$element.parents( '.oo-ui-popupWidget-popup' );
+	if ( visible ) {
+		$mainPopup.css( 'overflow', 'visible' );
+	} else {
+		$mainPopup.css( 'overflow', 'hidden' );
+	}
 };
