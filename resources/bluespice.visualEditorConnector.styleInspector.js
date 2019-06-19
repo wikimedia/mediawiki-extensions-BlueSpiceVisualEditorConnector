@@ -1,7 +1,8 @@
 mw.hook( 've.activationComplete' ).add( function () {
-	var surface, surfaceModel, earlySelection, selection, position = {}, popup;
+	var target, surface, surfaceModel, earlySelection, selection, selectedNode, position = {}, popup;
 
-	surface = ve.init.target.getSurface();
+	target = ve.init.target;
+	surface = target.getSurface();
 	if ( surface.getMode() !== 'visual' ) {
 		// Don't support source mode
 		return;
@@ -13,6 +14,11 @@ mw.hook( 've.activationComplete' ).add( function () {
 			return;
 		}
 		selection = s;
+		selectedNode = surfaceModel.getSelectedNode();
+	} );
+
+	target.getToolbar().on ( 'updateState', function() {
+		_removePopup();
 	} );
 
 	$( document ).on( 'mousedown', function( e ) {
@@ -45,8 +51,13 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( earlySelection && earlySelection.getRange() === selection.getRange() ) {
 			return;
 		}
+		if ( selectedNode !== null ) {
+			// We only show this inspector when plain text is selected,
+			// as soon as there is a node selected, its not plain text
+			return;
+		}
 		position.end = {
-			x: e.pageX,
+ 			x: e.pageX,
 			y: e.pageY
 		};
 		range = selection.getRange();
@@ -66,6 +77,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 			_removePopup();
 		}
 	} );
+
 	function _shouldRemovePopup( e ) {
 		if ( !popup ) {
 			return false;
@@ -81,6 +93,9 @@ mw.hook( 've.activationComplete' ).add( function () {
 	}
 
 	function _removePopup() {
+		if ( !popup ) {
+			return;
+		}
 		popup.toggle( false );
 	}
 
