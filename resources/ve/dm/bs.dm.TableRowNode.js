@@ -54,7 +54,7 @@ bs.vec.dm.TableRowNode.static.toDataElement = function ( domElements ) {
 };
 
 bs.vec.dm.TableRowNode.static.toDomElements = function ( dataElement, doc ) {
-	var	domElement = doc.createElement( 'tr' )
+	var	domElement = doc.createElement( 'tr' );
 
 	this.runTableStyles( 'toDomElements', [ dataElement, domElement ] );
 
