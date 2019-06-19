@@ -130,7 +130,14 @@
 				"bs.vec/ui/plugin/MWTableDialog.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js",
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
+				"ve/dm/bs.dm.TableRowNode.js",
+				"ve/dm/bs.dm.TableCellNode.js",
+				"ve/TableStyleApplicator.js",
+				"ve/ce/bs.ce.TableRowNode.js",
+				"ve/ce/bs.ce.TableCellNode.js",
+				"ve/ui/TableLineContext.js",
+				"ve/action/TableActionOverride.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
@@ -175,6 +182,28 @@
 		},
 		"ext.bluespice.visualEditorConnector.tablestyleplugin": {
 			"scripts": [
+				"bs.vec/TableStyleRegistry.js",
+				"bs.vec/ui/tableStyles/TableStyle.js",
+				"bs.vec/ui/tableStyles/RowHeightStyle.js",
+				"bs.vec/ui/tableStyles/CellBackgroundStyle.js",
+				"bs.vec/ui/tableStyles/TextDirectionStyle.js",
+				"bs.vec/ui/tableStyles/ColumnWidthStyle.js",
+				"ve/dialog/TableAdditionalOptions.js",
+				"ve/dialog/CreateTableOptions.js",
+				"ve/widget/CommandWidget.js",
+				"ve/widget/NumberCommandWidget.js",
+				"ve/widget/ButtonCommandWidget.js",
+				"ve/widget/RowHeightWidget.js",
+				"ve/widget/ColumnWidthWidget.js",
+				"ve/widget/ColorCommandWidget.js",
+				"ve/widget/CellBackgroundWidget.js",
+				"ve/widget/TextDirectionWidget.js",
+				"ve/action/TableAction.js",
+				"ve/command/TableStyleCommands.js",
+				"ve/contextitem/TableContextItem.js",
+				"ve/contextitem/RowStyleContextItem.js",
+				"ve/contextitem/ColumnStyleContextItem.js",
+				"ve/contextitem/CellStyleContextItem.js",
 				"ui/plugin/TableOptions.js",
 				"ui/plugin/FullWidthOption.js"
 			],
@@ -184,7 +213,25 @@
 			"messages": [
 				"bs-visualeditorconnector-ve-fullwidth-option",
 				"bs-visualeditorconnector-ve-style-option-description",
-				"bs-visualeditorconnector-ve-style-option"
+				"bs-visualeditorconnector-ve-style-option",
+				"bs-vec-table-inspector-column",
+				"bs-vec-table-inspector-row",
+				"bs-vec-table-inspector-cell",
+				"bs-vec-table-style-column-width",
+				"bs-vec-table-style-row-height",
+				"bs-vec-contextitem-cell-style-add-options-title",
+				"bs-vec-contextitem-column-style-add-options-title",
+				"bs-vec-contextitem-row-style-add-options-title",
+				"bs-vec-contextitem-row-duplicate",
+				"bs-vec-contextitem-column-duplicate",
+				"bs-vec-contextitem-table-additional-options",
+				"bs-vec-dialog-table-create-number-of-rows",
+				"bs-vec-dialog-table-create-number-of-columns",
+				"bs-vec-dialog-action-done",
+				"bs-vec-dialog-action-safe",
+				"bs-vec-dialog-create-table-title",
+				"bs-vec-widget-text-direction-tooltip",
+				"bs-vec-row-duplicate-has-merged"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.styleInspector": {
