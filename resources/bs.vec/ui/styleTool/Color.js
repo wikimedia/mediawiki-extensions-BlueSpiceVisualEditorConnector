@@ -71,6 +71,13 @@ bs.vec.ui.ColorStyleTool.prototype.onPickerClear = function() {
 	this.togglePicker();
 };
 
+bs.vec.ui.ColorStyleTool.prototype.togglePicker = function( visible ) {
+	if ( !this.colorPicker ) {
+		return;
+	}
+	this.colorPicker.togglePicker( visible );
+};
+
 bs.vec.ui.ColorStyleTool.prototype.getData = function() {
 	return this.data;
 };
