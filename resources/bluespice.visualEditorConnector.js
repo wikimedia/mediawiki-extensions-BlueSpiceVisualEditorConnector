@@ -66,6 +66,28 @@
 				return dfd.promise();
 			};
 
+			// some extensions, e.g. PageForms, do not support asynchronous
+			// calls. Hence, we need to provide a synchronous funcion here.
+			target.getWikiTextSync = function() {
+				var textToSubmit = this.getSurface().getHtml();
+
+				var requestWikiText = $.ajax({
+					type: "POST",
+					url: mw.config.get('wgScriptPath') + '/api.php?action=bs-vec-transformtowikitext',
+					async: false,
+					data: {
+						html: textToSubmit,
+						format: 'json',
+						token: mw.user.tokens.get( 'csrfToken' )
+					}
+				});
+				if ( requestWikiText.status != "200" ) {
+					return false;
+				} else {
+					return requestWikiText.responseJSON.wikitext;
+				}
+			};
+
 			dfd.resolve( target );
 		});
 
