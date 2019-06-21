@@ -25,20 +25,24 @@ bs.vec.dm.ColorAnnotation.static.toDataElement = function ( domElements ) {
 	return {
 		type: this.name,
 		attributes: {
-			'class': domElements[ 0 ].getAttribute( 'class' ),
+			'class': domElements[ 0 ].getAttribute( 'class' ) || '',
 			code: this.getCodeFromElement( domElements[ 0 ] )
 		}
 	};
 };
 
 bs.vec.dm.ColorAnnotation.static.getCodeFromElement = function( el ) {
-	let style = el.getAttribute( 'style' );
-	let props = style.split( ';' );
-	for( let i = 0; i < props.length; i++ ) {
-		let prop = props[i].trim();
-		let propBits = prop.split( ':' );
-		let val = propBits.pop().trim();
-		let propName = propBits.pop().trim();
+	var style, props, prop, i, propBits, val, propName;
+	style = el.getAttribute( 'style' );
+	if ( !style ) {
+		return '';
+	}
+	props = style.split( ';' );
+	for( i = 0; i < props.length; i++ ) {
+		prop = props[i].trim();
+		propBits = prop.split( ':' );
+		val = propBits.pop().trim();
+		propName = propBits.pop().trim();
 		if ( propName === 'color' ) {
 			return val;
 		}
@@ -76,13 +80,13 @@ bs.vec.dm.ColorAnnotation.prototype.getComparableObject = function () {
  * @returns object
  */
 bs.vec.dm.ColorAnnotation.prototype.getHashObject = function () {
-	let hash = this.constructor.static.getHashObject( this.element );
-	let attr = {};
+	var hash, attr = {};
+	hash = this.constructor.static.getHashObject( this.element );
 	if ( this.colorData.hasOwnProperty( 'code' ) ) {
-		attr.code = this.colorData.code
+		attr.code = this.colorData.code;
 	}
 	if ( this.colorData.hasOwnProperty( 'class' ) ) {
-		attr.code = this.colorData.class
+		attr.code = this.colorData.class;
 	}
 	hash.attributes = attr;
 	return hash;
