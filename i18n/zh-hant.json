@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"神樂坂秀吉"
 		]
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
@@ -24,5 +25,6 @@
 	"apihelp-bs-vec-restbase-mock-param-path": "要模擬的 RESTBase 路徑",
 	"bs-visualeditorconnector-upload-dialog-type": "用於在 MediaDialog 上傳檔案的工作流",
 	"bs-visualeditorconnector-simple-save-process": "設置用來簡化保存處理的變數",
-	"bs-visualeditorconnector-text-style-tool-color-label": "文字色彩"
+	"bs-visualeditorconnector-text-style-tool-color-label": "文字色彩",
+	"bs-visualeditorconnector-dialog-media-link": "連結至檔案"
 }

@@ -1,0 +1,13 @@
+{
+	"@metadata": {
+		"authors": [
+			"Vlad5250"
+		]
+	},
+	"bs-visualeditorconnector-desc": "Поврзува BlueSpice со нагледниот уредник",
+	"bs-visualeditorconnector-enable-visualeditor": "Овозможи го нагледниот уредник за BlueSpаce-додатоците",
+	"bs-visualeditorconnector-cancel-edit": "Откажи уредување",
+	"bs-visualeditor-nsm-label": "Визуелен уредник",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Заеднички",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредни"
+}

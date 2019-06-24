@@ -1,8 +1,23 @@
 {
 	"@metadata": {
 		"authors": [
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Mjälten"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering"
+	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Allmän",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancerad",
+	"bs-visualeditorconnector-ve-style-option": "Tabellstilar",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Text färg",
+	"bs-visualeditorconnector-dialog-media-link": "Länk till fil",
+	"bs-vec-table-inspector-cell": "Cell",
+	"bs-vec-table-style-column-width": "Kolumnbredd",
+	"bs-vec-table-style-row-height": "Radhöjd (px)",
+	"bs-vec-contextitem-cell-style-add-options-title": "Cellalternativ",
+	"bs-vec-contextitem-row-style-add-options-title": "Radalternativ",
+	"bs-vec-dialog-table-create-number-of-columns": "Antal kolumner",
+	"bs-vec-dialog-action-done": "Klar",
+	"bs-vec-dialog-action-safe": "Avbryt",
+	"bs-vec-widget-text-direction-tooltip": "Vertikal text"
 }

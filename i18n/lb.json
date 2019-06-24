@@ -7,5 +7,14 @@
 	"bs-visualeditorconnector-cancel-edit": "Ännerung annuléieren",
 	"bs-visualeditor-nsm-label": "Visuellen Editeur",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gemeinsam",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweidert"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweidert",
+	"bs-vec-table-inspector-column": "Kolonn",
+	"bs-vec-table-inspector-row": "Rei",
+	"bs-vec-table-inspector-cell": "Zell",
+	"bs-vec-contextitem-row-style-add-options-title": "Optioune vun de Reien",
+	"bs-vec-contextitem-table-additional-options": "Zousätzlech Optiounen",
+	"bs-vec-dialog-table-create-number-of-columns": "Zuel vun de Kolonnen",
+	"bs-vec-dialog-action-done": "Fäerdeg",
+	"bs-vec-dialog-action-safe": "Ofbriechen",
+	"bs-vec-dialog-create-table-title": "Tabell drasetzen"
 }

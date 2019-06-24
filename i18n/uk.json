@@ -26,5 +26,9 @@
 	"apihelp-bs-vec-restbase-mock-param-path": "Шлях RESTBase, макет якого треба зробити",
 	"bs-visualeditorconnector-upload-dialog-type": "Робочий процес завантаження файлів у медіадіалозі",
 	"bs-visualeditorconnector-simple-save-process": "Конфігураційна змінна для використання спрощеного процесу збереження",
-	"bs-visualeditorconnector-text-style-tool-color-label": "Колір тексту"
+	"bs-visualeditorconnector-text-style-tool-color-label": "Колір тексту",
+	"bs-vec-dialog-action-done": "Готово",
+	"bs-vec-dialog-action-safe": "Скасувати",
+	"bs-vec-dialog-create-table-title": "Вставити таблицю",
+	"bs-vec-widget-text-direction-tooltip": "Вертикальний текст"
 }
