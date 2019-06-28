@@ -17,7 +17,10 @@ bs.vec.ui.widget.ButtonCommandWidget = function( contextItem, cfg ) {
 
 OO.inheritClass( bs.vec.ui.widget.ButtonCommandWidget, bs.vec.ui.widget.CommandWidget );
 
-bs.vec.ui.widget.ButtonCommandWidget.prototype.onClick = function() {
+bs.vec.ui.widget.ButtonCommandWidget.prototype.executeAction = function() {
+	if ( !this.shouldExecute() ) {
+		return;
+	}
 	if ( !this.expensive ) {
 		return this.contextItem.execCommand( this.command );
 	}
@@ -52,7 +55,7 @@ bs.vec.ui.widget.ButtonCommandWidget.prototype.initWidget = function() {
 	} );
 
 	this.buttonWidget.connect( this, {
-		click: 'onClick'
+		click: 'executeAction'
 	} );
 
 	this.$element.append( this.buttonWidget.$element );

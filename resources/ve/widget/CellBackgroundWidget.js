@@ -12,7 +12,7 @@ bs.vec.ui.widget.CellBackgroundWidget = function( contextItem ) {
 		}
 	}
 	this.command = 'cellBackgroundColor';
-	this.value = this.styles;
+	this.widgetValue = this.styles;
 	this.icon = 'cellBackgroundColor';
 
 	bs.vec.ui.widget.CellBackgroundWidget.parent.call( this, contextItem );

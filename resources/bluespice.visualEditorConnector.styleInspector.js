@@ -51,7 +51,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( earlySelection && earlySelection.getRange() === selection.getRange() ) {
 			return;
 		}
-		if ( selectedNode !== null ) {
+		if ( selectedNode !== null && selectedNode.type !== 'text' ) {
 			// We only show this inspector when plain text is selected,
 			// as soon as there is a node selected, its not plain text
 			return;
@@ -115,4 +115,3 @@ mw.hook( 've.activationComplete' ).add( function () {
 		window.vecBSTextStylePopup = popup;
 	}
 } );
-

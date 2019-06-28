@@ -4,9 +4,8 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 	bs.vec.ui.widget.ColorCommandWidget.parent.call( this, contextItem );
 
 	this.icon = this.icon || 'highlight';
-
 	this.colorWidget = new OOJSPlus.widget.ColorPickerWidget( {
-		value: this.value,
+		value: this.widgetValue,
 		framed: false,
 		icon: this.icon,
 		popup: {
@@ -15,7 +14,7 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 	} );
 
 	this.colorWidget.connect( this, {
-		colorSelected: 'onColorSelected',
+		colorSelected: 'executeAction',
 		togglePicker: 'onPickerToggle',
 		clear: function() {
 			this.onColorSelected( [] );
@@ -28,8 +27,14 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 
 OO.inheritClass( bs.vec.ui.widget.ColorCommandWidget, bs.vec.ui.widget.CommandWidget );
 
-bs.vec.ui.widget.ColorCommandWidget.prototype.onColorSelected = function( val ) {
-	val = val.length > 0 ? val[0] : {};
+bs.vec.ui.widget.ColorCommandWidget.prototype.executeAction = function() {
+	if ( !this.shouldExecute() ) {
+		return;
+	}
+	var val = this.colorWidget.getValue();
+	if ( $.isArray( val ) ) {
+		val = val[0];
+	}
 	this.contextItem.execCommand( this.command, { value: val } );
 
 };

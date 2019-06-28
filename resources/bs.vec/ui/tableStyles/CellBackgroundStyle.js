@@ -70,7 +70,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDataElement = function( section, domEl
 	}
 	styleParser = new bs.vec.util.StyleAttributeParser( style );
 	if ( styleParser.getValueForAttr( this.getAttribute() ) ) {
-		result.cellBackgroundStyle = {
+		result.cellBackgroundColor = {
 			colorCode: styleParser.getValueForAttr( this.getAttribute() )
 		};
 		return;
@@ -85,13 +85,13 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDataElement = function( section, domEl
 	}
 	// Problem here is that we don't if the class assigned to the td
 	// actually comes from color picker
-	result.cellBackgroundStyle = {
+	result.cellBackgroundColor = {
 		colorClass: classes[0]
 	};
 };
 
 bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
-	var value;
+	var value, style, styleParser;
 
 	if ( !this.applies( section ) ) {
 		return;
@@ -100,9 +100,13 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataE
 	if ( !dataElement.hasOwnProperty( 'cellBackgroundColor' ) ) {
 		return;
 	}
+
 	value = dataElement.cellBackgroundColor;
 	if ( value.hasOwnProperty( 'colorCode' ) ) {
-		domElement.setAttribute( 'style', this.getAttribute() + ':' + value.colorCode );
+		style = domElement.getAttribute( 'style' ) || '';
+		styleParser = new bs.vec.util.StyleAttributeParser( style );
+		styleParser.addToStyle( this.getAttribute(), value.colorCode );
+		domElement.setAttribute( 'style', styleParser.toString() );
 	} else if ( value.hasOwnProperty( 'colorClass' ) ) {
 		domElement.setAttribute( 'class', value.colorClass );
 	}

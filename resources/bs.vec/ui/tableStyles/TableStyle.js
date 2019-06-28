@@ -122,7 +122,7 @@ bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, re
 };
 
 bs.vec.ui.TableStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
-	var value;
+	var value, style, styleParser;
 
 	if ( !this.applies( section ) ) {
 		return;
@@ -131,15 +131,24 @@ bs.vec.ui.TableStyle.prototype.toDomElements = function( section, dataElement, d
 	if ( !dataElement.hasOwnProperty( this.getModelProperty() ) ) {
 		return;
 	}
+
 	value = dataElement[this.getModelProperty()];
 	this.setValue( value );
-	domElement.setAttribute( 'style', this.getAttribute() + ':' + this.getValue() );
+
+	style = domElement.getAttribute( 'style' );
+	if ( !style ) {
+		style = '';
+	}
+	styleParser = new bs.vec.util.StyleAttributeParser( style );
+	styleParser.addToStyle( this.getAttribute(), this.getValue() );
+	domElement.setAttribute( 'style', styleParser.toString() );
 };
 
 
 
 bs.vec.util.StyleAttributeParser = function( value ) {
-	if ( value ) {
+	if ( typeof value !== 'undefined') {
+		// Parse even if empty style is passed
 		this.setStyle( value );
 	}
 };
@@ -171,13 +180,13 @@ bs.vec.util.StyleAttributeParser.prototype.parseStyle = function() {
 		pairBits = pair.split( ':' );
 		value = pairBits.pop().trim();
 		attr = pairBits.pop().trim();
-		this.formatted.attr = value;
+		this.formatted[attr] = value;
 	}
 	return this.formatted;
 };
 
 bs.vec.util.StyleAttributeParser.prototype.addToStyle = function( attr, value ) {
-	this.formatted.attr = value;
+	this.formatted[attr] = value;
 };
 
 bs.vec.util.StyleAttributeParser.prototype.removeFromStyle = function( attr ) {

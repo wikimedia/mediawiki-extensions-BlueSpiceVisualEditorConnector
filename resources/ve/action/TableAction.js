@@ -62,7 +62,7 @@ bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParam
 		for( colIndex = selection.startCol; colIndex <= selection.endCol; colIndex++ ) {
 			cells = matrix.getColumn( colIndex );
 			for ( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
-				cells[cellIndex] = cb( cells[cellIndex], cbParams );
+				cells[cellIndex] = cb( cells[cellIndex], cbParams, this );
 			}
 			this.replace( selection, what, colIndex, { cells: cells } );
 		}
@@ -73,13 +73,13 @@ bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParam
 			rowNode = matrix.getRowNode( rowIndex );
 			if ( what === 'row' ) {
 				newRow = {
-					row: cb( rowNode, cbParams ),
+					row: cb( rowNode, cbParams, this ),
 					cells: cells
 				};
 			} else if ( what === 'cell' ) {
 				for ( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
 					if ( cellIndex >= selection.startCol && cellIndex <= selection.endCol ) {
-						cells[cellIndex] = cb( cells[cellIndex], cbParams );
+						cells[cellIndex] = cb( cells[cellIndex], cbParams, this );
 					}
 				}
 

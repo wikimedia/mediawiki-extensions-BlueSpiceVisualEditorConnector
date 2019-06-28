@@ -23,12 +23,25 @@ bs.vec.ui.ColumnWidthStyle.prototype.getTool = function() {
 	};
 };
 
-bs.vec.ui.ColumnWidthStyle.prototype.executeAction = function( subject, args ) {
-	var value = args.hasOwnProperty( 'columnWidth' ) ? args.columnWidth : null;
+bs.vec.ui.ColumnWidthStyle.prototype.executeAction = function( subject, args, action ) {
+	var fragment, unit, value = args.hasOwnProperty( 'columnWidth' ) ? args.columnWidth : null,
+		surfaceModel = action.surface.getModel();
 
 	if ( value === null ) {
 		delete( subject.node.element.columnWidth );
 	} else {
+		if ( value.substr( value.length -1 ) === '%' ) {
+			// In order to use percent values for columns, table must have a width
+			// Easiest way is to make it 100%. Doing it like this, will also turn on
+			// "full width" option in table properties, so we are consistent
+			fragment = surfaceModel.getLinearFragment(
+				surfaceModel.getSelection().tableRange, true
+			);
+
+			fragment.changeAttributes( {
+				tablefullwidth: true
+			} );
+		}
 		subject.node.element.columnWidth = value;
 	}
 	return subject;

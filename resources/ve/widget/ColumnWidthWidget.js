@@ -21,7 +21,10 @@ bs.vec.ui.widget.ColumnWidthWidget = function( contextItem ) {
 
 OO.inheritClass( bs.vec.ui.widget.ColumnWidthWidget, bs.vec.ui.widget.NumberCommandWidget );
 
-bs.vec.ui.widget.ColumnWidthWidget.prototype.onNumberChange = function() {
+bs.vec.ui.widget.ColumnWidthWidget.prototype.executeAction = function() {
+	if ( !this.shouldExecute() ) {
+		return;
+	}
 	var data = {};
 	data[this.property] = this.numberWidget.getValue() + this.unit;
 	this.contextItem.execCommand( this.command, data );
@@ -51,7 +54,7 @@ bs.vec.ui.widget.ColumnWidthWidget.prototype.onUnitChange = function( value ) {
 	if ( this.unit === '%' && this.numberWidget.getValue() > 100  ) {
 		this.numberWidget.setValue( 100 );
 	}
-	this.onNumberChange();
+	this.executeAction();
 };
 
 /**
