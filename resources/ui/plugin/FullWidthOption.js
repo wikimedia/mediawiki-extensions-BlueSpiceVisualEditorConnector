@@ -30,8 +30,12 @@ bs.ui.plugin.FullWidthOption.prototype.getValues = function ( values ) {
 
 bs.ui.plugin.FullWidthOption.prototype.getSetupProcess = function ( parentProcess, data ) {
 	parentProcess.next( function () {
+		var fragment = this.component.getFragment();
+		if ( !fragment ) {
+			return;
+		}
 		var tableNode = this.component.getFragment().getSelection().getTableNode(),
-				tablefullwidth = !!tableNode.getAttribute( 'tablefullwidth' );
+			tablefullwidth = !!tableNode.getAttribute( 'tablefullwidth' );
 
 		this.component.fullWidthToggle.setValue( tablefullwidth );
 
@@ -44,12 +48,16 @@ bs.ui.plugin.FullWidthOption.prototype.getSetupProcess = function ( parentProces
 
 bs.ui.plugin.FullWidthOption.prototype.getActionProcess = function ( parentProcess, action ) {
 	parentProcess.next( function () {
-		var surfaceModel, fragment;
+		var surfaceModel, fragment, initialFragment;
 		if ( action === 'done' ) {
-			surfaceModel = this.component.getFragment().getSurface();
+			initialFragment = this.component.getFragment();
+			if ( !initialFragment ) {
+				return;
+			}
+			surfaceModel = initialFragment.getSurface();
 			fragment = surfaceModel.getLinearFragment(
-					this.component.getFragment().getSelection().tableRange, true
-					);
+				initialFragment.getSelection().tableRange, true
+			);
 			fragment.changeAttributes( {
 				tablefullwidth: this.component.fullWidthToggle.getValue()
 			} );

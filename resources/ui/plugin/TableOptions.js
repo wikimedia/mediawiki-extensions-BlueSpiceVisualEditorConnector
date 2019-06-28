@@ -115,13 +115,21 @@ bs.ui.plugin.TableOptions.prototype.getSetupProcess = function ( parentProcess, 
 
 bs.ui.plugin.TableOptions.prototype.getActionProcess = function ( parentProcess, action ) {
 	parentProcess.next( function () {
-		var surfaceModel, fragment;
+		var initialFragment, surfaceModel, fragment;
 
 		if ( action === 'done' ) {
-			surfaceModel = this.component.getFragment().getSurface();
+			initialFragment = this.component.getFragment();
+			if ( !initialFragment ) {
+				return;
+			}
+			surfaceModel = initialFragment.getSurface();
 			fragment = surfaceModel.getLinearFragment(
-					this.component.getFragment().getSelection().tableRange, true
-					);
+				initialFragment.getSelection().tableRange, true
+			);
+			var selectedItem = this.component.TableOptions.getMenu().findSelectedItem();
+			if ( !selectedItem ) {
+				return;
+			}
 			var selectedClass = this.component.TableOptions.getMenu().findSelectedItem().getData();
 			var allItems = this.component.TableOptions.getMenu().getItems();
 

@@ -14,10 +14,17 @@ bs.vec.ui.widget.NumberCommandWidget = function( contextItem ) {
 
 OO.inheritClass( bs.vec.ui.widget.NumberCommandWidget, bs.vec.ui.widget.CommandWidget );
 
-bs.vec.ui.widget.NumberCommandWidget.prototype.onNumberChange = function( val ) {
+bs.vec.ui.widget.NumberCommandWidget.prototype.executeAction = function() {
 	var data = {};
-	data[this.property] = val;
-	this.contextItem.execCommand( this.command, data );
+	if ( !this.shouldExecute() ) {
+		return;
+	}
+	this.numberWidget.getValidity()
+		.done( function() {
+			data[this.property] = this.numberWidget.getValue();
+			this.contextItem.execCommand( this.command, data );
+		}.bind( this ) );
+
 };
 
 bs.vec.ui.widget.NumberCommandWidget.prototype.initWidget = function() {
@@ -29,7 +36,7 @@ bs.vec.ui.widget.NumberCommandWidget.prototype.initWidget = function() {
 	} );
 
 	this.numberWidget.connect( this, {
-		change: 'onNumberChange'
+		change: 'executeAction'
 	} );
 
 	this.$element.append( this.numberWidget.$element );

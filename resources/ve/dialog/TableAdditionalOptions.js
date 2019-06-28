@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui.dialog' );
 bs.vec.ui.dialog.TableAdditionalOptions = function( commands, contextItem ) {
 	this.commands = commands;
 	this.contextItem = contextItem;
+	this.styleWidgets = {};
 
 	bs.vec.ui.dialog.TableAdditionalOptions.parent.call( this, {
 		size: 'medium'
@@ -33,7 +34,9 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function() {
 			continue;
 		}
 		config = this.commands[command];
-		indLayout = new OO.ui.FieldLayout( this.contextItem.getWidgetFromConfig( command, config ), {
+		this.styleWidgets[command] = this.contextItem.getWidgetFromConfig( command, config );
+		this.styleWidgets[command].setShouldExecute( false );
+		indLayout = new OO.ui.FieldLayout( this.styleWidgets[command], {
 			label: config.label || ''
 		} );
 		mainLayout.$element.append( indLayout.$element );
@@ -50,9 +53,9 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.getSetupProcess = function( da
 
 bs.vec.ui.dialog.TableAdditionalOptions.prototype.getActionProcess = function ( action ) {
 	var dialog = this;
-	if ( action ) {
+	if ( action === 'save' ) {
 		return new OO.ui.Process( function () {
-			dialog.close( { action: action } );
+			return dialog.close( { action: action, actionsToExecute: dialog.styleWidgets } );
 		} );
 	}
 	return bs.vec.ui.dialog.TableAdditionalOptions.parent.prototype.getActionProcess.call( this, action );

@@ -15,7 +15,7 @@ bs.vec.ui.widget.TextDirectionwidget = function( contextItem ) {
 	} );
 
 	this.directionToggle.connect( this, {
-		click: 'onChange'
+		click: 'executeAction'
 	} );
 
 	this.$element.append( this.directionToggle.$element );
@@ -24,7 +24,10 @@ bs.vec.ui.widget.TextDirectionwidget = function( contextItem ) {
 
 OO.inheritClass( bs.vec.ui.widget.TextDirectionwidget, bs.vec.ui.widget.CommandWidget );
 
-bs.vec.ui.widget.TextDirectionwidget.prototype.onChange = function() {
+bs.vec.ui.widget.TextDirectionwidget.prototype.executeAction = function() {
+	if ( !this.shouldExecute() ) {
+		return;
+	}
 	this.textDirection = this.textDirection ? null : 'vertical-rl';
 	this.contextItem.execCommand( 'textDirection', { textDirection: this.textDirection } );
 };

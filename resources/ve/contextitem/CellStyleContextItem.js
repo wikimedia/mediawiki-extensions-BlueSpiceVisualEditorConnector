@@ -2,11 +2,6 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.CellStyleContextItem = function ( context, model, config ) {
 	this.actions = {
-		clear: {
-			icon: 'cancel',
-			label: OO.ui.deferMsg( 'visualeditor-annotationbutton-clear-tooltip' ),
-			displaySection: 'quick'
-		},
 		bold: {
 			icon: 'bold',
 			label: OO.ui.deferMsg( 'visualeditor-annotationbutton-bold-tooltip' ),

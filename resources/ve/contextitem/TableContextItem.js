@@ -33,7 +33,7 @@ bs.vec.ui.TableContextItem.prototype.overrideLayout = function () {
 		}
 		commandConfig = this.actions[cmd];
 		commandConfig.displaySection = commandConfig.displaySection || 'additional';
-		if ( commandConfig.displaySection === 'quick' || commandConfig.displaySection === 'both' ) {
+		if ( commandConfig.displaySection === 'quick' ) {
 			widget = this.getWidgetFromConfig( cmd, commandConfig );
 			this.$actions.append( widget.$element );
 		} else {
@@ -60,7 +60,22 @@ bs.vec.ui.TableContextItem.prototype.displayAdditional = function () {
 	var windowManager = new OO.ui.WindowManager();
 	$( document.body ).append( windowManager.$element );
 	windowManager.addWindows( [ additionalOptionsDialog ] );
-	windowManager.openWindow( additionalOptionsDialog );
+	windowManager.openWindow( additionalOptionsDialog ).closed.then( function ( data ) {
+		// We need to execute actions after the dialog is closed and selection is restore,
+		// because, as soon as we click on a dialog table selection is gone
+		this.executeAdditionalActions( data.actionsToExecute );
+	}.bind( this ) );
+};
+
+bs.vec.ui.TableContextItem.prototype.executeAdditionalActions = function( actions ) {
+	var command;
+	for( command in actions ) {
+		if ( !actions.hasOwnProperty( command ) ) {
+			continue;
+		}
+		actions[command].setShouldExecute( true );
+		actions[command].executeAction();
+	}
 };
 
 bs.vec.ui.TableContextItem.prototype.getAdditionalOptionsTitle = function () {

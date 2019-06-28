@@ -24,7 +24,6 @@ bs.vec.ui.TextDirectionStyle.prototype.getTool = function() {
 
 bs.vec.ui.TextDirectionStyle.prototype.executeAction = function( subject, args ) {
 	var value = args.hasOwnProperty( 'textDirection' ) ? args.textDirection : null;
-
 	if ( value === null ) {
 		delete( subject.node.element.textDirection );
 	} else {

@@ -14,6 +14,7 @@ OO.initClass( bs.vec.ui.TableStyleApplicator );
 bs.vec.ui.TableStyleApplicator.prototype.apply = function () {
 	var styleAttr, styleAttrValue;
 
+	this.$element.removeAttr( 'style' );
 	for( styleAttr in this.styles ) {
 		if ( !this.styles.hasOwnProperty( styleAttr ) ) {
 			continue;
