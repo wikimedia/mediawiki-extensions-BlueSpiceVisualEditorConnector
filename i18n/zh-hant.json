@@ -26,5 +26,9 @@
 	"bs-visualeditorconnector-upload-dialog-type": "用於在 MediaDialog 上傳檔案的工作流",
 	"bs-visualeditorconnector-simple-save-process": "設置用來簡化保存處理的變數",
 	"bs-visualeditorconnector-text-style-tool-color-label": "文字色彩",
-	"bs-visualeditorconnector-dialog-media-link": "連結至檔案"
+	"bs-visualeditorconnector-dialog-media-link": "連結至檔案",
+	"bs-vec-dialog-action-done": "完成",
+	"bs-vec-dialog-action-safe": "取消",
+	"bs-vec-dialog-create-table-title": "插入表格",
+	"bs-vec-widget-text-direction-tooltip": "垂直文字"
 }

@@ -13,8 +13,10 @@
 	"bs-vec-table-inspector-cell": "Zell",
 	"bs-vec-contextitem-row-style-add-options-title": "Optioune vun de Reien",
 	"bs-vec-contextitem-table-additional-options": "Zousätzlech Optiounen",
+	"bs-vec-dialog-table-create-number-of-rows": "Zuel vun de Reien",
 	"bs-vec-dialog-table-create-number-of-columns": "Zuel vun de Kolonnen",
 	"bs-vec-dialog-action-done": "Fäerdeg",
 	"bs-vec-dialog-action-safe": "Ofbriechen",
-	"bs-vec-dialog-create-table-title": "Tabell drasetzen"
+	"bs-vec-dialog-create-table-title": "Tabell drasetzen",
+	"bs-vec-widget-text-direction-tooltip": "Vertikalen Text"
 }

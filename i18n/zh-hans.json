@@ -26,5 +26,7 @@
 	"apihelp-bs-vec-restbase-mock-param-path": "要模拟的 RESTBase 路径",
 	"bs-visualeditorconnector-upload-dialog-type": "MediaDialog 的文件上传工作流",
 	"bs-visualeditorconnector-simple-save-process": "用于简化保存流程的配置变量",
-	"bs-visualeditorconnector-text-style-tool-color-label": "文本颜色"
+	"bs-visualeditorconnector-text-style-tool-color-label": "文本颜色",
+	"bs-vec-dialog-action-done": "完成",
+	"bs-vec-dialog-action-safe": "取消"
 }

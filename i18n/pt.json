@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Hamilton Abreu"
+			"Hamilton Abreu",
+			"Fitoschido"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Liga o BlueSpice ao Editor Visual",
@@ -23,5 +24,6 @@
 	"apihelp-bs-vec-restbase-mock-summary": "Fornece um simulador para chamadas RESTBase do Editor Visual",
 	"apihelp-bs-vec-restbase-mock-param-path": "Caminho RESTBase a ser simulado",
 	"bs-visualeditorconnector-upload-dialog-type": "Fluxo de trabalho para carregar ficheiros no MediaDialog",
-	"bs-visualeditorconnector-simple-save-process": "Variável de configuração para usar um processo de gravação simplificado"
+	"bs-visualeditorconnector-simple-save-process": "Variável de configuração para usar um processo de gravação simplificado",
+	"bs-vec-dialog-action-done": "Concluído"
 }

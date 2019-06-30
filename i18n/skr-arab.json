@@ -4,5 +4,9 @@
 			"Saraiki"
 		]
 	},
-	"bs-visualeditorconnector-text-style-tool-color-label": "عبارت دا رنگ"
+	"bs-visualeditorconnector-text-style-tool-color-label": "عبارت دا رنگ",
+	"bs-vec-contextitem-row-style-add-options-title": "قطار دے اختیارات",
+	"bs-vec-dialog-table-create-number-of-columns": "کالماں دی تعداد",
+	"bs-vec-dialog-action-done": "تھی ڳیا",
+	"bs-vec-dialog-action-safe": "منسوخ"
 }

@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Erelon",
-			"Steeve815"
+			"Steeve815",
+			"Strayblues"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה",
@@ -13,6 +14,6 @@
 	"bs-visualeditorconnector-ve-style-option-description": "בחירת סגנון טבלה",
 	"bs-visualeditorconnector-ve-style-option": "סגנון טבלה",
 	"bs-visualeditorconnector-text-style-tool-color-label": "צבע טקסט",
-	"bs-visualeditorconnector-dialog-media-link": "קשר לקובץ",
+	"bs-visualeditorconnector-dialog-media-link": "יצירת קישור אל הקובץ",
 	"bs-visualeditorconnector-dialog-media-embed": "הטמעת קובץ זה"
 }
