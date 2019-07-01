@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Wladek92",
-			"Gomoko"
+			"Gomoko",
+			"Derugon"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec VisualEditor",
@@ -45,5 +46,6 @@
 	"bs-vec-dialog-action-done": "Fait",
 	"bs-vec-dialog-action-safe": "Annuler",
 	"bs-vec-dialog-create-table-title": "Insérer un tableau",
-	"bs-vec-widget-text-direction-tooltip": "Texte vertical"
+	"bs-vec-widget-text-direction-tooltip": "Texte vertical",
+	"bs-vec-row-duplicate-has-merged": "Les lignes sélectionnées contiennent des cellules s’étendant sur plusieurs lignes, et ne peuvent donc pas être dupliquées."
 }
