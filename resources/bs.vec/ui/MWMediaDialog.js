@@ -52,7 +52,12 @@ bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
 		] );
 	}
 
-	this.runComponentPlugins();
+	this.initComponentPlugins();
+
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.initialize();
+	}
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
@@ -67,15 +72,26 @@ bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
 		}, this );
 };
 
-bs.vec.ui.MWMediaDialog.prototype.runComponentPlugins = function() {
+bs.vec.ui.MWMediaDialog.prototype.initComponentPlugins = function() {
+	this.componentPlugins = [];
+
 	var pluginCallbacks = bs.vec.getComponentPlugins(
-			bs.vec.components.MEDIA_DIALOG
+		bs.vec.components.MEDIA_DIALOG
 	);
 
 	for( var i = 0; i < pluginCallbacks.length; i++ ) {
 		var callback = pluginCallbacks[i];
-		callback( this );
+		this.componentPlugins.push( callback( this ) );
 	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getSetupProcess = function ( data ) {
+	var parentProcess = bs.vec.ui.MWMediaDialog.super.prototype.getSetupProcess.call( this, data );
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		parentProcess = plugin.getSetupProcess( parentProcess, data );
+	}
+	return parentProcess;
 };
 
 bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchRequery ) {
@@ -124,17 +140,27 @@ bs.vec.ui.MWMediaDialog.prototype.uploadPageNameSet = function ( pageName ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
+	var process = null;
+
 	if ( action === 'link' ) {
 		return new OO.ui.Process( this.linkFile() );
 	} else if ( action === 'upload' && this.uploadType !== 'original' ) {
 		if ( this.uploadType === 'simple' ) {
-			return new OO.ui.Process( this.mediaUploadBooklet.uploadFile() );
+			process =  new OO.ui.Process( this.mediaUploadBooklet.uploadFile() );
 		} else if ( this.uploadType === 'one-click' ) {
-			return new OO.ui.Process( this.mediaUploadBooklet.uploadSingleStep() );
+			process = new OO.ui.Process( this.mediaUploadBooklet.uploadSingleStep() );
 		}
 	} else {
-		return bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
+		process = bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
 	}
+
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.getActionProcess( process, action );
+	}
+
+	return process;
+
 };
 
 bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
