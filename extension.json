@@ -130,6 +130,8 @@
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
+				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
+				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
 				"ve/dm/bs.dm.TableRowNode.js",

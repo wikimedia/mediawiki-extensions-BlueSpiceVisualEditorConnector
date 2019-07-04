@@ -29,35 +29,57 @@ ve.ui.MWMediaDialog.static.actions.push( {
 bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
 	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
 
-	if ( this.uploadType !== 'original' ) {
-		this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayout( {
-			$overlay: this.$overlay,
-			uploadType: this.uploadType
-		} );
-
-		this.mediaUploadBooklet.connect( this, {
-			set: 'onMediaUploadBookletSet',
-			uploadValid: 'onUploadValid',
-			infoValid: 'onInfoValid'
-		} );
-
-		var uploadTab = this.searchTabs.getTabPanel( 'upload' );
-		this.searchTabs.removeTabPanels( [ uploadTab ] );
-
-		this.searchTabs.addTabPanels( [
-			new OO.ui.TabPanelLayout( 'upload', {
-				label: ve.msg( 'visualeditor-dialog-media-search-tab-upload' ),
-				content: [ this.mediaUploadBooklet ]
-			} )
-		] );
-	}
-
+	this.overwriteUploadBooklet();
 	this.initComponentPlugins();
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];
 		plugin.initialize();
 	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.overwriteUploadBooklet = function () {
+	this.setNewUploadBooklet();
+	this.reestablishUploadBookletEventWiring();
+};
+
+bs.vec.ui.MWMediaDialog.prototype.setNewUploadBooklet = function () {
+	switch ( this.uploadType ) {
+		case 'simple':
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple( {
+				$overlay: this.$overlay
+			} );
+			break;
+		case 'one-click':
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayoutOneClick( {
+				$overlay: this.$overlay
+			} );
+			break;
+		case 'original':
+		default:
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayout( {
+				$overlay: this.$overlay
+			} );
+			break;
+	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.reestablishUploadBookletEventWiring = function () {
+	this.mediaUploadBooklet.connect( this, {
+		set: 'onMediaUploadBookletSet',
+		uploadValid: 'onUploadValid',
+		infoValid: 'onInfoValid'
+	} );
+
+	var uploadTab = this.searchTabs.getTabPanel( 'upload' );
+	this.searchTabs.removeTabPanels( [ uploadTab ] );
+
+	this.searchTabs.addTabPanels( [
+		new OO.ui.TabPanelLayout( 'upload', {
+			label: ve.msg( 'visualeditor-dialog-media-search-tab-upload' ),
+			content: [ this.mediaUploadBooklet ]
+		} )
+	] );
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
@@ -143,14 +165,9 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 	var process = null;
 
 	if ( action === 'link' ) {
-		return new OO.ui.Process( this.linkFile() );
-	} else if ( action === 'upload' && this.uploadType !== 'original' ) {
-		if ( this.uploadType === 'simple' ) {
-			process =  new OO.ui.Process( this.mediaUploadBooklet.uploadFile() );
-		} else if ( this.uploadType === 'one-click' ) {
-			process = new OO.ui.Process( this.mediaUploadBooklet.uploadSingleStep() );
-		}
-	} else {
+		process = new OO.ui.Process( this.linkFile() );
+	}
+	else {
 		process = bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
 	}
 
