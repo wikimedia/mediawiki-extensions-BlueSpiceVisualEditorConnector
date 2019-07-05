@@ -2,7 +2,7 @@
 
 namespace BlueSpice\VisualEditorConnector\ConfigDefinition;
 
-class EnableVisualEditor extends \BlueSpice\ConfigDefinition\BooleanSetting {
+class SimpleSaveProcess extends \BlueSpice\ConfigDefinition\BooleanSetting {
 
 	/**
 	 *
@@ -21,14 +21,6 @@ class EnableVisualEditor extends \BlueSpice\ConfigDefinition\BooleanSetting {
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
-		return 'bs-visualeditorconnector-enable-visualeditor';
-	}
-
-	/**
-	 *
-	 * @return bool
-	 */
-	public function isRLConfigVar() {
-		return true;
+		return 'bs-visualeditorconnector-simple-save-process';
 	}
 }
