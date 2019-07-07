@@ -11,6 +11,8 @@
 	"bs-visualeditor-nsm-label": "Visueel bewerkingsprogramma",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gangbaar",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Uitgebreid",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Tekstkleur",
+	"bs-visualeditorconnector-dialog-media-embed": "Dit bestand insluiten",
 	"bs-vec-table-inspector-column": "Kolom",
 	"bs-vec-table-inspector-row": "Rij",
 	"bs-vec-table-inspector-cell": "Cel",

@@ -5,6 +5,7 @@
 		]
 	},
 	"bs-visualeditorconnector-enable-visualeditor": "Attiva VisualEditor per estensioni BlueSpice",
+	"bs-visualeditorconnector-simple-save-process": "Variabile di configurazione per usare un processo di salvataggio semplificato",
 	"bs-visualeditorconnector-cancel-edit": "Annulla modifica",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comuni",
@@ -15,7 +16,6 @@
 	"apihelp-bs-vec-transformtohtml-summary": "Trasforma WikiTesto in HTML VisualEditor",
 	"apihelp-bs-vec-transformtowikitext-param-html": "HTML VisualEditor che deve essere trasformato in WikiTesto",
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiTesto che deve essere trasformato in HTML VisualEditor",
-	"bs-visualeditorconnector-simple-save-process": "Variabile di configurazione per usare un processo di salvataggio semplificato",
 	"bs-visualeditorconnector-dialog-media-link": "Collega questo file",
 	"bs-visualeditorconnector-dialog-media-embed": "Incorpora questo file",
 	"bs-vec-table-inspector-column": "Colonna",
