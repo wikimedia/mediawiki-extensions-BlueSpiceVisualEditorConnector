@@ -5,3 +5,14 @@ bs.vec.ui.ForeignStructuredUpload.BookletLayout = function BsVecUiForeignStructu
 };
 
 OO.inheritClass( bs.vec.ui.ForeignStructuredUpload.BookletLayout, mw.ForeignStructuredUpload.BookletLayout );
+
+bs.vec.ui.ForeignStructuredUpload.BookletLayout.prototype.getFilename = function() {
+	var filename = bs.vec.ui.ForeignStructuredUpload.BookletLayout.parent.prototype.getFilename.call( this );
+
+	var data = {
+		filename: filename
+	}
+	this.emit( 'getfilename', this, data );
+
+	return data.filename;
+};
