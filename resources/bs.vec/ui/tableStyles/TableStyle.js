@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.util' );
 
 bs.vec.ui.TableStyle = function() {
 	this.section = '';
+	this.applyTo = '';
 };
 
 OO.initClass( bs.vec.ui.TableStyle );
@@ -10,6 +11,9 @@ OO.initClass( bs.vec.ui.TableStyle );
 bs.vec.ui.TableStyle.static.SECTION_ROW = 'row';
 bs.vec.ui.TableStyle.static.SECTION_COLUMN = 'col';
 bs.vec.ui.TableStyle.static.SECTION_CELL = 'cell';
+
+bs.vec.ui.TableStyle.static.ELEMENT_CELL = 'cell';
+bs.vec.ui.TableStyle.static.ELEMENT_ROW = 'row';
 
 bs.vec.ui.TableStyle.static.UNIT_PIXEL = 'px';
 bs.vec.ui.TableStyle.static.UNIT_PERCENT = '%';
@@ -106,7 +110,8 @@ bs.vec.ui.TableStyle.prototype.getModelProperty = function() {
 bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, result ) {
 	var style, styleParser, modelProperty;
 	modelProperty = this.getModelProperty();
-	if ( !this.applies( section ) ) {
+
+	if ( section !== this.applyTo ) {
 		return;
 	}
 	style = domElement.getAttribute( 'style' );
@@ -124,7 +129,7 @@ bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, re
 bs.vec.ui.TableStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
 	var value, style, styleParser;
 
-	if ( !this.applies( section ) ) {
+	if ( section !== this.applyTo ) {
 		return;
 	}
 

@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.TextDirectionStyle = function() {
 	bs.vec.ui.TextDirectionStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_CELL;
+	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_CELL;
 };
 
 OO.inheritClass( bs.vec.ui.TextDirectionStyle , bs.vec.ui.TableStyle );

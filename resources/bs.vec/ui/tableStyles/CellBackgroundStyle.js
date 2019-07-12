@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.CellBackgroundStyle = function() {
 	bs.vec.ui.RowHeightStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_CELL;
+	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_CELL;
 };
 
 OO.inheritClass( bs.vec.ui.CellBackgroundStyle , bs.vec.ui.TableStyle );

@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.ColumnWidthStyle = function() {
 	bs.vec.ui.ColumnWidthStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_COLUMN;
+	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_CELL;
 };
 
 OO.inheritClass( bs.vec.ui.ColumnWidthStyle, bs.vec.ui.TableStyle );

@@ -8,6 +8,11 @@ bs.vec.ui.dialog.TableAdditionalOptions = function( commands, contextItem ) {
 	bs.vec.ui.dialog.TableAdditionalOptions.parent.call( this, {
 		size: 'medium'
 	} );
+
+	this.$element.on( 'mouseup mousedown', function( e ) {
+		e.preventDefault();
+		e.stopPropagation();
+	} );
 };
 
 OO.inheritClass( bs.vec.ui.dialog.TableAdditionalOptions, OO.ui.ProcessDialog );

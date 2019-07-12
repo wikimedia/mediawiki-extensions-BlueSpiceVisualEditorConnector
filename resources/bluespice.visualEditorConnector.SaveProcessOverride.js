@@ -13,7 +13,8 @@ mw.hook( 've.activationComplete' ).add( function () {
 
 	var isOpen = false;
 	ve.init.target.toolbarSaveButton.$element.on( 'mouseenter', function( e ) {
-		if ( isOpen ) {
+		var isDisabled = ve.init.target.toolbarSaveButton.isDisabled();
+		if ( isOpen || isDisabled ) {
 			return;
 		}
 		// Get the save button
