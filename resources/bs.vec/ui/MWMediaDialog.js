@@ -27,10 +27,9 @@ ve.ui.MWMediaDialog.static.actions.push( {
 	} );
 
 bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
-	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
-
-	this.overwriteUploadBooklet();
 	this.initComponentPlugins();
+	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
+	this.overwriteUploadBooklet();
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];
@@ -61,6 +60,11 @@ bs.vec.ui.MWMediaDialog.prototype.setNewUploadBooklet = function () {
 				$overlay: this.$overlay
 			} );
 			break;
+	}
+
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.setNewUploadBooklet();
 	}
 };
 
