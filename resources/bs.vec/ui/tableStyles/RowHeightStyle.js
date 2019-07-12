@@ -3,6 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.RowHeightStyle = function() {
 	bs.vec.ui.RowHeightStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_ROW;
+	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_ROW;
 };
 
 OO.inheritClass( bs.vec.ui.RowHeightStyle , bs.vec.ui.TableStyle );
