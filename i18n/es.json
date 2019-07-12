@@ -5,6 +5,7 @@
 			"Unai01"
 		]
 	},
+	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-cancel-edit": "Cancelar edición",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
@@ -17,6 +18,7 @@
 	"bs-vec-table-inspector-row": "Fila",
 	"bs-vec-table-inspector-cell": "Celda",
 	"bs-vec-table-style-column-width": "Anchura de columna",
+	"bs-vec-table-style-row-height": "Altura de fila (px)",
 	"bs-vec-contextitem-cell-style-add-options-title": "Opciones de celdas",
 	"bs-vec-contextitem-column-style-add-options-title": "Opciones de columna",
 	"bs-vec-contextitem-row-style-add-options-title": "Opciones de fila",

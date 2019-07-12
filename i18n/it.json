@@ -6,6 +6,8 @@
 	},
 	"bs-visualeditorconnector-enable-visualeditor": "Attiva VisualEditor per estensioni BlueSpice",
 	"bs-visualeditorconnector-simple-save-process": "Variabile di configurazione per usare un processo di salvataggio semplificato",
+	"bs-visualeditorconnector-upload-type-original": "Originale",
+	"bs-visualeditorconnector-upload-type-simple": "Semplice",
 	"bs-visualeditorconnector-cancel-edit": "Annulla modifica",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comuni",
