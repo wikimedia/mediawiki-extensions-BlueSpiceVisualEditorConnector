@@ -17,3 +17,7 @@ bs.vec.ui.plugin.MWMediaDialog.prototype.getSetupProcess = function( parentProce
 bs.vec.ui.plugin.MWMediaDialog.prototype.getActionProcess = function( parentProcess, action ) {
 	return parentProcess;
 };
+
+bs.vec.ui.plugin.MWMediaDialog.prototype.setNewUploadBooklet = function() {
+	// do nothing
+};
