@@ -109,6 +109,14 @@ mw.hook( 've.activationComplete' ).add( function () {
 			surface: surface,
 			fragment: surfaceModel.getLinearFragment( range, true )
 		} );
+		popup.$element.on( 'mousedown', function( e ) {
+			e.preventDefault();
+			e.stopPropagation();
+		} );
+		popup.$element.on( 'mouseup', function( e ) {
+			e.preventDefault();
+			e.stopPropagation();
+		} );
 
 		$( document.body ).append( popup.$element );
 		popup.toggle( true );
