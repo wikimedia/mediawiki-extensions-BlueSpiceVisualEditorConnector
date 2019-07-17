@@ -113,20 +113,16 @@
 		var surface, model, document, metadata;
 
 		surface = target.getSurface();
-		model = surface.getModel();
-		document = model.getDocument();
-		metadata = document.getMetadata();
 
-		//TODO: Implement WikiText-/Visual-Mode dispatcher
-		/*
 		if ( surface.getMode() === 'visual' ) {
-			// Visual mode
+			model = surface.getModel();
+			document = model.getDocument();
+			metadata = document.getMetadata();
+			return getCategoriesFromMetadata( metadata );
 		} else if ( surface.getMode() === 'source' ) {
-			// Source mode
+			return getCategoriesFromHtml( surface.getHtml() );
 		}
-		*/
-
-		return getCategoriesFromMetadata( metadata );
+		return [];
 	}
 
 	/**
@@ -135,7 +131,7 @@
 	 * @returns {Array}
 	 */
 	function getCategoriesFromMetadata( metadata ) {
-		var categories, i, item, prefixedCategory;
+		var categories, i, item, prefixedCategory, categoryParts;
 
 		categories = [];
 		for( i = 0; i < metadata.length; i++ ) {
@@ -150,7 +146,27 @@
 			categories.push( categoryParts[1] );
 		}
 
-		return categories
+		return categories;
+	}
+
+	function getCategoriesFromHtml( html ) {
+		var categories = [],
+			regex = new RegExp( '\\[\\[([^\\[\\]]*)\\]\\]', 'gm' ),
+			singleMatch,
+			title;
+
+		while ( ( singleMatch = regex.exec( html ) ) !== null ) {
+			if ( singleMatch.length !== 2 ) {
+				continue;
+			}
+			title = mw.Title.newFromText( singleMatch.pop() );
+			if ( title === null || title.getNamespaceId() !== 14 ) {
+				continue;
+			}
+			categories.push( title.getNameText() );
+		}
+
+		return categories;
 	}
 
 	bs.util.registerNamespace( 'bs.vec' );
@@ -158,6 +174,7 @@
 	bs.vec.getInstance = getInstance;
 	bs.vec.getCategoriesFromTarget = getCategoriesFromTarget;
 	bs.vec.getCategoriesFromMetadata = getCategoriesFromMetadata;
+	bs.vec.getCategoriesFromHtml = getCategoriesFromHtml;
 
 	// Hide QM tab
 	var $qmControls;
