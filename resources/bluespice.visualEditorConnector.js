@@ -175,13 +175,16 @@
 		var categories = [],
 			regex = new RegExp( '\\[\\[([^\\[\\]]*)\\]\\]', 'gm' ),
 			singleMatch,
-			title;
+			title,
+			categoryName;
 
 		while ( ( singleMatch = regex.exec( html ) ) !== null ) {
 			if ( singleMatch.length !== 2 ) {
 				continue;
 			}
-			title = mw.Title.newFromText( singleMatch.pop() );
+			categoryName = singleMatch.pop();
+			categoryName = categoryName.split( '|' ).shift();
+			title = mw.Title.newFromText( categoryName );
 			if ( title === null || title.getNamespaceId() !== 14 ) {
 				continue;
 			}
