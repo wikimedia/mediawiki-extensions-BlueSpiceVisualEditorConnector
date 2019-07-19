@@ -29,6 +29,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "{{doc-apihelp-description|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: for stub procedure; do not translate this word.",
 	"apihelp-bs-vec-restbase-mock-summary": "{{doc-apihelp-summary|bs-vec-restbase-mock}}\nDescription for an API endpoint that acts as a mock for an actual RESTbase setup\nmock: reserved word ; do not translate.",
 	"apihelp-bs-vec-restbase-mock-param-path": "{{doc-apihelp-param|bs-vec-restbase-mock|path}}\nDescription of a parameter that contains the path of an RESTbase endpoint to mock",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "{{doc-apihelp-param|bs-vec-restbase-mock|wikitext}}\nDescription of a parameter that contains wikitext to be processed",
 	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour",
 	"bs-visualeditorconnector-simple-save-process": "Configuration variable determining the behaviour of the saving process",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
@@ -52,5 +53,6 @@
 	"bs-vec-dialog-action-safe": "Process dialog \"safe\" action button",
 	"bs-vec-dialog-create-table-title": "Title for the dialog that inserts the table",
 	"bs-vec-widget-text-direction-tooltip": "Label for table style tool that changes text orientation in a table cell",
-	"bs-vec-row-duplicate-has-merged": "Warning when user tries to duplicated row containing multi-row cells"
+	"bs-vec-row-duplicate-has-merged": "Warning when user tries to duplicated row containing multi-row cells",
+	"bs-vec-dialog-media-change-file": "Process dialog \"change\" action button"
 }

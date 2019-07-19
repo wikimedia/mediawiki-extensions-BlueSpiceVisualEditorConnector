@@ -8,7 +8,6 @@ OO.inheritClass( bs.vec.ui.MWLinkAnnotationInspector, ve.ui.MWLinkAnnotationInsp
 
 bs.vec.ui.MWLinkAnnotationInspector.prototype.initialize = function () {
 	bs.vec.ui.MWLinkAnnotationInspector.super.prototype.initialize.call( this );
-
 	this.runComponentPlugins();
 };
 

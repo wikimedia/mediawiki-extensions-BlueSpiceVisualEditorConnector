@@ -4,6 +4,8 @@ namespace BlueSpice\VisualEditorConnector\Api;
 
 use ApiVisualEditor;
 use ApiBase;
+use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\VisualEditorConnector\IPostProcessor;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WikitextContent;
@@ -46,6 +48,10 @@ class RestbaseMock extends ApiVisualEditor {
 		return [
 			'path' => [
 				ApiBase::PARAM_REQUIRED => true,
+			],
+			'wikitext' => [
+				ApiBase::PARAM_TYPE => 'string',
+				ApiBase::PARAM_REQUIRED => false
 			]
 		];
 	}
@@ -60,6 +66,7 @@ class RestbaseMock extends ApiVisualEditor {
 				'wikitext' => $wikitext
 			]
 		);
+		$this->executePostProcessors( $pageName, $html );
 		$result = $this->getResult();
 		$result->addValue( null, 'html', $html );
 	}
@@ -88,6 +95,8 @@ class RestbaseMock extends ApiVisualEditor {
 					'wikitext' => $rawWikiText
 				]
 			);
+
+			$this->executePostProcessors( $pageName, $html );
 			$result->addValue( null, 'html', $html );
 		}
 	}
@@ -169,4 +178,35 @@ class RestbaseMock extends ApiVisualEditor {
 	public function getCustomPrinter() {
 		return new RestbaseMockFormat( $this->getMain() );
 	}
+
+	/**
+	 * @param string $pageName
+	 * @param string &$content
+	 */
+	private function executePostProcessors( $pageName, &$content ) {
+		foreach ( $this->getPostProcessors() as $processor ) {
+			$content = $processor->process( $pageName, $content );
+		}
+	}
+
+	private function getPostProcessors() {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceVisualEditorConnectorPostProcessors'
+		);
+
+		$processors = [];
+		foreach ( $registry->getAllKeys() as $key ) {
+			$factoryCallback = $registry->getValue( $key );
+			if ( !is_callable( $factoryCallback ) ) {
+				continue;
+			}
+			$processor = call_user_func( $factoryCallback );
+			if ( !$processor instanceof IPostProcessor ) {
+				continue;
+			}
+			$processors[] = $processor;
+		}
+		return $processors;
+	}
+
 }
