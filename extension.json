@@ -36,7 +36,8 @@
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.tablestyleplugin"
 			],
-			"TagDefinitions": []
+			"TagDefinitions": [],
+			"PostProcessors": {}
 		},
 		"BlueSpiceSimpleFarmer": {
 			"DynamicConfigurationFactories": {
@@ -138,6 +139,9 @@
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
 				"ve/dm/bs.dm.TableRowNode.js",
 				"ve/dm/bs.dm.TableCellNode.js",
+				"ve/dm/bs.dm.InternalFileLinkAnnotation.js",
+				"ve/ce/bs.ce.InternalFileLinkAnnotation.js",
+				"ve/contextitem/bs.ui.InternalFileLinkContextItem.js",
 				"ve/TableStyleApplicator.js",
 				"ve/ce/bs.ce.TableRowNode.js",
 				"ve/ce/bs.ce.TableCellNode.js",
@@ -151,7 +155,8 @@
 			],
 			"messages": [
 				"bs-visualeditorconnector-dialog-media-link",
-				"bs-visualeditorconnector-dialog-media-embed"
+				"bs-visualeditorconnector-dialog-media-embed",
+				"bs-vec-dialog-media-change-file"
 			],
 			"group": "bsvec-override"
 		},

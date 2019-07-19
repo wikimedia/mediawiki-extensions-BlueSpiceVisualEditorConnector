@@ -13,28 +13,39 @@ ve.ui.MWMediaDialog.static.actions.push( {
 		label: OO.ui.deferMsg( 'visualeditor-dialog-media-goback' ),
 		flags: [ 'safe', 'back' ],
 		modes: [ 'info_file' ]
+	}, {
+		label: OO.ui.deferMsg( 'visualeditor-dialog-action-cancel' ),
+		flags: [ 'safe', 'back' ],
+		modes: [ 'info_file_edit' ]
 	},{
 		action: 'link',
 		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-link' ),
 		flags: [ 'primary' ],
-		modes: [ 'info_file' ]
+		modes: [ 'info_file', 'info_file_edit' ]
 	},
 	{
 		action: 'choose',
 		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-embed' ),
 		flags: [ 'progressive' ],
 		modes: [ 'info_file' ]
-	} );
+	}, {
+		action: 'change',
+		label: OO.ui.deferMsg( "bs-vec-dialog-media-change-file" ),
+		flags: [ 'progressive' ],
+		modes: [ 'info_file_edit' ]
+	}  );
 
 bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
 	this.initComponentPlugins();
 	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
 	this.overwriteUploadBooklet();
+	this.annotation = null;
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];
 		plugin.initialize();
 	}
+	this.emit( 'initComplete' );
 };
 
 bs.vec.ui.MWMediaDialog.prototype.overwriteUploadBooklet = function () {
@@ -120,6 +131,53 @@ bs.vec.ui.MWMediaDialog.prototype.getSetupProcess = function ( data ) {
 	return parentProcess;
 };
 
+bs.vec.ui.MWMediaDialog.prototype.setFileLinkEditMode = function ( annotation ) {
+	this.fileAnnotation = annotation;
+	if ( annotation.element.attributes.hasOwnProperty( 'imageInfo' ) ) {
+		this.chooseImageInfo( annotation.element.attributes.imageInfo );
+		this.mode = 'info_file_edit';
+		this.actions.setMode( 'info_file_edit' );
+	} else if ( annotation.element.attributes.hasOwnProperty( 'normalizedTitle' ) ) {
+		this.switchPanels( 'imageInfo' );
+		this.getImageInfoRemote( annotation.element.attributes.normalizedTitle ).done( function( response ) {
+			if ( !response.hasOwnProperty( 'query' ) ) {
+				return this.switchPanels( 'search' );
+			}
+			var pages = response.query.pages;
+			for( var pageId in pages ) {
+				var page = pages[pageId];
+				if ( page.title === annotation.element.attributes.normalizedTitle ) {
+					var imageInfo = page.imageinfo.length  > 0 ? page.imageinfo[0] : {};
+					imageInfo.title = page.title;
+					this.chooseImageInfo( imageInfo );
+					this.mode = 'info_file_edit';
+					this.actions.setMode( 'info_file_edit' );
+					return;
+				}
+			}
+			this.switchPanels( 'search' );
+		}.bind( this ) ).fail( function () {
+			this.switchPanels( 'search' );
+		}.bind( this ) );
+	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getImageInfoRemote = function ( pagename ) {
+	return new mw.Api().get( {
+		action: 'query',
+		format: 'json',
+		generator: 'search',
+		gsrnamespace: 6,
+		iiurlheight: 200,
+		iiprop: 'dimensions|url|mediatype|extmetadata|timestamp|user',
+		prop: 'imageinfo',
+		gsrsearch: pagename,
+		iiurlwidth: 300,
+		gsroffset: 0,
+		gsrlimit: 15
+	} );
+};
+
 bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchRequery ) {
 	switch ( panel ) {
 		case 'search':
@@ -140,6 +198,9 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 		case 'imageInfo':
 		case 'edit':
 			bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
+			if ( !this.selectedImageInfo ) {
+				break;
+			}
 			switch ( this.selectedImageInfo.mediatype ) {
 				case 'OFFICE':
 					this.actions.setMode( 'info_file' );
@@ -169,9 +230,12 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 	var process = null;
 
 	if ( action === 'link' ) {
-		process = new OO.ui.Process( this.linkFile() );
-	}
-	else {
+		process = new OO.ui.Process( this.linkFile.bind( this ) );
+	} else if ( action === 'cancel' ) {
+		process = new OO.ui.Process( function() {
+			this.close( { action: 'cancel' } );
+		} );
+	} else {
 		process = bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
 	}
 
@@ -185,13 +249,16 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
-	var title = this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle,
-		titleObject = mw.Title.newFromText( title ),
-		linkAnnotation = ve.dm.MWInternalLinkAnnotation.static.newFromTitle( titleObject );
-
-	this.getFragment()
-		.insertContent( title )
-		.annotateContent( 'set', linkAnnotation );
+	var linkAnnotation = bs.vec.dm.InternalFileLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
+	if ( !this.fileAnnotation ) {
+		this.getFragment()
+			.insertContent( this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle );
+		this.getFragment().annotateContent( 'set', linkAnnotation );
+	} else {
+		var fragment = this.getFragment().expandLinearSelection( 'annotation', this.fileAnnotation );
+		fragment.annotateContent( 'clear', this.fileAnnotation );
+		fragment.annotateContent( 'set', linkAnnotation );
+	}
 
 	this.close( { action: 'link' } );
 };
