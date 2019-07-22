@@ -8,6 +8,8 @@
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
 	"bs-visualeditorconnector-enable-visualeditor": "啟用用於 BlueSpice 擴充的視覺化編輯器",
 	"bs-visualeditorconnector-simple-save-process": "設置用來簡化保存處理的變數",
+	"bs-visualeditorconnector-upload-type-simple": "簡易",
+	"bs-visualeditorconnector-upload-type": "上傳類型",
 	"bs-visualeditorconnector-cancel-edit": "取消編輯",
 	"bs-visualeditor-nsm-label": "視覺化編輯器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "一般",
