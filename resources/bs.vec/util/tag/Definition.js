@@ -80,6 +80,10 @@ bs.vec.util.tag.Definition.prototype.setValues = function( inspector, attrs, cfg
 	}
 }
 
+bs.vec.util.tag.Definition.prototype.getNewElement = function( inspector, element ) {
+	return element;
+}
+
 bs.vec.util.tag.Definition.prototype.updateMwData = function( inspector, mwData, cfg ) {
 	var attributes = cfg.attributes;
 	for( var i = 0; i < attributes.length; i++ ) {
@@ -199,7 +203,8 @@ bs.vec.util.tag.Definition.prototype.getCfg = function() {
 			methods: {
 				createFields: this.createFields,
 				setValues: this.setValues,
-				updateMwData: this.updateMwData
+				updateMwData: this.updateMwData,
+				getNewElement: this.getNewElement
 			}
 		},
 		toolGroup: '',
