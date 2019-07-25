@@ -48,9 +48,6 @@ bs.vec.ui.CellBackgroundStyle.prototype.executeAction = function( subject, args 
 	} else if ( args.value.hasOwnProperty( 'class' ) ) {
 		data = { colorClass: args.value.class };
 	}
-	if ( !data ) {
-		return;
-	}
 
 	subject.node.element.cellBackgroundColor = data;
 	return subject;
@@ -103,14 +100,19 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataE
 	}
 
 	value = dataElement.cellBackgroundColor;
-	if ( value.hasOwnProperty( 'colorCode' ) ) {
-		style = domElement.getAttribute( 'style' ) || '';
-		styleParser = new bs.vec.util.StyleAttributeParser( style );
-		styleParser.addToStyle( this.getAttribute(), value.colorCode );
-		domElement.setAttribute( 'style', styleParser.toString() );
-	} else if ( value.hasOwnProperty( 'colorClass' ) ) {
-		domElement.setAttribute( 'class', value.colorClass );
+	style = domElement.getAttribute( 'style' ) || '';
+	styleParser = new bs.vec.util.StyleAttributeParser( style );
+	if ( $.isEmptyObject( value ) ) {
+		styleParser.removeFromStyle( this.getAttribute() );
+		domElement.removeAttribute( 'class' );
 	}
+	if ( value.hasOwnProperty( 'colorCode' ) ) {
+		styleParser.addToStyle( this.getAttribute(), value.colorCode );
+
+	} else if ( value.hasOwnProperty( 'colorClass' ) ) {
+		return domElement.setAttribute( 'class', value.colorClass );
+	}
+	domElement.setAttribute( 'style', styleParser.toString() );
 };
 
 bs.vec.registry.TableStyle.register( "cellBackgroundColor", new bs.vec.ui.CellBackgroundStyle() );

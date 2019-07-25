@@ -109,6 +109,9 @@ bs.vec.ui.TableAction.prototype.hasMutliRowCells = function( cells ) {
 
 	for( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
 		cell = cells[cellIndex];
+		if ( !cell.node.element.attributes.hasOwnProperty( 'rowspan' ) ) {
+			continue;
+		}
 		if ( cell.node.element.attributes.rowspan < 2 ) {
 			continue;
 		}
