@@ -11,25 +11,25 @@ bs.vec.ui.ColumnStyleContextItem = function ( context, model, config ) {
 		},
 		insertColumnAfter: {
 			icon: 'tableAddColumnAfter',
-			label: OO.ui.deferMsg( 'visualeditor-table-insert-column-after' ),
+			label: OO.ui.deferMsg( 'visualeditor-table-insert-col-after' ),
 			displaySection: 'quick',
 			expensive: true
 		},
 		moveColumnBefore: {
 			icon: 'tableMoveColumnBefore',
-			label: OO.ui.deferMsg( 'visualeditor-table-move-column-before' ),
+			label: OO.ui.deferMsg( 'visualeditor-table-move-col-before' ),
 			displaySection: 'quick',
 			expensive: true
 		},
 		moveColumnAfter: {
 			icon: 'tableMoveColumnAfter',
-			label: OO.ui.deferMsg( 'visualeditor-table-move-column-after' ),
+			label: OO.ui.deferMsg( 'visualeditor-table-move-col-after' ),
 			displaySection: 'quick',
 			expensive: true
 		},
 		deleteColumn: {
 			icon: 'trash',
-			label: OO.ui.deferMsg( 'visualeditor-table-delete-column' ),
+			label: OO.ui.deferMsg( 'visualeditor-table-delete-col' ),
 			displaySection: 'quick',
 			expensive: true
 		}

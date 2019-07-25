@@ -37,4 +37,15 @@ bs.vec.ui.TextDirectionStyle.prototype.getModelProperty = function() {
 	return 'textDirection';
 };
 
+bs.vec.ui.TextDirectionStyle.prototype.decorate = function ( $element ) {
+	if ( !this.getAttribute() ) {
+		return;
+	}
+
+	if ( !this.value ) {
+		return;
+	}
+	$element.css( this.getAttribute(), this.getValue() );
+};
+
 bs.vec.registry.TableStyle.register( "textDirection", new bs.vec.ui.TextDirectionStyle() );

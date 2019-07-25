@@ -10,6 +10,9 @@ bs.vec.ui.dialog.TableAdditionalOptions = function( commands, contextItem ) {
 	} );
 
 	this.$element.on( 'mouseup mousedown', function( e ) {
+		if ( $( e.target ).hasClass( 'oo-ui-inputWidget-input' ) ) {
+			return;
+		}
 		e.preventDefault();
 		e.stopPropagation();
 	} );

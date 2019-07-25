@@ -16,9 +16,7 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 	this.colorWidget.connect( this, {
 		colorSelected: 'executeAction',
 		togglePicker: 'onPickerToggle',
-		clear: function() {
-			this.onColorSelected( [] );
-		}
+		clear: 'onPickerClear'
 	} );
 
 	this.$element.append( this.colorWidget.$element );
@@ -37,6 +35,10 @@ bs.vec.ui.widget.ColorCommandWidget.prototype.executeAction = function() {
 	}
 	this.contextItem.execCommand( this.command, { value: val } );
 
+};
+
+bs.vec.ui.widget.ColorCommandWidget.prototype.onPickerClear = function() {
+	this.executeAction();
 };
 
 bs.vec.ui.widget.ColorCommandWidget.prototype.onPickerToggle = function( visible ) {
