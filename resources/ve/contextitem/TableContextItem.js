@@ -60,9 +60,11 @@ bs.vec.ui.TableContextItem.prototype.displayAdditional = function () {
 	var windowManager = new OO.ui.WindowManager();
 	$( document.body ).append( windowManager.$element );
 	windowManager.addWindows( [ additionalOptionsDialog ] );
+	var selection = this.context.getSurface().getModel().getSelection();
 	windowManager.openWindow( additionalOptionsDialog ).closed.then( function ( data ) {
 		// We need to execute actions after the dialog is closed and selection is restore,
 		// because, as soon as we click on a dialog table selection is gone
+		this.context.getSurface().getModel().setSelection( selection );
 		if ( !data ) {
 			return;
 		}

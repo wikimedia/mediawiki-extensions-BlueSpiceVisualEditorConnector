@@ -62,5 +62,5 @@ bs.vec.ui.dialog.CreateTableOptions.prototype.getActionProcess = function ( acti
 			} );
 		} );
 	}
-	return bs.vec.ui.dialog.TableAdditionalOptions.parent.prototype.getActionProcess.call( this, action );
+	return bs.vec.ui.dialog.CreateTableOptions.parent.prototype.getActionProcess.call( this, action );
 };
