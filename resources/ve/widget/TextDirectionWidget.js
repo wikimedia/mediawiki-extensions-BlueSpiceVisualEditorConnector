@@ -1,3 +1,4 @@
+/* INACTIVE CODE!!!! - Disabled due to incompatibility with Chrome and PDF export */
 bs.util.registerNamespace( 'bs.vec.ui.widget' );
 
 bs.vec.ui.widget.TextDirectionwidget = function( contextItem ) {
@@ -31,3 +32,4 @@ bs.vec.ui.widget.TextDirectionwidget.prototype.executeAction = function() {
 	this.textDirection = this.textDirection ? null : 'vertical-rl';
 	this.contextItem.execCommand( 'textDirection', { textDirection: this.textDirection } );
 };
+/* INACTIVE CODE!!!! - Disabled due to incompatibility with Chrome and PDF export */

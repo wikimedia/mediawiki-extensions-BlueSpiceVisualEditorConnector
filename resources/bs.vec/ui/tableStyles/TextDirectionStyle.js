@@ -1,3 +1,5 @@
+/* INACTIVE CODE!!!! - Disabled due to incompatibility with Chrome and PDF export */
+
 bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.TextDirectionStyle = function() {
@@ -48,4 +50,5 @@ bs.vec.ui.TextDirectionStyle.prototype.decorate = function ( $element ) {
 	$element.css( this.getAttribute(), this.getValue() );
 };
 
-bs.vec.registry.TableStyle.register( "textDirection", new bs.vec.ui.TextDirectionStyle() );
+/* INACTIVE CODE!!!! - Disabled due to incompatibility with Chrome and PDF export */
+//bs.vec.registry.TableStyle.register( "textDirection", new bs.vec.ui.TextDirectionStyle() );
