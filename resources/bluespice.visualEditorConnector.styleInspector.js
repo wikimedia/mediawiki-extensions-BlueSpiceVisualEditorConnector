@@ -96,7 +96,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( !popup ) {
 			return;
 		}
-		popup.toggle( false );
+		popup.$element.remove();
 	}
 
 	function _inspect( range ) {
@@ -109,6 +109,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 			surface: surface,
 			fragment: surfaceModel.getLinearFragment( range, true )
 		} );
+
 		popup.$element.on( 'mousedown', function( e ) {
 			e.preventDefault();
 			e.stopPropagation();
