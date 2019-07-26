@@ -38,6 +38,10 @@ bs.vec.ui.TextStylePopup.prototype.toggle = function( show ) {
 			top: this.absPos.top,
 			left: this.absPos.left
 		} );
+		this.$anchor.css( {
+			left: '100px'
+		} );
+		this.$element.removeClass( 'oo-ui-element-hidden' );
 	}
 };
 
