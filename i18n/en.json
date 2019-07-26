@@ -27,6 +27,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "Provides a mock for RESTBase calls of VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Provides a mock for RESTBase calls of VisualEditor",
 	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase path to be mocked",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Wikitext to be processed",
 	"bs-visualeditorconnector-upload-dialog-type": "Workflow for uploading files in MediaDialog",
 	"bs-visualeditorconnector-simple-save-process": "Configuration variable to use a simplified save process",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Text color",
@@ -50,5 +51,6 @@
 	"bs-vec-dialog-action-safe": "Cancel",
 	"bs-vec-dialog-create-table-title": "Insert table",
 	"bs-vec-widget-text-direction-tooltip": "Vertical text",
-	"bs-vec-row-duplicate-has-merged": "Selected row contains cells that span over multiple rows, and therefore cannot be duplicated."
+	"bs-vec-row-duplicate-has-merged": "Selected row contains cells that span over multiple rows, and therefore cannot be duplicated.",
+	"bs-vec-dialog-media-change-file": "Change file"
 }
