@@ -28,6 +28,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "Fornece um simulador para chamadas RESTBase do Editor Visual",
 	"apihelp-bs-vec-restbase-mock-summary": "Fornece um simulador para chamadas RESTBase do Editor Visual",
 	"apihelp-bs-vec-restbase-mock-param-path": "Caminho RESTBase a ser simulado",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Texto wiki a ser processado",
 	"bs-visualeditorconnector-upload-dialog-type": "Fluxo de trabalho para carregar ficheiros no MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Cor do texto",
 	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\"",
@@ -50,5 +51,6 @@
 	"bs-vec-dialog-action-safe": "Cancelar",
 	"bs-vec-dialog-create-table-title": "Inserir tabela",
 	"bs-vec-widget-text-direction-tooltip": "Texto vertical",
-	"bs-vec-row-duplicate-has-merged": "A linha selecionada contém células que ocupam várias linhas e, portanto, não pode ser duplicada."
+	"bs-vec-row-duplicate-has-merged": "A linha selecionada contém células que ocupam várias linhas e, portanto, não pode ser duplicada.",
+	"bs-vec-dialog-media-change-file": "Alterar ficheiro"
 }

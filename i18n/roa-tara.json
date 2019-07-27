@@ -27,6 +27,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "Dèje 'nu mock pe le chiamate RESTBase de VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Dèje 'nu mock pe le chiamate RESTBase de VisualEditor",
 	"apihelp-bs-vec-restbase-mock-param-path": "Percorse de RESTBase ca adda essere mockate",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Uicchiteste ca adda essere processate",
 	"bs-visualeditorconnector-upload-dialog-type": "Flusse de fatìe pe le scarecaminde de le file jndr'à MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Culore d'u teste",
 	"bs-visualeditorconnector-color-annotation-desc": "Aggiunge culure a 'u teste assegnanne 'a probbietà \"color\" o \"class\"",
@@ -49,5 +50,6 @@
 	"bs-vec-dialog-action-safe": "Annulle",
 	"bs-vec-dialog-create-table-title": "'Nzerisce 'na tabbelle",
 	"bs-vec-widget-text-direction-tooltip": "Teste verticale",
-	"bs-vec-row-duplicate-has-merged": "'A riga scacchiate tène celle ca vonne sus a cchiù righe, e allore non ge pò essere duplicate."
+	"bs-vec-row-duplicate-has-merged": "'A riga scacchiate tène celle ca vonne sus a cchiù righe, e allore non ge pò essere duplicate.",
+	"bs-vec-dialog-media-change-file": "Cange 'u file"
 }

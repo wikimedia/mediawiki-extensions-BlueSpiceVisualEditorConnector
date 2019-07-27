@@ -28,6 +28,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-summary": "يوفر موك لاستدعاءات RESTBase للمحرر المرئي",
 	"apihelp-bs-vec-restbase-mock-param-path": "مسار RESTBase لمحاكاته",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "نص الويكي لمعالجته",
 	"bs-visualeditorconnector-upload-dialog-type": "سير العمل لرفع الملفات في MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "لون النص",
 	"bs-visualeditorconnector-color-annotation-desc": "يضيف الألوان إلى نص عن طريق تعيين خاصية \"اللون\" أو \"الفئة",
@@ -50,5 +51,6 @@
 	"bs-vec-dialog-action-safe": "إلغاء",
 	"bs-vec-dialog-create-table-title": "إدراج جدول",
 	"bs-vec-widget-text-direction-tooltip": "نص عمودي",
-	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها."
+	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها.",
+	"bs-vec-dialog-media-change-file": "تغيير الملف"
 }
