@@ -10,6 +10,7 @@
 	"bs-visualeditor-nsm-label": "Visuellen Editeur",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gemeinsam",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweidert",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Wikitext fir ze verschaffen",
 	"bs-vec-table-inspector-column": "Kolonn",
 	"bs-vec-table-inspector-row": "Rei",
 	"bs-vec-table-inspector-cell": "Zell",
@@ -20,5 +21,6 @@
 	"bs-vec-dialog-action-done": "Fäerdeg",
 	"bs-vec-dialog-action-safe": "Ofbriechen",
 	"bs-vec-dialog-create-table-title": "Tabell drasetzen",
-	"bs-vec-widget-text-direction-tooltip": "Vertikalen Text"
+	"bs-vec-widget-text-direction-tooltip": "Vertikalen Text",
+	"bs-vec-dialog-media-change-file": "Fichier änneren"
 }

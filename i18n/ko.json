@@ -23,5 +23,6 @@
 	"bs-vec-table-inspector-cell": "셀",
 	"bs-vec-contextitem-table-additional-options": "추가 옵션",
 	"bs-vec-dialog-action-done": "완료",
-	"bs-vec-dialog-action-safe": "취소"
+	"bs-vec-dialog-action-safe": "취소",
+	"bs-vec-dialog-media-change-file": "파일 변경"
 }
