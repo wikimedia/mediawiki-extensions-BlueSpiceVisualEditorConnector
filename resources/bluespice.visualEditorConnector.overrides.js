@@ -21,6 +21,7 @@ mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 						ve.ui.windowFactory.register( bs.vec.ui.MWMediaDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWSaveDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
+						ve.ui.windowFactory.register( bs.vec.ui.MWMetaDialog );
 						ve.dm.modelRegistry.register( bs.vec.dm.TableRowNode );
 						ve.dm.modelRegistry.register( bs.vec.dm.TableCellNode );
 						ve.ce.nodeFactory.register( bs.vec.ce.TableRowNode );
@@ -82,6 +83,7 @@ mw.loader.using( "ext.bluespice" )
 			LINK_ANNOTATION_INSPECTOR: 'link-annotation-inspector',
 			MEDIA_DIALOG: 'media-dialog',
 			SAVE_DIALOG: 'save-dialog',
-			TABLE_DIALOG: 'table-dialog'
+			TABLE_DIALOG: 'table-dialog',
+			META_DIALOG: 'meta-dialog'
 		};
 	} );
