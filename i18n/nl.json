@@ -29,5 +29,6 @@
 	"bs-vec-dialog-action-done": "Afgerond",
 	"bs-vec-dialog-action-safe": "Annuleren",
 	"bs-vec-dialog-create-table-title": "Tabel invoegen",
-	"bs-vec-widget-text-direction-tooltip": "Verticale tekst"
+	"bs-vec-widget-text-direction-tooltip": "Verticale tekst",
+	"bs-vec-dialog-media-change-file": "Bestand wijzigen"
 }

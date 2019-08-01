@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Kly",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Winston Sung"
 		]
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
@@ -26,11 +27,13 @@
 	"apihelp-bs-vec-restbase-mock-description": "提供視覺化編輯器的 RESTBase 呼叫模擬",
 	"apihelp-bs-vec-restbase-mock-summary": "提供視覺化編輯器的 RESTBase 呼叫模擬",
 	"apihelp-bs-vec-restbase-mock-param-path": "要模擬的 RESTBase 路徑",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "要處理的 wikitext",
 	"bs-visualeditorconnector-upload-dialog-type": "用於在 MediaDialog 上傳檔案的工作流",
 	"bs-visualeditorconnector-text-style-tool-color-label": "文字色彩",
 	"bs-visualeditorconnector-dialog-media-link": "連結至檔案",
 	"bs-vec-dialog-action-done": "完成",
 	"bs-vec-dialog-action-safe": "取消",
 	"bs-vec-dialog-create-table-title": "插入表格",
-	"bs-vec-widget-text-direction-tooltip": "垂直文字"
+	"bs-vec-widget-text-direction-tooltip": "垂直文字",
+	"bs-vec-dialog-media-change-file": "變更檔案"
 }
