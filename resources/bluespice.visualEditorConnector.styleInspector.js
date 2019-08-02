@@ -45,10 +45,8 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( e.which !== 1 ) {
 			return;
 		}
-		if( !selection ) {
-			return;
-		}
-		if ( earlySelection && earlySelection.getRange() === selection.getRange() ) {
+		selection = ve.init.target.getSurface().getModel().getSelection();
+		if( !selection || !selection.hasOwnProperty( 'range' ) ) {
 			return;
 		}
 		if ( selectedNode !== null && selectedNode.type !== 'text' ) {
@@ -89,6 +87,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( $target.parents( '.bs-vec-styleInspector' ).length !== 0 ) {
 			return false;
 		}
+
 		return true;
 	}
 
@@ -96,6 +95,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( !popup ) {
 			return;
 		}
+
 		popup.$element.remove();
 	}
 

@@ -5,6 +5,8 @@ bs.vec.ui.TextStylePopup = function( config ) {
 	config.padded = false;
 	config.width = 200;
 
+	this.isOpen = false;
+
 	this.absPos = {
 		top: config.position.start.y + 10, // For anchor
 		left: this.getHorizontalPos( config.position )
@@ -32,6 +34,7 @@ bs.vec.ui.TextStylePopup.prototype.getHorizontalPos = function( position ) {
 
 bs.vec.ui.TextStylePopup.prototype.toggle = function( show ) {
 	bs.vec.ui.TextStylePopup.parent.prototype.toggle.apply( this, [show] );
+	this.isOpen = false;
 	if ( show ) {
 		this.$element.css( {
 			position: 'absolute',
@@ -42,6 +45,7 @@ bs.vec.ui.TextStylePopup.prototype.toggle = function( show ) {
 			left: '100px'
 		} );
 		this.$element.removeClass( 'oo-ui-element-hidden' );
+		this.isOpen = true;
 	}
 };
 
@@ -67,4 +71,8 @@ bs.vec.ui.TextStylePopup.prototype.getTool = function( name ) {
 		return this.addedTools[name];
 	}
 	return null;
+};
+
+bs.vec.ui.TextStylePopup.prototype.isPopupOpen = function() {
+	return this.isOpen;
 };
