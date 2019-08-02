@@ -26,7 +26,7 @@ bs.vec.ui.ButtonStyleTool = function( config ) {
 OO.inheritClass( bs.vec.ui.ButtonStyleTool, OO.ui.ButtonWidget );
 
 bs.vec.ui.ButtonStyleTool.prototype.annotate = function() {
-	var method;
+	var method, annotationData;
 	if ( !this.annotationAction ) {
 		this.annotationAction = new ve.ui.AnnotationAction( this.surface );
 	}
@@ -34,7 +34,7 @@ bs.vec.ui.ButtonStyleTool.prototype.annotate = function() {
 	if ( ve.ui.AnnotationAction.static.methods.indexOf( method ) === -1 ) {
 		return;
 	}
-	let annotationData = {
+	annotationData = {
 		attributes: this.getData(),
 		type: this.getName()
 	};
