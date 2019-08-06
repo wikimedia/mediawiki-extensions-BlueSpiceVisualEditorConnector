@@ -282,6 +282,11 @@
 				"bs-visualeditorconnector-color-annotation-desc"
 			]
 		},
+		"ext.bluespice.visualEditorConnector.colors": {
+			"styles": [
+				"bluespice.visualEditorConnector.colors.less"
+			]
+		},
 		"bs.vec.ui.InternalUrlPlainTextStringTransferHandler": {
 			"scripts": [
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js"
@@ -335,7 +340,23 @@
 		},
 		"VisualEditorConnectorColorPickerColors": {
 			"@note": "Usage described in docs/custom_text_colors.md",
-			"value": []
+			"value": [
+				{ "class": "col-blue-light", "name": "Light Blue" },
+				{ "class": "col-blue", "name": "Blue" },
+				{ "class": "col-blue-dark", "name": "Dark Blue" },
+				{ "class": "col-red", "name": "Red" },
+				{ "class": "col-red-dark", "name": "Dark Red" },
+				{ "class": "col-orange", "name": "Orange" },
+				{ "class": "col-orange-dark", "name": "Dark Orange" },
+				{ "class": "col-purple", "name": "Purple" },
+				{ "class": "col-purple-dark", "name": "Dark Purple" },
+				{ "class": "col-turquoise", "name": "Turquoise" },
+				{ "class": "col-turquoise-dark", "name": "Dark Turquoise" },
+				{ "class": "col-grey-light", "name": "Light Grey" },
+				{ "class": "col-grey-medium", "name": "Medium Grey" },
+				{ "class": "col-grey", "name": "Grey" },
+				{ "class": "col-grey-dark", "name": "Dark Grey" }
+			]
 		}
 	},
 	"Hooks": {
@@ -344,14 +365,16 @@
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddModules::callback",
-			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddSaveProcessOverride::callback"
+			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddSaveProcessOverride::callback",
+			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback"
 		],
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
 		"NamespaceManager::writeNamespaceConfiguration": [
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerWriteNamespaceConfiguration\\WriteToConfiguration::callback"
-		]
+		],
+		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback"
 	},
 	"manifest_version": 2
 }
