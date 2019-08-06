@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Vlad5250"
+			"Vlad5250",
+			"Bjankuloski06"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Поврзува BlueSpice со нагледниот уредник",
@@ -10,7 +11,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Просто",
 	"bs-visualeditorconnector-upload-type": "Вид подигање",
 	"bs-visualeditorconnector-cancel-edit": "Откажи уредување",
-	"bs-visualeditor-nsm-label": "Визуелен уредник",
+	"bs-visualeditor-nsm-label": "Нагледен уредник",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Заеднички",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредни",
 	"bs-visualeditorconnector-ve-style-option-description": "Изберете стил на табела",
