@@ -45,6 +45,10 @@ mw.hook( 've.activationComplete' ).add( function () {
 		if ( e.which !== 1 ) {
 			return;
 		}
+		var $target = $( e.target );
+		if ( !$target.hasClass( 've-ce-branchNode' ) && !$target.hasClass( 've-ce-textStyleAnnotation' ) ) {
+			return;
+		}
 		selection = ve.init.target.getSurface().getModel().getSelection();
 		if( !selection || !selection.hasOwnProperty( 'range' ) ) {
 			return;
