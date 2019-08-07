@@ -4,7 +4,8 @@
 			"A Chinese Wikipedian",
 			"佛壁灯",
 			"科劳",
-			"神樂坂秀吉"
+			"神樂坂秀吉",
+			"Viztor"
 		]
 	},
 	"bs-visualeditorconnector-desc": "将 VisualEditor 与 BlueSpice 相连",
@@ -34,5 +35,6 @@
 	"bs-vec-table-style-column-width": "列宽",
 	"bs-vec-table-style-row-height": "行高（像素）",
 	"bs-vec-dialog-action-done": "完成",
-	"bs-vec-dialog-action-safe": "取消"
+	"bs-vec-dialog-action-safe": "取消",
+	"bs-vec-dialog-media-change-file": "改变文件"
 }
