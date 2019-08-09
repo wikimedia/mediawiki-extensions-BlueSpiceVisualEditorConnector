@@ -3,12 +3,13 @@
 		"authors": [
 			"Markus Glaser <glaser@hallowelt.com>",
 			"Wladek92",
-			"Umherirrender"
+			"Umherirrender",
+			"Robby"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of BlueSpice Visual Editor Connector extension.",
 	"bs-visualeditorconnector-enable-visualeditor": "Label for preference to enable VisualEditor for BlueSpice extensions",
-	"bs-visualeditorconnector-simple-save-process": "Label for preference to enable a simple save process in VisualEditor",
+	"bs-visualeditorconnector-simple-save-process": "Configuration variable determining the behaviour of the saving process",
 	"bs-visualeditorconnector-upload-type": "Label for preference to set the upload type in VisualEditor",
 	"bs-visualeditorconnector-upload-type-original": "Label for an option to set the upload type in VisualEditor be unchanged",
 	"bs-visualeditorconnector-upload-type-simple": "Label for an option to set the upload type in VisualEditor reduce requirements",
@@ -31,12 +32,11 @@
 	"apihelp-bs-vec-restbase-mock-param-path": "{{doc-apihelp-param|bs-vec-restbase-mock|path}}\nDescription of a parameter that contains the path of an RESTbase endpoint to mock",
 	"apihelp-bs-vec-restbase-mock-param-wikitext": "{{doc-apihelp-param|bs-vec-restbase-mock|wikitext}}\nDescription of a parameter that contains wikitext to be processed",
 	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour",
-	"bs-visualeditorconnector-simple-save-process": "Configuration variable determining the behaviour of the saving process",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
 	"bs-visualeditorconnector-color-annotation-desc": "Description of ve.ui.ColorAnnotation class",
 	"bs-visualeditorconnector-dialog-media-link": "Label for button to link the selected file",
 	"bs-visualeditorconnector-dialog-media-embed": "Label for button to embed the selected file",
-	"bs-vec-table-inspector-column": "Section title in table inspector for columns",
+	"bs-vec-table-inspector-column": "Section title in table inspector for columns\n{{Identical|Column}}",
 	"bs-vec-table-inspector-row": "Section title in table inspector for rows",
 	"bs-vec-table-inspector-cell": "Section title in table inspector for cells",
 	"bs-vec-table-style-column-width": "Label for table style tool that sets column width",
@@ -50,7 +50,7 @@
 	"bs-vec-dialog-table-create-number-of-rows": "Label for input for specifying number of rows a table should have, in table creation dialog",
 	"bs-vec-dialog-table-create-number-of-columns": "Label for input for specifying number of columns a table should have, in table creation dialog",
 	"bs-vec-dialog-action-done": "Process dialog \"save\" action button",
-	"bs-vec-dialog-action-safe": "Process dialog \"safe\" action button",
+	"bs-vec-dialog-action-safe": "Process dialog \"safe\" action button\n{{Identical|Cancel}}",
 	"bs-vec-dialog-create-table-title": "Title for the dialog that inserts the table",
 	"bs-vec-widget-text-direction-tooltip": "Label for table style tool that changes text orientation in a table cell",
 	"bs-vec-row-duplicate-has-merged": "Warning when user tries to duplicated row containing multi-row cells",

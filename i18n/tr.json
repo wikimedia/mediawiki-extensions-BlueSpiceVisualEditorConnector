@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hedda",
-			"Sucsuzz"
+			"Sucsuzz",
+			"Mirzali"
 		]
 	},
 	"bs-visualeditorconnector-desc": "VisualEditor ile BlueSpice'a bağlan",
@@ -13,5 +14,7 @@
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Gelişmiş",
 	"apihelp-bs-vec-transformtowikitext-summary": "HTML Görsel Düzenleyiciyi, WikiKaynağa çevirir",
 	"apihelp-bs-vec-transformtohtml-description": "WikiKaynağı, HTML Görsel Düzenleyiciye çevirir",
-	"apihelp-bs-vec-transformtohtml-summary": "WikiKaynağı, HTML Görsel Düzenleyiciye çevirir"
+	"apihelp-bs-vec-transformtohtml-summary": "WikiKaynağı, HTML Görsel Düzenleyiciye çevirir",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Metin rengi",
+	"bs-visualeditorconnector-color-annotation-desc": "\"Color\" veya \"class\" özelliğini atayarak metne renkler ekler"
 }

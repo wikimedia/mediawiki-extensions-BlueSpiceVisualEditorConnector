@@ -13,5 +13,16 @@
 	"apihelp-bs-vec-transformtowikitext-description": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtowikitext-summary": "시각편집기 HTML을 위키텍스트로 변환합니다",
 	"apihelp-bs-vec-transformtohtml-description": "위키텍스트를 시각편집기 HTML로 변환합니다",
-	"apihelp-bs-vec-transformtohtml-summary": "위키텍스트를 시각편집기 HTML로 변환합니다"
+	"apihelp-bs-vec-transformtohtml-summary": "위키텍스트를 시각편집기 HTML로 변환합니다",
+	"bs-visualeditorconnector-ve-fullwidth-option": "표에 꽉찬 너비 사용",
+	"bs-visualeditorconnector-ve-style-option-description": "표 스타일 선택",
+	"bs-visualeditorconnector-ve-style-option": "표 스타일",
+	"bs-visualeditorconnector-text-style-tool-color-label": "텍스트 색",
+	"bs-visualeditorconnector-dialog-media-link": "이 파일 링크하기",
+	"bs-visualeditorconnector-dialog-media-embed": "이 파일 임베드하기",
+	"bs-vec-table-inspector-cell": "셀",
+	"bs-vec-contextitem-table-additional-options": "추가 옵션",
+	"bs-vec-dialog-action-done": "완료",
+	"bs-vec-dialog-action-safe": "취소",
+	"bs-vec-dialog-media-change-file": "파일 변경"
 }

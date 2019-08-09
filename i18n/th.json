@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Geonuch"
+			"Geonuch",
+			"กิ๊ฟ เลิกล่ะ สายแข็ง"
 		]
 	},
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "ขั้นสูง"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "ขั้นสูง",
+	"bs-vec-dialog-table-create-number-of-rows": "Number of rows"
 }
