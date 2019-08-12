@@ -4,7 +4,7 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 	bs.vec.ui.widget.ColorCommandWidget.parent.call( this, contextItem );
 
 	this.icon = this.icon || 'highlight';
-	this.colorWidget = new OOJSPlus.widget.ColorPickerWidget( {
+	this.colorWidget = new OOJSPlus.ui.widget.ColorPickerWidget( {
 		value: this.widgetValue,
 		framed: false,
 		icon: this.icon,

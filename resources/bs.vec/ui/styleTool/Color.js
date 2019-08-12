@@ -11,7 +11,7 @@ bs.vec.ui.ColorStyleTool = function( config ) {
 	if ( customColors && customColors.length > 0 ) {
 		pickerCfg.colors = customColors;
 	}
-	this.colorPicker = new OOJSPlus.widget.ColorPickerWidget( pickerCfg );
+	this.colorPicker = new OOJSPlus.ui.widget.ColorPickerWidget( pickerCfg );
 	bs.vec.ui.ColorStyleTool.parent.call( this, config );
 
 	this.colorPicker.connect( this, {

@@ -6,6 +6,7 @@ bs.vec.ce.ColorAnnotation = function() {
 
 	// DOM changes
 	this.$element
+		.addClass( 've-ce-textStyleAnnotation' )
 		.addClass( 've-ce-colorAnnotation' )
 		.addClass( 've-ce-bidi-isolate' )
 		.prop( {
