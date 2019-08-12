@@ -16,5 +16,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Antal kolonner",
 	"bs-vec-dialog-action-done": "Udført",
 	"bs-vec-dialog-action-safe": "Annullér",
-	"bs-vec-dialog-create-table-title": "Indsæt tabel"
+	"bs-vec-dialog-create-table-title": "Indsæt tabel",
+	"bs-vec-dialog-media-change-file": "Ændre fil"
 }
