@@ -98,6 +98,9 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 		case 'imageInfo':
 		case 'edit':
 			bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
+			if ( !this.selectedImageInfo ) {
+				break;
+			}
 			switch ( this.selectedImageInfo.mediatype ) {
 				case 'OFFICE':
 					this.actions.setMode( 'info_file' );
