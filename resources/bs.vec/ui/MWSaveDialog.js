@@ -54,12 +54,20 @@ bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 			);
 		} );
 	}
+	if ( action === 'approve' ) {
+		return new OO.ui.Process( function () {
+			this.swapPanel( 'save' );
+			this.emit( action );
+		}, this );
+	}
 
 	return parentProcess;
 };
 
 bs.vec.ui.MWSaveDialog.prototype.swapPanel = function ( panel, noFocus ) {
 	bs.vec.ui.MWSaveDialog.super.prototype.swapPanel.apply( this, arguments );
+
+	this.emit( 'swapPanelComplete', panel );
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];

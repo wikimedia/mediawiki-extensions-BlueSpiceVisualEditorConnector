@@ -11,56 +11,52 @@ mw.hook( 've.activationComplete' ).add( function () {
 	// Disable click action
 	ve.init.target.toolbarSaveButton.off( 'click' );
 
-	var isOpen = false;
-	ve.init.target.toolbarSaveButton.$element.on( 'mouseenter', function( e ) {
+
+	var isOpen = false, autoClosed = false, dialog, $frame, $button, closeBlocked= false, bounds, overrideCss= {
+		top: 0,
+		left: 0,
+		margin: 0,
+		transition: 'none',
+		position: 'absolute'
+	};
+	ve.init.target.toolbarSaveButton.$element.on( 'mouseenter click', function( e ) {
 		var isDisabled = ve.init.target.toolbarSaveButton.isDisabled();
 		if ( isOpen || isDisabled ) {
 			return;
 		}
 		// Get the save button
-		var $button = $( e.target );
+		$button = $( e.currentTarget );
 		ve.init.target.toolbarSaveButton.setDisabled( true );
-		var offset = $button.offset();
-		// At this point, it would be nice to hide the dialog once
-		// the user navigates away from save button, even without ever
-		// entering the dialog itself. This is problematic because as soon
-		// as the dialog is visible it will steal the focus, focusing on the
-		// overlay that cannot be removed
+		bounds = $button[0].getBoundingClientRect();
 
 		// Initialize the save dialog
 		ve.init.target.showSaveDialog();
-		var dialog = ve.init.target.saveDialog;
+		dialog = ve.init.target.saveDialog;
+		startTrackingMouse();
 
-		// Align the save dialog with the save button
-		var $frame = dialog.$element.find( '.oo-ui-window-frame' );
-		$frame.addClass( 'bs-vec-save-dialog' );
-		$frame.css( 'top', 0 );
-		$frame.css( 'left', 0 );
-		$frame.css( 'margin', 0 );
-		$frame.css( 'transition', 'none' );
+		$frame = dialog.$element.find( '.oo-ui-window-frame' );
+		positionDialog( $button );
 
-		$frame.offset( {
-			// By calculating diff between current button offset
-			// and scroll offset we get it's relative position
-			top: offset.top - window.scrollY + $button.outerHeight() + 10,
-			left: offset.left - 500 + $button.outerWidth()
+		dialog.connect( ve.init.target, {
+			swapPanelComplete: switchToOther,
+			approve: positionDialog
 		} );
-		$frame.css( 'position', 'absolute' );
-
-		// Remove the white overlay
-		$frame.parents( '.oo-ui-dialog' ).css( 'background-color', 'transparent' );
 
 		// Re-enable the button when the dialog closes
 		dialog.on ( 'close', function() {
 			ve.init.target.toolbarSaveButton.setDisabled( false );
 			isOpen = false;
 		} );
+
+		$frame.on( 'mouseenter', function() {
+			stopTrackingMouse();
+		} );
 		// Close dialog once the mouse leaves it
 		$frame.on( 'mouseleave', function() {
 			if ( !isOpen ) {
 				return;
 			}
-			dialog.close();
+			closeDialog();
 		} );
 
 		// Add a anchor pointer
@@ -79,5 +75,66 @@ mw.hook( 've.activationComplete' ).add( function () {
 		}
 
 		isOpen = true;
+	} );
+
+	function startTrackingMouse() {
+		$( window ).on( 'mousemove', trackMouse );
+	}
+
+	function stopTrackingMouse() {
+		$( window ).off( 'mousemove', trackMouse );
+	}
+
+	function trackMouse( e ) {
+		if ( !isInBounds( e.clientX, e.clientY ) ) {
+			return closeDialog();
+		}
+	}
+
+	function closeDialog() {
+		stopTrackingMouse();
+		if( !closeBlocked ) {
+			ve.init.target.saveDialog.close();
+		}
+	}
+
+	function positionDialog() {
+		var offset = $button.offset();
+
+		$frame.addClass( 'bs-vec-save-dialog' );
+		$frame.css( overrideCss );
+		$frame.offset( {
+			// By calculating diff between current button offset
+			// and scroll offset we get it's relative position
+			top: offset.top - window.scrollY + $button.outerHeight() + 10,
+			left: offset.left - 500 + $button.outerWidth()
+		} );
+		$frame.css( 'position', 'absolute' );
+		// Remove the white overlay
+		$frame.parents( '.oo-ui-dialog' ).css( 'background-color', 'transparent' );
+		blockClose( false );
+	}
+
+	function blockClose( block )  {
+		closeBlocked = block;
+	}
+
+	function switchToOther( panel ) {
+		if ( [ 'review', 'preview', 'resolve' ].indexOf( panel ) !== -1 ) {
+			blockClose( true );
+			$frame.offset( { top: 0, left: 0 } );
+			dialog.setSize( 'full' );
+		}
+	}
+
+	function isInBounds( x, y ) {
+		var bottom = bounds.bottom + 50; // Buffer to enable user to get to the dialog
+		return ( bounds.top <= y && bottom >= y && bounds.left <= x && bounds.right >= x );
+	}
+
+	$( '.ve-ui-overlay' ).on( 'click', function( e ) {
+		if ( $( e.target ).hasClass( 've-ui-mwSaveDialog' ) ) {
+			closeDialog();
+		}
 	} );
 });
