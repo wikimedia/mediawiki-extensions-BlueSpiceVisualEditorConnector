@@ -137,7 +137,6 @@
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
 				"ve/dm/bs.dm.TableRowNode.js",
 				"ve/dm/bs.dm.TableCellNode.js",
@@ -263,7 +262,8 @@
 				"bluespice.visualEditorConnector.styleInspector.js"
 			],
 			"dependencies": [
-				"ext.visualEditor.core"
+				"ext.visualEditor.core",
+				"ext.bluespice.visualEditorConnector.textColor"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.textColor": {
@@ -285,14 +285,6 @@
 		"ext.bluespice.visualEditorConnector.colors": {
 			"styles": [
 				"bluespice.visualEditorConnector.colors.less"
-			]
-		},
-		"bs.vec.ui.InternalUrlPlainTextStringTransferHandler": {
-			"scripts": [
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore"
 			]
 		},
 		"bs.vec.ui.InternalUrlHTMLStringTransferHandler": {
