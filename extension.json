@@ -128,7 +128,6 @@
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
 
 			]
@@ -183,14 +182,6 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.desktopArticleTarget.init"
-			]
-		},
-		"bs.vec.ui.InternalUrlPlainTextStringTransferHandler": {
-			"scripts": [
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlPlainTextStringTransferHandler.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore"
 			]
 		},
 		"bs.vec.ui.InternalUrlHTMLStringTransferHandler": {
