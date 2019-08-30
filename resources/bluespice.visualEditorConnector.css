@@ -147,3 +147,14 @@
 .bs-vec-unit-selectable .oo-ui-numberInputWidget {
 	width: 120px;
 }
+
+/* Must use !important because margins are set dynamically
+at unknown times */
+.bs-vec-always-show-scroll {
+	overflow-y: scroll;
+	margin-right: 0 !important;
+}
+
+.bs-vec-always-show-scroll body {
+	margin-right: 0 !important;
+}

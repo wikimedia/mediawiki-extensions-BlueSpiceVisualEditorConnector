@@ -12,13 +12,15 @@ mw.hook( 've.activationComplete' ).add( function () {
 	ve.init.target.toolbarSaveButton.off( 'click' );
 
 
-	var isOpen = false, autoClosed = false, dialog, $frame, $button, closeBlocked= false, bounds, overrideCss= {
+	var isOpen = false, dialog, $frame, $button, closeBlocked= false, bounds, overrideCss= {
 		top: 0,
 		left: 0,
 		margin: 0,
 		transition: 'none',
 		position: 'absolute'
 	};
+
+
 	ve.init.target.toolbarSaveButton.$element.on( 'mouseenter click', function( e ) {
 		var isDisabled = ve.init.target.toolbarSaveButton.isDisabled();
 		if ( isOpen || isDisabled ) {
@@ -30,6 +32,9 @@ mw.hook( 've.activationComplete' ).add( function () {
 		bounds = $button[0].getBoundingClientRect();
 
 		// Initialize the save dialog
+		if ( scrollbarShowing() ) {
+			$( 'html' ).addClass( 'bs-vec-always-show-scroll' );
+		}
 		ve.init.target.showSaveDialog();
 		dialog = ve.init.target.saveDialog;
 		startTrackingMouse();
@@ -45,6 +50,11 @@ mw.hook( 've.activationComplete' ).add( function () {
 		// Re-enable the button when the dialog closes
 		dialog.on ( 'close', function() {
 			ve.init.target.toolbarSaveButton.setDisabled( false );
+			// Give some time for regular scrollbar to re-appear after dialog is closed
+			setTimeout( function() {
+				$( 'html' ).removeClass( 'bs-vec-always-show-scroll' );
+			}, 300 );
+
 			isOpen = false;
 		} );
 
@@ -112,7 +122,13 @@ mw.hook( 've.activationComplete' ).add( function () {
 		$frame.css( 'position', 'absolute' );
 		// Remove the white overlay
 		$frame.parents( '.oo-ui-dialog' ).css( 'background-color', 'transparent' );
+
 		blockClose( false );
+	}
+
+	function scrollbarShowing() {
+		var $html = $( 'html' );
+		return $html[0].scrollHeight > $( window ).height();
 	}
 
 	function blockClose( block )  {
