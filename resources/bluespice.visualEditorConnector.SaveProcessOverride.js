@@ -40,11 +40,12 @@ mw.hook( 've.activationComplete' ).add( function () {
 		startTrackingMouse();
 
 		$frame = dialog.$element.find( '.oo-ui-window-frame' );
-		positionDialog( $button );
 
 		dialog.connect( ve.init.target, {
 			swapPanelComplete: switchToOther,
-			approve: positionDialog
+			approve: function() {
+				positionDialog( $button );
+			}
 		} );
 
 		// Re-enable the button when the dialog closes
@@ -108,16 +109,14 @@ mw.hook( 've.activationComplete' ).add( function () {
 		}
 	}
 
-	function positionDialog() {
+	function positionDialog( $button ) {
 		var offset = $button.offset();
 
 		$frame.addClass( 'bs-vec-save-dialog' );
 		$frame.css( overrideCss );
-		$frame.offset( {
-			// By calculating diff between current button offset
-			// and scroll offset we get it's relative position
+		$frame.css( {
 			top: offset.top - window.scrollY + $button.outerHeight() + 10,
-			left: offset.left - 500 + $button.outerWidth()
+			left: offset.left + $button.outerWidth() - 500
 		} );
 		$frame.css( 'position', 'absolute' );
 		// Remove the white overlay
@@ -136,9 +135,16 @@ mw.hook( 've.activationComplete' ).add( function () {
 	}
 
 	function switchToOther( panel ) {
+		if ( panel === 'save' ) {
+			positionDialog( $button );
+		}
 		if ( [ 'review', 'preview', 'resolve' ].indexOf( panel ) !== -1 ) {
 			blockClose( true );
-			$frame.offset( { top: 0, left: 0 } );
+			$frame.css( {
+				top: 0,
+				left: 0,
+				margin: 0
+			} );
 			dialog.setSize( 'full' );
 		}
 	}
