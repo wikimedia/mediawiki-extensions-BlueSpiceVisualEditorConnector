@@ -142,6 +142,8 @@
 				"ve/dm/bs.dm.TableCellNode.js",
 				"ve/dm/bs.dm.InternalFileLinkAnnotation.js",
 				"ve/ce/bs.ce.InternalFileLinkAnnotation.js",
+				"ve/dm/bs.dm.InternalMediaLinkAnnotation.js",
+				"ve/ce/bs.ce.InternalMediaLinkAnnotation.js",
 				"ve/contextitem/bs.ui.InternalFileLinkContextItem.js",
 				"ve/TableStyleApplicator.js",
 				"ve/ce/bs.ce.TableRowNode.js",
@@ -155,8 +157,8 @@
 				"bluespice.visualEditorConnector.overrides.js"
 			],
 			"messages": [
-			    "bs-visualeditorconnector-dialog-media-link",
-			    "bs-visualeditorconnector-dialog-media-embed",
+				"bs-visualeditorconnector-dialog-media-link",
+				"bs-visualeditorconnector-dialog-media-embed",
 				"bs-vec-dialog-media-change-file"
 			],
 			"group": "bsvec-override"
