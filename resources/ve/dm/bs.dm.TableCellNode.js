@@ -36,12 +36,17 @@ bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 
 bs.vec.dm.TableCellNode.static.runTableStyles = function( func, params ) {
 	var registry = bs.vec.registry.TableStyle.registry,
+		callback = $.noop,
+		scope = null,
+		callbackParams = [ 'cell' ].concat( params ),
 		tableStyleKey;
 
 	for( tableStyleKey in registry ) {
 		if ( !registry.hasOwnProperty( tableStyleKey ) ) {
 			continue;
 		}
-		registry[tableStyleKey][func]( 'cell', ...params );
+		scope = registry[tableStyleKey];
+		callback = scope[func];
+		callback.apply( scope, callbackParams );
 	}
 };
