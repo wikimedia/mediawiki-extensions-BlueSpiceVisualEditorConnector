@@ -128,8 +128,9 @@
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
-
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
+				"ve/dm/bs.dm.InternalMediaLinkAnnotation.js",
+				"ve/ce/bs.ce.InternalMediaLinkAnnotation.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
