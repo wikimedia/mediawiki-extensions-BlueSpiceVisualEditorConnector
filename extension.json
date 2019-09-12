@@ -244,8 +244,7 @@
 				"bs-vec-dialog-action-safe",
 				"bs-vec-dialog-create-table-title",
 				"bs-vec-widget-text-direction-tooltip",
-				"bs-vec-row-duplicate-has-merged",
-				"bs-visualeditorconnector-ve-table-width-option"
+				"bs-vec-row-duplicate-has-merged"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.styleInspector": {
