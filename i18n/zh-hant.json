@@ -3,7 +3,8 @@
 		"authors": [
 			"Kly",
 			"神樂坂秀吉",
-			"Winston Sung"
+			"Winston Sung",
+			"予弦"
 		]
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
@@ -35,5 +36,23 @@
 	"bs-vec-dialog-action-safe": "取消",
 	"bs-vec-dialog-create-table-title": "插入表格",
 	"bs-vec-widget-text-direction-tooltip": "垂直文字",
-	"bs-vec-dialog-media-change-file": "變更檔案"
+	"bs-vec-dialog-media-change-file": "變更檔案",
+	"bs-visualeditorconnector-upload-type-original": "原有",
+	"bs-visualeditorconnector-upload-type-one-click": "點擊一次",
+	"bs-visualeditorconnector-color-annotation-desc": "透過分配「color」或「class」屬性來添加色彩到文字",
+	"bs-visualeditorconnector-dialog-media-embed": "嵌入此檔案",
+	"bs-vec-table-inspector-column": "直行",
+	"bs-vec-table-inspector-row": "橫列",
+	"bs-vec-table-inspector-cell": "單元格",
+	"bs-vec-table-style-column-width": "直行寬度",
+	"bs-vec-table-style-row-height": "橫列高度（像素）",
+	"bs-vec-contextitem-cell-style-add-options-title": "單元格選項",
+	"bs-vec-contextitem-column-style-add-options-title": "直行選項",
+	"bs-vec-contextitem-row-style-add-options-title": "橫列選項",
+	"bs-vec-contextitem-row-duplicate": "複製橫列",
+	"bs-vec-contextitem-column-duplicate": "複製直行",
+	"bs-vec-contextitem-table-additional-options": "額外選項",
+	"bs-vec-dialog-table-create-number-of-rows": "橫列數目",
+	"bs-vec-dialog-table-create-number-of-columns": "直行數目",
+	"bs-vec-row-duplicate-has-merged": "所選的橫列包含單元格而橫跨成多個橫列，因此不能做出複製。"
 }
