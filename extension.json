@@ -307,8 +307,8 @@
 				"bs.vec/styles/LinkContextItem.css"
 			],
 			"messages": [
-				"visualeditor-linkcontext-label-label",
-				"visualeditor-linkcontext-label-change"
+				"bs-visualeditor-linkcontext-label-label",
+				"bs-visualeditor-linkcontext-label-change"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.backports": {

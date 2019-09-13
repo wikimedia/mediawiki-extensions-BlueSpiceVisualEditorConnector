@@ -28,7 +28,7 @@ ve.ui.LinkContextItem = function VeUiLinkContextItem( context, model, config ) {
 
 	this.labelPreview = new OO.ui.LabelWidget();
 	this.labelButton = new OO.ui.ButtonWidget( {
-		label: OO.ui.deferMsg( 'visualeditor-linkcontext-label-change' ),
+		label: OO.ui.deferMsg( 'bs-visualeditor-linkcontext-label-change' ),
 		framed: false,
 		flags: [ 'progressive' ]
 	} ).connect( this, { click: 'onLabelButtonClick' } );
@@ -36,7 +36,7 @@ ve.ui.LinkContextItem = function VeUiLinkContextItem( context, model, config ) {
 	this.$labelLayout = $( '<div>' ).addClass( 've-ui-linkContextItem-label' ).append(
 		$( '<div>' ).addClass( 've-ui-linkContextItem-label-label' ).append(
 			new OO.ui.IconWidget( { icon: 'quotes' } ).$element,
-			new OO.ui.LabelWidget( { label: OO.ui.deferMsg( 'visualeditor-linkcontext-label-label' ) } ).$element
+			new OO.ui.LabelWidget( { label: OO.ui.deferMsg( 'bs-visualeditor-linkcontext-label-label' ) } ).$element
 		),
 		$( '<div>' ).addClass( 've-ui-linkContextItem-label-preview' ).append( this.labelPreview.$element )
 	);
