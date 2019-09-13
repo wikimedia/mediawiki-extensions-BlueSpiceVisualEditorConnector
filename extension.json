@@ -357,21 +357,41 @@
 		"VisualEditorConnectorColorPickerColors": {
 			"@note": "Usage described in docs/custom_text_colors.md",
 			"value": [
+				{ "class": "col-white", "name": "White" },
 				{ "class": "col-blue-light", "name": "Light Blue" },
 				{ "class": "col-blue", "name": "Blue" },
 				{ "class": "col-blue-dark", "name": "Dark Blue" },
-				{ "class": "col-red", "name": "Red" },
-				{ "class": "col-red-dark", "name": "Dark Red" },
+				{ "class": "col-blue-navy", "name": "Navy Blue" },
 				{ "class": "col-orange", "name": "Orange" },
-				{ "class": "col-orange-dark", "name": "Dark Orange" },
-				{ "class": "col-purple", "name": "Purple" },
-				{ "class": "col-purple-dark", "name": "Dark Purple" },
 				{ "class": "col-turquoise", "name": "Turquoise" },
-				{ "class": "col-turquoise-dark", "name": "Dark Turquoise" },
+				{ "class": "col-green", "name": "Green" },
+				{ "class": "col-purple", "name": "Purple" },
+				{ "class": "col-red", "name": "Red" },
 				{ "class": "col-grey-light", "name": "Light Grey" },
 				{ "class": "col-grey-medium", "name": "Medium Grey" },
 				{ "class": "col-grey", "name": "Grey" },
-				{ "class": "col-grey-dark", "name": "Dark Grey" }
+				{ "class": "col-grey-dark", "name": "Dark Grey" },
+				{ "class": "col-black", "name": "Black" }
+			]
+		},
+		"VisualEditorConnectorColorPickerColorsBackground": {
+			"@note": "Usage described in docs/custom_text_colors.md",
+			"value": [
+				{ "class": "col-white-bg", "name": "White" },
+				{ "class": "col-blue-light-bg", "name": "Light Blue" },
+				{ "class": "col-blue-bg", "name": "Blue" },
+				{ "class": "col-blue-dark-bg", "name": "Dark Blue" },
+				{ "class": "col-blue-navy-bg", "name": "Navy Blue" },
+				{ "class": "col-orange-bg", "name": "Orange" },
+				{ "class": "col-turquoise-bg", "name": "Turquoise" },
+				{ "class": "col-green-bg", "name": "Green" },
+				{ "class": "col-purple-bg", "name": "Purple" },
+				{ "class": "col-red-bg", "name": "Red" },
+				{ "class": "col-grey-light-bg", "name": "Light Grey" },
+				{ "class": "col-grey-medium-bg", "name": "Medium Grey" },
+				{ "class": "col-grey-bg", "name": "Grey" },
+				{ "class": "col-grey-dark-bg", "name": "Dark Grey" },
+				{ "class": "col-black-bg", "name": "Black" }
 			]
 		}
 	},

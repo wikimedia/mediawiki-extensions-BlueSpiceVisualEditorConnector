@@ -37,6 +37,10 @@ class AddModules extends BeforePageDisplay {
 			'bsVECColorPickerColors',
 			$this->getConfig()->get( 'VisualEditorConnectorColorPickerColors' )
 		);
+		$this->out->addJsConfigVars(
+			'bsVECColorPickerColorsBackground',
+			$this->getConfig()->get( 'VisualEditorConnectorColorPickerColorsBackground' )
+		);
 
 		$this->out->addModules(
 			'ext.bluespice.visualEditorConnector.overrides'

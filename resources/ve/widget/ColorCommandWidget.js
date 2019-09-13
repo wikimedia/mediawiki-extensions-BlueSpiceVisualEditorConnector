@@ -8,7 +8,7 @@ bs.vec.ui.widget.ColorCommandWidget = function( contextItem ) {
 		value: this.widgetValue,
 		framed: false,
 		icon: this.icon,
-		colors: mw.config.get( 'bsVECColorPickerColors' ),
+		colors: mw.config.get( 'bsVECColorPickerColorsBackground' ),
 		popup: {
 			position: 'above'
 		}
