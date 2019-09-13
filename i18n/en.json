@@ -52,5 +52,7 @@
 	"bs-vec-dialog-create-table-title": "Insert table",
 	"bs-vec-widget-text-direction-tooltip": "Vertical text",
 	"bs-vec-row-duplicate-has-merged": "Selected row contains cells that span over multiple rows, and therefore cannot be duplicated.",
-	"bs-vec-dialog-media-change-file": "Change file"
+	"bs-vec-dialog-media-change-file": "Change file",
+	"visualeditor-linkcontext-label-change": "Change label",
+	"visualeditor-linkcontext-label-label": "Label"
 }
