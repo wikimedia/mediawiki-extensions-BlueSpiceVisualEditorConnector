@@ -54,5 +54,7 @@
 	"bs-vec-dialog-create-table-title": "Title for the dialog that inserts the table",
 	"bs-vec-widget-text-direction-tooltip": "Label for table style tool that changes text orientation in a table cell",
 	"bs-vec-row-duplicate-has-merged": "Warning when user tries to duplicated row containing multi-row cells",
-	"bs-vec-dialog-media-change-file": "Process dialog \"change\" action button"
+	"bs-vec-dialog-media-change-file": "Process dialog \"change\" action button",
+	"visualeditor-linkcontext-label-change": "Text for the change label button. This sets the current selection to the entire contents of the link, so it can be easily edited.",
+	"visualeditor-linkcontext-label-label": "Label for the \"label\" field of a link\n{{Identical|Label}}"
 }
