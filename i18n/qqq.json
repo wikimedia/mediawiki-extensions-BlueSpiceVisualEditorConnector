@@ -36,6 +36,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
 	"bs-visualeditorconnector-color-annotation-desc": "Description of ve.ui.ColorAnnotation class",
 	"bs-visualeditorconnector-dialog-media-link": "Label for button to link the selected file",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Label for button to link the selected file's meta page",
 	"bs-visualeditorconnector-dialog-media-embed": "Label for button to embed the selected file",
 	"bs-vec-table-inspector-column": "Section title in table inspector for columns\n{{Identical|Column}}",
 	"bs-vec-table-inspector-row": "Section title in table inspector for rows",

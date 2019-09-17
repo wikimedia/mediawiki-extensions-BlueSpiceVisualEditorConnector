@@ -31,6 +31,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Textfarbe",
 	"bs-visualeditorconnector-color-annotation-desc": "Fügt dem Text Farben hinzu, indem die Eigenschaft \"color\" oder \"class\" zugewiesen wird",
 	"bs-visualeditorconnector-dialog-media-link": "Datei verlinken",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Dateibeschreibungsseite verlinken",
 	"bs-visualeditorconnector-dialog-media-embed": "Datei einbetten",
 	"bs-vec-table-inspector-column": "Spalte",
 	"bs-vec-table-inspector-row": "Zeile",
