@@ -24,6 +24,12 @@ ve.ui.MWMediaDialog.static.actions.push( {
 		modes: [ 'info_file', 'info_file_edit' ]
 	},
 	{
+		action: 'metalink',
+		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-meta-link' ),
+		flags: [ 'primary' ],
+		modes: [ 'info_file', 'info_file_edit' ]
+	},
+	{
 		action: 'choose',
 		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-embed' ),
 		flags: [ 'progressive' ],
@@ -132,6 +138,7 @@ bs.vec.ui.MWMediaDialog.prototype.getSetupProcess = function ( data ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.setFileLinkEditMode = function ( annotation ) {
+	annotation = this.convertAnnotation( annotation );
 	this.fileAnnotation = annotation;
 	if ( annotation.element.attributes.hasOwnProperty( 'imageInfo' ) ) {
 		this.chooseImageInfo( annotation.element.attributes.imageInfo );
@@ -160,6 +167,23 @@ bs.vec.ui.MWMediaDialog.prototype.setFileLinkEditMode = function ( annotation ) 
 			this.switchPanels( 'search' );
 		}.bind( this ) );
 	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.convertAnnotation = function ( annotation ) {
+	var title = mw.Title.newFromText( annotation.element.attributes.title );
+	if ( title.getNamespaceId() === bs.ns.NS_FILE ) {
+		return annotation;
+	}
+
+	if ( title.getNamespaceId() === bs.ns.NS_MEDIA ) {
+		var fileTitle = mw.Title.makeTitle( bs.ns.NS_FILE, title.getMainText() );
+		annotation.element.attributes.title = fileTitle.toText();
+		annotation.element.attributes.normalizedTitle = ve.dm.MWInternalLinkAnnotation.static.normalizeTitle( fileTitle );
+		annotation.element.attributes.lookupTitle = ve.dm.MWInternalLinkAnnotation.static.getLookupTitle( fileTitle );
+
+		return annotation;
+	}
+	return null;
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getImageInfoRemote = function ( pagename ) {
@@ -231,6 +255,8 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 
 	if ( action === 'link' ) {
 		process = new OO.ui.Process( this.linkFile.bind( this ) );
+	} else if ( action === 'metalink' ) {
+		process = new OO.ui.Process( this.linkFileMeta.bind( this ) );
 	} else if ( action === 'cancel' ) {
 		process = new OO.ui.Process( function() {
 			this.close( { action: 'cancel' } );
@@ -249,7 +275,16 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
+	var linkAnnotation = bs.vec.dm.InternalMediaLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
+	this.doLinkFile( linkAnnotation );
+};
+
+bs.vec.ui.MWMediaDialog.prototype.linkFileMeta = function () {
 	var linkAnnotation = bs.vec.dm.InternalFileLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
+	this.doLinkFile( linkAnnotation );
+};
+
+bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation ) {
 	if ( !this.fileAnnotation ) {
 		this.getFragment()
 			.insertContent( this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle );
@@ -260,5 +295,5 @@ bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
 		fragment.annotateContent( 'set', linkAnnotation );
 	}
 
-	this.close( { action: 'link' } );
+	this.close( { action: 'metalink' } );
 };

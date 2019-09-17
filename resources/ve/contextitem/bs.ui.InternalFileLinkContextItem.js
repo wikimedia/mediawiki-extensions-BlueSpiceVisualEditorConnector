@@ -16,9 +16,7 @@ OO.inheritClass( bs.vec.ui.InternalFileLinkContextItem, ve.ui.MWInternalLinkCont
 
 bs.vec.ui.InternalFileLinkContextItem.static.name = 'link/internalFile';
 
-bs.vec.ui.InternalFileLinkContextItem.static.modelClasses = [ bs.vec.dm.InternalFileLinkAnnotation ];
-
-bs.vec.ui.InternalFileLinkContextItem.static.label = "Internal file link"; // TODO: i18n
+bs.vec.ui.InternalFileLinkContextItem.static.modelClasses = [ bs.vec.dm.InternalFileLinkAnnotation, bs.vec.dm.InternalMediaLinkAnnotation ];
 
 bs.vec.ui.InternalFileLinkContextItem.static.commandName = 'media';
 
@@ -37,13 +35,7 @@ bs.vec.ui.InternalFileLinkContextItem.prototype.onEditButtonClick = function () 
 
 bs.vec.ui.InternalFileLinkContextItem.prototype.switchToInfoPanel = function ( win, opened, data ) {
 	var windowManager = this.context.getSurface().getDialogs(),
-		annotations = this.context.getSurface().getModel().getFragment().getAnnotations(),
-		annotationStoreHash = annotations.getAnnotationsByName( 'link/internalFile' ),
-		annotation;
-	if ( annotationStoreHash.length === 0 ) {
-		return;
-	}
-	annotation = annotationStoreHash.get()[0];
+		annotation = this.getOneAnnotation();
 
 	if ( win.constructor.name !== 'BsVecUiMWMediaDialog' ) {
 		return;
@@ -56,6 +48,21 @@ bs.vec.ui.InternalFileLinkContextItem.prototype.switchToInfoPanel = function ( w
 	windowManager.disconnect( this, {
 		opening: 'switchToInfoPanel'
 	} );
+};
+
+bs.vec.ui.InternalFileLinkContextItem.prototype.getOneAnnotation = function() {
+	var annotations = this.context.getSurface().getModel().getFragment().getAnnotations(),
+		annotationStoreHash;
+
+	annotationStoreHash = annotations.getAnnotationsByName( 'link/internalFile' );
+	if ( annotationStoreHash.storeHashes.length > 0 ) {
+		return annotationStoreHash.get()[0];
+	}
+	annotationStoreHash = annotations.getAnnotationsByName( 'link/internalMedia' );
+	if ( annotationStoreHash.storeHashes.length > 0 ) {
+		return annotationStoreHash.get()[0];
+	}
+	return null;
 };
 
 /* Registration */

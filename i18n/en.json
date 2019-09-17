@@ -33,6 +33,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Text color",
 	"bs-visualeditorconnector-color-annotation-desc": "Adds colors to text by assigning \"color\" or \"class\" property",
 	"bs-visualeditorconnector-dialog-media-link": "Link this file",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Link file description page",
 	"bs-visualeditorconnector-dialog-media-embed": "Embed this file",
 	"bs-vec-table-inspector-column": "Column",
 	"bs-vec-table-inspector-row": "Row",

@@ -158,6 +158,7 @@
 			],
 			"messages": [
 				"bs-visualeditorconnector-dialog-media-link",
+				"bs-visualeditorconnector-dialog-media-meta-link",
 				"bs-visualeditorconnector-dialog-media-embed",
 				"bs-vec-dialog-media-change-file"
 			],
