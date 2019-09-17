@@ -52,5 +52,7 @@
 	"bs-vec-dialog-create-table-title": "إدراج جدول",
 	"bs-vec-widget-text-direction-tooltip": "نص عمودي",
 	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها.",
-	"bs-vec-dialog-media-change-file": "تغيير الملف"
+	"bs-vec-dialog-media-change-file": "تغيير الملف",
+	"bs-visualeditor-linkcontext-label-change": "تغيير التسمية",
+	"bs-visualeditor-linkcontext-label-label": "التسمية"
 }

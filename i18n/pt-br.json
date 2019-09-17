@@ -51,5 +51,7 @@
 	"bs-vec-dialog-create-table-title": "Inserir tabela",
 	"bs-vec-widget-text-direction-tooltip": "Texto vertical",
 	"bs-vec-row-duplicate-has-merged": "A linha selecionada contém células que ocupam várias linhas e, portanto, não podem ser duplicadas.",
-	"bs-vec-dialog-media-change-file": "Alterar o arquivo"
+	"bs-vec-dialog-media-change-file": "Alterar o arquivo",
+	"bs-visualeditor-linkcontext-label-change": "Alterar etiqueta",
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
 }

@@ -32,5 +32,6 @@
 	"bs-vec-dialog-action-safe": "Откажи",
 	"bs-vec-dialog-create-table-title": "Вметни табела",
 	"bs-vec-widget-text-direction-tooltip": "Вертикален текст",
-	"bs-vec-dialog-media-change-file": "Смени податотека"
+	"bs-vec-dialog-media-change-file": "Смени податотека",
+	"bs-visualeditor-linkcontext-label-label": "Натпис"
 }

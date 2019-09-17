@@ -22,5 +22,7 @@
 	"bs-vec-dialog-action-safe": "Ofbriechen",
 	"bs-vec-dialog-create-table-title": "Tabell drasetzen",
 	"bs-vec-widget-text-direction-tooltip": "Vertikalen Text",
-	"bs-vec-dialog-media-change-file": "Fichier änneren"
+	"bs-vec-dialog-media-change-file": "Fichier änneren",
+	"bs-visualeditor-linkcontext-label-change": "Etikett änneren",
+	"bs-visualeditor-linkcontext-label-label": "Etikett"
 }
