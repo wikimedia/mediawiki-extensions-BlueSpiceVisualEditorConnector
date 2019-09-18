@@ -125,6 +125,12 @@
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
 			"scripts": [
+				"bs.vec/ce/Surface.js",
+				"bs.vec/ui/AnnotationContextItem.js",
+				"bs.vec/ui/LinkContextItem.js",
+				"bs.vec/ui/MWInternalLinkContextItem.js",
+
+
 				"bs.vec/ui/MWLinkAnnotationInspector.js",
 				"bs.vec/ui/MWMediaDialog.js",
 				"bs.vec/ui/MWSaveDialog.js",
@@ -150,6 +156,13 @@
 				"ve/ce/bs.ce.TableCellNode.js",
 				"ve/ui/TableLineContext.js",
 				"ve/action/TableActionOverride.js"
+			],
+			"styles": [
+				"bs.vec/styles/LinkContextItem.css"
+			],
+			"messages": [
+				"bs-visualeditor-linkcontext-label-label",
+				"bs-visualeditor-linkcontext-label-change"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
@@ -295,29 +308,6 @@
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.backports.classes": {
-			"scripts": [
-				"bs.vec/ce/Surface.js",
-				"bs.vec/ui/AnnotationContextItem.js",
-				"bs.vec/ui/LinkContextItem.js",
-				"bs.vec/ui/MWInternalLinkContextItem.js"
-			],
-			"styles": [
-				"bs.vec/styles/LinkContextItem.css"
-			],
-			"messages": [
-				"bs-visualeditor-linkcontext-label-label",
-				"bs-visualeditor-linkcontext-label-change"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.backports": {
-			"scripts": [
-				"bluespice.visualEditorConnector.backports.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.desktopArticleTarget.init"
 			]
 		}
 	},
