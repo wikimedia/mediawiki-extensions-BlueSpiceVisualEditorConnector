@@ -66,10 +66,6 @@ class AddModules extends BeforePageDisplay {
 
 		$uploadType = $this->getConfig()->get( 'VisualEditorConnectorUploadDialogType' );
 		$this->out->addJsConfigVars( 'bsVECUploadType', $uploadType );
-
-		$this->out->addModules(
-			'ext.bluespice.visualEditorConnector.backports'
-		);
 	}
 
 }
