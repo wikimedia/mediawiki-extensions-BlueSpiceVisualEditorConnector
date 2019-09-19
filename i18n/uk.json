@@ -3,14 +3,15 @@
 		"authors": [
 			"Vlad5250",
 			"Piramidion",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"bs-visualeditorconnector-desc": "З'єднує BlueSpice із Візуальним редактором",
 	"bs-visualeditorconnector-enable-visualeditor": "Увімкнути Візуальний редактор для розширень BlueSpice",
 	"bs-visualeditorconnector-cancel-edit": "Скасувати редагування",
 	"bs-visualeditor-nsm-label": "Візуальний редактор",
-	"bs-visualeditorconnector-inspector-tab-common-name": "Загальне",
+	"bs-visualeditorconnector-inspector-tab-common-name": "Загальні",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Розширені",
 	"apihelp-bs-vec-transformtowikitext-description": "Конвертує HTML Візуального редактора у вікірозмітку",
 	"apihelp-bs-vec-transformtowikitext-summary": "Конвертує HTML Візуального редактора у вікірозмітку",
@@ -30,7 +31,7 @@
 	"bs-visualeditorconnector-ve-style-option-description": "Вибрати стиль таблиці",
 	"bs-visualeditorconnector-ve-style-option": "Стиль таблиці",
 	"apihelp-bs-vec-restbase-mock-param-wikitext": "Вікітекст, який має бути оброблено",
-	"bs-visualeditorconnector-upload-dialog-type": "Робочий процес завантаження файлів у медіадіалозі",
+	"bs-visualeditorconnector-upload-dialog-type": "Робочий процес завантаження файлів у вікні опрацювання медіа",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Колір тексту",
 	"bs-visualeditorconnector-color-annotation-desc": "Додає кольори до тексту, присвоюючи властивість «color» або «class»",
 	"bs-visualeditorconnector-dialog-media-link": "Посилання на цей файл",
@@ -53,5 +54,7 @@
 	"bs-vec-dialog-create-table-title": "Вставити таблицю",
 	"bs-vec-widget-text-direction-tooltip": "Вертикальний текст",
 	"bs-vec-row-duplicate-has-merged": "Вибрані рядки містять комірки, що займають кілька рядків, і тому не можуть бути продубльовані.",
-	"bs-vec-dialog-media-change-file": "Змінити файл"
+	"bs-vec-dialog-media-change-file": "Змінити файл",
+	"bs-visualeditor-linkcontext-label-change": "Змінити мітку",
+	"bs-visualeditor-linkcontext-label-label": "Мітка"
 }

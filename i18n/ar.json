@@ -54,5 +54,6 @@
 	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها.",
 	"bs-vec-dialog-media-change-file": "تغيير الملف",
 	"bs-visualeditor-linkcontext-label-change": "تغيير التسمية",
-	"bs-visualeditor-linkcontext-label-label": "التسمية"
+	"bs-visualeditor-linkcontext-label-label": "التسمية",
+	"bs-visualeditorconnector-dialog-media-meta-link": "ربط صفحة وصف الملف"
 }

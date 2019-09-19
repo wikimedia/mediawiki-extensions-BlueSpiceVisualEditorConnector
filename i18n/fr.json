@@ -55,5 +55,6 @@
 	"bs-vec-row-duplicate-has-merged": "Les lignes sélectionnées contiennent des cellules s’étendant sur plusieurs lignes, et ne peuvent donc pas être dupliquées.",
 	"bs-vec-dialog-media-change-file": "Modifier le fichier",
 	"bs-visualeditor-linkcontext-label-change": "Changer le libellé",
-	"bs-visualeditor-linkcontext-label-label": "Libellé"
+	"bs-visualeditor-linkcontext-label-label": "Libellé",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Lier la page de description du fichier"
 }
