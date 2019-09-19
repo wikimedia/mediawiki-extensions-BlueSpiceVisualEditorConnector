@@ -11,6 +11,10 @@
 	"bs-visualeditorconnector-desc": "Verbindet BlueSpice mit dem VisualEditor",
 	"bs-visualeditorconnector-enable-visualeditor": "VisualEditor für BlueSpice-Erweiterungen aktivieren",
 	"bs-visualeditorconnector-simple-save-process": "Konfigurationsvariable zur Nutzung eines vereinfachten Speicherungsprozesses",
+	"bs-visualeditorconnector-upload-type-original": "Original",
+	"bs-visualeditorconnector-upload-type-simple": "Einfach",
+	"bs-visualeditorconnector-upload-type-one-click": "Ein Klick",
+	"bs-visualeditorconnector-upload-type": "Hochladetyp",
 	"bs-visualeditorconnector-cancel-edit": "Bearbeitung abbrechen",
 	"bs-visualeditor-nsm-label": "Visuelle Bearbeitung",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allgemein",
@@ -27,6 +31,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "Bietet einen Mock für RESTBase-Aufrufe des visuellen Editors",
 	"apihelp-bs-vec-restbase-mock-summary": "Stellt einen Mock für RESTBase-Aufrufe des visuellen Editors bereit",
 	"apihelp-bs-vec-restbase-mock-param-path": "RESTBase-Pfad, der gemockt werden soll",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Wikitext, der verarbeitet werden soll",
 	"bs-visualeditorconnector-upload-dialog-type": "Arbeitsablauf zum Hochladen von Dateien in MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Textfarbe",
 	"bs-visualeditorconnector-color-annotation-desc": "Fügt dem Text Farben hinzu, indem die Eigenschaft \"color\" oder \"class\" zugewiesen wird",
@@ -50,5 +55,8 @@
 	"bs-vec-dialog-action-safe": "Abbrechen",
 	"bs-vec-dialog-create-table-title": "Tabelle einfügen",
 	"bs-vec-widget-text-direction-tooltip": "Vertikaler Text",
-	"bs-vec-row-duplicate-has-merged": "Die ausgewählte Zeile enthält Zellen, die sich über mehrere Zeilen erstrecken und kann daher nicht dupliziert werden."
+	"bs-vec-row-duplicate-has-merged": "Die ausgewählte Zeile enthält Zellen, die sich über mehrere Zeilen erstrecken und kann daher nicht dupliziert werden.",
+	"bs-vec-dialog-media-change-file": "Datei ändern",
+	"bs-visualeditor-linkcontext-label-change": "Beschriftung ändern",
+	"bs-visualeditor-linkcontext-label-label": "Beschriftung"
 }

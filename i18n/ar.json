@@ -33,6 +33,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "لون النص",
 	"bs-visualeditorconnector-color-annotation-desc": "يضيف الألوان إلى نص عن طريق تعيين خاصية \"اللون\" أو \"الفئة",
 	"bs-visualeditorconnector-dialog-media-link": "ربط هذا الملف",
+	"bs-visualeditorconnector-dialog-media-meta-link": "ربط صفحة وصف الملف",
 	"bs-visualeditorconnector-dialog-media-embed": "تضمين هذا الملف",
 	"bs-vec-table-inspector-column": "العمود",
 	"bs-vec-table-inspector-row": "الصف",

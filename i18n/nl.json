@@ -12,6 +12,7 @@
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gangbaar",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Uitgebreid",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Tekstkleur",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Koppeling naar beschrijvingspagina van bestand",
 	"bs-visualeditorconnector-dialog-media-embed": "Dit bestand insluiten",
 	"bs-vec-table-inspector-column": "Kolom",
 	"bs-vec-table-inspector-row": "Rij",
@@ -30,5 +31,7 @@
 	"bs-vec-dialog-action-safe": "Annuleren",
 	"bs-vec-dialog-create-table-title": "Tabel invoegen",
 	"bs-vec-widget-text-direction-tooltip": "Verticale tekst",
-	"bs-vec-dialog-media-change-file": "Bestand wijzigen"
+	"bs-vec-dialog-media-change-file": "Bestand wijzigen",
+	"bs-visualeditor-linkcontext-label-change": "Etiket wijzigen",
+	"bs-visualeditor-linkcontext-label-label": "Etiket"
 }
