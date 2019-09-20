@@ -40,6 +40,9 @@ bs.vec.dm.ColorAnnotation.static.getCodeFromElement = function( el ) {
 	props = style.split( ';' );
 	for( i = 0; i < props.length; i++ ) {
 		prop = props[i].trim();
+		if ( prop === '' ) {
+			continue;
+		}
 		propBits = prop.split( ':' );
 		val = propBits.pop().trim();
 		propName = propBits.pop().trim();
