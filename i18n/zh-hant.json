@@ -54,5 +54,7 @@
 	"bs-vec-dialog-create-table-title": "插入表格",
 	"bs-vec-widget-text-direction-tooltip": "垂直文字",
 	"bs-vec-row-duplicate-has-merged": "所選的橫列包含單元格而橫跨成多個橫列，因此不能做出複製。",
-	"bs-vec-dialog-media-change-file": "變更檔案"
+	"bs-vec-dialog-media-change-file": "變更檔案",
+	"bs-visualeditor-linkcontext-label-change": "變更標籤",
+	"bs-visualeditor-linkcontext-label-label": "標籤"
 }

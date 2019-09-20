@@ -35,6 +35,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Колір тексту",
 	"bs-visualeditorconnector-color-annotation-desc": "Додає кольори до тексту, присвоюючи властивість «color» або «class»",
 	"bs-visualeditorconnector-dialog-media-link": "Посилання на цей файл",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Прив'язати сторінку опису файлу",
 	"bs-visualeditorconnector-dialog-media-embed": "Вбудувати цей файл",
 	"bs-vec-table-inspector-column": "Колонка",
 	"bs-vec-table-inspector-row": "Рядок",
