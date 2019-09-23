@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"McDutchie"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Conecta o BlueSpice com o EditorVisual",
@@ -32,7 +33,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Cor do texto",
 	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\"",
 	"bs-visualeditorconnector-dialog-media-link": "Vincular este arquivo",
-	"bs-visualeditorconnector-dialog-media-meta-link": "Página de descrição do arquivo de link",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Link para a página de descrição do arquivo",
 	"bs-visualeditorconnector-dialog-media-embed": "Incorporar este arquivo",
 	"bs-vec-table-inspector-column": "Coluna",
 	"bs-vec-table-inspector-row": "Linha",
