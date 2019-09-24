@@ -20,6 +20,7 @@
 	"apihelp-bs-vec-restbase-mock-param-wikitext": "처리할 위키텍스트",
 	"bs-visualeditorconnector-text-style-tool-color-label": "텍스트 색",
 	"bs-visualeditorconnector-dialog-media-link": "이 파일 링크하기",
+	"bs-visualeditorconnector-dialog-media-meta-link": "파일 설명 문서의 링크 추가",
 	"bs-visualeditorconnector-dialog-media-embed": "이 파일 임베드하기",
 	"bs-vec-table-inspector-cell": "셀",
 	"bs-vec-contextitem-cell-style-add-options-title": "셀 옵션",
