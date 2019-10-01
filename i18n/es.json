@@ -30,5 +30,7 @@
 	"bs-vec-dialog-action-done": "Hecho",
 	"bs-vec-dialog-action-safe": "Cancelar",
 	"bs-vec-dialog-create-table-title": "Insertar tabla",
-	"bs-vec-widget-text-direction-tooltip": "Texo vertical"
+	"bs-vec-widget-text-direction-tooltip": "Texo vertical",
+	"bs-visualeditor-linkcontext-label-change": "Cambiar etiqueta",
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
 }
