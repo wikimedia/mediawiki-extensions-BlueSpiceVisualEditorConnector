@@ -44,5 +44,6 @@
 	"bs-vec-widget-text-direction-tooltip": "Vertikal text",
 	"bs-vec-row-duplicate-has-merged": "Markerade rader innehåller celler som sträcker sig över flera rader och kan därför inte dupliceras.",
 	"bs-vec-dialog-media-change-file": "Ändra fil",
+	"bs-visualeditor-linkcontext-label-change": "Ändra etikett",
 	"bs-visualeditor-linkcontext-label-label": "Etikett"
 }
