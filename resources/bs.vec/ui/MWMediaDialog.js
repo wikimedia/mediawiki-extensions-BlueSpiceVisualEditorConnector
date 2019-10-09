@@ -13,46 +13,94 @@ ve.ui.MWMediaDialog.static.actions.push( {
 		label: OO.ui.deferMsg( 'visualeditor-dialog-media-goback' ),
 		flags: [ 'safe', 'back' ],
 		modes: [ 'info_file' ]
+	}, {
+		label: OO.ui.deferMsg( 'visualeditor-dialog-action-cancel' ),
+		flags: [ 'safe', 'back' ],
+		modes: [ 'info_file_edit' ]
 	},{
 		action: 'link',
 		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-link' ),
 		flags: [ 'primary' ],
-		modes: [ 'info_file' ]
+		modes: [ 'info_file', 'info_file_edit' ]
+	},
+	{
+		action: 'metalink',
+		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-meta-link' ),
+		flags: [ 'primary' ],
+		modes: [ 'info_file', 'info_file_edit' ]
 	},
 	{
 		action: 'choose',
 		label: OO.ui.deferMsg( 'bs-visualeditorconnector-dialog-media-embed' ),
 		flags: [ 'progressive' ],
 		modes: [ 'info_file' ]
-	} );
+	}, {
+		action: 'change',
+		label: OO.ui.deferMsg( "bs-vec-dialog-media-change-file" ),
+		flags: [ 'progressive' ],
+		modes: [ 'info_file_edit' ]
+	}  );
 
 bs.vec.ui.MWMediaDialog.prototype.initialize = function () {
+	this.initComponentPlugins();
 	bs.vec.ui.MWMediaDialog.super.prototype.initialize.call( this );
+	this.overwriteUploadBooklet();
+	this.annotation = null;
 
-	if ( this.uploadType !== 'original' ) {
-		this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayout( {
-			$overlay: this.$overlay,
-			uploadType: this.uploadType
-		} );
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.initialize();
+	}
+	this.emit( 'initComplete' );
+};
 
-		this.mediaUploadBooklet.connect( this, {
-			set: 'onMediaUploadBookletSet',
-			uploadValid: 'onUploadValid',
-			infoValid: 'onInfoValid'
-		} );
+bs.vec.ui.MWMediaDialog.prototype.overwriteUploadBooklet = function () {
+	this.setNewUploadBooklet();
+	this.reestablishUploadBookletEventWiring();
+};
 
-		var uploadTab = this.searchTabs.getTabPanel( 'upload' );
-		this.searchTabs.removeTabPanels( [ uploadTab ] );
-
-		this.searchTabs.addTabPanels( [
-			new OO.ui.TabPanelLayout( 'upload', {
-				label: ve.msg( 'visualeditor-dialog-media-search-tab-upload' ),
-				content: [ this.mediaUploadBooklet ]
-			} )
-		] );
+bs.vec.ui.MWMediaDialog.prototype.setNewUploadBooklet = function () {
+	switch ( this.uploadType ) {
+		case 'simple':
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple( {
+				$overlay: this.$overlay
+			} );
+			break;
+		case 'one-click':
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayoutOneClick( {
+				$overlay: this.$overlay
+			} );
+			break;
+		case 'original':
+		default:
+			this.mediaUploadBooklet = new bs.vec.ui.ForeignStructuredUpload.BookletLayout( {
+				$overlay: this.$overlay
+			} );
+			break;
 	}
 
-	this.runComponentPlugins();
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.setNewUploadBooklet();
+	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.reestablishUploadBookletEventWiring = function () {
+	this.mediaUploadBooklet.connect( this, {
+		set: 'onMediaUploadBookletSet',
+		uploadValid: 'onUploadValid',
+		infoValid: 'onInfoValid'
+	} );
+
+	var uploadTab = this.searchTabs.getTabPanel( 'upload' );
+	this.searchTabs.removeTabPanels( [ uploadTab ] );
+
+	this.searchTabs.addTabPanels( [
+		new OO.ui.TabPanelLayout( 'upload', {
+			label: ve.msg( 'visualeditor-dialog-media-search-tab-upload' ),
+			content: [ this.mediaUploadBooklet ]
+		} )
+	] );
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
@@ -67,15 +115,91 @@ bs.vec.ui.MWMediaDialog.prototype.getReadyProcess = function ( data ) {
 		}, this );
 };
 
-bs.vec.ui.MWMediaDialog.prototype.runComponentPlugins = function() {
+bs.vec.ui.MWMediaDialog.prototype.initComponentPlugins = function() {
+	this.componentPlugins = [];
+
 	var pluginCallbacks = bs.vec.getComponentPlugins(
-			bs.vec.components.MEDIA_DIALOG
+		bs.vec.components.MEDIA_DIALOG
 	);
 
 	for( var i = 0; i < pluginCallbacks.length; i++ ) {
 		var callback = pluginCallbacks[i];
-		callback( this );
+		this.componentPlugins.push( callback( this ) );
 	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getSetupProcess = function ( data ) {
+	var parentProcess = bs.vec.ui.MWMediaDialog.super.prototype.getSetupProcess.call( this, data );
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		parentProcess = plugin.getSetupProcess( parentProcess, data );
+	}
+	return parentProcess;
+};
+
+bs.vec.ui.MWMediaDialog.prototype.setFileLinkEditMode = function ( annotation ) {
+	annotation = this.convertAnnotation( annotation );
+	this.fileAnnotation = annotation;
+	if ( annotation.element.attributes.hasOwnProperty( 'imageInfo' ) ) {
+		this.chooseImageInfo( annotation.element.attributes.imageInfo );
+		this.mode = 'info_file_edit';
+		this.actions.setMode( 'info_file_edit' );
+	} else if ( annotation.element.attributes.hasOwnProperty( 'normalizedTitle' ) ) {
+		this.switchPanels( 'imageInfo' );
+		this.getImageInfoRemote( annotation.element.attributes.normalizedTitle ).done( function( response ) {
+			if ( !response.hasOwnProperty( 'query' ) ) {
+				return this.switchPanels( 'search' );
+			}
+			var pages = response.query.pages;
+			for( var pageId in pages ) {
+				var page = pages[pageId];
+				if ( page.title === annotation.element.attributes.normalizedTitle ) {
+					var imageInfo = page.imageinfo.length  > 0 ? page.imageinfo[0] : {};
+					imageInfo.title = page.title;
+					this.chooseImageInfo( imageInfo );
+					this.mode = 'info_file_edit';
+					this.actions.setMode( 'info_file_edit' );
+					return;
+				}
+			}
+			this.switchPanels( 'search' );
+		}.bind( this ) ).fail( function () {
+			this.switchPanels( 'search' );
+		}.bind( this ) );
+	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.convertAnnotation = function ( annotation ) {
+	var title = mw.Title.newFromText( annotation.element.attributes.title );
+	if ( title.getNamespaceId() === bs.ns.NS_FILE ) {
+		return annotation;
+	}
+
+	if ( title.getNamespaceId() === bs.ns.NS_MEDIA ) {
+		var fileTitle = mw.Title.makeTitle( bs.ns.NS_FILE, title.getMainText() );
+		annotation.element.attributes.title = fileTitle.toText();
+		annotation.element.attributes.normalizedTitle = ve.dm.MWInternalLinkAnnotation.static.normalizeTitle( fileTitle );
+		annotation.element.attributes.lookupTitle = ve.dm.MWInternalLinkAnnotation.static.getLookupTitle( fileTitle );
+
+		return annotation;
+	}
+	return null;
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getImageInfoRemote = function ( pagename ) {
+	return new mw.Api().get( {
+		action: 'query',
+		format: 'json',
+		generator: 'search',
+		gsrnamespace: 6,
+		iiurlheight: 200,
+		iiprop: 'dimensions|url|mediatype|extmetadata|timestamp|user',
+		prop: 'imageinfo',
+		gsrsearch: pagename,
+		iiurlwidth: 300,
+		gsroffset: 0,
+		gsrlimit: 15
+	} );
 };
 
 bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchRequery ) {
@@ -127,27 +251,49 @@ bs.vec.ui.MWMediaDialog.prototype.uploadPageNameSet = function ( pageName ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
+	var process = null;
+
 	if ( action === 'link' ) {
-		return new OO.ui.Process( this.linkFile() );
-	} else if ( action === 'upload' && this.uploadType !== 'original' ) {
-		if ( this.uploadType === 'simple' ) {
-			return new OO.ui.Process( this.mediaUploadBooklet.uploadFile() );
-		} else if ( this.uploadType === 'one-click' ) {
-			return new OO.ui.Process( this.mediaUploadBooklet.uploadSingleStep() );
-		}
+		process = new OO.ui.Process( this.linkFile.bind( this ) );
+	} else if ( action === 'metalink' ) {
+		process = new OO.ui.Process( this.linkFileMeta.bind( this ) );
+	} else if ( action === 'cancel' ) {
+		process = new OO.ui.Process( function() {
+			this.close( { action: 'cancel' } );
+		} );
 	} else {
-		return bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
+		process = bs.vec.ui.MWMediaDialog.super.prototype.getActionProcess.call( this, action );
 	}
+
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		plugin.getActionProcess( process, action );
+	}
+
+	return process;
+
 };
 
 bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
-	var title = this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle,
-		titleObject = mw.Title.newFromText( title ),
-		linkAnnotation = ve.dm.MWInternalLinkAnnotation.static.newFromTitle( titleObject );
+	var linkAnnotation = bs.vec.dm.InternalMediaLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
+	this.doLinkFile( linkAnnotation );
+};
 
-	this.getFragment()
-		.insertContent( title )
-		.annotateContent( 'set', linkAnnotation );
+bs.vec.ui.MWMediaDialog.prototype.linkFileMeta = function () {
+	var linkAnnotation = bs.vec.dm.InternalFileLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
+	this.doLinkFile( linkAnnotation );
+};
 
-	this.close( { action: 'link' } );
+bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation ) {
+	if ( !this.fileAnnotation ) {
+		this.getFragment()
+			.insertContent( this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle );
+		this.getFragment().annotateContent( 'set', linkAnnotation );
+	} else {
+		var fragment = this.getFragment().expandLinearSelection( 'annotation', this.fileAnnotation );
+		fragment.annotateContent( 'clear', this.fileAnnotation );
+		fragment.annotateContent( 'set', linkAnnotation );
+	}
+
+	this.close( { action: 'metalink' } );
 };

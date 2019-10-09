@@ -9,10 +9,12 @@ class UseVisualEditor extends BSPageTemplatesModifyTargetUrl {
 		$targetNamespace = $this->targetTitle->getNsText();
 		$targetNamespaceIndex = $this->targetTitle->getNamespace();
 
-		if ( isset( $enabledNamespaces[$targetNamespace] ) && $enabledNamespaces[$targetNamespace] === true ) {
+		if ( isset( $enabledNamespaces[$targetNamespace] ) &&
+			$enabledNamespaces[$targetNamespace] === true ) {
 			return false;
 		}
-		if ( isset( $enabledNamespaces[$targetNamespaceIndex] ) && $enabledNamespaces[$targetNamespaceIndex] === true ) {
+		if ( isset( $enabledNamespaces[$targetNamespaceIndex] ) &&
+			$enabledNamespaces[$targetNamespaceIndex] === true ) {
 			return false;
 		}
 		return true;

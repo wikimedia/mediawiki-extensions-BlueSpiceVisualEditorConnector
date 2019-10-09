@@ -80,6 +80,10 @@ bs.vec.util.tag.Definition.prototype.setValues = function( inspector, attrs, cfg
 	}
 }
 
+bs.vec.util.tag.Definition.prototype.getNewElement = function( inspector, element ) {
+	return element;
+}
+
 bs.vec.util.tag.Definition.prototype.updateMwData = function( inspector, mwData, cfg ) {
 	var attributes = cfg.attributes;
 	for( var i = 0; i < attributes.length; i++ ) {
@@ -139,7 +143,8 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 		case 'text' :
 		default :
 			widget = new OO.ui.TextInputWidget({
-				value: attribute.default
+				value: attribute.default,
+				placeholder: mw.msg( attribute.placeholderMsg )
 			});
 	};
 	return widget;
@@ -172,6 +177,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
  *   * default: (string) Default value of the attribute.
  *   * tab: (string) Name of the tab this attribute should be rendered to.
  *   * options: (array) Only for dropdown. An array of items: [{data:'X', label:'X'}].
+ *   * placeholder: (string) Only for text: A placeholder text.
  *   inspector: (object) Describes specific functional configurations for inspectors.
  *   * methods: (object) Callback methods for various hooks. Can be overwritten to add more complex
  *                       behavior.
@@ -197,7 +203,8 @@ bs.vec.util.tag.Definition.prototype.getCfg = function() {
 			methods: {
 				createFields: this.createFields,
 				setValues: this.setValues,
-				updateMwData: this.updateMwData
+				updateMwData: this.updateMwData,
+				getNewElement: this.getNewElement
 			}
 		},
 		toolGroup: '',

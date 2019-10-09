@@ -18,5 +18,6 @@
 	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiText, който трябва да се преобразува към HTML за VisualEditor",
 	"apihelp-bs-vec-restbase-mock-description": "Осигурява примерни данни за заявки към RESTBase от VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Осигурява примерни данни за заявки към RESTBase от VisualEditor",
-	"apihelp-bs-vec-restbase-mock-param-path": "Път на RESTBase, за който да се създадат примерни данни"
+	"apihelp-bs-vec-restbase-mock-param-path": "Път на RESTBase, за който да се създадат примерни данни",
+	"bs-vec-dialog-action-safe": "Отказ"
 }

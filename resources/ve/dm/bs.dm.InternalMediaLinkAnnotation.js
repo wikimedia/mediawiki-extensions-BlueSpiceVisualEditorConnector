@@ -45,6 +45,55 @@ bs.vec.dm.InternalMediaLinkAnnotation.static.toDataElement = function ( domEleme
 	};
 };
 
+bs.vec.dm.InternalMediaLinkAnnotation.static.newFromImageInfo = function ( imageInfo, rawTitle ) {
+	var title = imageInfo.title || imageInfo.canonicaltitle,
+		titleObject = mw.Title.newFromText( title ),
+		element;
+
+	if ( titleObject.getNamespaceId() !== bs.ns.NS_FILE ) {
+		return null;
+	}
+
+	titleObject = mw.Title.makeTitle( bs.ns.NS_MEDIA, titleObject.getMainText() );
+	element = {
+		type: 'link/internalMedia',
+		attributes: {
+			title: titleObject.toText(),
+			normalizedTitle: ve.dm.MWInternalLinkAnnotation.static.normalizeTitle( titleObject ),
+			imageInfo: imageInfo
+		}
+	};
+
+	if ( rawTitle ) {
+		element.attributes.origTitle = rawTitle;
+	}
+
+	return new bs.vec.dm.InternalMediaLinkAnnotation( element );
+};
+
+bs.vec.dm.InternalMediaLinkAnnotation.static.newFromTitle = function ( title, rawTitle ) {
+	var element,
+		target = title.toText();
+
+	if ( title.getNamespaceId() !== bs.ns.NS_MEDIA ) {
+		return null;
+	}
+
+	element = {
+		type: 'link/internalMedia',
+		attributes: {
+			title: target,
+			normalizedTitle: ve.dm.MWInternalLinkAnnotation.static.normalizeTitle( title ),
+			lookupTitle: ve.dm.MWInternalLinkAnnotation.static.getLookupTitle( title )
+		}
+	};
+	if ( rawTitle ) {
+		element.attributes.origTitle = rawTitle;
+	}
+
+	return new bs.vec.dm.InternalMediaLinkAnnotation( element );
+};
+
 /* Registration */
 
 ve.dm.modelRegistry.register( bs.vec.dm.InternalMediaLinkAnnotation );

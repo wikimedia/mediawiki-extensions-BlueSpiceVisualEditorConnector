@@ -30,6 +30,15 @@ bs.vec.ui.MWSaveDialog.prototype.initComponentPlugins = function() {
 	}
 };
 
+bs.vec.ui.MWSaveDialog.prototype.getSetupProcess = function ( data ) {
+	var parentProcess = bs.vec.ui.MWSaveDialog.super.prototype.getSetupProcess.call( this, data );
+	for( var i = 0; i < this.componentPlugins.length; i++ ) {
+		var plugin = this.componentPlugins[i];
+		parentProcess = plugin.getSetupProcess( parentProcess, data );
+	}
+	return parentProcess;
+};
+
 bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 	var parentProcess = bs.vec.ui.MWSaveDialog.super.prototype.getActionProcess.apply( this, arguments );
 
@@ -45,12 +54,20 @@ bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 			);
 		} );
 	}
+	if ( action === 'approve' ) {
+		return new OO.ui.Process( function () {
+			this.swapPanel( 'save' );
+			this.emit( action );
+		}, this );
+	}
 
 	return parentProcess;
 };
 
 bs.vec.ui.MWSaveDialog.prototype.swapPanel = function ( panel, noFocus ) {
 	bs.vec.ui.MWSaveDialog.super.prototype.swapPanel.apply( this, arguments );
+
+	this.emit( 'swapPanelComplete', panel );
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];

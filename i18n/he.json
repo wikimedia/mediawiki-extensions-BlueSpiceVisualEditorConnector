@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Erelon",
+			"Steeve815",
+			"Strayblues"
+		]
+	},
+	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה",
+	"bs-visualeditor-nsm-label": "העורך החזותי",
+	"bs-visualeditorconnector-inspector-tab-common-name": "תדיר",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "מתקדם",
+	"bs-visualeditorconnector-ve-fullwidth-option": "שימוש ברוחב מלא עבור הטבלה",
+	"bs-visualeditorconnector-ve-style-option-description": "בחירת סגנון טבלה",
+	"bs-visualeditorconnector-ve-style-option": "סגנון טבלה",
+	"bs-visualeditorconnector-text-style-tool-color-label": "צבע טקסט",
+	"bs-visualeditorconnector-dialog-media-link": "יצירת קישור אל הקובץ",
+	"bs-visualeditorconnector-dialog-media-embed": "הטמעת קובץ זה"
+}

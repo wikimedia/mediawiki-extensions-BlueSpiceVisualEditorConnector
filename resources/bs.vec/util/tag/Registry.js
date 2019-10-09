@@ -205,6 +205,12 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function( cfg ){
 		mwData = cfg.inspector.methods.updateMwData( this, mwData, cfg );
 	};
 
+	bs.vec.ui[classname].prototype.getNewElement = function () {
+		var element = bs.vec.ui[classname].super.prototype.getNewElement.call( this );
+
+		return cfg.inspector.methods.getNewElement( this, element );
+	};
+
 	ve.ui.windowFactory.register( bs.vec.ui[classname] );
 }
 

@@ -28,15 +28,18 @@ class WriteToConfiguration extends NamespaceManagerWriteNamespaceConfiguration {
 	protected function writeConfiguration( $configVar, $nsManagerOptionName ) {
 		$enabledNamespaces = $this->getConfig()->get( $configVar );
 
-		$currentlyActivated = ( isset( $enabledNamespaces[$this->ns] ) && $enabledNamespaces[$this->ns] === true );
+		$currentlyActivated = ( isset( $enabledNamespaces[$this->ns] ) &&
+			$enabledNamespaces[$this->ns] === true );
 
 		$explicitlyDeactivated = false;
-		if ( isset( $this->definition[$nsManagerOptionName] ) && $this->definition[$nsManagerOptionName] === false ) {
+		if ( isset( $this->definition[$nsManagerOptionName] ) &&
+			$this->definition[$nsManagerOptionName] === false ) {
 			$explicitlyDeactivated = true;
 		}
 
 		$explicitlyActivated = false;
-		if ( isset( $this->definition[$nsManagerOptionName] ) && $this->definition[$nsManagerOptionName] === true ) {
+		if ( isset( $this->definition[$nsManagerOptionName] ) &&
+			$this->definition[$nsManagerOptionName] === true ) {
 			$explicitlyActivated = true;
 		}
 

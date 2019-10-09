@@ -10,5 +10,8 @@
 	"bs-visualeditorconnector-cancel-edit": "Откажи уређивање",
 	"bs-visualeditor-nsm-label": "Визуелни уређивач",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Опште",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредно"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредно",
+	"bs-vec-table-inspector-row": "Ред",
+	"bs-vec-contextitem-table-additional-options": "Додатне опције",
+	"bs-vec-dialog-table-create-number-of-rows": "Број редова"
 }
