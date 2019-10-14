@@ -35,7 +35,8 @@ bs.vec.ui.CellBackgroundStyle.prototype.getTool = function() {
  * This is called when command related to this tableStyle is executed
  * context: bs.vec.ui.TableAction
  *
- * @param array args
+ * @param Object subject
+ * @param Object args
  */
 bs.vec.ui.CellBackgroundStyle.prototype.executeAction = function( subject, args ) {
 	if ( !args.hasOwnProperty( 'value' ) ) {
@@ -63,29 +64,27 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDataElement = function( section, domEl
 		return;
 	}
 	style = domElement.getAttribute( 'style' );
-	if ( !style ) {
-		return;
-	}
-	styleParser = new bs.vec.util.StyleAttributeParser( style );
-	if ( styleParser.getValueForAttr( this.getAttribute() ) ) {
+	if ( style ) {
+		styleParser = new bs.vec.util.StyleAttributeParser( style );
+		if ( styleParser.getValueForAttr( this.getAttribute() ) ) {
+			result.cellBackgroundColor = {
+				colorCode: styleParser.getValueForAttr( this.getAttribute() )
+			};
+		}
+	} else {
+		classes = domElement.getAttribute( 'class' );
+		if ( !classes ) {
+			return;
+		}
+		classes = classes.split( ' ' );
+		if ( classes.length === 0 || classes.length > 1 ) {
+			return;
+		}
+
 		result.cellBackgroundColor = {
-			colorCode: styleParser.getValueForAttr( this.getAttribute() )
+			colorClass: classes[0]
 		};
-		return;
 	}
-	classes = this.getAttribute( 'class' );
-	if ( !classes ) {
-		return;
-	}
-	classes = classes.split( ' ' );
-	if ( classes.length === 0 || classes.length > 1 ) {
-		return;
-	}
-	// Problem here is that we don't if the class assigned to the td
-	// actually comes from color picker
-	result.cellBackgroundColor = {
-		colorClass: classes[0]
-	};
 };
 
 bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
