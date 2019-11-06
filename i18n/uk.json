@@ -56,5 +56,6 @@
 	"bs-vec-row-duplicate-has-merged": "Вибрані рядки містять комірки, що займають кілька рядків, і тому не можуть бути продубльовані.",
 	"bs-vec-dialog-media-change-file": "Змінити файл",
 	"bs-visualeditor-linkcontext-label-change": "Змінити мітку",
-	"bs-visualeditor-linkcontext-label-label": "Мітка"
+	"bs-visualeditor-linkcontext-label-label": "Мітка",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Прив'язати сторінку опису файлу"
 }

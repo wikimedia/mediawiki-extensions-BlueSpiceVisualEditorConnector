@@ -35,5 +35,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "열 수",
 	"bs-vec-dialog-create-table-title": "표 추가",
 	"bs-visualeditor-linkcontext-label-change": "레이블 변경",
-	"bs-visualeditor-linkcontext-label-label": "레이블"
+	"bs-visualeditor-linkcontext-label-label": "레이블",
+	"bs-visualeditorconnector-dialog-media-meta-link": "파일 설명 문서의 링크 추가"
 }

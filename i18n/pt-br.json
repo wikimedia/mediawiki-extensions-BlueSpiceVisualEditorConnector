@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Addad de Oliveira"
+			"Eduardo Addad de Oliveira",
+			"McDutchie"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Conecta o BlueSpice com o EditorVisual",
@@ -53,5 +54,6 @@
 	"bs-vec-row-duplicate-has-merged": "A linha selecionada contém células que ocupam várias linhas e, portanto, não podem ser duplicadas.",
 	"bs-vec-dialog-media-change-file": "Alterar o arquivo",
 	"bs-visualeditor-linkcontext-label-change": "Alterar etiqueta",
-	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Link para a página de descrição do arquivo"
 }
