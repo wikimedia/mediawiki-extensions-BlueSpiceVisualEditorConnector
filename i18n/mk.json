@@ -33,5 +33,10 @@
 	"apihelp-bs-vec-restbase-mock-description": "Осигурува примерни податоци за повикувања до RESTBase на VisualEditor",
 	"apihelp-bs-vec-restbase-mock-summary": "Осигурува примерни податоци за повикувања до RESTBase на VisualEditor",
 	"apihelp-bs-vec-restbase-mock-param-path": "Патека на RESTBase за којашто да се дадат примерни податоци",
-	"bs-visualeditor-linkcontext-label-label": "Натпис"
+	"bs-visualeditor-linkcontext-label-label": "Натпис",
+	"bs-visualeditorconnector-simple-save-process": "Конфигурациска променлива за да се користи упростен процес на зачувување",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Поврзи ја описната страница на податотеката",
+	"bs-vec-dialog-table-create-number-of-rows": "Број на редови",
+	"bs-vec-dialog-table-create-number-of-columns": "Број на столбови",
+	"bs-visualeditor-linkcontext-label-change": "Промени натпис"
 }

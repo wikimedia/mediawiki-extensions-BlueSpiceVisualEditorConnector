@@ -53,5 +53,6 @@
 	"bs-vec-row-duplicate-has-merged": "'A riga scacchiate tène celle ca vonne sus a cchiù righe, e allore non ge pò essere duplicate.",
 	"bs-vec-dialog-media-change-file": "Cange 'u file",
 	"bs-visualeditor-linkcontext-label-change": "Cange l'etichette",
-	"bs-visualeditor-linkcontext-label-label": "Etichette"
+	"bs-visualeditor-linkcontext-label-label": "Etichette",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Pàgene de descrizione d'u collegamende d'u file"
 }

@@ -4,7 +4,8 @@
 			"Kly",
 			"神樂坂秀吉",
 			"Winston Sung",
-			"予弦"
+			"予弦",
+			"A Retired User"
 		]
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
@@ -54,5 +55,8 @@
 	"bs-vec-contextitem-table-additional-options": "額外選項",
 	"bs-vec-dialog-table-create-number-of-rows": "橫列數目",
 	"bs-vec-dialog-table-create-number-of-columns": "直行數目",
-	"bs-vec-row-duplicate-has-merged": "所選的橫列包含單元格而橫跨成多個橫列，因此不能做出複製。"
+	"bs-vec-row-duplicate-has-merged": "所選的橫列包含單元格而橫跨成多個橫列，因此不能做出複製。",
+	"bs-visualeditorconnector-dialog-media-meta-link": "連結檔案描述頁面",
+	"bs-visualeditor-linkcontext-label-change": "變更標籤",
+	"bs-visualeditor-linkcontext-label-label": "標籤"
 }
