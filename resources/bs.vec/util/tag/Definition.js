@@ -135,8 +135,16 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 			});
 			break;
 		case 'number' :
+			widget = new OO.ui.NumberInputWidget({
+				min: attribute.min || -Infinity,
+				max: attribute.max || Infinity,
+				value: attribute.default
+			});
+			break;
 		case 'percent' :
 			widget = new OO.ui.NumberInputWidget({
+				min: 0,
+				max: 100,
 				value: attribute.default
 			});
 			break;
