@@ -220,7 +220,6 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 			this.search.runLayoutQueue();
 			break;
 		case 'imageInfo':
-		case 'edit':
 			bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
 			if ( !this.selectedImageInfo ) {
 				break;
