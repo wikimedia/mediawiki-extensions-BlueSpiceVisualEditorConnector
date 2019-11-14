@@ -22,6 +22,8 @@ mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 						ve.ui.windowFactory.register( bs.vec.ui.MWSaveDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWMetaDialog );
+						ve.ui.toolFactory.register( bs.vec.ui.MWHelpPopupTool );
+
 						ve.dm.modelRegistry.register( bs.vec.dm.TableRowNode );
 						ve.dm.modelRegistry.register( bs.vec.dm.TableCellNode );
 						ve.ce.nodeFactory.register( bs.vec.ce.TableRowNode );
