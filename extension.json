@@ -129,8 +129,7 @@
 				"bs.vec/ui/AnnotationContextItem.js",
 				"bs.vec/ui/LinkContextItem.js",
 				"bs.vec/ui/MWInternalLinkContextItem.js",
-
-
+				"bs.vec/ui/tools/MWHelpPopupTool.js",
 				"bs.vec/ui/MWLinkAnnotationInspector.js",
 				"bs.vec/ui/MWMediaDialog.js",
 				"bs.vec/ui/MWSaveDialog.js",
