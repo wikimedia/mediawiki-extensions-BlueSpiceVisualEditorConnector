@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Hamilton Abreu",
-			"Fitoschido"
+			"Fitoschido",
+			"Mansil alfalb"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Liga o BlueSpice ao Editor Visual",
@@ -33,6 +34,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Cor do texto",
 	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\"",
 	"bs-visualeditorconnector-dialog-media-link": "Hiperligação para este ficheiro",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Página de descrição do ficheiro de hiperligação",
 	"bs-visualeditorconnector-dialog-media-embed": "Incorporar este ficheiro",
 	"bs-vec-table-inspector-column": "Coluna",
 	"bs-vec-table-inspector-row": "Linha",
@@ -52,5 +54,7 @@
 	"bs-vec-dialog-create-table-title": "Inserir tabela",
 	"bs-vec-widget-text-direction-tooltip": "Texto vertical",
 	"bs-vec-row-duplicate-has-merged": "A linha selecionada contém células que ocupam várias linhas e, portanto, não pode ser duplicada.",
-	"bs-vec-dialog-media-change-file": "Alterar ficheiro"
+	"bs-vec-dialog-media-change-file": "Alterar ficheiro",
+	"bs-visualeditor-linkcontext-label-change": "Alterar etiqueta",
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
 }
