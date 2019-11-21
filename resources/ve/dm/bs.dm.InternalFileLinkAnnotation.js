@@ -23,6 +23,14 @@ bs.vec.dm.InternalFileLinkAnnotation.static.matchFunction = function( domElement
 		return false;
 	}
 	titleObject = mw.Title.newFromText( title );
+	if ( !titleObject ) {
+		// media links may have their file names url decoded
+		titleObject = mw.Title.newFromText( decodeURIComponent( title ) );
+	}
+	if ( !titleObject ) {
+		// broken title. may have invalid chars etc.
+		return false;
+	}
 	if ( titleObject.getNamespaceId() !== namespaceIds.file ) {
 		return false;
 	}
