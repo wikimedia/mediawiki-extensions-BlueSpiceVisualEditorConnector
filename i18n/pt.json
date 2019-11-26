@@ -34,7 +34,7 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Cor do texto",
 	"bs-visualeditorconnector-color-annotation-desc": "Adiciona cores ao texto atribuindo a propriedade \"color\" ou \"class\"",
 	"bs-visualeditorconnector-dialog-media-link": "Hiperligação para este ficheiro",
-	"bs-visualeditorconnector-dialog-media-meta-link": "Página de descrição do ficheiro de hiperligação",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Hiperligar a página de descrição do ficheiro",
 	"bs-visualeditorconnector-dialog-media-embed": "Incorporar este ficheiro",
 	"bs-vec-table-inspector-column": "Coluna",
 	"bs-vec-table-inspector-row": "Linha",
