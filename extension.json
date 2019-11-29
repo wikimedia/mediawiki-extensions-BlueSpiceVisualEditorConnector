@@ -155,7 +155,8 @@
 				"ve/ce/bs.ce.TableRowNode.js",
 				"ve/ce/bs.ce.TableCellNode.js",
 				"ve/ui/TableLineContext.js",
-				"ve/action/TableActionOverride.js"
+				"ve/action/TableActionOverride.js",
+				"ve/ve.dm.MWInternalLinkAnnotation.override.js"
 			],
 			"styles": [
 				"bs.vec/styles/LinkContextItem.css"
