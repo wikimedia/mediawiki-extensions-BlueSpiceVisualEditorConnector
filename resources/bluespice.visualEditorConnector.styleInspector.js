@@ -1,130 +1,180 @@
-mw.hook( 've.activationComplete' ).add( function () {
-	var target, surface, surfaceModel, earlySelection, selection, selectedNode, position = {}, popup;
+var instance = new StyleInspector();
 
-	target = ve.init.target;
-	surface = target.getSurface();
-	if ( surface.getMode() !== 'visual' ) {
-		// Don't support source mode
+function StyleInspector() {
+	this.target = null;
+}
+
+OO.initClass( StyleInspector );
+
+StyleInspector.prototype.setTarget = function( target ) {
+	this.target = target;
+	this.init();
+};
+
+StyleInspector.prototype.init = function() {
+	this.surface = this.target.getSurface();
+	this.surfaceModel = this.surface.getModel();
+	this.popup = null;
+	this.selection = null;
+	this.selectedNode = null;
+	this.earlySelection = null;
+	this.position = {};
+
+	this.enabled = true;
+
+	this.surfaceModel.on( 'select', this.onSelection.bind( this )  );
+	this.target.getToolbar().on( 'updateState', this.onToolbarUpdateState.bind( this ) );
+	$( document ).on( 'mousedown', this.onMouseDown.bind( this ) );
+	$( document ).on( 'mouseup', this.onMouseUp.bind( this ) );
+	$( window ).on( 'resize', this.onResize.bind( this ) );
+};
+
+StyleInspector.prototype.setEnabled = function( val ) {
+	this.enabled = !!val;
+};
+
+StyleInspector.prototype.onSelection = function( s ) {
+	if ( !this.enabled ) {
 		return;
 	}
-	surfaceModel = surface.getModel();
+	if ( !( s instanceof ve.dm.LinearSelection ) ) {
+		return;
+	}
+	this.selection = s;
+	this.selectedNode = this.surfaceModel.getSelectedNode();
+};
 
-	surfaceModel.on( 'select', function( s ) {
-		if ( !( s instanceof ve.dm.LinearSelection ) ) {
-			return;
-		}
-		selection = s;
-		selectedNode = surfaceModel.getSelectedNode();
-	} );
+StyleInspector.prototype.onToolbarUpdateState = function() {
+	if ( !this.enabled ) {
+		return;
+	}
+	this.removePopup();
+};
 
-	target.getToolbar().on ( 'updateState', function() {
-		_removePopup();
-	} );
+StyleInspector.prototype.onMouseDown = function ( e ) {
+	if ( !this.enabled ) {
+		return;
+	}
+	this.earlySelection = null;
+	if ( e.which !== 1 ) {
+		return;
+	}
 
-	$( document ).on( 'mousedown', function( e ) {
-		earlySelection = null;
-		if ( e.which !== 1 ) {
-			return;
-		}
+	if ( this.shouldRemovePopup( e ) ) {
+		this.removePopup();
+	}
 
-		if ( _shouldRemovePopup( e ) ) {
-			_removePopup();
-		}
-
-		earlySelection = selection;
-		position = {
-			start: {
-				x: e.pageX,
-				y: e.pageY
-			}
-		};
-	} );
-
-	$( document ).on( 'mouseup', function( e ) {
-		var range;
-		if ( e.which !== 1 ) {
-			return;
-		}
-		var $target = $( e.target );
-		if ( !$target.hasClass( 've-ce-branchNode' ) && !$target.hasClass( 've-ce-textStyleAnnotation' ) ) {
-			return;
-		}
-		selection = ve.init.target.getSurface().getModel().getSelection();
-		if( !selection || !selection.hasOwnProperty( 'range' ) ) {
-			return;
-		}
-		if ( selectedNode !== null && selectedNode.type !== 'text' ) {
-			// We only show this inspector when plain text is selected,
-			// as soon as there is a node selected, its not plain text
-			return;
-		}
-		position.end = {
+	this.earlySelection = this.selection;
+	this.position = {
+		start: {
 			x: e.pageX,
 			y: e.pageY
-		};
-		range = selection.getRange();
-		if ( range.start === range.end ) {
-			// Empty selection - but maybe we could still show the inspector
-			return;
 		}
-		_inspect( range );
+	};
+};
+
+StyleInspector.prototype.onMouseUp = function ( e ) {
+	if ( !this.enabled ) {
+		return;
+	}
+	var range;
+	if ( e.which !== 1 ) {
+		return;
+	}
+	var $target = $( e.target );
+	if ( !$target.hasClass( 've-ce-branchNode' ) && !$target.hasClass( 've-ce-textStyleAnnotation' ) ) {
+		return;
+	}
+	this.selection = ve.init.target.getSurface().getModel().getSelection();
+	if( !this.selection || !this.selection.hasOwnProperty( 'range' ) ) {
+		return;
+	}
+	if ( this.selectedNode !== null && this.selectedNode.type !== 'text' ) {
+		// We only show this inspector when plain text is selected,
+		// as soon as there is a node selected, its not plain text
+		return;
+	}
+	this.position.end = {
+		x: e.pageX,
+		y: e.pageY
+	};
+	range = this.selection.getRange();
+	if ( range.start === range.end ) {
+		// Empty selection - but maybe we could still show the inspector
+		return;
+	}
+	this.inspect( range );
+};
+
+StyleInspector.prototype.onResize = function() {
+	if ( !this.enabled ) {
+		return;
+	}
+
+	// Traditionally, popup must be attached to the element it appears next to.
+	// Since, with selection, we don't have that element, we attach to the body
+	// and position it to appear underneath the selection. This position becomes
+	// obsolete once the window is resized, so hide the popup and make use select again
+	if ( this.popup ) {
+		this.removePopup();
+	}
+};
+
+StyleInspector.prototype.shouldRemovePopup = function ( e ) {
+	if ( !this.popup ) {
+		return false;
+	}
+	var $target = $( e.target );
+	if ( $target.hasClass( 'bs-vec-styleInspector' ) ) {
+		return false;
+	}
+	if ( $target.parents( '.bs-vec-styleInspector' ).length !== 0 ) {
+		return false;
+	}
+
+	return true;
+};
+
+StyleInspector.prototype.removePopup = function() {
+	if ( !this.popup ) {
+		return;
+	}
+
+	this.popup.$element.remove();
+};
+
+StyleInspector.prototype.inspect = function( range ) {
+	if ( this.popup ) {
+		this.removePopup();
+	}
+
+	this.popup = new bs.vec.ui.TextStylePopup( {
+		position: this.position,
+		surface: this.surface,
+		fragment: this.surfaceModel.getLinearFragment( range, true )
 	} );
 
-	$( window ).on( 'resize', function() {
-		// Traditionally, popup must be attached to the element it appears next to.
-		// Since, with selection, we don't have that element, we attach to the body
-		// and position it to appear underneath the selection. This position becomes
-		// obsolete once the window is resized, so hide the popup and make use select again
-		if ( popup ) {
-			_removePopup();
-		}
+	this.popup.$element.on( 'mousedown', function( e ) {
+		e.preventDefault();
+		e.stopPropagation();
+	} );
+	this.popup.$element.on( 'mouseup', function( e ) {
+		e.preventDefault();
+		e.stopPropagation();
 	} );
 
-	function _shouldRemovePopup( e ) {
-		if ( !popup ) {
-			return false;
-		}
-		var $target = $( e.target );
-		if ( $target.hasClass( 'bs-vec-styleInspector' ) ) {
-			return false;
-		}
-		if ( $target.parents( '.bs-vec-styleInspector' ).length !== 0 ) {
-			return false;
-		}
+	$( document.body ).append( this.popup.$element );
+	this.popup.toggle( true );
+	window.vecBSTextStylePopup = this.popup;
+};
 
-		return true;
+mw.hook( 've.activationComplete' ).add( function () {
+	var target = ve.init.target;
+
+	if ( target.getSurface().getMode() === 'visual' ) {
+		this.setTarget( target );
+		this.setEnabled( true );
+	} else {
+		this.setEnabled( false );
 	}
-
-	function _removePopup() {
-		if ( !popup ) {
-			return;
-		}
-
-		popup.$element.remove();
-	}
-
-	function _inspect( range ) {
-		if ( popup ) {
-			_removePopup();
-		}
-
-		popup = new bs.vec.ui.TextStylePopup( {
-			position: position,
-			surface: surface,
-			fragment: surfaceModel.getLinearFragment( range, true )
-		} );
-
-		popup.$element.on( 'mousedown', function( e ) {
-			e.preventDefault();
-			e.stopPropagation();
-		} );
-		popup.$element.on( 'mouseup', function( e ) {
-			e.preventDefault();
-			e.stopPropagation();
-		} );
-
-		$( document.body ).append( popup.$element );
-		popup.toggle( true );
-		window.vecBSTextStylePopup = popup;
-	}
-} );
+}.bind( instance ) );
