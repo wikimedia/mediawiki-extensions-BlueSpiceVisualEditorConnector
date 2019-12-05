@@ -110,7 +110,8 @@
 			"scripts": [
 				"ve-visualeditorconnector/ve.init.bs.CancelEditButton.js",
 				"ve-visualeditorconnector/ve.init.bs.HideAfterContent.js",
-				"ve-visualeditorconnector/ve.init.bs.PreventCellEditInTableSelectionInIE11.js"
+				"ve-visualeditorconnector/ve.init.bs.PreventCellEditInTableSelectionInIE11.js",
+				"ve-visualeditorconnector/ve.init.bs.ClearStorageAfterSave.js"
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore"
