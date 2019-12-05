@@ -37,8 +37,10 @@ bs.vec.ui.ColorAnnotationCommand.prototype.isExecutable = function ( fragment ) 
 			break;
 		}
 	}
-	return bs.vec.ui.ColorAnnotationCommand.super.prototype.isExecutable.apply( this, arguments )
-		&& hasActualSelection;
+
+	return ve.init.target.getSurface().getMode() === 'visual' &&
+		bs.vec.ui.ColorAnnotationCommand.super.prototype.isExecutable.apply( this, arguments ) &&
+		hasActualSelection;
 };
 
 
