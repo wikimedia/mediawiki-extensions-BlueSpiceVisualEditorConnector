@@ -38,6 +38,9 @@ bs.vec.ui.ColorAnnotationCommand.prototype.isExecutable = function ( fragment ) 
 		}
 	}
 
+	if ( ve.init.target.getSurface() === null ) {
+		return false;
+	}
 	return ve.init.target.getSurface().getMode() === 'visual' &&
 		bs.vec.ui.ColorAnnotationCommand.super.prototype.isExecutable.apply( this, arguments ) &&
 		hasActualSelection;
