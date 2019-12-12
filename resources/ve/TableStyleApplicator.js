@@ -22,6 +22,7 @@ bs.vec.ui.TableStyleApplicator.prototype.apply = function () {
 		if( !this.tableStyleRegistry.hasOwnProperty( styleAttr ) ) {
 			continue;
 		}
+
 		styleAttrValue = this.styles[styleAttr];
 		this.tableStyleRegistry[styleAttr].setValue( styleAttrValue );
 		this.tableStyleRegistry[styleAttr].decorate( this.$element );

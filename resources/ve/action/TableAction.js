@@ -11,10 +11,12 @@ bs.vec.ui.TableAction = function () {
 			continue;
 		}
 		var handler = this.tableStyleRegistry[key];
-		// This will create a function for each command
-		bs.vec.ui.TableAction.prototype[key] = function( args ) {
-			action.executeAction.call( this, action, args );
-		}.bind( handler );
+		if ( handler.shouldOverrideAction() === true ) {
+			// This will create a function for each command
+			bs.vec.ui.TableAction.prototype[key] = function( args ) {
+				action.executeAction.call( this, action, args );
+			}.bind( handler );
+		}
 	}
 };
 
@@ -33,6 +35,8 @@ bs.vec.ui.TableAction.static.methods = Object.keys( bs.vec.registry.TableStyle.r
 /**
  * Gets the selection and runs each appropriate node( row, cell ) though
  * the handler's executeAction method, afterwards, restores the original selection
+ *
+ * Context here is handler for the action, one of this.tableStyleRegistry handlers
  *
  * @param bs.vec.ui.TableAction action
  * @param array args
@@ -175,7 +179,6 @@ bs.vec.ui.TableAction.prototype.replace = function( selection, mode, index, repl
 	}
 	this.deleteRowsOrColumns( matrix, mode, index, index );
 
-
 	position = 'after';
 	if ( index === 0 ) {
 		position = 'before';
@@ -184,6 +187,275 @@ bs.vec.ui.TableAction.prototype.replace = function( selection, mode, index, repl
 	}
 
 	this.insertRowOrCol( tableNode, mode, index, position, null, replacement );
+};
+
+bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
+	var surfaceModel = this.surface.getModel(),
+		selection = surfaceModel.getSelection(),
+		tableNode = selection.getTableNode(),
+		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
+		handler = this.tableStyleRegistry['cellBorder'], isCollapsed;
+
+	if ( args.hasOwnProperty( 'value' ) ) {
+		// Normalization
+		args = args.value;
+	}
+
+	isCollapsed = args.isCollapsed || true;
+
+	// Get all cells that are targeted with this action, decorating them with appropriate attributes
+	// This method will be called recursively internally allowing setting multiple properties on one cell -
+	// eg. top left corner cell need to have both left and top border. This method allows being called
+	// multiple times, once for top and once for left, and returns single cell that has both top and left set
+	var targets = this.getTargetCells( selection, args, isCollapsed );
+
+	this.execBorderStyle( targets, selection, handler.executeAction.bind( this ), args );
+
+	this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
+};
+
+bs.vec.ui.TableAction.prototype.getTargetCells = function( selection, args, isCollapsed ) {
+	var mode = args.mode, cells = [];
+	// Clone selection, so that recursive calls don't screw it up
+	selection = $.extend( {}, selection );
+
+	// For modes "clear", "all" and "none" all cells are targeted anyway, so no need to pre-clear them
+	if ( mode !== 'clear' && mode !== 'all' && !args.internal ) {
+		if ( mode === 'none' ) {
+			// Reset all properties when settings no borders, as it might produce unexpected
+			// results if some borders are set later on
+			cells = this.getTargetCells( selection, { prop: {
+				style: 'none',
+				width: null,
+				color: null
+			}, mode: 'none', internal: true }, isCollapsed );
+			return cells;
+		}
+		// If we are not explicitly setting no borders, just clear out borders for all non-targeted cell sides
+		cells = this.getTargetCells( selection, { prop: { style: 'none' }, mode: 'none', internal: true }, isCollapsed );
+	}
+
+	switch( mode ) {
+		case 'left':
+			cells = cells.concat( this.getCol( selection, selection.startCol, args ) );
+			if ( isCollapsed ) {
+				// In a table with collapsed borders, left border of a cell is actually the right border of the cell to the left
+				// Due to that we need to set the styling to both left border of the cell we are actually targeting
+				// and to the right border of the cell left of it. Same if true for other borders.
+				cells = cells.concat( this.getCol( selection, selection.startCol - 1 , $.extend( args, {
+					mode: 'right',
+					adjacent: true
+				} ) ) );
+			}
+			break;
+		case 'right':
+			cells = cells.concat( this.getCol( selection, selection.endCol, args ) );
+			if ( isCollapsed ) {
+				cells = cells.concat( this.getCol( selection, selection.endCol + 1, $.extend( args, {
+					mode: 'left',
+					adjacent: true
+				} ) ) );
+			}
+			break;
+		case 'top':
+			cells = cells.concat( this.getRow( selection, selection.startRow, args ) );
+			if ( isCollapsed ) {
+				cells =  cells.concat( this.getRow( selection, selection.startRow - 1, $.extend( args, {
+					mode: 'bottom',
+					adjacent: true
+				} ) ) );
+			}
+			break;
+		case 'bottom':
+			cells = cells.concat( this.getRow( selection, selection.endRow, args ) );
+			if ( isCollapsed ) {
+				cells = cells.concat( this.getRow( selection, selection.endRow + 1, $.extend( args, {
+					mode: 'top',
+					adjacent: true
+				} ) ) );
+			}
+			break;
+		case 'topbottom':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'top', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'bottom', internal: true } ), isCollapsed ) );
+			break;
+		case 'leftright':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'left', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'right', internal: true } ), isCollapsed ) );
+			break;
+		case 'round':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'left', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'right', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'top', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'bottom', internal: true } ), isCollapsed ) );
+			break;
+		case 'horizontal':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'top', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, {
+				mode: 'inner', includeEdges: true, internal: true, applyMode: 'bottom'
+			} ), isCollapsed ) );
+			break;
+		case 'roundhorizontal':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'round', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'horizontal', internal: true } ), isCollapsed ) );
+			break;
+		case 'roundvertical':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'round', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, {
+				mode: 'inner', includeEdges: false, internal: true, applyMode: 'right'
+			} ), isCollapsed ) );
+			break;
+		case 'inner':
+			var applyMode = args.applyMode || 'all', i = 0;
+
+			for( i = selection.startRow; i <= selection.endRow ; i++ ) {
+				cells = cells.concat( this.getRow( selection, i, $.extend( args, { mode: applyMode } ) ) );
+			}
+			break;
+		case 'all':
+		case 'none':
+		case 'clear':
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'round', internal: true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'inner', internal:true } ), isCollapsed ) );
+			break;
+	}
+
+	cells = this.mergeCellProperties( cells );
+	return cells;
+};
+
+bs.vec.ui.TableAction.prototype.getCol = function( selection, colIndex, args, cells ) {
+	return this.getTableLine( 'col', selection, colIndex, args, cells );
+};
+
+bs.vec.ui.TableAction.prototype.getRow = function( selection, rowIndex, args, cells ) {
+	return this.getTableLine( 'row', selection, rowIndex, args, cells );
+};
+
+bs.vec.ui.TableAction.prototype.getTableLine = function( type, selection, index, args, cells ) {
+	cells = cells || [];
+	args = this.parseArgs( args );
+
+	var result = [], i;
+	if ( type === 'row' ) {
+		if (
+			index < 0 ||
+			( selection.tableNode.hasOwnProperty( 'matrix' ) && index >= selection.tableNode.matrix.rowNodes.length )
+		) {
+			return result;
+		}
+		for( i = selection.startCol; i <= selection.endCol; i++ ) {
+			if ( this.getCellIndex( index, i, cells ) !== -1 ) {
+				continue;
+			}
+			result.push( $.extend( {
+				row: index,
+				col: i
+			}, args ) );
+		}
+	} else {
+		if (
+			index < 0 ||
+			( selection.tableNode.hasOwnProperty( 'matrix' ) && index >= selection.tableNode.matrix.rowNodes[0].children.length )
+		) {
+			return result;
+		}
+		for ( i = selection.startRow; i <= selection.endRow; i++ ) {
+			if ( this.getCellIndex( i, index, cells ) !== -1 ) {
+				continue;
+			}
+			result.push( $.extend( {
+				row: i,
+				col: index
+			}, args ) );
+		}
+	}
+	return result;
+};
+
+bs.vec.ui.TableAction.prototype.mergeCellProperties = function( cells ) {
+	var newCells = [];
+	for ( var i = 0; i < cells.length; i++ ) {
+		var existingIndex = this.getCellIndex( cells[i].row, cells[i].col, newCells );
+		if ( existingIndex === -1 ) {
+			newCells.push( cells[i] );
+		} else {
+			newCells[existingIndex] = $.extend( newCells[existingIndex], cells[i] );
+		}
+	}
+	return newCells;
+};
+
+bs.vec.ui.TableAction.prototype.getCellIndex = function( row, col, cells ) {
+	for ( var i = 0; i < cells.length; i++ ) {
+		if ( cells[i].row === row && cells[i].col === col ) {
+			return i;
+		}
+	}
+	return -1;
+};
+
+bs.vec.ui.TableAction.prototype.getTargetForCell = function( cells, row, col ) {
+	for ( var i = 0; i < cells.length; i++ ) {
+		if ( cells[i].row === row && cells[i].col === col ) {
+			var data = $.extend( cells[i], {} );
+			delete( data.row );
+			delete( data.col );
+			return data;
+		}
+	}
+	return false;
+};
+
+bs.vec.ui.TableAction.prototype.parseArgs = function( args ) {
+	var res = {}, basePositions = [ 'left', 'right', 'top', 'bottom' ], i;
+	if ( basePositions.indexOf( args.mode ) !== -1 ) {
+		// Only set current mode, others will be filled from existing props
+		res[args.mode] = args.prop;
+		return res;
+	}
+	if ( args.mode === 'all' || args.mode === 'none' || args.mode === 'clear' ) {
+		for ( i = 0; i < basePositions.length; i++ ) {
+			res[basePositions[i]] = args.prop;
+		}
+		return res;
+	}
+};
+
+bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, selection, cb, args ) {
+	var tableNode = selection.getTableNode(),
+		matrix = tableNode.getMatrix(),
+		cellIndex = 0, rowIndex, newRow, cells;
+
+	for( rowIndex = selection.startRow - 1; rowIndex <= selection.endRow + 1; rowIndex++ ) {
+		cells = matrix.getRow( rowIndex );
+		if ( !cells ) {
+			// Row not there - could be out of bounds
+			continue;
+		}
+		for ( cellIndex = 0; cellIndex < cells.length + 1; cellIndex++ ) {
+			if ( !cells[cellIndex] ) {
+				// Cell out of bounds
+				continue;
+			}
+			var targetIndex = this.getCellIndex( rowIndex, cellIndex, targets );
+			if ( targetIndex === -1 ) {
+				continue;
+			}
+
+			var data = $.extend( targets[targetIndex], {} );
+			delete( data.row );
+			delete( data.col );
+			cells[cellIndex] = cb( cells[cellIndex], data, this );
+		}
+
+		newRow = {
+			row: ve.dm.TableRowNode.static.applyStylings( matrix.getRowNode( rowIndex ), {} ),
+			cells: cells
+		};
+
+		this.replace( selection, 'row', rowIndex, newRow );
+	}
 };
 
 ve.ui.actionFactory.register( bs.vec.ui.TableAction );

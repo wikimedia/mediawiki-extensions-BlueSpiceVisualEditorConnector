@@ -33,14 +33,14 @@ bs.vec.ui.ColumnWidthStyle.prototype.executeAction = function( subject, args, ac
 	} else {
 		if ( value.substr( value.length -1 ) === '%' ) {
 			// In order to use percent values for columns, table must have a width
-			// Easiest way is to make it 100%. Doing it like this, will also turn on
-			// "full width" option in table properties, so we are consistent
+			// Easiest way is to make it 100%. Doing it like this, will also
+			// set table width to 100% in table properties, so we are consistent
 			fragment = surfaceModel.getLinearFragment(
 				surfaceModel.getSelection().tableRange, true
 			);
 
 			fragment.changeAttributes( {
-				tablefullwidth: true
+				tableWidth: 100
 			} );
 		}
 		subject.node.element.columnWidth = value;
