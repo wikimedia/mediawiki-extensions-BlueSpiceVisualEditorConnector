@@ -144,6 +144,8 @@
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
+				"ve/dm/bs.dm.MWTableNode.js",
+				"ve/ce/bs.ce.MWTableNode.js",
 				"ve/dm/bs.dm.TableRowNode.js",
 				"ve/dm/bs.dm.TableCellNode.js",
 				"ve/dm/bs.dm.InternalFileLinkAnnotation.js",
@@ -215,6 +217,9 @@
 				"bs.vec/ui/tableStyles/RowHeightStyle.js",
 				"bs.vec/ui/tableStyles/CellBackgroundStyle.js",
 				"bs.vec/ui/tableStyles/TextDirectionStyle.js",
+				"bs.vec/ui/tableStyles/VerticalTextAlignmentStyle.js",
+				"bs.vec/ui/tableStyles/HorizontalTextAlignmentStyle.js",
+				"bs.vec/ui/tableStyles/CellBorderStyle.js",
 				"bs.vec/ui/tableStyles/ColumnWidthStyle.js",
 				"ve/dialog/TableAdditionalOptions.js",
 				"ve/dialog/CreateTableOptions.js",
@@ -226,6 +231,10 @@
 				"ve/widget/ColorCommandWidget.js",
 				"ve/widget/CellBackgroundWidget.js",
 				"ve/widget/TextDirectionWidget.js",
+				"ve/widget/VerticalTextAlignmentWidget.js",
+				"ve/widget/HorizontalTextAlignmentWidget.js",
+				"ve/mixin/TableBorderStylePopup.js",
+				"ve/widget/CellBorderWidget.js",
 				"ve/action/TableAction.js",
 				"ve/command/TableStyleCommands.js",
 				"ve/contextitem/TableContextItem.js",
@@ -233,13 +242,18 @@
 				"ve/contextitem/ColumnStyleContextItem.js",
 				"ve/contextitem/CellStyleContextItem.js",
 				"ui/plugin/TableOptions.js",
-				"ui/plugin/FullWidthOption.js"
+				"ui/plugin/TableWidth.js",
+				"bs.vec/util/StyleParser.js"
+			],
+			"styles": [
+				"bluespice.visualEditorConnector.cellBorder.less"
 			],
 			"dependencies": [
-				"ext.bluespice.extjs"
+				"ext.bluespice.extjs",
+				"ext.oOJSPlus.widgets",
+				"ext.oOJSPlus.icons"
 			],
 			"messages": [
-				"bs-visualeditorconnector-ve-fullwidth-option",
 				"bs-visualeditorconnector-ve-style-option-description",
 				"bs-visualeditorconnector-ve-style-option",
 				"bs-vec-table-inspector-column",
@@ -259,7 +273,43 @@
 				"bs-vec-dialog-action-safe",
 				"bs-vec-dialog-create-table-title",
 				"bs-vec-widget-text-direction-tooltip",
-				"bs-vec-row-duplicate-has-merged"
+				"bs-vec-row-duplicate-has-merged",
+				"bs-vec-table-style-cell-text-vert-align",
+				"bs-vec-table-style-cell-text-vert-align-top",
+				"bs-vec-table-style-cell-text-vert-align-middle",
+				"bs-vec-table-style-cell-text-vert-align-bottom",
+				"bs-vec-table-style-cell-text-hor-align",
+				"bs-vec-table-style-cell-text-hor-align-left",
+				"bs-vec-table-style-cell-text-hor-align-center",
+				"bs-vec-table-style-cell-text-hor-align-right",
+				"bs-vec-table-style-cell-text-hor-align-justify",
+				"bs-vec-ve-table-width-label",
+				"bs-vec-ve-table-width-value-auto",
+				"bs-vec-table-border-clear-all",
+				"bs-vec-table-border-borders",
+				"bs-vec-table-border-width",
+				"bs-vec-table-border-styles",
+				"bs-vec-table-border-color",
+				"bs-vec-table-border-none",
+				"bs-vec-table-border-left",
+				"bs-vec-table-border-top",
+				"bs-vec-table-border-right",
+				"bs-vec-table-border-bottom",
+				"bs-vec-table-border-all",
+				"bs-vec-table-border-leftright",
+				"bs-vec-table-border-topbottom",
+				"bs-vec-table-border-round",
+				"bs-vec-table-border-horizontal",
+				"bs-vec-table-border-roundhorizontal",
+				"bs-vec-table-border-roundvertical",
+				"bs-vec-table-border-width-1",
+				"bs-vec-table-border-width-2",
+				"bs-vec-table-border-width-3",
+				"bs-vec-table-border-width-4",
+				"bs-vec-table-border-solid",
+				"bs-vec-table-border-dashed",
+				"bs-vec-table-border-dotted",
+				"bs-vec-table-border-double"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.styleInspector": {
@@ -330,7 +380,7 @@
 		},
 		"VisualEditorConnectorSimpleSaveProcess": {
 			"value": true,
-			"descriptionmsg": "bs-visualeditorconnector-simple-save-process",
+			"descriptionmsg": "bs-visualeditorconnector-simple-save-process-desc",
 			"public": true
 		},
 		"VisualEditorConnectorTableStyleRegistry": {
@@ -384,6 +434,24 @@
 				{ "class": "col-grey-bg", "name": "Grey" },
 				{ "class": "col-grey-dark-bg", "name": "Dark Grey" },
 				{ "class": "col-black-bg", "name": "Black" }
+			]
+		},
+		"VisualEditorConnectorCellBorderColors": {
+			"value": [
+				{ "code": "#97bfe7" },
+				{ "code": "#5185b9" },
+				{ "code": "#0060df" },
+				{ "code": "#3e5389" },
+				{ "code": "#e49c00" },
+				{ "code": "#259596" },
+				{ "code": "#3fb34c" },
+				{ "code": "#cd41cb" },
+				{ "code": "#b73a3a" },
+				{ "code": "#d2d2d2" },
+				{ "code": "#acacac" },
+				{ "code": "#787878" },
+				{ "code": "#434343" },
+				{ "code": "#000000" }
 			]
 		}
 	},
