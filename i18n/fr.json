@@ -3,7 +3,8 @@
 		"authors": [
 			"Wladek92",
 			"Gomoko",
-			"Derugon"
+			"Derugon",
+			"Thibaut120094"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec VisualEditor",
@@ -20,14 +21,14 @@
 	"bs-visualeditorconnector-ve-fullwidth-option": "Utiliser toute la largeur pour le tableau",
 	"bs-visualeditorconnector-ve-style-option-description": "Choisir le style de tableau",
 	"bs-visualeditorconnector-ve-style-option": "Style de tableau",
-	"apihelp-bs-vec-transformtowikitext-description": "Transforme le HTML de l'Editeur Visuel en texte wiki",
-	"apihelp-bs-vec-transformtowikitext-summary": "Transforme le HTML de l'Editeur Visuel en texte wiki",
-	"apihelp-bs-vec-transformtohtml-description": "Transforme le texte wiki en HTML pour l'Editeur Visuel",
-	"apihelp-bs-vec-transformtohtml-summary": "Transforme le texte wiki en HTML pour l'Editeur Visuel",
-	"apihelp-bs-vec-transformtowikitext-param-html": "HTML de l'Editeur Visuel, à transformer en texte wiki",
-	"apihelp-bs-vec-transformtohtml-param-wikitext": "Texte wiki à transformer en HTML pour l'Editeur Visuel",
-	"apihelp-bs-vec-restbase-mock-description": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
-	"apihelp-bs-vec-restbase-mock-summary": "Fournit un mock pour les appels à RESTBase de l'Editeur Visuel",
+	"apihelp-bs-vec-transformtowikitext-description": "Transforme le HTML de l’Editeur Visuel en texte wiki",
+	"apihelp-bs-vec-transformtowikitext-summary": "Transforme le HTML de l’Editeur Visuel en texte wiki",
+	"apihelp-bs-vec-transformtohtml-description": "Transforme le texte wiki en HTML pour l’Editeur Visuel",
+	"apihelp-bs-vec-transformtohtml-summary": "Transforme le texte wiki en HTML pour l’Editeur Visuel",
+	"apihelp-bs-vec-transformtowikitext-param-html": "HTML de l’Editeur Visuel, à transformer en texte wiki",
+	"apihelp-bs-vec-transformtohtml-param-wikitext": "Texte wiki à transformer en HTML pour l’Editeur Visuel",
+	"apihelp-bs-vec-restbase-mock-description": "Fournit un mock pour les appels à RESTBase de l’Editeur Visuel",
+	"apihelp-bs-vec-restbase-mock-summary": "Fournit un mock pour les appels à RESTBase de l’Editeur Visuel",
 	"apihelp-bs-vec-restbase-mock-param-path": "chemin vers RESTBase à simuler",
 	"apihelp-bs-vec-restbase-mock-param-wikitext": "Wikitext à traiter",
 	"bs-visualeditorconnector-upload-dialog-type": "Flux de travail pour téléverser des fichiers dans MediaDialog",
