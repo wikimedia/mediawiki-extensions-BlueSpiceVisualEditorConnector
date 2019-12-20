@@ -6,6 +6,11 @@ use BlueSpice\SaferEdit\EnvironmentChecker\Base;
 
 class VeActionChecker extends Base {
 
+	/**
+	 *
+	 * @param bool &$result
+	 * @return bool
+	 */
 	public function isEditMode( &$result ) {
 		$veAction = $this->context->getRequest()->getText( 'veaction', '' );
 
@@ -16,6 +21,11 @@ class VeActionChecker extends Base {
 		return true;
 	}
 
+	/**
+	 *
+	 * @param bool &$result
+	 * @return bool
+	 */
 	public function shouldShowWarning( &$result ) {
 		$isEdit = false;
 		$this->isEditMode( $isEdit );
