@@ -1,7 +1,7 @@
 bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.CellBackgroundStyle = function() {
-	bs.vec.ui.RowHeightStyle.super.apply( this );
+	bs.vec.ui.CellBackgroundStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_CELL;
 	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_CELL;
 };
@@ -45,7 +45,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.executeAction = function( subject, args 
 	var	data = {};
 
 	if ( args.value.hasOwnProperty( 'code' ) ) {
-		data = { colorCode:args.value.code };
+		data = { colorCode: args.value.code };
 	} else if ( args.value.hasOwnProperty( 'class' ) ) {
 		data = { colorClass: args.value.class };
 	}
