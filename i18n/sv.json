@@ -15,7 +15,6 @@
 	"bs-visualeditor-nsm-label": "Visual Editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allmän",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancerad",
-	"bs-visualeditorconnector-ve-fullwidth-option": "Använd fullständig bredd för tabell",
 	"bs-visualeditorconnector-ve-style-option-description": "Välj tabellstil",
 	"bs-visualeditorconnector-ve-style-option": "Tabellstilar",
 	"apihelp-bs-vec-transformtowikitext-description": "Omvandlar VisualEditor HTML till wikitext",

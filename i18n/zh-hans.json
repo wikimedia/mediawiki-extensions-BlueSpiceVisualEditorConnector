@@ -12,7 +12,6 @@
 	},
 	"bs-visualeditorconnector-desc": "将 VisualEditor 与 BlueSpice 相连",
 	"bs-visualeditorconnector-enable-visualeditor": "为 BlueSpice 扩展启用 VisualEditor",
-	"bs-visualeditorconnector-simple-save-process": "用于简化保存流程的配置变量",
 	"bs-visualeditorconnector-upload-type-simple": "简单",
 	"bs-visualeditorconnector-cancel-edit": "取消编辑",
 	"bs-visualeditor-nsm-label": "可视化编辑器",
