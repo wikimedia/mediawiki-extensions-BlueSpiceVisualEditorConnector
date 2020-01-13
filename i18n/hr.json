@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Astrind"
+			"Astrind",
+			"Neptune, the Mystic"
 		]
 	},
 	"bs-vec-table-inspector-column": "Stupac",
@@ -21,5 +22,15 @@
 	"bs-vec-dialog-action-safe": "Otkaži",
 	"bs-vec-dialog-create-table-title": "Umetni tablicu",
 	"bs-vec-widget-text-direction-tooltip": "Vertikalni tekst",
-	"bs-vec-row-duplicate-has-merged": "Odabrani red sadrži ćelije koje obuhvaćaju više redova, te se ne mogu duplicirati."
+	"bs-vec-row-duplicate-has-merged": "Odabrani red sadrži ćelije koje obuhvaćaju više redova, te se ne mogu duplicirati.",
+	"bs-vec-table-style-cell-text-vert-align-bottom": "Dno",
+	"bs-vec-table-style-cell-text-vert-align-top": "Vrh",
+	"bs-vec-table-style-cell-text-vert-align-middle": "Sredina",
+	"bs-vec-table-style-cell-text-hor-align-left": "Lijevo",
+	"bs-vec-table-style-cell-text-hor-align-right": "Desno",
+	"bs-vec-table-border-left": "Lijevo",
+	"bs-vec-table-border-top": "Vrh",
+	"bs-vec-table-border-right": "Desno",
+	"bs-vec-table-border-bottom": "Dno",
+	"bs-vec-table-border-leftright": "Lijevo-desno"
 }
