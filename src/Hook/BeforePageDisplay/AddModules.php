@@ -2,8 +2,8 @@
 
 namespace BlueSpice\VisualEditorConnector\Hook\BeforePageDisplay;
 
-use BlueSpice\Hook\BeforePageDisplay;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\Hook\BeforePageDisplay;
 
 class AddModules extends BeforePageDisplay {
 

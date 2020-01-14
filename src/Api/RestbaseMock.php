@@ -2,14 +2,14 @@
 
 namespace BlueSpice\VisualEditorConnector\Api;
 
-use ApiVisualEditor;
 use ApiBase;
+use ApiVisualEditor;
 use BlueSpice\ExtensionAttributeBasedRegistry;
+use BlueSpice\VisualEditorConnector\Api\Format\RestbaseMock as RestbaseMockFormat;
 use BlueSpice\VisualEditorConnector\IPostProcessor;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WikitextContent;
-use BlueSpice\VisualEditorConnector\Api\Format\RestbaseMock as RestbaseMockFormat;
 
 class RestbaseMock extends ApiVisualEditor {
 

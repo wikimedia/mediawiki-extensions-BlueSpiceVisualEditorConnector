@@ -2,9 +2,9 @@
 
 namespace BlueSpice\VisualEditorConnector\Api;
 
+use ApiBase;
 use ApiVisualEditor;
 use ConfigFactory;
-use ApiBase;
 
 class TransformToWikiText extends ApiVisualEditor {
 
