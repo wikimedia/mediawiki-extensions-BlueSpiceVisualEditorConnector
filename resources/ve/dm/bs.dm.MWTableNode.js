@@ -12,7 +12,7 @@ bs.vec.dm.MWTableNode.static.toDataElement = function ( domElements ) {
 	var dataElement = ve.dm.MWTableNode.static.toDataElement( domElements ),
 		styleParser = new bs.vec.util.StyleAttributeParser( domElements[0].getAttribute( 'style' ) || '' );
 
-	if ( styleParser.getValueForAttr( 'width' ) !== null ) {
+	if ( styleParser.getValueForAttr( 'width' ) !== null && dataElement.hasOwnProperty( 'attributes' ) ) {
 		dataElement.attributes.tablewidth = styleParser.getValueForAttr( 'width' );
 	}
 
