@@ -89,5 +89,6 @@
 	"bs-vec-table-border-solid": "Solid",
 	"bs-vec-table-border-dashed": "Dashed",
 	"bs-vec-table-border-dotted":  "Dotted",
-	"bs-vec-table-border-double": "Double"
+	"bs-vec-table-border-double": "Double",
+	"bs-vec-insert-softhyphen-title": "Soft hyphen"
 }
