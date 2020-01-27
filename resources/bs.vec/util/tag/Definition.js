@@ -152,7 +152,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 		default :
 			widget = new OO.ui.TextInputWidget({
 				value: attribute.default,
-				placeholder: mw.msg( attribute.placeholderMsg )
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			});
 	};
 	return widget;
