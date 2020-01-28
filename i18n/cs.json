@@ -21,6 +21,7 @@
 	"bs-vec-table-style-cell-text-hor-align-center": "Doprostřed",
 	"bs-vec-table-style-cell-text-hor-align-right": "Vpravo",
 	"bs-vec-table-style-cell-text-hor-align-justify": "Do bloku",
+	"bs-vec-table-border-clear-all": "Obnovit všechny styly na výchozí",
 	"bs-vec-table-border-borders": "Orámování buněk",
 	"bs-vec-table-border-width": "Šířka rámečku",
 	"bs-vec-table-border-styles": "Styl rámečků",
