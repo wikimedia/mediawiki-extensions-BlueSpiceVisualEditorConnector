@@ -82,5 +82,6 @@
 	"bs-vec-table-border-roundvertical": "Redonda e vertical",
 	"bs-vec-table-border-solid": "Sólido",
 	"bs-vec-table-border-dashed": "Tracejadas",
+	"bs-vec-table-border-dotted": "Pontilhado",
 	"bs-vec-table-border-double": "Dupla"
 }
