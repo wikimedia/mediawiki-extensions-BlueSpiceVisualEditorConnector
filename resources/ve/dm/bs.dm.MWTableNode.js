@@ -22,11 +22,15 @@ bs.vec.dm.MWTableNode.static.toDataElement = function ( domElements ) {
 bs.vec.dm.MWTableNode.static.toDomElements = function ( dataElement, doc ) {
 	var elements = ve.dm.MWTableNode.static.toDomElements( dataElement, doc ),
 		element = elements[0],
-		tableWidth = dataElement.attributes.tablewidth || false,
+		attributes = dataElement.attributes || null,
 		styleParser = new bs.vec.util.StyleAttributeParser( element.getAttribute( 'style' ) || '' );
 
-	if ( tableWidth ) {
-		styleParser.addToStyle( 'width', tableWidth );
+	if ( !attributes || !attributes.tablewidth ) {
+		return [ element ];
+	}
+
+	if ( attributes.tablewidth ) {
+		styleParser.addToStyle( 'width', attributes.tablewidth );
 	} else {
 		styleParser.removeFromStyle( 'width' );
 	}
