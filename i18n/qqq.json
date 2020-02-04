@@ -60,12 +60,12 @@
 	"bs-visualeditor-linkcontext-label-label": "Label for the \"label\" field of a link\n{{Identical|Label}}",
 	"bs-vec-table-style-cell-text-vert-align": "Label for vertical alignment of text control",
 	"bs-vec-table-style-cell-text-vert-align-bottom": "Label for bottom vertical text alignment option",
-	"bs-vec-table-style-cell-text-vert-align-top": "Label for top vertical text alignment option",
+	"bs-vec-table-style-cell-text-vert-align-top": "Label for top vertical text alignment option\n{{Identical|Top}}",
 	"bs-vec-table-style-cell-text-vert-align-middle": "Label for middle vertical text alignment option",
 	"bs-vec-table-style-cell-text-hor-align": "Label for horizontal alignment of text control",
 	"bs-vec-table-style-cell-text-hor-align-left": "Label for left text alignment option",
 	"bs-vec-table-style-cell-text-hor-align-center": "Label for center text alignment option",
-	"bs-vec-table-style-cell-text-hor-align-right": "Label for right text alignment option",
+	"bs-vec-table-style-cell-text-hor-align-right": "Label for right text alignment option\n[[Identical|Right}}",
 	"bs-vec-table-style-cell-text-hor-align-justify": "Label for justify text alignment option",
 	"bs-vec-ve-table-width-label": "Label for table width control",
 	"bs-vec-ve-table-width-value-auto": "Label for table width, when no width is specified. Should not be longer than 6 characters",
@@ -92,6 +92,6 @@
 	"bs-vec-table-border-width-4": "{{notranslate}}",
 	"bs-vec-table-border-solid": "Label for button that set cell border style to solid",
 	"bs-vec-table-border-dashed": "Label for button that set cell border style to dashed",
-	"bs-vec-table-border-dotted":  "Label for button that set cell border style to dotted",
+	"bs-vec-table-border-dotted": "Label for button that set cell border style to dotted",
 	"bs-vec-table-border-double": "Label for button that set cell border style to double"
 }

@@ -33,5 +33,18 @@
 	"bs-vec-widget-text-direction-tooltip": "Texo vertical",
 	"bs-visualeditorconnector-ve-style-option-description": "Elige el tipo de tabla",
 	"bs-visualeditor-linkcontext-label-change": "Cambiar etiqueta",
-	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta",
+	"bs-vec-table-style-cell-text-hor-align": "Alineación de texto",
+	"bs-vec-table-style-cell-text-hor-align-justify": "Justificar",
+	"bs-vec-ve-table-width-label": "Anchura de tabla",
+	"bs-vec-ve-table-width-value-auto": "Automático",
+	"bs-vec-table-border-clear-all": "Restablecer todos los estilos",
+	"bs-vec-table-border-borders": "Bordes de celdas",
+	"bs-vec-table-border-width": "Anchura de borde",
+	"bs-vec-table-border-styles": "Estilos de bordes",
+	"bs-vec-table-border-color": "Color de borde",
+	"bs-vec-table-border-none": "Ninguno",
+	"bs-vec-table-border-all": "Todo",
+	"bs-vec-table-border-solid": "Sólido",
+	"bs-vec-table-border-dotted": "Punteado"
 }

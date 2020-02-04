@@ -3,7 +3,8 @@
 		"authors": [
 			"Hamilton Abreu",
 			"Fitoschido",
-			"Mansil alfalb"
+			"Mansil alfalb",
+			"Mansil"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Liga o BlueSpice ao Editor Visual",
@@ -56,5 +57,29 @@
 	"bs-vec-dialog-media-change-file": "Alterar ficheiro",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Hiperligar a página de descrição do ficheiro",
 	"bs-visualeditor-linkcontext-label-change": "Alterar etiqueta",
-	"bs-visualeditor-linkcontext-label-label": "Etiqueta"
+	"bs-visualeditor-linkcontext-label-label": "Etiqueta",
+	"bs-vec-table-style-cell-text-vert-align-bottom": "Base",
+	"bs-vec-table-style-cell-text-vert-align-top": "Topo",
+	"bs-vec-table-style-cell-text-vert-align-middle": "Centro",
+	"bs-vec-table-style-cell-text-hor-align": "Alinhamento do texto",
+	"bs-vec-table-style-cell-text-hor-align-left": "Esquerda",
+	"bs-vec-table-style-cell-text-hor-align-center": "Centro",
+	"bs-vec-table-style-cell-text-hor-align-right": "Direita",
+	"bs-vec-table-style-cell-text-hor-align-justify": "Justificar",
+	"bs-vec-ve-table-width-label": "Largura da tabela",
+	"bs-vec-ve-table-width-value-auto": "Automático",
+	"bs-vec-table-border-borders": "Margens da célula",
+	"bs-vec-table-border-width": "Largura da margem",
+	"bs-vec-table-border-styles": "Estilos de margem",
+	"bs-vec-table-border-color": "Cor da margem",
+	"bs-vec-table-border-none": "Nenhuma",
+	"bs-vec-table-border-left": "Esquerda",
+	"bs-vec-table-border-top": "Topo",
+	"bs-vec-table-border-right": "Direita",
+	"bs-vec-table-border-bottom": "Base",
+	"bs-vec-table-border-all": "Tudo",
+	"bs-vec-table-border-horizontal": "Horizontal",
+	"bs-vec-table-border-roundhorizontal": "Redonda e horizontal",
+	"bs-vec-table-border-roundvertical": "Redonda e vertical",
+	"bs-vec-table-border-double": "Dupla"
 }

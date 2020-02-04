@@ -7,7 +7,9 @@
 			"神樂坂秀吉",
 			"Viztor",
 			"予弦",
-			"A Retired User"
+			"A Retired User",
+			"Josephine W.",
+			"沈澄心"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit": "取消编辑",
@@ -38,5 +40,10 @@
 	"bs-vec-table-style-row-height": "行高（像素）",
 	"bs-vec-dialog-action-done": "完成",
 	"bs-vec-dialog-action-safe": "取消",
-	"bs-vec-dialog-media-change-file": "改变文件"
+	"bs-vec-dialog-media-change-file": "改变文件",
+	"bs-vec-ve-table-width-value-auto": "自动",
+	"bs-vec-table-border-none": "无",
+	"bs-vec-table-border-left": "左边",
+	"bs-vec-table-border-bottom": "底部",
+	"bs-vec-table-border-double": "两倍"
 }
