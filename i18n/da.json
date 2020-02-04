@@ -17,5 +17,13 @@
 	"bs-vec-dialog-action-done": "Udført",
 	"bs-vec-dialog-action-safe": "Annullér",
 	"bs-vec-dialog-create-table-title": "Indsæt tabel",
-	"bs-vec-dialog-media-change-file": "Ændre fil"
+	"bs-vec-dialog-media-change-file": "Ændre fil",
+	"bs-vec-table-style-cell-text-vert-align-bottom": "Bund",
+	"bs-vec-table-style-cell-text-vert-align-middle": "Midt",
+	"bs-vec-table-style-cell-text-hor-align-left": "Venstre",
+	"bs-vec-table-style-cell-text-hor-align-right": "Højre",
+	"bs-vec-table-border-none": "Ingen",
+	"bs-vec-table-border-left": "Venstre",
+	"bs-vec-table-border-right": "Højre",
+	"bs-vec-table-border-bottom": "Bund"
 }
