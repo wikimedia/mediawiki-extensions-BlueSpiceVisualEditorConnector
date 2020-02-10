@@ -1,35 +1,22 @@
 bs.util.registerNamespace( 'bs.ui.plugin' );
 
-var styleclasses = mw.config.get( 'bsgVisualEditorConnectorTableStyleRegistry' );
-
 bs.ui.plugin.TableOptions = function ( config ) {
+	this.styleclasses = mw.config.get( 'bsgVisualEditorConnectorTableStyleRegistry' );
+
 	bs.ui.plugin.TableOptions.super.call( this, config );
 };
 
 OO.inheritClass( bs.ui.plugin.TableOptions, bs.vec.ui.plugin.MWTableDialog );
 
-
-
-// object styleclass has properties displayname->classname
-for ( var style in styleclasses ) {
-	if ( !styleclasses.hasOwnProperty( style ) ) {
-		continue;
-	}
-	var classname = styleclasses[style];
-	var obj = {};
-	obj[classname] = true;
-	ve.dm.MWTableNode.static.classAttributes[classname] = obj;
-}
-
 bs.ui.plugin.TableOptions.prototype.initialize = function () {
-	var TableOptions;
+	var tableOptionsLayout;
 
 	var options = [];
-	for ( var style in styleclasses ) {
-		if ( !styleclasses.hasOwnProperty( style ) ) {
+	for ( var style in this.styleclasses ) {
+		if ( !this.styleclasses.hasOwnProperty( style ) ) {
 			continue;
 		}
-		var classname = styleclasses[style];
+		var classname = this.styleclasses[style];
 		var option = new OO.ui.MenuOptionWidget( {
 			data: classname, label: style
 		} );
@@ -41,74 +28,68 @@ bs.ui.plugin.TableOptions.prototype.initialize = function () {
 			items: options
 		}
 	} );
-	TableOptions = new OO.ui.FieldLayout( this.component.TableOptions, {
+	tableOptionsLayout = new OO.ui.FieldLayout( this.component.TableOptions, {
 		align: 'left',
 		label: ve.msg( 'bs-visualeditorconnector-ve-style-option' )
 	} );
 
-	this.component.TableOptions.connect( this.component, {change: 'updateActions'} );
-	this.component.panel.$element.append( TableOptions.$element );
+	this.component.TableOptions.connect( this.component, { change: 'updateActions' } );
+	this.component.panel.$element.append( tableOptionsLayout.$element );
 
 };
 
 bs.ui.plugin.TableOptions.prototype.getValues = function ( values ) {
+	return ve.extendObject( values, { tableoption: this.getActiveClass() } );
+};
 
-	var tableNode = this.component.getFragment().getSelection().getTableNode();
-	var tableoption = tableNode.getAttributes();
-	var activeclass = '';
-	var originalClasses = tableoption.originalClasses;
-
-	if ( originalClasses ) {
-		var classes = originalClasses.split( " " );
-		for ( var style in styleclasses ) {
-			if ( !styleclasses.hasOwnProperty( style ) ) {
-				continue;
-			}
-			var classname = styleclasses[style];
-			if ( classes.indexOf( classname ) !== -1 ) {
-				if ( !activeclass ) {
-					activeclass = classname;
-				}
+bs.ui.plugin.TableOptions.prototype.getActiveClass = function( fragment, fromOriginalClasses ) {
+	fragment = fragment || this.component.getFragment();
+	var options = $.extend( {}, fragment.getSelection().getTableNode().getAttributes() );
+	if ( fromOriginalClasses ) {
+		var originalClasses = options.originalClasses.split( ' ' );
+		for( var x = 0; x < originalClasses.length; x++ ) {
+			if (
+				Object.values( this.styleclasses ).indexOf( originalClasses[x] ) !== -1 &&
+				!options.hasOwnProperty( originalClasses[x] )
+			) {
+				options[originalClasses[x]] = true;
 			}
 		}
 	}
-	return ve.extendObject( values, {tableoption: activeclass} );
+
+	for ( var style in this.styleclasses ) {
+		if ( !this.styleclasses.hasOwnProperty( style ) ) {
+			continue;
+		}
+		if ( !options.hasOwnProperty( this.styleclasses[style] ) ) {
+			continue;
+		}
+		if ( options[this.styleclasses[style]] === true ) {
+			return this.styleclasses[style];
+		}
+	}
+
+	if ( !fromOriginalClasses ) {
+		return this.getActiveClass( fragment, true );
+	}
+
+	return false;
 };
 
-bs.ui.plugin.TableOptions.prototype.getSetupProcess = function ( parentProcess, data ) {
+bs.ui.plugin.TableOptions.prototype.getSetupProcess = function ( parentProcess ) {
 	parentProcess.next( function () {
-		var tableNode = this.component.getFragment().getSelection().getTableNode();
-		var tableoption = tableNode.getAttributes();
-		var originalClasses = tableoption.originalClasses;
+		this.fragment = this.component.getFragment();
+		var activeClass = this.getActiveClass( this.fragment );
 
-		if ( originalClasses ) {
-			var classes = originalClasses.split( " " );
-			var activeclass;
-			for ( var style in styleclasses ) {
-				if ( !styleclasses.hasOwnProperty( style ) ) {
-					continue;
-				}
-				var classname = styleclasses[style];
-				if ( classes.indexOf( classname ) !== -1 ) {
-					if ( activeclass ) {
-						var index = classes.indexOf( classname );
-						if ( index !== -1 ) {
-							classes.splice( index, 1 );
-						}
-					} else {
-						activeclass = classname;
-					}
-				}
-			}
-			if ( activeclass ) {
-				var selected = this.component.TableOptions.getMenu().findItemFromData( activeclass );
-				this.component.TableOptions.getMenu().selectItem( selected );
-			}
-			ve.extendObject( this.component.initialValues, {
-				tableoption: activeclass
-			} );
+		if ( activeClass ) {
+			var selected = this.component.TableOptions.getMenu().findItemFromData( activeClass );
+			this.component.TableOptions.getMenu().selectItem( selected );
 		}
+		ve.extendObject( this.component.initialValues, {
+			tableoption: activeClass
+		} );
 	}, this );
+
 	return parentProcess;
 };
 
@@ -117,7 +98,7 @@ bs.ui.plugin.TableOptions.prototype.getActionProcess = function ( parentProcess,
 		var initialFragment, surfaceModel, fragment;
 
 		if ( action === 'done' ) {
-			initialFragment = this.component.getFragment();
+			initialFragment = this.component.getFragment() || this.fragment;
 			if ( !initialFragment ) {
 				return;
 			}
@@ -149,8 +130,23 @@ bs.ui.plugin.TableOptions.prototype.getActionProcess = function ( parentProcess,
 };
 
 bs.vec.registerComponentPlugin(
-		bs.vec.components.TABLE_DIALOG,
-		function ( component ) {
-			return new bs.ui.plugin.TableOptions( component );
-		}
+	bs.vec.components.TABLE_DIALOG,
+	function ( component ) {
+		return new bs.ui.plugin.TableOptions( component );
+	}
 );
+
+( function registerClasses() {
+	var styleclasses = mw.config.get( 'bsgVisualEditorConnectorTableStyleRegistry' );
+
+	// Add class attributes
+	for ( var style in styleclasses ) {
+		if ( !styleclasses.hasOwnProperty( style ) ) {
+			continue;
+		}
+		var classname = styleclasses[style];
+		var obj = {};
+		obj[classname] = true;
+		ve.dm.MWTableNode.static.classAttributes[classname] = obj;
+	}
+} )();
