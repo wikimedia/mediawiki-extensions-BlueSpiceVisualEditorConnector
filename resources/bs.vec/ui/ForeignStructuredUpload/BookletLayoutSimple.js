@@ -30,13 +30,6 @@ bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple.prototype.onUploadFormChan
 	this.emit( 'uploadValid', valid );
 };
 
-bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple.prototype.clear = function () {
-	mw.ForeignStructuredUpload.BookletLayout.parent.prototype.clear.call( this );
-
-	this.categoriesWidget.setItemsFromData( [] );
-	this.dateWidget.setValue( '' ).setValidityFlag( true );
-};
-
 bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple.prototype.renderInfoForm = function () {
 	bs.vec.ui.ForeignStructuredUpload.BookletLayoutSimple.super.prototype.renderInfoForm.apply( this );
 	this.descriptionWidget.setRequired( false );
