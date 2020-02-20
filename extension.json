@@ -159,7 +159,8 @@
 				"ve/ui/TableLineContext.js",
 				"ve/action/TableActionOverride.js",
 				"ve/ve.dm.MWInternalLinkAnnotation.override.js",
-				"ve/ve.init.mw.DesktopArticleTarget.override.js"
+				"ve/ve.init.mw.DesktopArticleTarget.override.js",
+				"ve/ui/DataTransferItem.js"
 			],
 			"styles": [
 				"bs.vec/styles/LinkContextItem.css"
@@ -454,6 +455,10 @@
 				{ "code": "#434343" },
 				{ "code": "#000000" }
 			]
+		},
+		"VisualEditorConnectorPasteFilename": {
+			"value": "{{timestamp}}",
+			"description": "Default name pasted files will receive. Tokens {{timestamp}}, {{random}} and {{pagename}} can be used to generate unique parts of the name. This name should not include the extension"
 		}
 	},
 	"Hooks": {
