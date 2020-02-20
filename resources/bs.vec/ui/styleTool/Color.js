@@ -7,7 +7,7 @@ bs.vec.ui.ColorStyleTool = function( config ) {
 	pickerCfg = {
 		framed: false
 	};
-	customColors = mw.config.get( 'bsVECColorPickerColors' );
+	customColors = config.customColors ||  mw.config.get( 'bsVECColorPickerColors' );
 	if ( customColors && customColors.length > 0 ) {
 		pickerCfg.colors = customColors;
 	}
