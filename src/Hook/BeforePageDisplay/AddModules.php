@@ -71,6 +71,11 @@ class AddModules extends BeforePageDisplay {
 
 		$uploadType = $this->getConfig()->get( 'VisualEditorConnectorUploadDialogType' );
 		$this->out->addJsConfigVars( 'bsVECUploadType', $uploadType );
+
+		$this->out->addJsConfigVars(
+			'bsgVisualEditorConnectorPasteFilename',
+			$this->getConfig()->get( 'VisualEditorConnectorPasteFilename' )
+		);
 	}
 
 }
