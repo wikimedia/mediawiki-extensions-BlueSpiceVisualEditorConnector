@@ -5,7 +5,8 @@ bs.vec.ui.ColorStyleTool = function( config ) {
 
 	this.value = {};
 	pickerCfg = {
-		framed: false
+		framed: false,
+		icon: this.getIcon()
 	};
 	customColors = config.customColors ||  mw.config.get( 'bsVECColorPickerColors' );
 	if ( customColors && customColors.length > 0 ) {
@@ -32,7 +33,7 @@ bs.vec.ui.ColorStyleTool.prototype.getName = function() {
 };
 
 bs.vec.ui.ColorStyleTool.prototype.getIcon = function() {
-	return 'highlight';
+	return 'textColor';
 };
 
 bs.vec.ui.ColorStyleTool.prototype.getLabel = function() {

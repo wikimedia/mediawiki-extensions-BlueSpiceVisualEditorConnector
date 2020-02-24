@@ -103,6 +103,7 @@ StyleInspector.prototype.onMouseUp = function ( e ) {
 		// Empty selection - but maybe we could still show the inspector
 		return;
 	}
+
 	this.inspect( range );
 };
 
@@ -141,6 +142,7 @@ StyleInspector.prototype.removePopup = function() {
 	}
 
 	this.popup.$element.remove();
+	this.popup = null;
 };
 
 StyleInspector.prototype.inspect = function( range ) {
@@ -165,7 +167,9 @@ StyleInspector.prototype.inspect = function( range ) {
 
 	$( document.body ).append( this.popup.$element );
 	this.popup.toggle( true );
-	window.vecBSTextStylePopup = this.popup;
+	window.vecBSTextStylePopup = function() {
+		return this.popup;
+	}.bind( this );
 };
 
 mw.hook( 've.activationComplete' ).add( function () {
