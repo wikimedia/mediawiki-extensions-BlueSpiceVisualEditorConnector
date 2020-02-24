@@ -19,19 +19,19 @@ OO.inheritClass( bs.vec.ui.ColorAnnotationCommand, ve.ui.Command );
  * @inheritdoc
  */
 bs.vec.ui.ColorAnnotationCommand.prototype.execute = function () {
-	let popup = window.vecBSTextStylePopup;
+	var popup = window.hasOwnProperty( 'vecBSTextStylePopup' ) ? vecBSTextStylePopup() : null;
 	if ( popup ) {
-		let colorTool = popup.getTool( 'textStyle/color' );
+		var colorTool = popup.getTool( 'textStyle/color' );
 		colorTool.togglePicker( true );
 	}
 };
 
 bs.vec.ui.ColorAnnotationCommand.prototype.isExecutable = function ( fragment ) {
 	// Parent method
-	let ranges = fragment.getSelection().getRanges();
-	let hasActualSelection = false;
-	for( let i = 0; i < ranges.length; i++ ) {
-		let range = ranges[i];
+	var ranges = fragment.getSelection().getRanges();
+	var hasActualSelection = false;
+	for( var i = 0; i < ranges.length; i++ ) {
+		var range = ranges[i];
 		if ( range.from !== range.to ) {
 			hasActualSelection = true;
 			break;
