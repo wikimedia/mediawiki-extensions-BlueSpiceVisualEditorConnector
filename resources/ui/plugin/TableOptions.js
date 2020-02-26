@@ -46,6 +46,9 @@ bs.ui.plugin.TableOptions.prototype.getActiveClass = function( fragment, fromOri
 	fragment = fragment || this.component.getFragment();
 	var options = $.extend( {}, fragment.getSelection().getTableNode().getAttributes() );
 	if ( fromOriginalClasses ) {
+		if ( !options.hasOwnProperty( 'originalClasses' ) ) {
+			return false;
+		}
 		var originalClasses = options.originalClasses.split( ' ' );
 		for( var x = 0; x < originalClasses.length; x++ ) {
 			if (
