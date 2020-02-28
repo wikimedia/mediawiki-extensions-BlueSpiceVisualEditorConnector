@@ -232,6 +232,9 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 			break;
 		default:
 			bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
+			if ( panel === 'edit' ) {
+				this.sizeWidget.setDisabled( this.imageModel.getType() === 'frame' );
+			}
 			break;
 	}
 	this.currentPanel = panel || 'imageinfo';
