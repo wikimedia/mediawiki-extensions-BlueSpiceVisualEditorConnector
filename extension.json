@@ -37,7 +37,8 @@
 				"ext.bluespice.visualEditorConnector.tablestyleplugin"
 			],
 			"TagDefinitions": [],
-			"PostProcessors": {}
+			"PostProcessors": {},
+			"PreProcessors": {}
 		},
 		"BlueSpiceSimpleFarmer": {
 			"DynamicConfigurationFactories": {
