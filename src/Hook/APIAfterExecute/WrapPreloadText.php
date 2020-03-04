@@ -39,6 +39,9 @@ class WrapPreloadText extends APIAfterExecute {
 		if ( empty( $data['visualeditor'] ) ) {
 			return true;
 		}
+		if ( empty( $data['visualeditor']['content'] ) ) {
+			return true;
+		}
 	}
 
 }
