@@ -29,7 +29,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "VisualEditor RESTBase çağrıları için bir sahte sağlar",
 	"apihelp-bs-vec-restbase-mock-summary": "VisualEditor RESTBase çağrıları için bir sahte sağlar",
 	"apihelp-bs-vec-restbase-mock-param-path": "Atılacak RESTBase yolu",
-	"apihelp-bs-vec-restbase-mock-param-wikitext": "İşlenecek wiki metin",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "İşlenecek vikimetin",
 	"bs-visualeditorconnector-upload-dialog-type": "MediaDialog'a dosya yüklemek için iş akışı",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Metin rengi",
 	"bs-visualeditorconnector-color-annotation-desc": "\"Color\" veya \"class\" özelliğini atayarak metne renkler ekler",
