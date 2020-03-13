@@ -364,6 +364,20 @@
 			"dependencies": [
 				"ext.visualEditor.mwcore"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.SoftHyphen": {
+			"scripts": [
+				"ve/command/SoftHyphen.js",
+				"ve/tool/InsertSoftHyphen.js",
+				"ve/ce/bs.ce.SoftHyphenNode.js",
+				"ve/dm/bs.dm.SoftHyphenNode.js"
+			],
+			"dependencies": [
+				"ext.bluespice.visualEditorConnector"
+			],
+			"messages": [
+				"bs-vec-insert-softhyphen-title"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
