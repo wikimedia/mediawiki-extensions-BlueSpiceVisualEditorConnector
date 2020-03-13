@@ -36,7 +36,7 @@ class RestbaseMock extends ApiVisualEditor {
 			$this->mockWikiTextToHtml( $pageName );
 		}
 		if ( strpos( $path, 'v1/page/html/' ) === 0 ) {
-			$pageName = preg_replace( '#^v1/page/html/#', '', $path );
+			$pageName = preg_replace( '#^v1/page/html/(.*?)(\?redirect=false)$#is', '$1', $path );
 			$this->mockGetPageHtml( $pageName );
 		}
 	}
