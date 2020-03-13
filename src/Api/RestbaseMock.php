@@ -6,6 +6,7 @@ use ApiVisualEditor;
 use ApiBase;
 use BlueSpice\ExtensionAttributeBasedRegistry;
 use BlueSpice\VisualEditorConnector\IPostProcessor;
+use BlueSpice\VisualEditorConnector\IPreProcessor;
 use MediaWiki\MediaWikiServices;
 use Title;
 use WikitextContent;
@@ -59,6 +60,7 @@ class RestbaseMock extends ApiVisualEditor {
 	private function mockWikiTextToHtml( $pageName ) {
 		$wikitext = $this->getParameter( 'wikitext' );
 
+		$this->executePreProcessors( $pageName, $wikitext );
 		$html = $this->requestRestbase(
 			'POST',
 			'transform/wikitext/to/html/' . urlencode( $pageName ),
@@ -88,6 +90,8 @@ class RestbaseMock extends ApiVisualEditor {
 
 		if ( $content instanceof WikitextContent ) {
 			$rawWikiText = $content->getNativeData();
+			$this->executePreProcessors( $pageName, $rawWikiText );
+
 			$html = $this->requestRestbase(
 				'POST',
 				'transform/wikitext/to/html/' . urlencode( $title->getPrefixedDBkey() ),
@@ -189,6 +193,10 @@ class RestbaseMock extends ApiVisualEditor {
 		}
 	}
 
+	/**
+	 *
+	 * @return IPostProcessor[]
+	 */
 	private function getPostProcessors() {
 		$registry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceVisualEditorConnectorPostProcessors'
@@ -202,6 +210,40 @@ class RestbaseMock extends ApiVisualEditor {
 			}
 			$processor = call_user_func( $factoryCallback );
 			if ( !$processor instanceof IPostProcessor ) {
+				continue;
+			}
+			$processors[] = $processor;
+		}
+		return $processors;
+	}
+
+	/**
+	 * @param string $pageName
+	 * @param string &$wikitext
+	 */
+	private function executePreProcessors( $pageName, &$wikitext ) {
+		foreach ( $this->getPreProcessors() as $processor ) {
+			$wikitext = $processor->process( $pageName, $wikitext );
+		}
+	}
+
+	/**
+	 *
+	 * @return IPreProcessor[]
+	 */
+	private function getPreProcessors() {
+		$registry = new ExtensionAttributeBasedRegistry(
+			'BlueSpiceVisualEditorConnectorPreProcessors'
+		);
+
+		$processors = [];
+		foreach ( $registry->getAllKeys() as $key ) {
+			$factoryCallback = $registry->getValue( $key );
+			if ( !is_callable( $factoryCallback ) ) {
+				continue;
+			}
+			$processor = call_user_func( $factoryCallback );
+			if ( !$processor instanceof IPreProcessor ) {
 				continue;
 			}
 			$processors[] = $processor;
