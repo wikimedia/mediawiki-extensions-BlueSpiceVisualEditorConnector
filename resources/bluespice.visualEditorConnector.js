@@ -200,6 +200,7 @@
 	bs.vec.getCategoriesFromTarget = getCategoriesFromTarget;
 	bs.vec.getCategoriesFromMetadata = getCategoriesFromMetadata;
 	bs.vec.getCategoriesFromHtml = getCategoriesFromHtml;
+	bs.vec.transformToWikiText = _transformToWikiText;
 
 	// Hide QM tab
 	var $qmControls;
