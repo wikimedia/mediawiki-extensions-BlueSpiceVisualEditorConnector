@@ -32,7 +32,8 @@ class AddModules extends BeforePageDisplay {
 		$this->out->addModules( [
 			"ext.bluespice.visualEditorConnector",
 			"ext.bluespice.visualEditorConnector.styleInspector",
-			'ext.bluespice.visualEditorConnector.textColor'
+			"ext.bluespice.visualEditorConnector.textColor",
+			"ext.bluespice.visualEditorConnector.SoftHyphen"
 		] );
 		$this->out->addJsConfigVars(
 			'bsVECColorPickerColors',
