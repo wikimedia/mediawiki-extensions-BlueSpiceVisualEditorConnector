@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Eduardo Addad de Oliveira",
-			"McDutchie"
+			"McDutchie",
+			"Rodrigo codignoli"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Conecta o BlueSpice com o EditorVisual",
@@ -83,5 +84,6 @@
 	"bs-vec-table-border-solid": "Sólido",
 	"bs-vec-table-border-dashed": "Tracejadas",
 	"bs-vec-table-border-dotted": "Pontilhado",
-	"bs-vec-table-border-double": "Dupla"
+	"bs-vec-table-border-double": "Dupla",
+	"bs-vec-insert-softhyphen-title": "Hífen suave"
 }

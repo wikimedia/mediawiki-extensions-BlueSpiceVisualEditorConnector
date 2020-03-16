@@ -88,5 +88,6 @@
 	"bs-vec-table-border-solid": "Katı",
 	"bs-vec-table-border-dashed": "Kesik",
 	"bs-vec-table-border-dotted": "Noktalı",
-	"bs-vec-table-border-double": "Çift"
+	"bs-vec-table-border-double": "Çift",
+	"bs-vec-insert-softhyphen-title": "Esnek kısa çizgi"
 }
