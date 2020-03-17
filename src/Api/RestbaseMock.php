@@ -82,7 +82,10 @@ class RestbaseMock extends ApiVisualEditor {
 		$result = $this->getResult();
 
 		$title = \Title::newFromID( $revision->getPageId() );
-		if ( !$title->userCan( 'read' ) ) {
+		if ( !MediaWikiServices::getInstance()
+			->getPermissionManager()
+			->userCan( 'read', $this->getUser(), $title )
+		) {
 			return;
 		}
 
