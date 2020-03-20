@@ -46,5 +46,6 @@
 	"bs-vec-table-border-none": "Ninguno",
 	"bs-vec-table-border-all": "Todo",
 	"bs-vec-table-border-solid": "Sólido",
-	"bs-vec-table-border-dotted": "Punteado"
+	"bs-vec-table-border-dotted": "Punteado",
+	"bs-vec-insert-softhyphen-title": "Guion discrecional"
 }
