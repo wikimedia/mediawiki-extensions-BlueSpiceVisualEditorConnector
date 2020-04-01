@@ -90,5 +90,6 @@
 	"bs-vec-table-border-solid": "Pleine",
 	"bs-vec-table-border-dashed": "Tirets",
 	"bs-vec-table-border-dotted": "Pointillés",
-	"bs-vec-table-border-double": "Double"
+	"bs-vec-table-border-double": "Double",
+	"bs-vec-insert-softhyphen-title": "Trait d’union léger"
 }

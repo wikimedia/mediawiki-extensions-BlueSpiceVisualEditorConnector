@@ -31,7 +31,7 @@
 	"apihelp-bs-vec-restbase-mock-description": "VisualEditor RESTBase çağrıları için bir sahte sağlar",
 	"apihelp-bs-vec-restbase-mock-summary": "VisualEditor RESTBase çağrıları için bir sahte sağlar",
 	"apihelp-bs-vec-restbase-mock-param-path": "Atılacak RESTBase yolu",
-	"apihelp-bs-vec-restbase-mock-param-wikitext": "İşlenecek wiki metin",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "İşlenecek vikimetin",
 	"bs-visualeditorconnector-upload-dialog-type": "MediaDialog'a dosya yüklemek için iş akışı",
 	"bs-visualeditorconnector-dialog-media-link": "Bu dosyayı bağla",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Bağlantı dosyası açıklama sayfası",
@@ -88,5 +88,6 @@
 	"bs-vec-table-border-solid": "Katı",
 	"bs-vec-table-border-dashed": "Kesik",
 	"bs-vec-table-border-dotted": "Noktalı",
-	"bs-vec-table-border-double": "Çift"
+	"bs-vec-table-border-double": "Çift",
+	"bs-vec-insert-softhyphen-title": "Esnek kısa çizgi"
 }

@@ -38,5 +38,11 @@
 	"bs-visualeditorconnector-dialog-media-meta-link": "Поврзи ја описната страница на податотеката",
 	"bs-vec-dialog-table-create-number-of-rows": "Број на редови",
 	"bs-vec-dialog-table-create-number-of-columns": "Број на столбови",
-	"bs-visualeditor-linkcontext-label-change": "Промени натпис"
+	"bs-visualeditor-linkcontext-label-change": "Промени натпис",
+	"bs-visualeditorconnector-simple-save-process-desc": "Овозможи проста постапка за зачувување",
+	"bs-visualeditorconnector-upload-type-one-click": "Еден стисок",
+	"apihelp-bs-vec-restbase-mock-param-wikitext": "Викитекст за обработка",
+	"bs-visualeditorconnector-upload-dialog-type": "Работен тек за подигање на податотеки во MediaDialog",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Боја на текстот",
+	"bs-visualeditorconnector-color-annotation-desc": "Додава бои во текстот задавајќи му својство „color“ или „class“"
 }

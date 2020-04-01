@@ -3,7 +3,8 @@
 		"authors": [
 			"Vlad5250",
 			"Nk88",
-			"Katunchik"
+			"Katunchik",
+			"Alexander Yukal"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit": "Отменить изменения",
@@ -13,5 +14,6 @@
 	"apihelp-bs-vec-transformtohtml-description": "Преобразует викитекст в HTML VisualEditor",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Ссылка на страницу описания файла",
 	"bs-visualeditor-linkcontext-label-change": "Изменить метку",
-	"bs-visualeditor-linkcontext-label-label": "Метка"
+	"bs-visualeditor-linkcontext-label-label": "Метка",
+	"bs-vec-insert-softhyphen-title": "Мягкий дефис"
 }

@@ -91,5 +91,6 @@
 	"bs-vec-table-border-solid": "Durchgehend",
 	"bs-vec-table-border-dashed": "Gestrichelt",
 	"bs-vec-table-border-dotted": "Gepunktet",
-	"bs-vec-table-border-double": "Doppelt"
+	"bs-vec-table-border-double": "Doppelt",
+	"bs-vec-insert-softhyphen-title": "Bedingter Trennstrich"
 }

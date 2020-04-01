@@ -90,5 +90,6 @@
 	"bs-vec-table-border-solid": "Цілісна",
 	"bs-vec-table-border-dashed": "Штрихована",
 	"bs-vec-table-border-dotted": "Пунктирна",
-	"bs-vec-table-border-double": "Подвійна"
+	"bs-vec-table-border-double": "Подвійна",
+	"bs-vec-insert-softhyphen-title": "М'який дефіс"
 }

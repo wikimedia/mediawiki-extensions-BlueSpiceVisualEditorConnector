@@ -67,5 +67,6 @@
 	"bs-vec-table-border-solid": "Solid",
 	"bs-vec-table-border-dashed": "Streckad",
 	"bs-vec-table-border-dotted": "Prickad",
-	"bs-vec-table-border-double": "Dubbel"
+	"bs-vec-table-border-double": "Dubbel",
+	"bs-vec-insert-softhyphen-title": "Mjukt bindestreck"
 }
