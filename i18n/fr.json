@@ -1,10 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Wladek92",
-			"Gomoko",
 			"Derugon",
-			"Thibaut120094"
+			"Gomoko",
+			"Thibaut120094",
+			"Wladek92"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec VisualEditor",
