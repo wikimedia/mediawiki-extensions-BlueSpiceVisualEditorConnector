@@ -36,7 +36,21 @@ class RestbaseMock extends ApiVisualEditor {
 			$this->mockWikiTextToHtml( $pageName );
 		}
 		if ( strpos( $path, 'v1/page/html/' ) === 0 ) {
-			$pageName = preg_replace( '#^v1/page/html/(.*?)(\?redirect=false)$#is', '$1', $path );
+			/**
+			 * Explanation of RegEx or why do we need to extract pageName
+			 * between v1/page/html/ and [?>]redirect=false
+			 * The issue goes from pages with dots (.) in the title
+			 * WebRequest.php:1062 runs IEUrlExtension::areServerVarsBad()
+			 * which is looking for file extension in path (.php for example)
+			 * but page title also contains a dot so IEUrlExtension::findIE6Extension()
+			 * returns wrong extension
+			 * The strangest string manipulations happen in IEUrlExtension::fixUrlForIE6
+			 * especially, replacing `?` chars with `%3E` (>)
+			 * As the result we get url with `>` chars instead of `?`
+			 *
+			 * [?>] - is important
+			 */
+			$pageName = preg_replace( '#^v1/page/html/(.*?)([?>]redirect=false)$#is', '$1', $path );
 			$this->mockGetPageHtml( $pageName );
 		}
 	}
