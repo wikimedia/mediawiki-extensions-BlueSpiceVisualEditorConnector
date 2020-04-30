@@ -141,6 +141,7 @@
 				"bs.vec/ui/plugin/MWSaveDialog.js",
 				"bs.vec/ui/plugin/MWTableDialog.js",
 				"bs.vec/ui/plugin/MWMetaDialog.js",
+				"bs.vec/ui/ForeignStructuredUpload/ForeignStructuredUpload.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
