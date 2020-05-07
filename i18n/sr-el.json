@@ -1,5 +1,7 @@
 {
-	"@metadata": [],
+	"@metadata": {
+		"authors": []
+	},
 	"bs-visualeditorconnector-desc": "Povezuje Parsoid sa Vizelnim uređivačem",
 	"bs-visualeditorconnector-enable-visualeditor": "Omogući vizuelni uređivač za dodatke BlueSpice-a",
 	"bs-visualeditorconnector-cancel-edit": "Otkaži uređivanje",

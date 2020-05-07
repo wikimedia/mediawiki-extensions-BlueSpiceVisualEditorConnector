@@ -87,5 +87,6 @@
 	"bs-vec-table-border-solid": "Heltrukket",
 	"bs-vec-table-border-dashed": "Perforert",
 	"bs-vec-table-border-dotted": "Prikkete",
-	"bs-vec-table-border-double": "Dobbel"
+	"bs-vec-table-border-double": "Dobbel",
+	"bs-vec-insert-softhyphen-title": "Myk bindestrek"
 }

@@ -87,5 +87,6 @@
 	"bs-vec-table-border-dashed": "Tracejadas",
 	"bs-vec-table-border-dotted": "Pontilhado",
 	"bs-vec-table-border-double": "Dupla",
-	"bs-vec-insert-softhyphen-title": "Hífen suave"
+	"bs-vec-insert-softhyphen-title": "Hífen suave",
+	"bs-vec-table-border-round": "Rodada"
 }
