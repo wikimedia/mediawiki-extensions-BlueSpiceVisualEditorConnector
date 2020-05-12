@@ -415,7 +415,7 @@
 			}
 		},
 		"VisualEditorConnectorColorPickerColors": {
-			"@note": "Usage described in docs/custom_text_colors.md",
+			"description": "Usage described in docs/custom_text_colors.md",
 			"value": [
 				{ "class": "col-white", "name": "White" },
 				{ "class": "col-blue-light", "name": "Light Blue" },
@@ -435,7 +435,7 @@
 			]
 		},
 		"VisualEditorConnectorColorPickerColorsBackground": {
-			"@note": "Usage described in docs/custom_text_colors.md",
+			"description": "Usage described in docs/custom_text_colors.md",
 			"value": [
 				{ "class": "col-white-bg", "name": "White" },
 				{ "class": "col-blue-light-bg", "name": "Light Blue" },
