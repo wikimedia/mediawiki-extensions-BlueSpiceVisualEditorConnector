@@ -41,7 +41,7 @@ bs.vec.ui.ColorStyleTool.prototype.getLabel = function() {
 };
 
 bs.vec.ui.ColorStyleTool.prototype.onPickerColorSelected = function( data ) {
-	data = data.length > 0 ? data[0] : {};
+	data = data || {};
 	this.data = data;
 	this.clearAnnotation();
 	this.annotate();
