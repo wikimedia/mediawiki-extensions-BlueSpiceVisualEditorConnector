@@ -30,6 +30,15 @@ bs.vec.ui.ForeignStructuredUpload.BookletLayout.prototype.createUpload = functio
 	} );
 };
 
+bs.vec.ui.ForeignStructuredUpload.BookletLayout.prototype.renderUploadForm = function () {
+	var form = bs.vec.ui.ForeignStructuredUpload.BookletLayout.super.prototype.renderUploadForm.apply( this );
+	var items = form.getItems();
+	var fieldlayouts = items[0].getItems();
+	// Hide "upload-form-label-not-own-work-message-generic-local" text
+	fieldlayouts[2].$element.hide();
+	return form;
+};
+
 bs.vec.ui.ForeignStructuredUpload.BookletLayout.prototype.saveFile = function() {
 	if ( this.saveCalledInit === false ) {
 		this.uploadPromise = this.upload.uploadToStash( true );
