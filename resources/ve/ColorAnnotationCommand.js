@@ -28,7 +28,7 @@ bs.vec.ui.ColorAnnotationCommand.prototype.execute = function () {
 
 bs.vec.ui.ColorAnnotationCommand.prototype.isExecutable = function ( fragment ) {
 	// Parent method
-	var ranges = fragment.getSelection().getRanges();
+	var ranges = fragment.getSelection().getRanges( ve.init.target.getSurface().getModel().getDocument() );
 	var hasActualSelection = false;
 	for( var i = 0; i < ranges.length; i++ ) {
 		var range = ranges[i];

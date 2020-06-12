@@ -44,21 +44,20 @@ bs.vec.ui.TableAction.static.methods = Object.keys( bs.vec.registry.TableStyle.r
 bs.vec.ui.TableAction.prototype.executeAction = function( action, args ) {
 	var surfaceModel = action.surface.getModel(),
 		selection = surfaceModel.getSelection(),
-		tableNode = selection.getTableNode(),
+		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
 		section;
 
 	section = this.getSection();
 	if ( section ) {
-		action.forEach( section, selection, this.executeAction.bind( action ), args );
+		action.forEach( section, selection, surfaceModel, tableNode, this.executeAction.bind( action ), args );
 	}
 
 	action.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
 };
 
-bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParams ) {
-	var tableNode = selection.getTableNode(),
-		matrix = tableNode.getMatrix(),
+bs.vec.ui.TableAction.prototype.forEach = function( what, selection, surfaceModel, tableNode, cb, cbParams ) {
+	var matrix = tableNode.getMatrix(),
 		cellIndex = 0, rowIndex, colIndex, newRow, rowNode, cells;
 
 	if ( what === 'col' ) {
@@ -68,7 +67,7 @@ bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParam
 			for ( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
 				cells[cellIndex] = cb( cells[cellIndex], cbParams, this );
 			}
-			this.replace( selection, what, colIndex, { cells: cells } );
+			this.replace( selection, surfaceModel.getDocument(), what, colIndex, { cells: cells } );
 		}
 		return;
 	} else {
@@ -92,7 +91,7 @@ bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParam
 					cells: cells
 				};
 			}
-			this.replace( selection, 'row', rowIndex, newRow );
+			this.replace( selection, surfaceModel.getDocument(), 'row', rowIndex, newRow );
 		}
 	}
 
@@ -101,7 +100,6 @@ bs.vec.ui.TableAction.prototype.forEach = function( what, selection, cb, cbParam
 
 bs.vec.ui.TableAction.prototype.restoreSelection = function( surfaceModel, selection, tableNode, oldSelection ) {
 	surfaceModel.setSelection( new ve.dm.TableSelection(
-		selection.getDocument(),
 		// tableNode range was changed by deletion
 		tableNode.getOuterRange(),
 		oldSelection[ 0 ], oldSelection[ 1 ], oldSelection[ 2 ], oldSelection[ 3 ]
@@ -126,8 +124,9 @@ bs.vec.ui.TableAction.prototype.hasMutliRowCells = function( cells ) {
 
 bs.vec.ui.TableAction.prototype.duplicate = function( mode ) {
 	var surfaceModel = this.surface.getModel(),
+		document = surfaceModel.getDocument(),
 		selection = surfaceModel.getSelection(),
-		tableNode = selection.getTableNode(),
+		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		matrix = tableNode.getMatrix(),
 		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
 		newRow, cells, itemIndex, indexAfterAddditions;
@@ -150,7 +149,7 @@ bs.vec.ui.TableAction.prototype.duplicate = function( mode ) {
 				cells: cells
 			};
 			// Don't ask...
-			this.replace( selection, 'row', itemIndex, newRow );
+			this.replace( selection, document, 'row', itemIndex, newRow );
 			this.insertRowOrCol( tableNode, 'row', itemIndex, 'after', null, newRow );
 			// Number of rows changed
 			itemIndex++;
@@ -160,7 +159,7 @@ bs.vec.ui.TableAction.prototype.duplicate = function( mode ) {
 		indexAfterAddditions = selection.toCol;
 		for ( itemIndex = selection.fromCol; itemIndex <= indexAfterAddditions; itemIndex++ ) {
 			cells = matrix.getColumn( itemIndex );
-			this.replace( selection, mode, itemIndex, { cells: cells }  );
+			this.replace( selection, document, mode, itemIndex, { cells: cells }  );
 			this.insertRowOrCol( tableNode, mode, itemIndex, 'after', null, { cells: cells } );
 			itemIndex++;
 			indexAfterAddditions++;
@@ -169,8 +168,8 @@ bs.vec.ui.TableAction.prototype.duplicate = function( mode ) {
 	this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
 };
 
-bs.vec.ui.TableAction.prototype.replace = function( selection, mode, index, replacement ) {
-	var tableNode = selection.getTableNode(),
+bs.vec.ui.TableAction.prototype.replace = function( selection, document, mode, index, replacement ) {
+	var tableNode = selection.getTableNode( document ),
 		matrix = tableNode.getMatrix(),
 		position;
 
@@ -192,9 +191,9 @@ bs.vec.ui.TableAction.prototype.replace = function( selection, mode, index, repl
 bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
 	var surfaceModel = this.surface.getModel(),
 		selection = surfaceModel.getSelection(),
-		tableNode = selection.getTableNode(),
+		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
-		handler = this.tableStyleRegistry['cellBorder'], isCollapsed;
+		handler = this.tableStyleRegistry.cellBorder, isCollapsed;
 
 	if ( args.hasOwnProperty( 'value' ) ) {
 		// Normalization
@@ -209,7 +208,7 @@ bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
 	// multiple times, once for top and once for left, and returns single cell that has both top and left set
 	var targets = this.getTargetCells( selection, args, isCollapsed );
 
-	this.execBorderStyle( targets, selection, handler.executeAction.bind( this ), args );
+	this.execBorderStyle( targets, surfaceModel, selection, handler.executeAction.bind( this ), args );
 
 	this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
 };
@@ -241,8 +240,8 @@ bs.vec.ui.TableAction.prototype.getTargetCells = function( selection, args, isCo
 			if ( isCollapsed ) {
 				// In a table with collapsed borders, left border of a cell is actually the right border of the cell to the left
 				// Due to that we need to set the styling to both left border of the cell we are actually targeting
-				// and to the right border of the cell left of it. Same if true for other borders.
-				cells = cells.concat( this.getCol( selection, selection.startCol - 1 , $.extend( args, {
+				// and to the right border of the cell left of it. Same is true for other borders.
+				cells = cells.concat( this.getCol( selection, selection.startCol - 1, $.extend( args, {
 					mode: 'right',
 					adjacent: true
 				} ) ) );
@@ -340,7 +339,7 @@ bs.vec.ui.TableAction.prototype.getTableLine = function( type, selection, index,
 	if ( type === 'row' ) {
 		if (
 			index < 0 ||
-			( selection.tableNode.hasOwnProperty( 'matrix' ) && index >= selection.tableNode.matrix.rowNodes.length )
+			( selection.hasOwnProperty( 'fromRow' ) && index >= selection.getRowCount() + 1 )
 		) {
 			return result;
 		}
@@ -356,7 +355,7 @@ bs.vec.ui.TableAction.prototype.getTableLine = function( type, selection, index,
 	} else {
 		if (
 			index < 0 ||
-			( selection.tableNode.hasOwnProperty( 'matrix' ) && index >= selection.tableNode.matrix.rowNodes[0].children.length )
+			( selection.hasOwnProperty( 'fromCol' ) && index >= selection.getColCount() + 1 )
 		) {
 			return result;
 		}
@@ -422,8 +421,8 @@ bs.vec.ui.TableAction.prototype.parseArgs = function( args ) {
 	}
 };
 
-bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, selection, cb, args ) {
-	var tableNode = selection.getTableNode(),
+bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, surfaceModel, selection, cb, args ) {
+	var tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		matrix = tableNode.getMatrix(),
 		cellIndex = 0, rowIndex, newRow, cells;
 
@@ -454,7 +453,7 @@ bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, selection, 
 			cells: cells
 		};
 
-		this.replace( selection, 'row', rowIndex, newRow );
+		this.replace( selection, surfaceModel.getDocument(),'row', rowIndex, newRow );
 	}
 };
 

@@ -146,3 +146,12 @@ at unknown times */
 .bs-soft-hyphen-node::before {
 	content: '|';
 }
+
+.ve-ui-tableDialog-panel {
+	max-width: 100%;
+}
+
+.ve-ui-tableDialog-panel .oo-ui-fieldLayout-header,
+.ve-ui-tableDialog-panel .oo-ui-fieldLayout-field {
+	width: 50% !important;
+}

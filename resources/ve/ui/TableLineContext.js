@@ -8,7 +8,7 @@ ve.ui.TableLineContext.prototype.onIconMouseDown = function ( e ) {
 	e.preventDefault();
 	var surfaceModel = this.tableNode.surface.getModel(),
 		selection = surfaceModel.getSelection(),
-		matrix = selection.getTableNode().getMatrix(),
+		matrix = selection.getTableNode( surfaceModel.getDocument() ).getMatrix(),
 		newSelection = [];
 	if ( this.itemGroup === 'col' ) {
 		newSelection = [ selection.fromCol, 0, selection.toCol, matrix.getRowCount() - 1 ];
@@ -21,7 +21,7 @@ ve.ui.TableLineContext.prototype.onIconMouseDown = function ( e ) {
 	surfaceModel.setSelection( new ve.dm.TableSelection(
 		selection.getDocument(),
 		// tableNode range was changed by deletion
-		selection.getTableNode().getOuterRange(),
+		selection.getTableNode( surfaceModel.getDocument() ).getOuterRange(),
 		newSelection[ 0 ], newSelection[ 1 ], newSelection[ 2 ], newSelection[ 3 ]
 	) );
 };

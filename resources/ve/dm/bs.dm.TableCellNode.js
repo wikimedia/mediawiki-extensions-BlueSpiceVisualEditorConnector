@@ -2,6 +2,10 @@ bs.util.registerNamespace( 'bs.vec.dm' );
 
 bs.vec.dm.TableCellNode = function() {
 	bs.vec.dm.TableCellNode.super.apply( this, arguments );
+	if ( this.element.attributes.style && Array.isArray( this.element.attributes.style ) ) {
+		// Wierd stuff
+		this.element.attributes.style = this.element.attributes.style[0];
+	}
 };
 
 /* Inheritance */
@@ -16,7 +20,7 @@ bs.vec.dm.TableCellNode.static.toDataElement = function ( domElements ) {
 	ve.dm.TableCellableNode.static.setAttributes( attributes, domElements );
 	this.runTableStyles( 'toDataElement', [ domElements[0], result ] );
 
-	result = $.extend( result, {
+	result = $.extend( true, {}, result, {
 		type: this.name,
 		attributes: attributes
 	} );

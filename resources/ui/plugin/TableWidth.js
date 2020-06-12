@@ -39,7 +39,7 @@ bs.ui.plugin.TableWidth.prototype.getSetupProcess = function ( parentProcess, da
 			return;
 		}
 
-		var tableNode = this.component.getFragment().getSelection().getTableNode(),
+		var tableNode = this.component.getFragment().getSelection().getTableNode( this.fragment.document ),
 			tableWidth = tableNode.getAttribute( 'tablewidth' ) ?
 				parseInt( tableNode.getAttribute( 'tablewidth' ) ) : 0;
 

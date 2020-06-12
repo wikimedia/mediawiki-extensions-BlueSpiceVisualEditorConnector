@@ -44,7 +44,8 @@ bs.ui.plugin.TableOptions.prototype.getValues = function ( values ) {
 
 bs.ui.plugin.TableOptions.prototype.getActiveClass = function( fragment, fromOriginalClasses ) {
 	fragment = fragment || this.component.getFragment();
-	var options = $.extend( {}, fragment.getSelection().getTableNode().getAttributes() );
+
+	var options = $.extend( {}, fragment.getSelection().getTableNode( fragment.document ).getAttributes() );
 	if ( fromOriginalClasses ) {
 		if ( !options.hasOwnProperty( 'originalClasses' ) ) {
 			return false;

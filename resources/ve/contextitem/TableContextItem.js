@@ -23,7 +23,6 @@ bs.vec.ui.TableContextItem.prototype.overrideLayout = function () {
 	var cmd, commandConfig, widget;
 
 	this.$actions.children().remove();
-	this.$info.remove();
 
 	this.actions = $.extend( this.actions, this.getActionsFromRegistry() );
 
