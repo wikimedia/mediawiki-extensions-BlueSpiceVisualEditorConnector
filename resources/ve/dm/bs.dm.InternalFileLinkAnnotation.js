@@ -58,7 +58,7 @@ bs.vec.dm.InternalFileLinkAnnotation.static.toDataElement = function ( domElemen
 /**
  * Build a ve.dm.MWInternalLinkAnnotation from a given mw.Title.
  *
- * @param {mw.Title} title The title to link to.
+ * @param {Array} imageInfo The title to link to.
  * @param {string} [rawTitle] String from which the title was created
  * @return {ve.dm.MWInternalLinkAnnotation} The annotation.
  */

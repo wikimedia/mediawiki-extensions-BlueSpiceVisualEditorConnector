@@ -57,11 +57,6 @@
 		}
 	},
 	"callback": "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
-	"APIModules": {
-		"bs-vec-transformtowikitext": "BlueSpice\\VisualEditorConnector\\Api\\TransformToWikiText",
-		"bs-vec-transformtohtml": "BlueSpice\\VisualEditorConnector\\Api\\TransformToHtml",
-		"bs-vec-restbase-mock": "BlueSpice\\VisualEditorConnector\\Api\\RestbaseMock"
-	},
 	"AutoloadNamespaces": {
 		"BlueSpice\\VisualEditorConnector\\": "src/"
 	},
@@ -127,10 +122,6 @@
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
 			"scripts": [
-				"bs.vec/ce/Surface.js",
-				"bs.vec/ui/AnnotationContextItem.js",
-				"bs.vec/ui/LinkContextItem.js",
-				"bs.vec/ui/MWInternalLinkContextItem.js",
 				"bs.vec/ui/tools/MWHelpPopupTool.js",
 				"bs.vec/ui/MWLinkAnnotationInspector.js",
 				"bs.vec/ui/MWMediaDialog.js",
@@ -165,7 +156,6 @@
 				"ve/ui/DataTransferItem.js"
 			],
 			"styles": [
-				"bs.vec/styles/LinkContextItem.css"
 			],
 			"messages": [
 				"bs-visualeditor-linkcontext-label-label",
@@ -478,7 +468,6 @@
 		}
 	},
 	"Hooks": {
-		"APIAfterExecute": "\\BlueSpice\\VisualEditorConnector\\Hook\\APIAfterExecute\\WrapPreloadText::callback",
 		"BSSocialModuleDepths": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSSocialModuleDepths\\AddVECModules::callback",
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [

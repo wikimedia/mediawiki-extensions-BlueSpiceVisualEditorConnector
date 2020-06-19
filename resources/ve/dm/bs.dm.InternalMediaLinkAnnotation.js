@@ -19,7 +19,7 @@ bs.vec.dm.InternalMediaLinkAnnotation.static.toDataElement = function ( domEleme
 	var targetData, data,
 		resource = domElements[ 0 ].getAttribute( 'resource' );
 	if ( resource ) {
-		data = ve.parseParsoidResourceName( resource );
+		data = mw.libs.ve.parseParsoidResourceName( resource );
 
 		targetData = {
 			title: data.title,

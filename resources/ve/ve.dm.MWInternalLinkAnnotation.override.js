@@ -27,7 +27,7 @@ ve.dm.MWInternalLinkAnnotation.static.getTargetDataFromHref = function ( href, d
 
 	// This href doesn't necessarily come from Parsoid (and it might not have the "./" prefix), but
 	// this method will work fine.
-	data = ve.parseParsoidResourceName( href );
+	data = mw.libs.ve.parseParsoidResourceName( href );
 
 	// Replace Special:FilePath/ coming from Parsoid with normal Media namespace
 	// We only need to take care of english version of "Media" namespace,
@@ -43,3 +43,4 @@ ve.dm.MWInternalLinkAnnotation.static.getTargetDataFromHref = function ( href, d
 		isInternal: isInternal
 	};
 };
+

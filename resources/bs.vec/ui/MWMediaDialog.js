@@ -278,15 +278,16 @@ bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
 
 bs.vec.ui.MWMediaDialog.prototype.linkFile = function () {
 	var linkAnnotation = bs.vec.dm.InternalMediaLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
-	this.doLinkFile( linkAnnotation );
+
+	this.doLinkFile( linkAnnotation, 'link' );
 };
 
 bs.vec.ui.MWMediaDialog.prototype.linkFileMeta = function () {
 	var linkAnnotation = bs.vec.dm.InternalFileLinkAnnotation.static.newFromImageInfo( this.selectedImageInfo );
-	this.doLinkFile( linkAnnotation );
+	this.doLinkFile( linkAnnotation, 'metalink' );
 };
 
-bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation ) {
+bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation, type ) {
 	if ( !this.fileAnnotation ) {
 		this.getFragment()
 			.insertContent( this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle );
@@ -297,5 +298,5 @@ bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation ) {
 		fragment.annotateContent( 'set', linkAnnotation );
 	}
 
-	this.close( { action: 'metalink' } );
+	this.close( { action: type } );
 };
