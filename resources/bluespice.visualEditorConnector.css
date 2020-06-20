@@ -41,9 +41,16 @@
 }
 
 .bs-visualeditorconnector-cancel-edit {
-	vertical-align: middle;
-	border-left: 1px solid #c8ccd1;
-	padding: 5px;
+	margin: 0px;
+	padding-top: 5px;
+	height: 42px;
+	width: 42px;
+	text-align:center;
+	background-color: #eaecf0;
+}
+
+.bs-visualeditorconnector-cancel-edit:hover {
+	background-color: #c8ccd1;
 }
 
 .bs-vec-color-widget {

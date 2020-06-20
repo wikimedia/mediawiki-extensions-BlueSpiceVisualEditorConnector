@@ -113,7 +113,9 @@
 				"ext.visualEditor.mwcore"
 			],
 			"messages": [
-				"bs-visualeditorconnector-cancel-edit"
+				"bs-visualeditorconnector-cancel-edit",
+				"bs-visualeditorconnector-cancel-edit-no-unsaved-changes",
+				"bs-visualeditorconnector-cancel-edit-confirm-message"
 			],
 			"targets": [
 				"desktop",
