@@ -32,6 +32,9 @@ bs.vec.util.StyleAttributeParser.prototype.parseStyle = function() {
 			continue;
 		}
 		pairBits = pair.split( ':' );
+		if ( pairBits.length < 2 ) {
+			continue;
+		}
 		value = pairBits.pop().trim();
 		attr = pairBits.pop().trim();
 		this.formatted[attr] = value;
