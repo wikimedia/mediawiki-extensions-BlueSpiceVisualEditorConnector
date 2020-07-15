@@ -2,9 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Astrind",
+			"Bugoslav",
 			"Neptune, the Mystic"
 		]
 	},
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Otkaži uređivanje",
 	"bs-vec-table-inspector-column": "Stupac",
 	"bs-vec-table-inspector-row": "Redak",
 	"bs-vec-table-inspector-cell": "Ćelija",

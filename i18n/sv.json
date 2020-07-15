@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Mjälten",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
@@ -11,7 +12,9 @@
 	"bs-visualeditorconnector-upload-type-simple": "Enkel",
 	"bs-visualeditorconnector-upload-type-one-click": "Ett klick",
 	"bs-visualeditorconnector-upload-type": "Uppladdningstyp",
-	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Avbryt redigering",
+	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering. Ändringar som inte sparats kommer slängas",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Vill du verkligen avbryta redigeringen? Dina osparade ändringar kommer slängas.",
 	"bs-visualeditor-nsm-label": "Visual Editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allmän",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancerad",
