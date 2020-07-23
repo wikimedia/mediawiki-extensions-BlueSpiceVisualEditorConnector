@@ -6,7 +6,8 @@
 		]
 	},
 	"bs-visualeditorconnector-upload-type-original": "Original",
-	"bs-visualeditorconnector-cancel-edit": "Cancelar edición",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancelar edición",
+	"bs-visualeditorconnector-cancel-edit": "Cancelar edición. Se descartarán los cambios no guardados",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas",
