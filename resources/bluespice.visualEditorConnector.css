@@ -162,3 +162,7 @@ at unknown times */
 .ve-ui-tableDialog-panel .oo-ui-fieldLayout-field {
 	width: 50% !important;
 }
+
+.ve-active .main-footer {
+	padding-bottom: 8rem;
+}
