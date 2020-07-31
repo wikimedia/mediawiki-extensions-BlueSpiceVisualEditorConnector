@@ -47,11 +47,11 @@
 }
 
 .bs-vec-text-color-current {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    bottom: 2px;
-    right: 0;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom: 2px;
+	right: 0;
 	line-height: 0;
 	font-size: 40px;
 	overflow: hidden;
@@ -161,4 +161,8 @@ at unknown times */
 
 .bs-soft-hyphen-node::before {
 	content: '|';
+}
+
+.ve-active .main-footer {
+	padding-bottom: 8rem;
 }
