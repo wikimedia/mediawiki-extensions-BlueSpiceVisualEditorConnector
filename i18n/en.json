@@ -11,7 +11,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Simple",
 	"bs-visualeditorconnector-upload-type-one-click": "One click",
 	"bs-visualeditorconnector-upload-type": "Upload type",
-	"bs-visualeditorconnector-cancel-edit": "Cancel edit",
+	"bs-visualeditorconnector-cancel-edit": "Cancel edit. Unsaved changes will be discarded",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Common",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Advanced",
@@ -88,7 +88,9 @@
 	"bs-vec-table-border-width-4": "4px",
 	"bs-vec-table-border-solid": "Solid",
 	"bs-vec-table-border-dashed": "Dashed",
-	"bs-vec-table-border-dotted":  "Dotted",
+	"bs-vec-table-border-dotted": "Dotted",
 	"bs-vec-table-border-double": "Double",
-	"bs-vec-insert-softhyphen-title": "Soft hyphen"
+	"bs-vec-insert-softhyphen-title": "Soft hyphen",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancel edit",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Do you really want to cancel the edit? Your unsaved changes will be discarded."
 }

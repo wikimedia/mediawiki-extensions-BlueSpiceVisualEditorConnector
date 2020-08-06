@@ -8,7 +8,7 @@
 	},
 	"bs-visualeditorconnector-desc": "Conecta o BlueSpice com o EditorVisual",
 	"bs-visualeditorconnector-enable-visualeditor": "Ativar o EditorVisual para extensões do BlueSpice",
-	"bs-visualeditorconnector-cancel-edit": "Cancelar as edições",
+	"bs-visualeditorconnector-cancel-edit": "Cancelar edição. Mudanças não salvas serão descartadas",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comuns",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avançado",
@@ -88,5 +88,7 @@
 	"bs-vec-table-border-dotted": "Pontilhado",
 	"bs-vec-table-border-double": "Dupla",
 	"bs-vec-insert-softhyphen-title": "Hífen suave",
-	"bs-vec-table-border-round": "Rodada"
+	"bs-vec-table-border-round": "Rodada",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancelar as edições",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Deseja realmente cancelar a edição? Suas alterações não salvas serão descartadas."
 }

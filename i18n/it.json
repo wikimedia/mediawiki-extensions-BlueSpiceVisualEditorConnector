@@ -5,7 +5,7 @@
 		]
 	},
 	"bs-visualeditorconnector-enable-visualeditor": "Attiva VisualEditor per estensioni BlueSpice",
-	"bs-visualeditorconnector-cancel-edit": "Annulla modifica",
+	"bs-visualeditorconnector-cancel-edit": "Annulla modifica. Le modifiche non salvate verranno perse",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comuni",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzate",
@@ -34,5 +34,7 @@
 	"bs-vec-widget-text-direction-tooltip": "Testo verticale",
 	"bs-visualeditor-linkcontext-label-change": "Modifica etichetta",
 	"bs-visualeditor-linkcontext-label-label": "Etichetta",
-	"bs-vec-table-border-bottom": "In fondo"
+	"bs-vec-table-border-bottom": "In fondo",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Annulla modifica",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Vuoi davvero annullare la modifica? Le modifiche non salvate verranno perse."
 }

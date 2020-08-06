@@ -10,7 +10,7 @@
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
 	"bs-visualeditorconnector-enable-visualeditor": "啟用用於 BlueSpice 擴充的視覺化編輯器",
-	"bs-visualeditorconnector-cancel-edit": "取消編輯",
+	"bs-visualeditorconnector-cancel-edit": "取消編輯。尚未保存的更改將會被捨棄",
 	"bs-visualeditor-nsm-label": "視覺化編輯器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "一般",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "進階",
@@ -92,5 +92,7 @@
 	"bs-vec-table-border-dashed": "虛線",
 	"bs-vec-table-border-dotted": "點線",
 	"bs-vec-table-border-double": "雙線",
-	"bs-vec-insert-softhyphen-title": "軟連字元"
+	"bs-vec-insert-softhyphen-title": "軟連字元",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "取消編輯",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "您確定要取消編輯嗎？您的尚未保存更改將會被捨棄。"
 }

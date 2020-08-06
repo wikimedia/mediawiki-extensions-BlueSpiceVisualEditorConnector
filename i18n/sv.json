@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Mjälten",
+			"Sabelöga",
 			"WikiPhoenix"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering",
+	"bs-visualeditorconnector-cancel-edit": "Avbryt redigering. Ändringar som inte sparats kommer slängas",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Allmän",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancerad",
 	"bs-visualeditorconnector-ve-style-option": "Tabellstilar",
@@ -68,5 +69,7 @@
 	"bs-vec-table-border-dashed": "Streckad",
 	"bs-vec-table-border-dotted": "Prickad",
 	"bs-vec-table-border-double": "Dubbel",
-	"bs-vec-insert-softhyphen-title": "Mjukt bindestreck"
+	"bs-vec-insert-softhyphen-title": "Mjukt bindestreck",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Avbryt redigering",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Vill du verkligen avbryta redigeringen? Dina osparade ändringar kommer slängas."
 }

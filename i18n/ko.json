@@ -6,7 +6,7 @@
 	},
 	"bs-visualeditorconnector-desc": "시각편집기로 블루스파이스에 연결합니다",
 	"bs-visualeditorconnector-enable-visualeditor": "블루스파이스 확장기능을 위해 시각편집기를 활성화합니다",
-	"bs-visualeditorconnector-cancel-edit": "편집 취소",
+	"bs-visualeditorconnector-cancel-edit": "편집을 취소합니다. 저장되지 않은 변경사항은 전부 버려집니다",
 	"bs-visualeditor-nsm-label": "시각편집기",
 	"bs-visualeditorconnector-inspector-tab-common-name": "공통",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "고급",
@@ -59,5 +59,7 @@
 	"bs-vec-table-border-bottom": "아래",
 	"bs-vec-table-border-all": "모두",
 	"bs-vec-table-border-leftright": "좌우",
-	"bs-vec-table-border-topbottom": "상하"
+	"bs-vec-table-border-topbottom": "상하",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "편집 취소",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "편집을 취소하시겠습니까? 저장되지 않은 변경사항은 버려집니다."
 }

@@ -9,7 +9,7 @@
 	},
 	"bs-visualeditorconnector-desc": "Görsel Düzenleyici ile BlueSpice'a bağlanır",
 	"bs-visualeditorconnector-enable-visualeditor": "BlueSpice uzantıları için Görsel Düzenleyici'yi etkinleştirin",
-	"bs-visualeditorconnector-cancel-edit": "Düzenlemeyi iptal et",
+	"bs-visualeditorconnector-cancel-edit": "Düzenlemeyi iptal et. Kaydedilmemiş değişiklikler atılacak",
 	"bs-visualeditor-nsm-label": "Görsel düzenleyici",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Genel",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Gelişmiş",
@@ -89,5 +89,7 @@
 	"bs-vec-table-border-dashed": "Kesik",
 	"bs-vec-table-border-dotted": "Noktalı",
 	"bs-vec-table-border-double": "Çift",
-	"bs-vec-insert-softhyphen-title": "Esnek kısa çizgi"
+	"bs-vec-insert-softhyphen-title": "Esnek kısa çizgi",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Düzenlemeyi iptal et",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Düzenlemeyi gerçekten iptal etmek istiyor musunuz? Kaydedilmemiş değişiklikleriniz silinecek."
 }
