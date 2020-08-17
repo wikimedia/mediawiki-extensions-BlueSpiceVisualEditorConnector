@@ -80,6 +80,8 @@
 	"bs-vec-table-border-right": "Direita",
 	"bs-vec-table-border-bottom": "Base",
 	"bs-vec-table-border-all": "Todos",
+	"bs-vec-table-border-leftright": "Esquerda-direita",
+	"bs-vec-table-border-topbottom": "Botão principal",
 	"bs-vec-table-border-round": "Rodada",
 	"bs-vec-table-border-horizontal": "Horizontal",
 	"bs-vec-table-border-roundhorizontal": "Redonda e horizontal",
