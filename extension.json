@@ -479,6 +479,10 @@
 				"Tokens {{timestamp}}, {{random}} and {{pagename}} can be used to generate unique parts of the name.",
 				"This name should not include the file extension"
 			]
+		},
+		"VisualEditorConnectorHelpUrl": {
+			"value": "https://en.wiki.bluespice.com/wiki/Manual:Extension/VisualEditor",
+			"description": "Help URL for the VE help button"
 		}
 	},
 	"Hooks": {
