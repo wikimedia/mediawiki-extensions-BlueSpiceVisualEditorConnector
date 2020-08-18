@@ -77,6 +77,11 @@ class AddModules extends BeforePageDisplay {
 			'bsgVisualEditorConnectorPasteFilename',
 			$this->getConfig()->get( 'VisualEditorConnectorPasteFilename' )
 		);
+
+		$this->out->addJsConfigVars(
+			'bsgVisualEditorConnectorHelpUrl',
+			$this->getConfig()->get( 'VisualEditorConnectorHelpUrl' )
+		);
 	}
 
 }
