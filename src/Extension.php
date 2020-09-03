@@ -29,7 +29,7 @@
  */
 namespace BlueSpice\VisualEditorConnector;
 
-use BlueSpice\Services;
+use MediaWiki\MediaWikiServices;
 
 class Extension extends \BlueSpice\Extension {
 	/**
@@ -38,7 +38,7 @@ class Extension extends \BlueSpice\Extension {
 	 */
 	public static function onRegistration() {
 		// Setup our Restbase Mock API to allow switching from WikiText editor to VE
-		$config = Services::getInstance()->getMainConfig();
+		$config = MediaWikiServices::getInstance()->getMainConfig();
 		if ( $config->get( 'VisualEditorFullRestbaseURL' ) !== false ) {
 			return;
 		}
