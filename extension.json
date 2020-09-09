@@ -146,6 +146,7 @@
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.FileProtocolHTMLStringTransferHandler.js",
 				"ve/dm/bs.dm.MWTableNode.js",
 				"ve/ce/bs.ce.MWTableNode.js",
 				"ve/dm/bs.dm.TableRowNode.js",
@@ -360,6 +361,14 @@
 		"bs.vec.ui.InternalUrlHTMLStringTransferHandler": {
 			"scripts": [
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.mwcore"
+			]
+		},
+		"bs.vec.ui.FileProtocolHTMLStringTransferHandler": {
+			"scripts": [
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.FileProtocolHTMLStringTransferHandler.js"
 			],
 			"dependencies": [
 				"ext.visualEditor.mwcore"
