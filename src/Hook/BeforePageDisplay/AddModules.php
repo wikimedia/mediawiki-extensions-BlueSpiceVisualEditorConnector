@@ -12,9 +12,18 @@ class AddModules extends BeforePageDisplay {
 	 * @return bool
 	 */
 	protected function skipProcessing() {
-		if ( $this->getConfig()->get( 'VisualEditorConnectorEnableVisualEditor' ) ) {
+		if ( !$this->getConfig()->get( 'VisualEditorConnectorEnableVisualEditor' ) ) {
+			return true;
+		}
+		$action = $this->getContext()->getRequest()->getVal(
+			'action',
+			$this->getContext()->getRequest()->getVal( 'veaction', 'view' )
+		);
+
+		if ( $action === 'edit' || $action === 'editsource' ) {
 			return false;
 		}
+
 		return true;
 	}
 
@@ -29,12 +38,6 @@ class AddModules extends BeforePageDisplay {
 			$pluginModules[] = $moduleName;
 		}
 
-		$this->out->addModules( [
-			"ext.bluespice.visualEditorConnector",
-			"ext.bluespice.visualEditorConnector.styleInspector",
-			"ext.bluespice.visualEditorConnector.textColor",
-			"ext.bluespice.visualEditorConnector.SoftHyphen"
-		] );
 		$this->out->addJsConfigVars(
 			'bsVECColorPickerColors',
 			$this->getConfig()->get( 'VisualEditorConnectorColorPickerColors' )
@@ -48,13 +51,15 @@ class AddModules extends BeforePageDisplay {
 			$this->getConfig()->get( 'VisualEditorConnectorCellBorderColors' )
 		);
 
-		$this->out->addModules(
-			'ext.bluespice.visualEditorConnector.overrides'
-		);
 		$this->out->addJsConfigVars( 'bsVECPluginModules', $pluginModules );
 
 		$tableStyles = $this->getConfig()->get( 'VisualEditorConnectorTableStyleRegistry' );
 		$this->out->addJsConfigVars( 'bsgVisualEditorConnectorTableStyleRegistry', $tableStyles );
+
+		$this->out->addJsConfigVars(
+			'bsVECSimpleSaveProcess',
+			$this->getConfig()->get( 'VisualEditorConnectorSimpleSaveProcess' )
+		);
 
 		$tagRegistry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceVisualEditorConnectorTagDefinitions'
@@ -64,10 +69,6 @@ class AddModules extends BeforePageDisplay {
 			$moduleName = $tagRegistry->getValue( $key );
 			$tagDefinitions[] = $moduleName;
 		}
-
-		$this->out->addModules(
-			'ext.bluespice.visualEditorConnector.tags'
-		);
 		$this->out->addJsConfigVars( 'bsVECTagDefinitions', $tagDefinitions );
 
 		$uploadType = $this->getConfig()->get( 'VisualEditorConnectorUploadDialogType' );
@@ -77,6 +78,10 @@ class AddModules extends BeforePageDisplay {
 			'bsgVisualEditorConnectorPasteFilename',
 			$this->getConfig()->get( 'VisualEditorConnectorPasteFilename' )
 		);
+
+		$this->out->addModules( [
+			"ext.bluespice.visualEditorConnector",
+		] );
 	}
 
 }
