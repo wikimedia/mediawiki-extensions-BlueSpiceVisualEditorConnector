@@ -34,16 +34,13 @@
 		},
 		"BlueSpiceVisualEditorConnector": {
 			"PluginModules": [
-				"ext.bluespice.visualEditorConnector.tablestyleplugin"
+				"ext.bluespice.visualEditorConnector.tableStyle",
+				"ext.bluespice.visualEditorConnector.saveProcess",
+				"ext.bluespice.visualEditorConnector.internalLink"
 			],
 			"TagDefinitions": [],
 			"PostProcessors": {},
 			"PreProcessors": {}
-		},
-		"BlueSpiceSimpleFarmer": {
-			"DynamicConfigurationFactories": {
-				"virtualrestparsoiddomain": "\\BlueSpice\\VisualEditorConnector\\SimpleFarmer\\DynamicConfiguration\\VirtualRestConfig::factory"
-			}
 		},
 		"VisualEditor": {
 			"PluginModules": [
@@ -56,7 +53,6 @@
 			}
 		}
 	},
-	"callback": "BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
 	"AutoloadNamespaces": {
 		"BlueSpice\\VisualEditorConnector\\": "src/"
 	},
@@ -68,24 +64,43 @@
 	"ResourceModules": {
 		"ext.bluespice.visualEditorConnector": {
 			"scripts": [
-				"ve/init/sa/BlueSpiceTarget.js",
-				"ui/widget/TextInputMWVisualEditor.js",
-				"bluespice.visualEditorConnector.js"
+				"ext.bluespice.visualEditorConnector.js"
 			],
 			"styles": [
-				"bluespice.visualEditorConnector.css"
+				"ext.bluespice.visualEditorConnector.css"
 			],
 			"dependencies": [
+				"ext.bluespice.visualEditorConnector.overrides",
+				"oojs-ui",
+				"ext.bluespice.oojs",
 				"ext.visualEditor.core",
 				"ext.visualEditor.mediawiki",
-				"ext.visualEditor.standalone",
 				"ext.visualEditor.core.desktop",
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.mwextensions.desktop",
 				"ext.visualEditor.icons",
-				"ext.bluespice.oojs",
-				"oojs-ui",
+				"ext.visualEditor.mwlink",
+				"ext.bluespice.visualEditorConnector.tags",
+				"ext.bluespice.visualEditorConnector.softHyphen",
+				"ext.bluespice.visualEditorConnector.styleInspector",
+				"ext.bluespice.visualEditorConnector.internalLink",
 				"mediawiki.api"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.standalone": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.standalone/init/sa/BlueSpiceTarget.js"
+			],
+			"dependencies": [
+				"ext.visualEditor.standalone",
+				"ext.bluespice.visualEditorConnector"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.standalone.bootstrap": {
+			"scripts": "ext.bluespice.visualEditorConnector.standalone.bootstrap/ui/widget/TextInputMWVisualEditor.js",
+			"dependencies": [
+				"ext.bluespice",
+				"oojs-ui"
 			]
 		},
 		"ext.visualEditor.standalone": {
@@ -104,148 +119,153 @@
 		},
 		"ext.bluespice.visualEditorConnector.plugin": {
 			"scripts": [
-				"ve-visualeditorconnector/ve.init.bs.CancelEditButton.js",
-				"ve-visualeditorconnector/ve.init.bs.HideAfterContent.js",
-				"ve-visualeditorconnector/ve.init.bs.PreventCellEditInTableSelectionInIE11.js",
-				"ve-visualeditorconnector/ve.init.bs.ClearStorageAfterSave.js"
+				"ext.bluespice.visualEditorConnector.plugin/base/MWMediaDialog.js",
+				"ext.bluespice.visualEditorConnector.plugin/base/MWSaveDialog.js",
+				"ext.bluespice.visualEditorConnector.plugin/base/MWTableDialog.js",
+				"ext.bluespice.visualEditorConnector.plugin/base/MWMetaDialog.js",
+				"ext.bluespice.visualEditorConnector.plugin/CancelEditButton.js",
+				"ext.bluespice.visualEditorConnector.plugin/HideAfterContent.js",
+				"ext.bluespice.visualEditorConnector.plugin/PreventCellEditInTableSelectionInIE11.js",
+				"ext.bluespice.visualEditorConnector.plugin/ClearStorageAfterSave.js"
 			],
 			"dependencies": [
-				"ext.visualEditor.mwcore"
+				"ext.visualEditor.mwcore",
+				"ext.bluespice.visualEditorConnector"
 			],
 			"messages": [
 				"bs-visualeditorconnector-cancel-edit",
 				"bs-visualeditorconnector-cancel-edit-no-unsaved-changes",
 				"bs-visualeditorconnector-cancel-edit-confirm-message"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.saveProcess": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.saveProcess/bootstrap.js"
 			],
-			"targets": [
-				"desktop",
-				"mobile"
+			"dependencies": [
+				"ext.bluespice",
+				"ext.visualEditor.mwcore"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.internalLink": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.internalLink/dm/InternalFileLinkAnnotation.js",
+				"ext.bluespice.visualEditorConnector.internalLink/ce/InternalFileLinkAnnotation.js",
+				"ext.bluespice.visualEditorConnector.internalLink/dm/InternalMediaLinkAnnotation.js",
+				"ext.bluespice.visualEditorConnector.internalLink/ce/InternalMediaLinkAnnotation.js",
+				"ext.bluespice.visualEditorConnector.internalLink/contextitem/InternalFileLinkContextItem.js",
+				"ext.bluespice.visualEditorConnector.internalLink/dm/MWInternalLinkAnnotation.override.js"
+			],
+			"dependencies": [
+				"ext.bluespice",
+				"ext.visualEditor.mwcore",
+				"ext.visualEditor.mwlink"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
 			"scripts": [
-				"bs.vec/ui/tools/MWHelpPopupTool.js",
-				"bs.vec/ui/MWLinkAnnotationInspector.js",
-				"bs.vec/ui/MWMediaDialog.js",
-				"bs.vec/ui/MWSaveDialog.js",
-				"bs.vec/ui/MWTableDialog.js",
-				"bs.vec/ui/MWMetaDialog.js",
-				"bs.vec/ui/plugin/MWMediaDialog.js",
-				"bs.vec/ui/plugin/MWSaveDialog.js",
-				"bs.vec/ui/plugin/MWTableDialog.js",
-				"bs.vec/ui/plugin/MWMetaDialog.js",
-				"bs.vec/ui/ForeignStructuredUpload/ForeignStructuredUpload.js",
-				"bs.vec/ui/ForeignStructuredUpload/BookletLayout.js",
-				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
-				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
-				"ve/dm/bs.dm.MWTableNode.js",
-				"ve/ce/bs.ce.MWTableNode.js",
-				"ve/dm/bs.dm.TableRowNode.js",
-				"ve/dm/bs.dm.TableCellNode.js",
-				"ve/dm/bs.dm.InternalFileLinkAnnotation.js",
-				"ve/ce/bs.ce.InternalFileLinkAnnotation.js",
-				"ve/dm/bs.dm.InternalMediaLinkAnnotation.js",
-				"ve/ce/bs.ce.InternalMediaLinkAnnotation.js",
-				"ve/contextitem/bs.ui.InternalFileLinkContextItem.js",
-				"ve/TableStyleApplicator.js",
-				"ve/ce/bs.ce.TableRowNode.js",
-				"ve/ce/bs.ce.TableCellNode.js",
-				"ve/ui/TableLineContext.js",
-				"ve/action/TableActionOverride.js",
-				"ve/ve.dm.MWInternalLinkAnnotation.override.js",
-				"ve/ve.init.mw.DesktopArticleTarget.override.js",
-				"ve/ui/DataTransferItem.js"
-			],
-			"styles": [
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWHelpPopupTool.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWLinkAnnotationInspector.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWMediaDialog.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWTableDialog.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWMetaDialog.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWSaveDialog.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/dataTransferHandler/InternalUrlHTMLStringTransferHandler.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ve.init.mw.DesktopArticleTarget.override.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ui/DataTransferItem.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ForeignStructuredUpload/ForeignStructuredUpload.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ForeignStructuredUpload/BookletLayout.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ForeignStructuredUpload/BookletLayoutSimple.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/ForeignStructuredUpload/BookletLayoutOneClick.js"
 			],
 			"messages": [
 				"bs-visualeditor-linkcontext-label-label",
 				"bs-visualeditor-linkcontext-label-change"
+			],
+			"dependencies": [
+				"ext.bluespice"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides": {
 			"scripts": [
-				"bluespice.visualEditorConnector.overrides.js"
+				"ext.bluespice.visualEditorConnector.overrides/Overrides.js"
 			],
 			"messages": [
 				"bs-visualeditorconnector-dialog-media-link",
 				"bs-visualeditorconnector-dialog-media-meta-link",
 				"bs-visualeditorconnector-dialog-media-embed",
 				"bs-vec-dialog-media-change-file"
-			],
-			"group": "bsvec-override"
+			]
 		},
 		"ext.bluespice.visualEditorConnector.tags.classes": {
 			"scripts": [
-				"bs.vec/util/tag/Definition.js",
-				"bs.vec/util/tag/Registry.js",
-				"bs.vec/ui/widget/GroupListInputWidget.js"
+				"ext.bluespice.visualEditorConnector.tags.classes/Definition.js",
+				"ext.bluespice.visualEditorConnector.tags.classes/Registry.js",
+				"ext.bluespice.visualEditorConnector.tags.classes/ui/widget/GroupListInputWidget.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.tags": {
 			"scripts": [
-				"bluespice.visualEditorConnector.tags.js"
+				"ext.bluespice.visualEditorConnector.tags.js"
 			],
 			"dependencies": [
-				"ext.visualEditor.desktopArticleTarget.init"
+				"ext.visualEditor.desktopArticleTarget.init",
+				"ext.bluespice"
 			],
 			"messages": [
 				"bs-visualeditorconnector-inspector-tab-common-name",
 				"bs-visualeditorconnector-inspector-tab-advanced-name"
 			]
 		},
-		"ext.bluespice.visualEditorConnector.SaveProcessOverride": {
+		"ext.bluespice.visualEditorConnector.tableStyle": {
 			"scripts": [
-				"bluespice.visualEditorConnector.SaveProcessOverride.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.mwcore"
-			],
-			"targets": [
-				"desktop"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.tablestyleplugin": {
-			"scripts": [
-				"bs.vec/TableStyleRegistry.js",
-				"bs.vec/ui/tableStyles/TableStyle.js",
-				"bs.vec/ui/tableStyles/RowHeightStyle.js",
-				"bs.vec/ui/tableStyles/CellBackgroundStyle.js",
-				"bs.vec/ui/tableStyles/TextDirectionStyle.js",
-				"bs.vec/ui/tableStyles/VerticalTextAlignmentStyle.js",
-				"bs.vec/ui/tableStyles/HorizontalTextAlignmentStyle.js",
-				"bs.vec/ui/tableStyles/CellBorderStyle.js",
-				"bs.vec/ui/tableStyles/ColumnWidthStyle.js",
-				"ve/dialog/TableAdditionalOptions.js",
-				"ve/dialog/CreateTableOptions.js",
-				"ve/widget/CommandWidget.js",
-				"ve/widget/NumberCommandWidget.js",
-				"ve/widget/ButtonCommandWidget.js",
-				"ve/widget/RowHeightWidget.js",
-				"ve/widget/ColumnWidthWidget.js",
-				"ve/widget/ColorCommandWidget.js",
-				"ve/widget/CellBackgroundWidget.js",
-				"ve/widget/TextDirectionWidget.js",
-				"ve/widget/VerticalTextAlignmentWidget.js",
-				"ve/widget/HorizontalTextAlignmentWidget.js",
-				"ve/mixin/TableBorderStylePopup.js",
-				"ve/widget/CellBorderWidget.js",
-				"ve/action/TableAction.js",
-				"ve/command/TableStyleCommands.js",
-				"ve/contextitem/TableContextItem.js",
-				"ve/contextitem/RowStyleContextItem.js",
-				"ve/contextitem/ColumnStyleContextItem.js",
-				"ve/contextitem/CellStyleContextItem.js",
-				"ui/plugin/TableOptions.js",
-				"ui/plugin/TableWidth.js",
-				"bs.vec/util/StyleParser.js"
+				"ext.bluespice.visualEditorConnector.tableStyle/TableStyleApplicator.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/TableStyleRegistry.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/TableStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/RowHeightStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/CellBackgroundStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/TextDirectionStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/VerticalTextAlignmentStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/HorizontalTextAlignmentStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/CellBorderStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/ColumnWidthStyle.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/dialog/TableAdditionalOptions.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/dialog/CreateTableOptions.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/CommandWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/NumberCommandWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/ButtonCommandWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/RowHeightWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/ColumnWidthWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/ColorCommandWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/CellBackgroundWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/TextDirectionWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/VerticalTextAlignmentWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/HorizontalTextAlignmentWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/mixin/TableBorderStylePopup.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/widget/CellBorderWidget.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/action/TableAction.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/command/TableStyleCommands.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/contextitem/TableContextItem.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/contextitem/RowStyleContextItem.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/contextitem/ColumnStyleContextItem.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/contextitem/CellStyleContextItem.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/plugin/TableOptions.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/plugin/TableWidth.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/util/StyleParser.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/dm/MWTableNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/ce/MWTableNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/dm/TableRowNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/dm/TableCellNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/ce/TableRowNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/ce/TableCellNode.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/ui/TableLineContext.js",
+				"ext.bluespice.visualEditorConnector.tableStyle/action/TableActionOverride.js"
 			],
 			"styles": [
-				"bluespice.visualEditorConnector.cellBorder.less"
+				"ext.bluespice.visualEditorConnector.tableStyle/cellBorders.less"
 			],
 			"dependencies": [
-				"ext.bluespice.extjs",
+				"ext.bluespice",
 				"ext.oOJSPlus.widgets",
 				"ext.oOJSPlus.icons"
 			],
@@ -310,62 +330,50 @@
 		},
 		"ext.bluespice.visualEditorConnector.styleInspector": {
 			"scripts": [
-				"bs.vec/ui/styleTool/ButtonTool.js",
-				"bs.vec/ui/styleTool/Bold.js",
-				"bs.vec/ui/styleTool/Italic.js",
-				"bs.vec/ui/styleTool/Color.js",
-				"bs.vec/ui/styleTool/Code.js",
-				"bs.vec/ui/styleTool/Small.js",
-				"bs.vec/ui/styleTool/Big.js",
-				"bs.vec/ui/styleTool/Strikethrough.js",
-				"bs.vec/ui/styleTool/Underline.js",
-				"bs.vec/TextStyleToolRegistry.js",
-				"bs.vec/ui/widget/TextStylePopup.js",
-				"bluespice.visualEditorConnector.styleInspector.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.core",
-				"ext.bluespice.visualEditorConnector.textColor"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.textColor": {
-			"scripts": [
-				"ve/ColorAnnotationCommand.js",
-				"ve/ColorAnnotationTool.js",
-				"ve/dm/bs.dm.ColorAnnotation.js",
-				"ve/ce/bs.ce.ColorAnnotation.js"
-			],
-			"dependencies": [
-				"ext.visualEditor.core",
-				"ext.oOJSPlus.widgets.colorPicker"
+				"ext.bluespice.visualEditorConnector.styleInspector/command/ColorAnnotationCommand.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/tool/ColorAnnotationTool.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/dm/ColorAnnotation.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/ce/ColorAnnotation.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/ButtonTool.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Bold.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Italic.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Color.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Code.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Small.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Big.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Strikethrough.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Underline.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/TextStyleToolRegistry.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/widget/TextStylePopup.js",
+				"ext.bluespice.visualEditorConnector.styleInspector/bluespice.visualEditorConnector.styleInspector.js"
 			],
 			"messages": [
 				"bs-visualeditorconnector-text-style-tool-color-label",
 				"bs-visualeditorconnector-color-annotation-desc"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.visualEditor.mwcore",
+				"ext.oOJSPlus.widgets.colorPicker",
+				"ext.bluespice"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.colors": {
 			"styles": [
-				"bluespice.visualEditorConnector.colors.less"
+				"ext.bluespice.visualEditorConnector.colors.less"
 			]
 		},
-		"bs.vec.ui.InternalUrlHTMLStringTransferHandler": {
+		"ext.bluespice.visualEditorConnector.softHyphen": {
 			"scripts": [
-				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js"
+				"ext.bluespice.visualEditorConnector.softHyphen/command/SoftHyphen.js",
+				"ext.bluespice.visualEditorConnector.softHyphen/tool/InsertSoftHyphen.js",
+				"ext.bluespice.visualEditorConnector.softHyphen/ce/SoftHyphenNode.js",
+				"ext.bluespice.visualEditorConnector.softHyphen/dm/SoftHyphenNode.js"
 			],
 			"dependencies": [
+				"oojs-ui",
+				"ext.bluespice",
 				"ext.visualEditor.mwcore"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.SoftHyphen": {
-			"scripts": [
-				"ve/command/SoftHyphen.js",
-				"ve/tool/InsertSoftHyphen.js",
-				"ve/ce/bs.ce.SoftHyphenNode.js",
-				"ve/dm/bs.dm.SoftHyphenNode.js"
-			],
-			"dependencies": [
-				"ext.bluespice.visualEditorConnector"
 			],
 			"messages": [
 				"bs-vec-insert-softhyphen-title"
@@ -466,7 +474,11 @@
 		},
 		"VisualEditorConnectorPasteFilename": {
 			"value": "{{timestamp}}",
-			"description": "Default name pasted files will receive. Tokens {{timestamp}}, {{random}} and {{pagename}} can be used to generate unique parts of the name. This name should not include the extension"
+			"description": [
+				"Default name pasted files will receive.",
+				"Tokens {{timestamp}}, {{random}} and {{pagename}} can be used to generate unique parts of the name.",
+				"This name should not include the file extension"
+			]
 		}
 	},
 	"Hooks": {
@@ -474,7 +486,6 @@
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddModules::callback",
-			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddSaveProcessOverride::callback",
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback"
 		],
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
@@ -485,5 +496,12 @@
 		],
 		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback"
 	},
+	"RestRoutes": [
+		{
+			"path": "/bsvec/transform/{from}/to/{to}",
+			"factory": "BlueSpice\\VisualEditorConnector\\Rest\\Handler\\Transform::factory",
+			"method": "POST"
+		}
+	],
 	"manifest_version": 2
 }
