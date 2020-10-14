@@ -4,6 +4,7 @@
 			"Saederup92"
 		]
 	},
+	"bs-visualeditorconnector-upload-type-simple": "Simpel",
 	"bs-visualeditorconnector-cancel-edit": "Fortryd redigering. Ikke gemte ændringer vil blive kasseret",
 	"bs-visualeditor-nsm-label": "Visuel redigering",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Almindelig",
@@ -18,6 +19,8 @@
 	"bs-vec-dialog-action-safe": "Annullér",
 	"bs-vec-dialog-create-table-title": "Indsæt tabel",
 	"bs-vec-dialog-media-change-file": "Ændre fil",
+	"bs-visualeditor-linkcontext-label-change": "Ændre etiket",
+	"bs-visualeditor-linkcontext-label-label": "Etiket",
 	"bs-vec-table-style-cell-text-vert-align-bottom": "Bund",
 	"bs-vec-table-style-cell-text-vert-align-middle": "Midt",
 	"bs-vec-table-style-cell-text-hor-align-left": "Venstre",
