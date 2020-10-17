@@ -39,6 +39,10 @@ bs.vec.ui.ColorAnnotationCommand.prototype.execute = function ( surface, args, s
 			};
 
 			annotationAction.set( 'textStyle/color', annotationData );
+		},
+		clear: function() {
+			var annotationAction = new ve.ui.AnnotationAction( surface );
+			annotationAction.clear( 'textStyle/color' );
 		}
 	} );
 
