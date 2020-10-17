@@ -38,6 +38,7 @@ bs.vec.ui.ButtonStyleTool.prototype.annotate = function() {
 		attributes: this.getData(),
 		type: this.getName()
 	};
+
 	if ( this.annotationAction[method]( this.getName(), annotationData ) ) {
 		this.changeActive();
 	}
