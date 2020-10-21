@@ -1,7 +1,6 @@
 (function( mw, $, bs ){
 
 	var _instances = {};
-	console.log( "LOADED" );
 
 	function createEditor( id, cfg ) {
 		cfg.floatable = cfg.floatable || false;
