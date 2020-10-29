@@ -4,7 +4,7 @@
 			"Saederup92"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit": "Fortryd redigering",
+	"bs-visualeditorconnector-cancel-edit": "Fortryd redigering. Ikke gemte ændringer vil blive kasseret",
 	"bs-visualeditor-nsm-label": "Visuel redigering",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Almindelig",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanceret",
@@ -26,5 +26,8 @@
 	"bs-vec-table-border-left": "Venstre",
 	"bs-vec-table-border-right": "Højre",
 	"bs-vec-table-border-bottom": "Bund",
-	"bs-vec-table-border-all": "Alle"
+	"bs-vec-table-border-all": "Alle",
+	"bs-visualeditorconnector-upload-type-simple": "Simpel",
+	"bs-visualeditor-linkcontext-label-change": "Ændre etiket",
+	"bs-visualeditor-linkcontext-label-label": "Etiket"
 }

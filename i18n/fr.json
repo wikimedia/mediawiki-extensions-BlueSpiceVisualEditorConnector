@@ -14,7 +14,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Simple",
 	"bs-visualeditorconnector-upload-type-one-click": "Un clic",
 	"bs-visualeditorconnector-upload-type": "Type de téléversement",
-	"bs-visualeditorconnector-cancel-edit": "Annuler les modifications",
+	"bs-visualeditorconnector-cancel-edit": "Annuler la modification. Les modifications non enregistrées seront perdues",
 	"bs-visualeditor-nsm-label": "Éditeur visuel",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Commun",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avancé",
@@ -89,5 +89,7 @@
 	"bs-vec-table-border-dashed": "Tirets",
 	"bs-vec-table-border-dotted": "Pointillés",
 	"bs-vec-table-border-double": "Double",
-	"bs-vec-insert-softhyphen-title": "Trait d’union léger"
+	"bs-vec-insert-softhyphen-title": "Trait d’union léger",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Annuler la modification",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Voulez-vous vraiment annuler la modification ? Vos modifications non enregistrées seront perdues."
 }
