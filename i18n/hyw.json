@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kareyac"
+			"Kareyac",
+			"Շահէն"
 		]
 	},
-	"bs-vec-dialog-action-safe": "Չեղարկել"
+	"bs-vec-dialog-action-safe": "Չեղարկել",
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "Ընդլայնուած"
 }

@@ -13,7 +13,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Simples",
 	"bs-visualeditorconnector-upload-type-one-click": "Um clique",
 	"bs-visualeditorconnector-upload-type": "Tipo de carregamento",
-	"bs-visualeditorconnector-cancel-edit": "Cancelar as edições",
+	"bs-visualeditorconnector-cancel-edit": "Cancelar edição. Mudanças não salvas serão descartadas",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comuns",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avançado",
@@ -86,5 +86,9 @@
 	"bs-vec-table-border-dashed": "Tracejadas",
 	"bs-vec-table-border-dotted": "Pontilhado",
 	"bs-vec-table-border-double": "Dupla",
-	"bs-vec-insert-softhyphen-title": "Hífen suave"
+	"bs-vec-insert-softhyphen-title": "Hífen suave",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancelar as edições",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Deseja realmente cancelar a edição? Suas alterações não salvas serão descartadas.",
+	"bs-vec-table-border-leftright": "Esquerda-direita",
+	"bs-vec-table-border-topbottom": "Botão principal"
 }

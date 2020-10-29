@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Dutchy45",
 			"Elroy",
 			"Mainframe98"
 		]
@@ -59,5 +60,6 @@
 	"bs-vec-table-border-roundhorizontal": "Rond en horizontaal",
 	"bs-vec-table-border-roundvertical": "Rond en verticaal",
 	"bs-vec-table-border-dashed": "Gestreept",
-	"bs-vec-table-border-double": "Dubbel"
+	"bs-vec-table-border-double": "Dubbel",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Bewerking annuleren"
 }

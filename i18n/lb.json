@@ -6,7 +6,7 @@
 	},
 	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-upload-type-simple": "Einfach",
-	"bs-visualeditorconnector-cancel-edit": "Ännerung annuléieren",
+	"bs-visualeditorconnector-cancel-edit": "Ännerung annuléieren. Net gespäichert Ännerunge ginn ignoréiert",
 	"bs-visualeditor-nsm-label": "Visuellen Editeur",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gemeinsam",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweidert",
@@ -31,5 +31,6 @@
 	"bs-vec-table-border-left": "Lenks",
 	"bs-vec-table-border-top": "Uewen",
 	"bs-vec-table-border-bottom": "Ënnen",
-	"bs-vec-table-border-double": "Duebel"
+	"bs-vec-table-border-double": "Duebel",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Ännerung annuléieren"
 }

@@ -14,7 +14,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Простий",
 	"bs-visualeditorconnector-upload-type-one-click": "Один клік",
 	"bs-visualeditorconnector-upload-type": "Тип завантаження",
-	"bs-visualeditorconnector-cancel-edit": "Скасувати редагування",
+	"bs-visualeditorconnector-cancel-edit": "Скасувати редагування. Незбережені зміни буде відкинуто",
 	"bs-visualeditor-nsm-label": "Візуальний редактор",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Загальні",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Розширені",
@@ -89,5 +89,7 @@
 	"bs-vec-table-border-dashed": "Штрихована",
 	"bs-vec-table-border-dotted": "Пунктирна",
 	"bs-vec-table-border-double": "Подвійна",
-	"bs-vec-insert-softhyphen-title": "М'який дефіс"
+	"bs-vec-insert-softhyphen-title": "М'який дефіс",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Скасувати редагування",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ви справді хочете скасувати редагування? Ваші незбережені зміни буде відкинуто."
 }

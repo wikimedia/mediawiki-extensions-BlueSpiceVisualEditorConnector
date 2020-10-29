@@ -18,5 +18,6 @@
 	"bs-vec-table-border-all": "არძა",
 	"bs-vec-table-border-horizontal": "ჰორიზონტალური",
 	"bs-vec-table-border-roundhorizontal": "რგვალი დო ჰორიზონტალური",
-	"bs-vec-table-border-double": "ნაჟირალი"
+	"bs-vec-table-border-double": "ნაჟირალი",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "რედაქტირაფაშ გოუქვაფა"
 }

@@ -6,7 +6,7 @@
 		]
 	},
 	"bs-visualeditorconnector-upload-type-original": "Original",
-	"bs-visualeditorconnector-cancel-edit": "Cancelar edición",
+	"bs-visualeditorconnector-cancel-edit": "Cancelar edición. Se descartarán los cambios no guardados",
 	"bs-visualeditor-nsm-label": "Editor visual",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Comunes",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Avanzadas",
@@ -47,5 +47,10 @@
 	"bs-vec-table-border-all": "Todo",
 	"bs-vec-table-border-solid": "Sólido",
 	"bs-vec-table-border-dotted": "Punteado",
-	"bs-vec-insert-softhyphen-title": "Guion discrecional"
+	"bs-vec-insert-softhyphen-title": "Guion discrecional",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancelar edición",
+	"bs-vec-row-duplicate-has-merged": "No se puede duplicar la fila seleccionada porque contiene celdas que se extienden por varias filas.",
+	"bs-vec-dialog-media-change-file": "Cambiar archivo",
+	"bs-vec-table-style-cell-text-vert-align": "Alineación vertical del texto",
+	"bs-vec-table-border-horizontal": "Horizontal"
 }

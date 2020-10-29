@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Astrind",
+			"Bugoslav",
 			"Neptune, the Mystic"
 		]
 	},
@@ -32,5 +33,6 @@
 	"bs-vec-table-border-top": "Vrh",
 	"bs-vec-table-border-right": "Desno",
 	"bs-vec-table-border-bottom": "Dno",
-	"bs-vec-table-border-leftright": "Lijevo-desno"
+	"bs-vec-table-border-leftright": "Lijevo-desno",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Otkaži uređivanje"
 }
