@@ -221,13 +221,8 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 			break;
 		case 'imageInfo':
 			bs.vec.ui.MWMediaDialog.parent.prototype.switchPanels.apply( this, [ panel, stopSearchRequery ] );
-			if ( !this.selectedImageInfo ) {
-				break;
-			}
-			switch ( this.selectedImageInfo.mediatype ) {
-				case 'OFFICE':
-					this.actions.setMode( 'info_file' );
-					break;
+			if ( this.isLinkable( this.selectedImageInfo ) ) {
+				this.actions.setMode( 'info_file' );
 			}
 			break;
 		default:
@@ -246,10 +241,28 @@ bs.vec.ui.MWMediaDialog.prototype.uploadPageNameSet = function ( pageName ) {
 		imageInfo = this.mediaUploadBooklet.upload.getImageInfo();
 		this.selectedImageInfo = imageInfo;
 		this.confirmSelectedImage();
-		this.switchPanels( 'edit' );
+		if ( this.isLinkable( this.selectedImageInfo ) ) {
+			this.switchPanels( 'imageInfo' );
+			this.buildMediaInfoPanel( this.selectedImageInfo );
+		} else {
+			this.switchPanels( 'edit' );
+		}
 	} else {
 		bs.vec.ui.MWMediaDialog.parent.prototype.uploadPageNameSet.call( this, pageName );
 	}
+};
+
+bs.vec.ui.MWMediaDialog.prototype.isLinkable = function( imageInfo ) {
+	if ( !imageInfo ) {
+		return false;
+	}
+	switch ( imageInfo.mediatype ) {
+		case 'OFFICE':
+		case 'TEXT':
+			return true;
+	}
+
+	return false;
 };
 
 bs.vec.ui.MWMediaDialog.prototype.getActionProcess = function ( action ) {
