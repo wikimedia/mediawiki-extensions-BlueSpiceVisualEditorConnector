@@ -26,5 +26,8 @@
 	"bs-vec-table-border-left": "Venstre",
 	"bs-vec-table-border-right": "Højre",
 	"bs-vec-table-border-bottom": "Bund",
-	"bs-vec-table-border-all": "Alle"
+	"bs-vec-table-border-all": "Alle",
+	"bs-visualeditorconnector-upload-type-simple": "Simpel",
+	"bs-visualeditor-linkcontext-label-change": "Ændre etiket",
+	"bs-visualeditor-linkcontext-label-label": "Etiket"
 }

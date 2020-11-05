@@ -3,11 +3,12 @@
 		"authors": [
 			"Alexander Yukal",
 			"Katunchik",
+			"Megakott",
 			"Nk88",
 			"Vlad5250"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit": "Отменить изменения",
+	"bs-visualeditorconnector-cancel-edit": "Отменить изменения. Несохраненные изменения будут отменены",
 	"bs-visualeditor-nsm-label": "Визуальный редактор",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Дополнительно",
 	"apihelp-bs-vec-transformtowikitext-summary": "Преобразует VisualEditor HTML в викитекст",
