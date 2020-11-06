@@ -1,7 +1,7 @@
 bs.util.registerNamespace( 'bs.ui.plugin' );
 
 bs.ui.plugin.TableOptions = function ( config ) {
-	this.styleclasses = mw.config.get( 'bsgVisualEditorConnectorTableStyleRegistry' );
+	this.styleclasses = bs.vec.config.get( 'TableStyleRegistry' );
 
 	bs.ui.plugin.TableOptions.super.call( this, config );
 };
@@ -141,7 +141,7 @@ bs.vec.registerComponentPlugin(
 );
 
 ( function registerClasses() {
-	var styleclasses = mw.config.get( 'bsgVisualEditorConnectorTableStyleRegistry' );
+	var styleclasses = bs.vec.config.get( 'TableStyleRegistry' );
 
 	// Add class attributes
 	for ( var style in styleclasses ) {

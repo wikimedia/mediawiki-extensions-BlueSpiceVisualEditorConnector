@@ -37,7 +37,7 @@ bs.vec.ui.DataTransferItem.prototype.getCustomNameFile = function ( blob ) {
 };
 
 bs.vec.ui.DataTransferItem.prototype.getFormattedFileName = function () {
-	var filename = mw.config.get( 'bsgVisualEditorConnectorPasteFilename' );
+	var filename = bs.vec.config.get( 'PasteFilename' );
 	if ( !filename ) {
 		return this.name;
 	}

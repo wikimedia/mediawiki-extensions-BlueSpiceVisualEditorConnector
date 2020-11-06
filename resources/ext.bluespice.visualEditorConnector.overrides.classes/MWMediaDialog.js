@@ -3,7 +3,7 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.MWMediaDialog = function BsVecUiMWMediaDialog( config ) {
 	bs.vec.ui.MWMediaDialog.super.call( this, config );
 
-	this.uploadType = mw.config.get( 'bsVECUploadType' );
+	this.uploadType = bs.vec.config.get( 'UploadType' );
 };
 
 OO.inheritClass( bs.vec.ui.MWMediaDialog, ve.ui.MWMediaDialog );

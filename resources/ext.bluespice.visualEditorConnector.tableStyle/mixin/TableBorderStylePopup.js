@@ -294,7 +294,7 @@ bs.vec.mixin.TableBorderStylePopup.prototype.makeBorderStyle = function() {
 
 bs.vec.mixin.TableBorderStylePopup.prototype.makeBorderColor = function() {
 	this.colorWidget = new OOJSPlus.ui.widget.ColorPickerEmbeddable( {
-		colors: mw.config.get( 'bsVECellBorderColors' ) || []
+		colors: bs.vec.config.get( 'CellBorderColors' ) || []
 	} );
 
 	this.colorWidget.connect( this, {

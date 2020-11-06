@@ -20,7 +20,7 @@ mw.libs.ve.addPlugin( function() {
 
 				//Step 2: Load all plugin modules that may want to register to
 				//those classes
-				var bsvecTagDefinitions = mw.config.get( 'bsVECTagDefinitions' );
+				var bsvecTagDefinitions = bs.vec.config.get( 'TagDefinitions' );
 				if( bsvecTagDefinitions.length === 0 ) {
 					dfd.resolve();
 				}

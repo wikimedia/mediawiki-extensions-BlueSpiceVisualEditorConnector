@@ -70,7 +70,7 @@ bs.vec.ui.ColorAnnotationCommand.prototype.showPicker = function () {
 
 	var offset = $( '.ve-ui-toolbar-group-style' ).offset(),
 		picker = new OOJSPlus.ui.widget.ColorPickerStandaloneWidget( {
-			colors: mw.config.get( 'bsVECColorPickerColors' )
+			colors: bs.vec.config.get( 'ColorPickerColors' )
 		} );
 
 	$( document.body ).append( picker.$element );

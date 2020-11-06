@@ -8,7 +8,7 @@ bs.vec.ui.ColorStyleTool = function( config ) {
 		framed: false,
 		icon: this.getIcon()
 	};
-	customColors = config.customColors ||  mw.config.get( 'bsVECColorPickerColors' );
+	customColors = config.customColors ||  bs.vec.config.get( 'ColorPickerColors' );
 	if ( customColors && customColors.length > 0 ) {
 		pickerCfg.colors = customColors;
 	}
