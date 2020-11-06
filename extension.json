@@ -30,6 +30,9 @@
 						"VisualEditorConnectorUploadDialogType": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\UploadDialogType::getInstance"
 					}
 				}
+			},
+			"JSConfigVars": {
+				"BlueSpiceVisualEditorConfig": "\\BlueSpice\\VisualEditorConnector\\ClientConfig::factory"
 			}
 		},
 		"BlueSpiceVisualEditorConnector": {
@@ -40,7 +43,19 @@
 			],
 			"TagDefinitions": [],
 			"PostProcessors": {},
-			"PreProcessors": {}
+			"PreProcessors": {},
+			"ClientConfig": {
+				"ColorPickerColors": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\ColorPickerColors::factory",
+				"ColorPickerColorsBackground": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\ColorPickerColorsBackground::factory",
+				"CellBorderColors": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\CellBorderColors::factory",
+				"PluginModules": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\PluginModules::factory",
+				"TableStyleRegistry": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TableStyleRegistry::factory",
+				"SimpleSaveProcess": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\SimpleSaveProcess::factory",
+				"TagDefinitions": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TagDefinitions::factory",
+				"UploadType": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\UploadType::factory",
+				"PasteFilename": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\PasteFilename::factory",
+				"HelpUrl": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\HelpUrl::factory"
+			}
 		},
 		"VisualEditor": {
 			"PluginModules": [
@@ -403,8 +418,8 @@
 		},
 		"VisualEditorConnectorTableStyleRegistry": {
 			"value": {
-				"Standard":"wikitable",
-				"Content":"contenttable",
+				"Standard": "wikitable",
+				"Content": "contenttable",
 				"Content (black)":"contenttable-black",
 				"Content (blue)":"contenttable-blue",
 				"Content (darkblue)":"contenttable-darkblue",

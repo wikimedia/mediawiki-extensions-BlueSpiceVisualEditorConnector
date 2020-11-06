@@ -25,7 +25,7 @@ mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 
 						//Step 2: Load all plugin modules that may want to register to
 						//those classes
-						var bsvecPluginModules = mw.config.get( 'bsVECPluginModules' );
+						var bsvecPluginModules = bs.vec.config.get( 'PluginModules' );
 						if( bsvecPluginModules.length === 0 ) {
 							dfd.resolve();
 						}

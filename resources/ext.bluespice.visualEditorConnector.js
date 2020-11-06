@@ -224,4 +224,9 @@
 		}
 	} );
 
+	var config = mw.config.constructor;
+	bs.vec.config = new config();
+	bs.config.getDeferred( 'BlueSpiceVisualEditorConfig' ).done( function( values ) {
+		bs.vec.config.set( values );
+	} );
 })( mediaWiki, jQuery, blueSpice );

@@ -1,5 +1,5 @@
 mw.hook( 've.activationComplete' ).add( function () {
-	if ( !mw.config.get( 'bsVECSimpleSaveProcess' ) ) {
+	if ( !bs.vec.config.get( 'SimpleSaveProcess' ) ) {
 		// Not enabled
 		return;
 	}
