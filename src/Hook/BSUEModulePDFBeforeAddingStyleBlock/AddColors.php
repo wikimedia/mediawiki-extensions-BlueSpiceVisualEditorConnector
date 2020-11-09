@@ -6,7 +6,7 @@ use BlueSpice\UEModulePDF\Hook\BSUEModulePDFBeforeAddingStyleBlocks;
 
 class AddColors extends BSUEModulePDFBeforeAddingStyleBlocks {
 
-	private $lessFilename = 'bluespice.visualEditorConnector.colors.less';
+	private $lessFilename = 'ext.bluespice.visualEditorConnector.colors.less';
 
 	protected function doProcess() {
 		$lessFilepathname = $this->makeLessFilePathname();
