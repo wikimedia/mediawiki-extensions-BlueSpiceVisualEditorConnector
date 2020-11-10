@@ -20,16 +20,18 @@ mw.libs.ve.addPlugin( function() {
 
 				//Step 2: Load all plugin modules that may want to register to
 				//those classes
-				var bsvecTagDefinitions = bs.vec.config.get( 'TagDefinitions' );
-				if( bsvecTagDefinitions.length === 0 ) {
-					dfd.resolve();
-				}
-
-				mw.loader.using( bsvecTagDefinitions ).done( function() {
-					//Step 3: There is no step three
-					tagRegistry.initialize().done( function(){
+				bs.vec.config.load().done( function( config ) {
+					var bsvecTagDefinitions = config.get( 'TagDefinitions' );
+					if( bsvecTagDefinitions.length === 0 ) {
 						dfd.resolve();
-					});
+					}
+
+					mw.loader.using( bsvecTagDefinitions ).done( function() {
+						//Step 3: There is no step three
+						tagRegistry.initialize().done( function(){
+							dfd.resolve();
+						});
+					} );
 				} );
 			} );
 	} );
