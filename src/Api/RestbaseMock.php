@@ -51,6 +51,7 @@ class RestbaseMock extends ApiVisualEditor {
 			 * [?>] - is important
 			 */
 			$pageName = preg_replace( '#^v1/page/html/(.*?)([?>]redirect=false)$#is', '$1', $path );
+
 			$this->mockGetPageHtml( $pageName );
 		}
 	}
@@ -124,8 +125,6 @@ class RestbaseMock extends ApiVisualEditor {
 	 * @return \MediaWiki\Storage\RevisionRecord|null
 	 */
 	protected function revisionFromPageName( $pageName ) {
-		$pageNameParts = explode( '?', $pageName, 2 );
-		$pageName = array_shift( $pageNameParts );
 		$pageNameParts = explode( '>', $pageName, 2 );
 		$pageName = array_shift( $pageNameParts );
 
