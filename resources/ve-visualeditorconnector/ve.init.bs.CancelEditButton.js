@@ -2,29 +2,67 @@
 // eventually gave up. This is a hacky but working
 // solution.
 mw.hook( 've.activationComplete' ).add( function () {
-	if ( ve.init.target.getActions().bsCancelAdded ) {
+	if ( ve.init.target.$element.hasClass( 've-init-sa-target' ) ) {
 		return;
-	};
-
+	}
 	var cancelButton = new OO.ui.ButtonWidget(
-			{
-				label: '',
-				icon: 'clear',
-				iconTitle: mw.msg( 'bs-visualeditorconnector-cancel-edit' ),
-				classes: [ 'bs-visualeditorconnector-cancel-edit' ],
-				framed: false,
-				disabled: false,
-				active: true
-			}
+		{
+			title: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
+			icon: 'cancel',
+			classes: [ 'bs-visualeditorconnector-cancel-edit' ],
+			framed: false,
+			disabled: false,
+			active: true
+		}
 	);
 
 	cancelButton.on( 'click', function () {
-			window.location.href = mw.util.getUrl();
+		OO.ui.confirm( ve.msg( 'bs-visualeditorconnector-cancel-edit-confirm-message' ) ).done( function ( confirmed ) {
+			if ( confirmed ) {
+				// As this is an intentional act of the user, we assume the user
+				// really wants to discard the changes. So we remove any locally stored
+				// but not yet saved changes.
+				ve.init.target.getSurface().getModel().removeDocStateAndChanges();
+				// This flag triggers the browser's unsaved changes warning in
+				// ve.init.mw.DesktopArticleTarget.prototype.onBeforeUnload
+				ve.init.target.edited = false;
+				window.location.href = mw.util.getUrl();
+			}
+		} );
 	});
 
+	// Needed for switching between Visual and Wikitext mode. Otherwise, we get this
+	// error: this.items[i].destroy is not a function
 	cancelButton.destroy = function() {};
 
-	ve.init.target.getActions().insertItem( cancelButton );
+	// Enable cancel button when the text is already dirty on load (happens when
+	// there are edits in session storage in the browser).
+	ve.init.target.isSaveable() ? cancelButton.setFlags( 'destructive' ) : null ;
 
-	ve.init.target.getActions().bsCancelAdded = true;
+	// Position 3 is just before the save button
+	ve.init.target.getActions().addItems( [ cancelButton ], 3 );
+
+	ve.init.target.cancelButton = cancelButton;
+	// This override is dangerous, since it is hard to identify. It shouldn't be
+	// necessary; see the comment (copied from the original) why we use it.
+	// Putting the override in a better identifyable place outside of the mw.hook
+	// context lead to an error, though
+	// #Override
+	ve.init.mw.ArticleTarget.prototype.updateToolbarSaveButtonState = function () {
+		// Disable the save button if we can't save
+		var wasDisabled = this.toolbarSaveButton.isDisabled(),
+			isDisabled = !this.isSaveable();
+		if ( wasDisabled !== isDisabled ) {
+			this.toolbarSaveButton.setDisabled( isDisabled );
+			mw.hook( 've.toolbarSaveButton.stateChanged' ).fire( isDisabled );
+		}
+		// Added by BlueSpice
+		if ( ve.init.target.isSaveable() ) {
+			this.cancelButton.setFlags( ['destructive'] );
+			this.cancelButton.setTitle( mw.msg( 'bs-visualeditorconnector-cancel-edit' ) );
+		} else {
+			this.cancelButton.setFlags( { destructive : false } );
+			this.cancelButton.setTitle( mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ) );
+		}
+	};
 });
