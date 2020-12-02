@@ -5,6 +5,12 @@ mw.hook( 've.activationComplete' ).add( function () {
 	if ( ve.init.target.$element.hasClass( 've-init-sa-target' ) ) {
 		return;
 	}
+
+	// Prevent the button from being added several times
+	if ( ve.init.target.getActions().bsCancelAdded ) {
+		return;
+	};
+
 	var cancelButton = new OO.ui.ButtonWidget(
 		{
 			title: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
@@ -41,6 +47,7 @@ mw.hook( 've.activationComplete' ).add( function () {
 
 	// Position 3 is just before the save button
 	ve.init.target.getActions().addItems( [ cancelButton ], 3 );
+	ve.init.target.getActions().bsCancelAdded = true;
 
 	ve.init.target.cancelButton = cancelButton;
 	// This override is dangerous, since it is hard to identify. It shouldn't be
