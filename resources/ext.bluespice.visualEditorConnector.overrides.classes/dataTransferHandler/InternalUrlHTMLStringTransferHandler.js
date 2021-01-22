@@ -45,6 +45,9 @@ ve.init.Platform.static.initializedPromise.then( function () {} );
  * @inheritdoc
  */
 bs.vec.ui.InternalUrlHTMLStringTransferHandler.prototype.process = function () {
+	var commentRegex = /<!--.*?-->/gms,
+		text = this.item.getAsString();
+	text = text.replace( commentRegex, '' );
 	let newRules = {
 		external: {
 			blacklist: [
@@ -54,15 +57,15 @@ bs.vec.ui.InternalUrlHTMLStringTransferHandler.prototype.process = function () {
 				'article', 'section', 'div', 'alienInline', 'alienBlock', 'comment'
 			],
 			htmlBlacklist: {
-				remove: ['sup.reference:not( [typeof] )'],
+				remove: ['sup.reference:not( [typeof] )', 'o:p'],
 				unwrap: ['fieldset', 'legend']
 			},
-			removeOriginalDomElements: false,
-			nodeSanitization: false
+			removeOriginalDomElements: true,
+			nodeSanitization: true
 		},
 		all: null
 	};
-	let doc = this.surface.getModel().getDocument().newFromHtml( this.item.getAsString(), newRules );
+	let doc = this.surface.getModel().getDocument().newFromHtml( text, newRules );
 	this.resolve( doc );
 
 };
