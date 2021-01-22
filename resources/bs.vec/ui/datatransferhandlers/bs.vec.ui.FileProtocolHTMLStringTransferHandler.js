@@ -36,7 +36,7 @@ bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.handlesPaste = true;
  * @property {RegExp}
  * @private
  */
-bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.urlRegExp = /file:\//i; // Initialized below
+bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.urlRegExp = /^file:\//i; // Initialized below
 
 /**
  * Checks input item with urlRegExp expression
@@ -45,7 +45,6 @@ bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.urlRegExp = /file:\//i; /
  * @return bool Whether item matches against urlRegExp
  */
 bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.matchFunction = function ( item ) {
-
 	if ( bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.types.indexOf( item.type ) >= 0 ) {
 		return bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.urlRegExp.test(
 			item.getAsString()
@@ -57,7 +56,6 @@ bs.vec.ui.FileProtocolHTMLStringTransferHandler.static.matchFunction = function 
  * @inheritdoc
  */
 bs.vec.ui.FileProtocolHTMLStringTransferHandler.prototype.process = function () {
-
 	var newLinkAnnotation = new ve.dm.MWExternalLinkAnnotation( {
 		type: 'link/mwExternal',
 		attributes: { href: this.item.getAsString().trim() }
