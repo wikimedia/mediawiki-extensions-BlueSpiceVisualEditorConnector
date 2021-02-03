@@ -2,9 +2,9 @@
 	"@metadata": {
 		"authors": [
 			"Markus Glaser <glaser@hallowelt.com>",
-			"Wladek92",
-			"Umherirrender",
 			"Robby",
+			"Umherirrender",
+			"Wladek92",
 			"Zoranzoki21"
 		]
 	},
@@ -94,7 +94,7 @@
 	"bs-vec-table-border-width-4": "{{notranslate}}",
 	"bs-vec-table-border-solid": "Label for button that set cell border style to solid",
 	"bs-vec-table-border-dashed": "Label for button that set cell border style to dashed",
-	"bs-vec-table-border-dotted":  "Label for button that set cell border style to dotted",
+	"bs-vec-table-border-dotted": "Label for button that set cell border style to dotted",
 	"bs-vec-table-border-double": "Label for button that set cell border style to double",
 	"bs-vec-insert-softhyphen-title": "Label for the tool that inserts word breaks"
 }
