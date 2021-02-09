@@ -2,7 +2,7 @@
 
 namespace BlueSpice\VisualEditorConnector\ClientConfig;
 
-class TableSytleRegistry extends ConfigVariable {
+class TableStyleRegistry extends ConfigVariable {
 
 	/**
 	 * @inheritDoc
