@@ -1,7 +1,7 @@
 bs.util.registerNamespace( 'bs.ui.plugin' );
 
 bs.ui.plugin.TableOptions = function ( config ) {
-	this.styleclasses = bs.vec.config.get( 'TableStyleRegistry' );
+	this.styleclasses = bs.vec.config.get( 'TableStyleRegistry', {} );
 
 	bs.ui.plugin.TableOptions.super.call( this, config );
 };
