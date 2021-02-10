@@ -5,6 +5,11 @@ use BlueSpice\PageTemplates\Hook\BSPageTemplatesModifyTargetUrl;
 
 class UseVisualEditor extends BSPageTemplatesModifyTargetUrl {
 	protected function skipProcessing() {
+		if ( $this->targetTitle->getContentModel() !== CONTENT_MODEL_WIKITEXT ) {
+			// Only apply page templates to wikitext content model
+			return true;
+		}
+
 		$enabledNamespaces = $this->getConfig()->get( 'VisualEditorAvailableNamespaces' );
 		$targetNamespace = $this->targetTitle->getNsText();
 		$targetNamespaceIndex = $this->targetTitle->getNamespace();
@@ -17,6 +22,7 @@ class UseVisualEditor extends BSPageTemplatesModifyTargetUrl {
 			$enabledNamespaces[$targetNamespaceIndex] === true ) {
 			return false;
 		}
+
 		return true;
 	}
 
