@@ -420,13 +420,13 @@
 			"value": {
 				"Standard": "wikitable",
 				"Content": "contenttable",
-				"Content (black)":"contenttable-black",
-				"Content (blue)":"contenttable-blue",
-				"Content (darkblue)":"contenttable-darkblue",
-				"Cusco Sky":"cuscosky",
-				"Casablanca":"casablanca",
-				"Greyscale":"greyscale",
-				"Greyscale (narrow)":"greyscale-narrow"
+				"Content (black)": "contenttable-black",
+				"Content (blue)": "contenttable-blue",
+				"Content (darkblue)": "contenttable-darkblue",
+				"Cusco Sky": "cuscosky",
+				"Casablanca": "casablanca",
+				"Greyscale": "greyscale",
+				"Greyscale (narrow)": "greyscale-narrow"
 			}
 		},
 		"VisualEditorConnectorColorPickerColors": {
