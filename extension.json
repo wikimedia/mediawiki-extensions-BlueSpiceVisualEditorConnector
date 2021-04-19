@@ -23,13 +23,13 @@
 					"className": "\\BlueSpice\\VisualEditorConnector\\Extension",
 					"extPath": "/BlueSpiceVisualEditorConnector",
 					"status": "beta",
-					"package": "BlueSpice Pro",
-					"configDefinitions": {
-						"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance",
-						"VisualEditorConnectorSimpleSaveProcess": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\SimpleSaveProcess::getInstance",
-						"VisualEditorConnectorUploadDialogType": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\UploadDialogType::getInstance"
-					}
+					"package": "BlueSpice Pro"
 				}
+			},
+			"ConfigDefinitionRegistry": {
+				"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance",
+				"VisualEditorConnectorSimpleSaveProcess": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\SimpleSaveProcess::getInstance",
+				"VisualEditorConnectorUploadDialogType": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\UploadDialogType::getInstance"
 			},
 			"JSConfigVars": {
 				"BlueSpiceVisualEditorConfig": "\\BlueSpice\\VisualEditorConnector\\ClientConfig::factory"
