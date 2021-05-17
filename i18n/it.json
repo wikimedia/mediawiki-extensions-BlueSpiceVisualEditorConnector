@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Beta16"
 		]
 	},
@@ -29,5 +30,10 @@
 	"bs-vec-widget-text-direction-tooltip": "Testo verticale",
 	"bs-visualeditor-linkcontext-label-change": "Modifica etichetta",
 	"bs-visualeditor-linkcontext-label-label": "Etichetta",
+	"bs-vec-table-style-cell-text-hor-align-left": "Sinistra",
+	"bs-vec-table-style-cell-text-hor-align-center": "Centro",
+	"bs-vec-table-style-cell-text-hor-align-right": "Destra",
+	"bs-vec-table-border-left": "Sinistra",
+	"bs-vec-table-border-right": "Destra",
 	"bs-vec-table-border-bottom": "In fondo"
 }
