@@ -19,6 +19,7 @@ bs.vec.util.tag.Definition.prototype.createFields = function( inspector, cfg ) {
 			inspector[ attributes[i].name + 'Input' ],
 			{
 				align: 'left',
+				$overlay: inspector.$body,
 				label: ve.msg( attributes[i].labelMsg ),
 				help: ve.msg( attributes[i].helpMsg )
 			}
