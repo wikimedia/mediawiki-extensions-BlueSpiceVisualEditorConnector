@@ -261,7 +261,6 @@
 				"ext.oOJSPlus.icons"
 			],
 			"messages": [
-				"bs-visualeditorconnector-ve-fullwidth-option",
 				"bs-visualeditorconnector-ve-style-option-description",
 				"bs-visualeditorconnector-ve-style-option",
 				"bs-vec-table-inspector-column",
