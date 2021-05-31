@@ -180,5 +180,5 @@ at unknown times */
 }
 
 .oo-ui-popupWidget-anchored:not(.bs-vec-styleInspector) .oo-ui-popupWidget-popup {
-	margin-left: -30px;
+	margin-left: 0px;
 }
