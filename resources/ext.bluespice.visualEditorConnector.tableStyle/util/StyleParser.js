@@ -39,6 +39,7 @@ bs.vec.util.StyleAttributeParser.prototype.parseStyle = function() {
 		attr = pairBits.pop().trim();
 		this.formatted[attr] = value;
 	}
+
 	return this.formatted;
 };
 
@@ -57,6 +58,10 @@ bs.vec.util.StyleAttributeParser.prototype.getValueForAttr = function( attr ) {
 		return this.formatted[attr];
 	}
 	return null;
+};
+
+bs.vec.util.StyleAttributeParser.prototype.getParsed = function() {
+	return this.formatted;
 };
 
 bs.vec.util.StyleAttributeParser.prototype.toString = function() {

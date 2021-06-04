@@ -108,13 +108,14 @@ bs.vec.ui.TableStyle.prototype.getModelProperty = function() {
 };
 
 bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, result ) {
-	var style, styleParser, modelProperty;
+	var style, styleParser, modelProperty, externalStyle = {}, parsed;
 	modelProperty = this.getModelProperty();
 
 	if ( section !== this.applyTo ) {
 		return;
 	}
 	style = domElement.getAttribute( 'style' );
+
 	if ( !style ) {
 		return;
 	}
@@ -123,6 +124,17 @@ bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, re
 		result[modelProperty] = this.splitValue(
 			styleParser.getValueForAttr( this.getAttribute() )
 		);
+	}
+	parsed = styleParser.getParsed();
+	for ( var key in parsed ) {
+		if ( !parsed.hasOwnProperty( key ) ) {
+			continue;
+		}
+		externalStyle[key] = parsed[key];
+	}
+
+	if ( Object.keys( externalStyle ).length > 0 ) {
+		result.externalStyle = externalStyle;
 	}
 };
 
