@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"bs-visualeditorconnector-desc": "چاشنی آبی را به ویرایشگر دیداری متصل می‌کند",
@@ -10,15 +11,22 @@
 	"bs-visualeditorconnector-simple-save-process-desc": "فعال‌سازی فرایند ذخیرهٔ ساده",
 	"bs-visualeditorconnector-upload-type-original": "اصلی",
 	"bs-visualeditorconnector-upload-type-simple": "ساده",
+	"bs-visualeditorconnector-upload-type-one-click": "یک کلیک",
 	"bs-visualeditorconnector-upload-type": "نوع بارگذاری",
-	"bs-visualeditorconnector-cancel-edit": "لغو ویرایش",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "لغو ویرایش",
+	"bs-visualeditorconnector-cancel-edit": "لغو ویرایش. تغییرات ذخیره‌نشده دور ریخته می‌شوند.",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "آیا از لغو ویرایش مطمئن هستید؟ تغییرات ذخیره‌نشدهٔ شما دور ریخته خواهند شد.",
 	"bs-visualeditor-nsm-label": "ویرایشگر دیداری",
 	"bs-visualeditorconnector-inspector-tab-common-name": "متداول",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "پیشرفته",
 	"bs-visualeditorconnector-ve-style-option-description": "انتخاب سبک جدول",
 	"bs-visualeditorconnector-ve-style-option": "سبک جدول",
+	"bs-visualeditorconnector-upload-dialog-type": "جریان کار برای بارگذاری تصاویر در جعبهٔ رسانه",
 	"bs-visualeditorconnector-text-style-tool-color-label": "رنگ متن",
+	"bs-visualeditorconnector-color-annotation-desc": "با اختصاص دادن ویژگی‌های «color» یا «class»، رنگ‌هایی را به متن می‌افزاید",
 	"bs-visualeditorconnector-dialog-media-link": "پیوند به این پرونده",
+	"bs-visualeditorconnector-dialog-media-meta-link": "پیوند به صفحهٔ توضیحات پرونده",
+	"bs-visualeditorconnector-dialog-media-embed": "تعبیه‌کردن این پرونده",
 	"bs-vec-table-inspector-column": "ستون",
 	"bs-vec-table-inspector-row": "سطر",
 	"bs-vec-table-inspector-cell": "سلول",
@@ -36,6 +44,7 @@
 	"bs-vec-dialog-action-safe": "لغو",
 	"bs-vec-dialog-create-table-title": "درج جدول",
 	"bs-vec-widget-text-direction-tooltip": "متن عمودی",
+	"bs-vec-row-duplicate-has-merged": "ردیف‌های انتخاب‌شده شامل خانه‌هایی می‌شوند که در طول چندین ردیف گسترده شده‌اند و در نتیجه قابل تکثیر نیستند.",
 	"bs-vec-dialog-media-change-file": "تغییر پرونده",
 	"bs-visualeditor-linkcontext-label-change": "تغییر برچسب",
 	"bs-visualeditor-linkcontext-label-label": "برچسب",
@@ -47,8 +56,10 @@
 	"bs-vec-table-style-cell-text-hor-align-left": "چپ",
 	"bs-vec-table-style-cell-text-hor-align-center": "مرکز",
 	"bs-vec-table-style-cell-text-hor-align-right": "راست",
+	"bs-vec-table-style-cell-text-hor-align-justify": "تصدیق",
 	"bs-vec-ve-table-width-label": "پهنای جدول",
 	"bs-vec-ve-table-width-value-auto": "خودکار",
+	"bs-vec-table-border-clear-all": "بازنشانی همهٔ سبک‌ها",
 	"bs-vec-table-border-borders": "کناره‌های خانه",
 	"bs-vec-table-border-width": "پهنای کناره",
 	"bs-vec-table-border-styles": "سبک‌های کناره‌ها",
@@ -61,9 +72,13 @@
 	"bs-vec-table-border-all": "همه",
 	"bs-vec-table-border-leftright": "چپ و راست",
 	"bs-vec-table-border-topbottom": "بالا و پایین",
+	"bs-vec-table-border-round": "اطراف",
 	"bs-vec-table-border-horizontal": "افقی",
+	"bs-vec-table-border-roundhorizontal": "اطراف و افقی",
+	"bs-vec-table-border-roundvertical": "اطراف و عمودی",
 	"bs-vec-table-border-solid": "یکدست",
 	"bs-vec-table-border-dashed": "خط‌چین",
 	"bs-vec-table-border-dotted": "نقطه‌چین",
-	"bs-vec-table-border-double": "دوگانه"
+	"bs-vec-table-border-double": "دوگانه",
+	"bs-vec-insert-softhyphen-title": "خط ربط نرم"
 }
