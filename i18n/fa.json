@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Amirsara",
-			"FarsiNevis"
+			"FarsiNevis",
+			"Jeeputer"
 		]
 	},
 	"bs-visualeditorconnector-text-style-tool-color-label": "رنگ متن",
@@ -15,7 +16,7 @@
 	"bs-visualeditorconnector-upload-type-original": "اصلی",
 	"bs-visualeditorconnector-upload-type-simple": "ساده",
 	"bs-visualeditorconnector-upload-type": "نوع بارگذاری",
-	"bs-visualeditorconnector-cancel-edit": "لغو ویرایش",
+	"bs-visualeditorconnector-cancel-edit": "لغو ویرایش. تغییرات ذخیره‌نشده دور ریخته می‌شوند.",
 	"bs-visualeditor-nsm-label": "ویرایشگر دیداری",
 	"bs-visualeditorconnector-inspector-tab-common-name": "متداول",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "پیشرفته",
@@ -65,5 +66,19 @@
 	"bs-vec-table-border-solid": "یکدست",
 	"bs-vec-table-border-dashed": "خط‌چین",
 	"bs-vec-table-border-dotted": "نقطه‌چین",
-	"bs-vec-table-border-double": "دوگانه"
+	"bs-vec-table-border-double": "دوگانه",
+	"bs-visualeditorconnector-upload-type-one-click": "یک کلیک",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "لغو ویرایش",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "آیا از لغو ویرایش مطمئن هستید؟ تغییرات ذخیره‌نشدهٔ شما دور ریخته خواهند شد.",
+	"bs-visualeditorconnector-upload-dialog-type": "جریان کار برای بارگذاری تصاویر در جعبهٔ رسانه",
+	"bs-visualeditorconnector-color-annotation-desc": "با اختصاص دادن ویژگی‌های «color» یا «class»، رنگ‌هایی را به متن می‌افزاید",
+	"bs-visualeditorconnector-dialog-media-meta-link": "پیوند به صفحهٔ توضیحات پرونده",
+	"bs-visualeditorconnector-dialog-media-embed": "تعبیه‌کردن این پرونده",
+	"bs-vec-row-duplicate-has-merged": "ردیف‌های انتخاب‌شده شامل خانه‌هایی می‌شوند که در طول چندین ردیف گسترده شده‌اند و در نتیجه قابل تکثیر نیستند.",
+	"bs-vec-table-style-cell-text-hor-align-justify": "تصدیق",
+	"bs-vec-table-border-clear-all": "بازنشانی همهٔ سبک‌ها",
+	"bs-vec-table-border-round": "اطراف",
+	"bs-vec-table-border-roundhorizontal": "اطراف و افقی",
+	"bs-vec-table-border-roundvertical": "اطراف و عمودی",
+	"bs-vec-insert-softhyphen-title": "خط ربط نرم"
 }
