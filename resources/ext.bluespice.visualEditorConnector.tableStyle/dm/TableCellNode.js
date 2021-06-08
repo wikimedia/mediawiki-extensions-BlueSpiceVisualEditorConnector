@@ -35,6 +35,24 @@ bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 	ve.dm.TableCellableNode.static.applyAttributes( attributes, domElement );
 	this.runTableStyles( 'toDomElements', [ dataElement, domElement, attributes ] );
 
+	var styleParser = new bs.vec.util.StyleAttributeParser(  domElement.getAttribute( 'style' ) ),
+		externalStyle = dataElement.externalStyle || {};
+
+	if ( Object.keys( externalStyle ).length > 0 ) {
+		for ( var styleKey in externalStyle ) {
+			if ( !externalStyle.hasOwnProperty( styleKey ) ) {
+				continue;
+			}
+
+			if ( styleParser.getValueForAttr( styleKey ) !== null ) {
+				continue;
+			}
+			styleParser.addToStyle( styleKey, externalStyle[styleKey] );
+		}
+
+		domElement.setAttribute( 'style', styleParser.toString() );
+	}
+
 	return [ domElement ];
 };
 
