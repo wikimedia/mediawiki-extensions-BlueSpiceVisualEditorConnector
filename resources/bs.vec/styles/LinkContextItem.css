@@ -45,6 +45,7 @@
 	display: block;
 	max-width: 8.5em;
 	padding-left: 0.6em;
+	padding-right: 0.3em;
 }
 
 .ve-ui-linkContextItem .ve-ui-linkContextItem-label .ve-ui-linkContextItem-label-action .oo-ui-buttonElement {
