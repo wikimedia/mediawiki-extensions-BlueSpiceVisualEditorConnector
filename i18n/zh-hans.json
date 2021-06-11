@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			")8",
 			"A Chinese Wikipedian",
 			"A Retired User",
 			"Josephine W.",
@@ -47,5 +48,15 @@
 	"bs-vec-table-border-bottom": "底部",
 	"bs-vec-table-border-double": "两倍",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "取消编辑",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "你真的要取消这次的编辑吗？你未保存的部分将被销毁。"
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "你真的要取消这次的编辑吗？你未保存的部分将被销毁。",
+	"bs-visualeditor-linkcontext-label-label": "标签",
+	"bs-vec-table-style-cell-text-vert-align-bottom": "底部",
+	"bs-vec-table-style-cell-text-vert-align-top": "顶部",
+	"bs-vec-table-style-cell-text-vert-align-middle": "中间",
+	"bs-vec-table-style-cell-text-hor-align-left": "左",
+	"bs-vec-table-style-cell-text-hor-align-center": "中",
+	"bs-vec-table-style-cell-text-hor-align-right": "右",
+	"bs-vec-table-border-top": "顶部",
+	"bs-vec-table-border-right": "右",
+	"bs-vec-table-border-all": "全部"
 }

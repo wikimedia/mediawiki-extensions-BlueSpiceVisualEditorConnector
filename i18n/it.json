@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Ajeje Brazorf",
 			"Beta16"
 		]
 	},
@@ -35,5 +36,10 @@
 	"bs-visualeditor-linkcontext-label-label": "Etichetta",
 	"bs-vec-table-border-bottom": "In fondo",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Annulla modifica",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Vuoi davvero annullare la modifica? Le modifiche non salvate verranno perse."
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Vuoi davvero annullare la modifica? Le modifiche non salvate verranno perse.",
+	"bs-vec-table-style-cell-text-hor-align-left": "Sinistra",
+	"bs-vec-table-style-cell-text-hor-align-center": "Centro",
+	"bs-vec-table-style-cell-text-hor-align-right": "Destra",
+	"bs-vec-table-border-left": "Sinistra",
+	"bs-vec-table-border-right": "Destra"
 }
