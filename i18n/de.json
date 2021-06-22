@@ -11,6 +11,7 @@
 	"bs-visualeditorconnector-desc": "Verbindet BlueSpice mit dem VisualEditor",
 	"bs-visualeditorconnector-enable-visualeditor": "VisualEditor für BlueSpice-Erweiterungen aktivieren",
 	"bs-visualeditorconnector-simple-save-process-desc": "Aktiviere den einfachen Speichervorgang",
+	"bs-visualeditorconnector-simple-save-process": "Einfachen Speichervorgang aktivieren",
 	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-upload-type-simple": "Einfach",
 	"bs-visualeditorconnector-upload-type-one-click": "Ein Klick",
@@ -92,5 +93,6 @@
 	"bs-vec-table-border-dashed": "Gestrichelt",
 	"bs-vec-table-border-dotted": "Gepunktet",
 	"bs-vec-table-border-double": "Doppelt",
-	"bs-vec-insert-softhyphen-title": "Bedingter Trennstrich"
+	"bs-vec-insert-softhyphen-title": "Bedingter Trennstrich",
+	"bs-visualeditorconnector-upload-type-help": "Original: Hochlade-Recht wird geprüft. Dateiname, Namensraum und Kategorie sind editierbar. Die Beschreibung ist erforderlich.\nEinfach: Hochlade-Recht wird nicht geprüft. Dateiname, Namensraum und Kategorie sind editierbar. Beschreibung ist optional.\nEin Klick: Hochlade-Recht wird nicht geprüft. Dateiname und Kategorie sind nicht editierbar. Der Namensraum ist editierbar."
 }
