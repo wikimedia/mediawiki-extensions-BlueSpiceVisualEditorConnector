@@ -92,5 +92,6 @@
 	"bs-vec-table-border-dashed": "Dashed",
 	"bs-vec-table-border-dotted": "Dotted",
 	"bs-vec-table-border-double": "Double",
-	"bs-vec-insert-softhyphen-title": "Soft hyphen"
+	"bs-vec-insert-softhyphen-title": "Soft hyphen",
+	"bs-visualeditorconnector-upload-type-help": "Original: Upload-right is verified. File name, namespace and category are editable. Description is required.\nSimple: Upload-right is not verified. File name, namespace and category are editable. Description is optional.\nOne click: Upload-right is not verified. File name and category are not editable. The namespace is editable."
 }

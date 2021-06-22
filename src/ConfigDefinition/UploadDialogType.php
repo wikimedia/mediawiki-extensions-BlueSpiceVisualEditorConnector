@@ -50,4 +50,12 @@ class UploadDialogType extends ConfigDefinition {
 		return 'bs-visualeditorconnector-upload-type';
 	}
 
+	/**
+	 *
+	 * @return string
+	 */
+	public function getHelpMessageKey() {
+		return 'bs-visualeditorconnector-upload-type-help';
+	}
+
 }
