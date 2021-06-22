@@ -86,5 +86,6 @@
 	"bs-vec-table-border-dashed": "Label for button that set cell border style to dashed",
 	"bs-vec-table-border-dotted": "Label for button that set cell border style to dotted",
 	"bs-vec-table-border-double": "Label for button that set cell border style to double",
-	"bs-vec-insert-softhyphen-title": "Label for the tool that inserts word breaks"
+	"bs-vec-insert-softhyphen-title": "Label for the tool that inserts word breaks",
+	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\""
 }
