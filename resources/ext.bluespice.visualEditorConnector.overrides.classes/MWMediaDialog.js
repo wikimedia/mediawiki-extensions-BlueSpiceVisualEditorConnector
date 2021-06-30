@@ -313,3 +313,51 @@ bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation, type )
 
 	this.close( { action: type } );
 };
+
+// Overwrite fitLabel to get the label completely displayed
+bs.vec.ui.MWMediaDialog.prototype.fitLabel = function (  ) {
+	bs.vec.ui.MWMediaDialog.super.prototype.fitLabel.call( this );
+
+	var safeWidth, primaryWidth, labelWidth, navigationWidth, leftWidth, rightWidth,
+		size = this.getSizeProperties();
+
+	if ( typeof size.width !== 'number' ) {
+		if ( this.isOpened() ) {
+			navigationWidth = this.$head.width() - 20;
+		} else if ( this.isOpening() ) {
+			if ( !this.fitOnOpen ) {
+				// Size is relative and the dialog isn't open yet, so wait.
+				// FIXME: This should ideally be handled by setup somehow.
+				this.manager.lifecycle.opened.done( this.fitLabel.bind( this ) );
+				this.fitOnOpen = true;
+			}
+			return;
+		} else {
+			return;
+		}
+	} else {
+		navigationWidth = size.width - 20;
+	}
+
+	safeWidth = this.$safeActions.width();
+	primaryWidth = this.$primaryActions.width();
+
+	labelWidth = this.title.$element.width();
+
+	// sometimes primaryActions.width() returns a smaller width than it has
+	// to get the title completely displayed the primaryWidth is set manually
+	if ( !OO.ui.isMobile() && primaryWidth < 120 ) {
+		primaryWidth = 150;
+	}
+	if ( this.getDir() === 'ltr' ) {
+		leftWidth = safeWidth;
+		rightWidth = primaryWidth;
+	} else {
+		leftWidth = primaryWidth;
+		rightWidth = safeWidth;
+	}
+
+	this.$location.css( { paddingLeft: leftWidth, paddingRight: rightWidth  } );
+
+	return this;
+};
