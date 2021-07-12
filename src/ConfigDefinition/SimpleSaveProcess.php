@@ -21,6 +21,6 @@ class SimpleSaveProcess extends \BlueSpice\ConfigDefinition\BooleanSetting {
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
-		return 'bs-visualeditorconnector-simple-save-process';
+		return 'bs-visualeditorconnector-simple-save-process-desc';
 	}
 }
