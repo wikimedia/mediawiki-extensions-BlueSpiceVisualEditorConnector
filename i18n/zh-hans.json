@@ -5,6 +5,7 @@
 			"A Chinese Wikipedian",
 			"A Retired User",
 			"Josephine W.",
+			"Lakejason0",
 			"Shuiwater",
 			"Viztor",
 			"予弦",
@@ -58,5 +59,6 @@
 	"bs-vec-table-style-cell-text-hor-align-right": "右",
 	"bs-vec-table-border-top": "顶部",
 	"bs-vec-table-border-right": "右",
-	"bs-vec-table-border-all": "全部"
+	"bs-vec-table-border-all": "全部",
+	"bs-vec-ve-table-width-label": "表格宽度"
 }
