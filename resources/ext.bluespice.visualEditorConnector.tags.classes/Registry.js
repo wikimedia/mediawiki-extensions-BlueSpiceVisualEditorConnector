@@ -126,6 +126,11 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function( cfg ){
 				scrollable: false,
 				padded: true
 			});
+			this.indexLayout.connect( this, {
+				set: function() {
+					this.updateSize();
+				}
+			});
 			for( var i = 0; i < cfg.tabs.length; i++ ) {
 				var tabName = cfg.tabs[i].name;
 				var tabClassName = "tab" + tabName;
