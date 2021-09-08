@@ -30,7 +30,13 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.onFocus = function() {
  * @returns {string}
  */
 bs.ui.widget.TextInputMWVisualEditor.prototype.getValue = function() {
-	return this.currentValue;
+	var promise = this.visualEditor.getWikiText();
+	var me = this;
+	promise.done( function ( value ) {
+		// keep track of actual value anyway to be on the safe side
+		me.currentValue = value;
+	} );
+	return promise;
 };
 
 /**
@@ -69,9 +75,13 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.makeVisualEditor = function( conf
 };
 
 bs.ui.widget.TextInputMWVisualEditor.prototype.onHistoryChange = function() {
-	var me = this;
-	this.visualEditor.getWikiText().done( function( value ) {
-		me.currentValue = value;
-		me.emit( 'change', value );
-	} );
+	// we do not need to track the actual value, just that there was a change
+	this.emit( 'change', this.currentValue );
+};
+
+bs.ui.widget.TextInputMWVisualEditor.prototype.getValidity = function() {
+	// visual editor is always valid
+	var $dfd = $.Deferred();
+	$dfd.resolve();
+	return $dfd.promise( this );
 };
