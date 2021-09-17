@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"McDutchie",
 			"Unai01"
 		]
 	},
@@ -32,7 +33,7 @@
 	"bs-vec-dialog-action-done": "Hecho",
 	"bs-vec-dialog-action-safe": "Cancelar",
 	"bs-vec-dialog-create-table-title": "Insertar tabla",
-	"bs-vec-widget-text-direction-tooltip": "Texo vertical",
+	"bs-vec-widget-text-direction-tooltip": "Texto vertical",
 	"bs-vec-row-duplicate-has-merged": "No se puede duplicar la fila seleccionada porque contiene celdas que se extienden por varias filas.",
 	"bs-vec-dialog-media-change-file": "Cambiar archivo",
 	"bs-visualeditor-linkcontext-label-change": "Cambiar etiqueta",
