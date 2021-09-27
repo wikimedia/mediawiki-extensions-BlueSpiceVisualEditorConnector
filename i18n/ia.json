@@ -78,5 +78,6 @@
 	"bs-vec-table-border-dashed": "Striate",
 	"bs-vec-table-border-dotted": "Punctate",
 	"bs-vec-table-border-double": "Duple",
-	"bs-vec-insert-softhyphen-title": "Tracto de union conditional"
+	"bs-vec-insert-softhyphen-title": "Tracto de union conditional",
+	"bs-visualeditorconnector-upload-type-help": "Original: Derecto de incargamento es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es obligatori.\nSimple: Derecto de incargamento non es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es optional.\nUn clic: Derecto de incargamento non es verificate. Nomine de file e categoria non es modificabile. Le spatio de nomines es modificabile."
 }
