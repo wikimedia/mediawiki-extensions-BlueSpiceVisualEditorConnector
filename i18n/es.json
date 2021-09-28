@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Fitoschido",
+			"McDutchie",
 			"Unai01"
 		]
 	},
@@ -30,7 +31,7 @@
 	"bs-vec-dialog-action-done": "Hecho",
 	"bs-vec-dialog-action-safe": "Cancelar",
 	"bs-vec-dialog-create-table-title": "Insertar tabla",
-	"bs-vec-widget-text-direction-tooltip": "Texo vertical",
+	"bs-vec-widget-text-direction-tooltip": "Texto vertical",
 	"bs-visualeditorconnector-ve-style-option-description": "Elige el tipo de tabla",
 	"bs-visualeditor-linkcontext-label-change": "Cambiar etiqueta",
 	"bs-visualeditor-linkcontext-label-label": "Etiqueta",

@@ -4,7 +4,8 @@
 			"Dutchy45",
 			"Elroy",
 			"Mainframe98",
-			"McDutchie"
+			"McDutchie",
+			"Romaine"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Koppelt BlueSpice aan VisualEditor",
@@ -23,8 +24,8 @@
 	"bs-vec-contextitem-cell-style-add-options-title": "Cel opties",
 	"bs-vec-contextitem-column-style-add-options-title": "Kolom opties",
 	"bs-vec-contextitem-row-style-add-options-title": "Rij opties",
-	"bs-vec-contextitem-row-duplicate": "Dubbele rij",
-	"bs-vec-contextitem-column-duplicate": "Dubbele kolom",
+	"bs-vec-contextitem-row-duplicate": "Rij dupliceren",
+	"bs-vec-contextitem-column-duplicate": "Kolom dupliceren",
 	"bs-vec-contextitem-table-additional-options": "Extra opties",
 	"bs-vec-dialog-table-create-number-of-rows": "Aantal rijen",
 	"bs-vec-dialog-table-create-number-of-columns": "Aantal kolommen",
@@ -62,5 +63,14 @@
 	"bs-vec-table-border-roundvertical": "Rond en verticaal",
 	"bs-vec-table-border-dashed": "Gestreept",
 	"bs-vec-table-border-double": "Dubbel",
-	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Bewerking annuleren"
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Bewerking annuleren",
+	"bs-visualeditorconnector-upload-type-original": "Origineel",
+	"bs-visualeditorconnector-upload-type-simple": "Eenvoudig",
+	"bs-visualeditorconnector-upload-type-one-click": "Een klik",
+	"bs-visualeditorconnector-ve-style-option": "Tabelstijl",
+	"bs-visualeditorconnector-dialog-media-link": "Link naar dit bestand",
+	"bs-vec-table-style-cell-text-vert-align": "Verticale tekst-uitlijning",
+	"bs-vec-table-style-cell-text-hor-align": "Tekst-uitlijning",
+	"bs-vec-ve-table-width-value-auto": "Automatisch",
+	"bs-vec-table-border-clear-all": "Alle stijlen resetten"
 }

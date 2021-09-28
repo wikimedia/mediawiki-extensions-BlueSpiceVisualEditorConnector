@@ -3,10 +3,11 @@
 		"authors": [
 			"Erelon",
 			"Steeve815",
-			"Strayblues"
+			"Strayblues",
+			"נדב ס"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה",
+	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה. פעולה זו תגרום לביטול כל השינויים שלא נשמרו.",
 	"bs-visualeditor-nsm-label": "העורך החזותי",
 	"bs-visualeditorconnector-inspector-tab-common-name": "תדיר",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "מתקדם",
