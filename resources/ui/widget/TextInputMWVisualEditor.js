@@ -30,6 +30,9 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.onFocus = function() {
  * @returns {string}
  */
 bs.ui.widget.TextInputMWVisualEditor.prototype.getValue = function() {
+	if ( !this.visualEditor ) {
+		return this.currentValue;
+	}
 	var promise = this.visualEditor.getWikiText();
 	var me = this;
 	promise.done( function ( value ) {
