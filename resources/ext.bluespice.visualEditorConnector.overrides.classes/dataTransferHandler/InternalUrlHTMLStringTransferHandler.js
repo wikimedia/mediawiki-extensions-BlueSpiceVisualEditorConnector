@@ -43,7 +43,7 @@ ve.init.Platform.static.initializedPromise.then( function () {} );
 
 bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.matchFunction = function( item ) {
 	// Do not handle table data
-	var regex = new RegExp( '^\<table.*\<\/table\>$' );
+	var regex = new RegExp( '\<table.*\<\/table\>$' );
 	return !regex.test( item.stringData || '' );
 };
 
