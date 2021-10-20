@@ -5,6 +5,7 @@
 			"Katunchik",
 			"Megakott",
 			"Nk88",
+			"Okras",
 			"Vlad5250"
 		]
 	},
@@ -16,5 +17,7 @@
 	"bs-visualeditorconnector-dialog-media-meta-link": "Ссылка на страницу описания файла",
 	"bs-visualeditor-linkcontext-label-change": "Изменить метку",
 	"bs-visualeditor-linkcontext-label-label": "Метка",
-	"bs-vec-insert-softhyphen-title": "Мягкий дефис"
+	"bs-vec-insert-softhyphen-title": "Мягкий дефис",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Отменить изменения",
+	"bs-vec-dialog-action-safe": "Отмена"
 }
