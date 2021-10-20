@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DDPAT",
 			"Movses",
 			"Piramidion",
 			"Vlad5250",
@@ -91,5 +92,6 @@
 	"bs-vec-table-border-double": "Подвійна",
 	"bs-vec-insert-softhyphen-title": "М'який дефіс",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Скасувати редагування",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ви справді хочете скасувати редагування? Ваші незбережені зміни буде відкинуто."
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ви справді хочете скасувати редагування? Ваші незбережені зміни буде відкинуто.",
+	"bs-visualeditorconnector-upload-type-help": "Оригінал: право на завантаження перевірено. Ім'я файлу, простір назв та категорію можна редагувати. Опис обов’язковий.\nПростий: право на завантаження не перевірено. Ім'я файлу, простір назв та категорію можна редагувати. Опис необов’язковий.\nОдин клік: право на завантаження не перевірено. Ім'я файлу та категорію не можна редагувати. Простір назв можна редагувати."
 }
