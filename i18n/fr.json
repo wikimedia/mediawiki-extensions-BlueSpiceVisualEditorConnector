@@ -82,5 +82,6 @@
 	"bs-vec-table-border-dashed": "Tirets",
 	"bs-vec-table-border-dotted": "Pointillés",
 	"bs-vec-table-border-double": "Double",
-	"bs-vec-insert-softhyphen-title": "Tiret de césure conditionnel"
+	"bs-vec-insert-softhyphen-title": "Tiret de césure conditionnel",
+	"bs-visualeditorconnector-upload-type-help": "D’origine : Le droit de téléchargement est vérifié. Le nom de fichier, l’espace de nom et la catégorie sont modifiables. La description est obligatoire.\nSimple : Le droit de téléchargement n’est pas vérifié. Le nom de fichier, l’espace de nom et la catégorie sont modifiables. La description est facultatif.\nUn clic : Le droit de téléchargement n’est pas vérifié. Le nom de fichier et la catégorie ne sont pas modifiables. L’espace de nom est modifiable."
 }
