@@ -29,4 +29,9 @@
 namespace BlueSpice\VisualEditorConnector;
 
 class Extension extends \BlueSpice\Extension {
+	public static function onRegistration() {
+		if ( isset( $GLOBALS[ 'wgVisualEditorPreloadModules' ] ) ) {
+			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector";
+		}
+	}
 }

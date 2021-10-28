@@ -1,6 +1,6 @@
 mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 	.done( function() {
-		mw.libs.ve.addPlugin( function() {
+		mw.libs.ve.targetLoader.addPlugin( function() {
 			/**
 			 * Unfortunately when `VisualeditorPluginModules`, that are registered at
 			 * the serverside are loaded, the base classes like
