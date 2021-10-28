@@ -68,6 +68,7 @@
 			}
 		}
 	},
+	"callback": "\\BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
 	"AutoloadNamespaces": {
 		"BlueSpice\\VisualEditorConnector\\": "src/"
 	},
@@ -504,7 +505,6 @@
 		"BSSocialModuleDepths": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSSocialModuleDepths\\AddVECModules::callback",
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
-			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddModules::callback",
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback"
 		],
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
