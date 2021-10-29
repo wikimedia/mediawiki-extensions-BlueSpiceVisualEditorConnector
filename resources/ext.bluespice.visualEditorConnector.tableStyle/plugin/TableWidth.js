@@ -23,7 +23,7 @@ bs.ui.plugin.TableWidth.prototype.initialize = function () {
 	} );
 
 	this.component.widthSlider.connect( this.component, { change: 'updateActions' } );
-	this.component.panel.$element.append( this.widthLayout.$element );
+	this.component.panel.$element.prepend( this.widthLayout.$element );
 };
 
 bs.ui.plugin.TableWidth.prototype.getValues = function ( values ) {
