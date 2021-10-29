@@ -16,6 +16,7 @@ bs.ui.plugin.TableOptions.prototype.initialize = function () {
 		if ( !this.styleclasses.hasOwnProperty( style ) ) {
 			continue;
 		}
+
 		var classname = this.styleclasses[style];
 		var option = new OO.ui.MenuOptionWidget( {
 			data: classname, label: style
@@ -34,7 +35,7 @@ bs.ui.plugin.TableOptions.prototype.initialize = function () {
 	} );
 
 	this.component.TableOptions.connect( this.component, { change: 'updateActions' } );
-	this.component.panel.$element.append( tableOptionsLayout.$element );
+	this.component.panel.$element.prepend( tableOptionsLayout.$element );
 
 };
 
