@@ -9,12 +9,24 @@ OO.inheritClass( bs.vec.ui.MWTableDialog, ve.ui.MWTableDialog );
 bs.vec.ui.MWTableDialog.prototype.initialize = function() {
 	bs.vec.ui.MWTableDialog.super.prototype.initialize.call( this );
 
+	$properties = this.panel.$element.children();
+	/* set switch 'styled wikitable' from VE hidden  */
+	for ( var i = 0; i < $properties.length; i++ ) {
+		if ( $properties[i].innerText.includes( "wikitable" ) ) {
+			this.panel.$element.children().eq( i ).hide();
+		}
+	}
+	/* to set bluespice elements on top of dialog */
+	this.panel.$element.children().remove();
+
 	this.initComponentPlugins();
 
 	for( var i = 0; i < this.componentPlugins.length; i++ ) {
 		var plugin = this.componentPlugins[i];
 		plugin.initialize();
 	}
+
+	this.panel.$element.append( $properties );
 };
 
 bs.vec.ui.MWTableDialog.prototype.getValues = function () {

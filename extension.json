@@ -418,6 +418,7 @@
 		},
 		"VisualEditorConnectorTableStyleRegistry": {
 			"value": {
+				"No table style": "nostyle",
 				"Standard": "wikitable",
 				"Content": "contenttable",
 				"Content (black)": "contenttable-black",
