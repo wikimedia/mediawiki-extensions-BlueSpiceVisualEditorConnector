@@ -48,6 +48,12 @@
 	background-color: #eaecf0;
 }
 
+article#content .bs-visualeditorconnector-cancel-edit {
+	/* fix height for discovery skin */
+	height: 45px;
+	width: 45px;
+}
+
 .bs-visualeditorconnector-cancel-edit:hover {
 	background-color: #c8ccd1;
 }
