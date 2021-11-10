@@ -86,10 +86,11 @@ bs.ui.plugin.TableOptions.prototype.getSetupProcess = function ( parentProcess )
 		this.fragment = this.component.getFragment();
 		var activeClass = this.getActiveClass( this.fragment );
 
+		var selected = this.component.TableOptions.getMenu().findItemFromData( 'nostyle' );
 		if ( activeClass ) {
-			var selected = this.component.TableOptions.getMenu().findItemFromData( activeClass );
-			this.component.TableOptions.getMenu().selectItem( selected );
+			selected = this.component.TableOptions.getMenu().findItemFromData( activeClass );
 		}
+		this.component.TableOptions.getMenu().selectItem( selected );
 		ve.extendObject( this.component.initialValues, {
 			tableoption: activeClass
 		} );
@@ -121,7 +122,11 @@ bs.ui.plugin.TableOptions.prototype.getActionProcess = function ( parentProcess,
 			allItems.forEach( function ( thisClass ) {
 				var thisName = thisClass.data;
 				var obj = {};
-				if ( thisName === selectedClass ) {
+				if ( thisName === 'nostyle' ) {
+					obj[thisName] = false;
+					fragment.changeAttributes( obj );
+				}
+				else if ( thisName === selectedClass ) {
 					obj[thisName] = true;
 					fragment.changeAttributes( obj );
 				} else {
