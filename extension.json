@@ -187,6 +187,7 @@
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWMetaDialog.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWSaveDialog.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/dataTransferHandler/InternalUrlHTMLStringTransferHandler.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/dataTransferHandler/MailtoHTMLStringTransferHandler.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/ve.init.mw.DesktopArticleTarget.override.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/ui/DataTransferItem.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/ForeignStructuredUpload/ForeignStructuredUpload.js",
