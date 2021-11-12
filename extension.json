@@ -148,6 +148,7 @@
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutSimple.js",
 				"bs.vec/ui/ForeignStructuredUpload/BookletLayoutOneClick.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.InternalUrlHTMLStringTransferHandler.js",
+				"bs.vec/ui/datatransferhandlers/bs.vec.ui.MailtoHTMLStringTransferHandler.js",
 				"bs.vec/ui/datatransferhandlers/bs.vec.ui.FileProtocolHTMLStringTransferHandler.js",
 				"ve/dm/bs.dm.MWTableNode.js",
 				"ve/ce/bs.ce.MWTableNode.js",
