@@ -16,8 +16,6 @@ bs.vec.ui.MWTableDialog.prototype.initialize = function() {
 			this.panel.$element.children().eq( i ).hide();
 		}
 	}
-	/* to set bluespice elements on top of dialog */
-	this.panel.$element.children().remove();
 
 	this.initComponentPlugins();
 
