@@ -379,6 +379,11 @@
 				"ext.bluespice.visualEditorConnector.colors.less"
 			]
 		},
+		"ext.bluespice.visualEditorConnector.tables": {
+			"styles": [
+				"ext.bluespice.visualEditorConnector.tables.less"
+			]
+		},
 		"ext.bluespice.visualEditorConnector.softHyphen": {
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.softHyphen/command/SoftHyphen.js",
