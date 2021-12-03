@@ -96,10 +96,6 @@
 				"ext.visualEditor.mwextensions.desktop",
 				"ext.visualEditor.icons",
 				"ext.visualEditor.mwlink",
-				"ext.bluespice.visualEditorConnector.tags",
-				"ext.bluespice.visualEditorConnector.softHyphen",
-				"ext.bluespice.visualEditorConnector.styleInspector",
-				"ext.bluespice.visualEditorConnector.internalLink",
 				"mediawiki.api"
 			]
 		},

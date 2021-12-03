@@ -13,12 +13,7 @@ class TagDefinitions extends ConfigBase {
 		$tagRegistry = new ExtensionAttributeBasedRegistry(
 			'BlueSpiceVisualEditorConnectorTagDefinitions'
 		);
-		$tagDefinitions = [];
-		foreach ( $tagRegistry->getAllKeys() as $key ) {
-			$moduleName = $tagRegistry->getValue( $key );
-			$tagDefinitions[] = $moduleName;
-		}
 
-		return $tagDefinitions;
+		return $tagRegistry->getAllValues();
 	}
 }
