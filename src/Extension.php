@@ -32,6 +32,10 @@ class Extension extends \BlueSpice\Extension {
 	public static function onRegistration() {
 		if ( isset( $GLOBALS[ 'wgVisualEditorPreloadModules' ] ) ) {
 			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector";
+			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector.tags";
+			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector.softHyphen";
+			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector.styleInspector";
+			$GLOBALS[ 'wgVisualEditorPreloadModules' ][] = "ext.bluespice.visualEditorConnector.internalLink";
 		}
 	}
 }
