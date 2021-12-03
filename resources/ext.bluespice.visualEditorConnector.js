@@ -1,5 +1,4 @@
 (function( mw, $, bs ){
-
 	var _instances = {};
 
 	function createEditor( id, cfg ) {
