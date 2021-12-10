@@ -1,6 +1,7 @@
 bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.GroupListInputWidget = function BsVecUiGroupListInputWidget ( config ) {
+	config.$overlay = true;
 	bs.vec.ui.GroupListInputWidget.super.call( this, config );
 	this.inspector = config.inspector;
 	this.attribute = config.attribute;
@@ -18,14 +19,17 @@ OO.inheritClass( bs.vec.ui.GroupListInputWidget, OO.ui.MenuTagMultiselectWidget 
 bs.vec.ui.GroupListInputWidget.prototype.getValue = function() {
 	var value = bs.vec.ui.GroupListInputWidget.super.prototype.getValue.call( this );
 	return value.join( "," );
-}
+};
 
 bs.vec.ui.GroupListInputWidget.prototype.setValue = function( value ) {
+	if ( !value || $.type( value ) === 'array' ) {
+		return bs.vec.ui.GroupListInputWidget.super.prototype.setValue.call( this, value );
+	}
 	// remove any whitespace around commas
-	var value = value.replace( /[\s,]+/g, ',' );
+	value = value.replace( /[\s,]+/g, ',' );
 	value = value.split( "," );
 	return bs.vec.ui.GroupListInputWidget.super.prototype.setValue.call( this, value );
-}
+};
 
 bs.vec.ui.GroupListInputWidget.prototype.getGroups = function() {
 	var dfd = $.Deferred();
@@ -37,8 +41,8 @@ bs.vec.ui.GroupListInputWidget.prototype.getGroups = function() {
 				data: results[i].group_name,
 				label: results[i].displayname
 			});
-		};
+		}
 		dfd.resolve( options );
 	});
 	return dfd.promise();
-}
+};
