@@ -28,7 +28,6 @@
 			},
 			"ConfigDefinitionRegistry": {
 				"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance",
-				"VisualEditorConnectorSimpleSaveProcess": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\SimpleSaveProcess::getInstance",
 				"VisualEditorConnectorUploadDialogType": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\UploadDialogType::getInstance"
 			},
 			"JSConfigVars": {
@@ -38,7 +37,6 @@
 		"BlueSpiceVisualEditorConnector": {
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.tableStyle",
-				"ext.bluespice.visualEditorConnector.saveProcess",
 				"ext.bluespice.visualEditorConnector.internalLink"
 			],
 			"TagDefinitions": [],
@@ -50,7 +48,6 @@
 				"CellBorderColors": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\CellBorderColors::factory",
 				"PluginModules": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\PluginModules::factory",
 				"TableStyleRegistry": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TableStyleRegistry::factory",
-				"SimpleSaveProcess": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\SimpleSaveProcess::factory",
 				"TagDefinitions": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TagDefinitions::factory",
 				"UploadType": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\UploadType::factory",
 				"PasteFilename": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\PasteFilename::factory",
@@ -148,15 +145,6 @@
 				"bs-visualeditorconnector-cancel-edit",
 				"bs-visualeditorconnector-cancel-edit-no-unsaved-changes",
 				"bs-visualeditorconnector-cancel-edit-confirm-message"
-			]
-		},
-		"ext.bluespice.visualEditorConnector.saveProcess": {
-			"scripts": [
-				"ext.bluespice.visualEditorConnector.saveProcess/bootstrap.js"
-			],
-			"dependencies": [
-				"ext.bluespice",
-				"ext.visualEditor.mwcore"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.internalLink": {
@@ -412,11 +400,6 @@
 		"VisualEditorConnectorUploadDialogType": {
 			"value": "original",
 			"descriptionmsg": "bs-visualeditorconnector-upload-dialog-type",
-			"public": true
-		},
-		"VisualEditorConnectorSimpleSaveProcess": {
-			"value": true,
-			"descriptionmsg": "bs-visualeditorconnector-simple-save-process-desc",
 			"public": true
 		},
 		"VisualEditorConnectorTableStyleRegistry": {

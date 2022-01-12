@@ -10,7 +10,6 @@
 	},
 	"bs-visualeditorconnector-desc": "Used in [{{canonicalurl:Special:Version}} Special:Version], description of BlueSpice Visual Editor Connector extension.",
 	"bs-visualeditorconnector-enable-visualeditor": "Label for preference to enable VisualEditor for BlueSpice extensions",
-	"bs-visualeditorconnector-simple-save-process-desc": "Configuration variable determining the behaviour of the saving process",
 	"bs-visualeditorconnector-upload-type-original": "Label for an option to set the upload type in VisualEditor be unchanged",
 	"bs-visualeditorconnector-upload-type-simple": "Label for an option to set the upload type in VisualEditor reduce requirements",
 	"bs-visualeditorconnector-upload-type-one-click": "Label for an option to set the upload type in VisualEditor to require just one click",
