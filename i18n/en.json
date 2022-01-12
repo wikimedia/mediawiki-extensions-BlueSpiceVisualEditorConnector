@@ -6,7 +6,6 @@
 	},
 	"bs-visualeditorconnector-desc": "Connects BlueSpice with VisualEditor",
 	"bs-visualeditorconnector-enable-visualeditor": "Enable VisualEditor for BlueSpice extensions",
-	"bs-visualeditorconnector-simple-save-process-desc": "Enable simple save process",
 	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-upload-type-simple": "Simple",
 	"bs-visualeditorconnector-upload-type-one-click": "One click",
