@@ -10,7 +10,6 @@
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec l’ÉditeurVisuel",
 	"bs-visualeditorconnector-enable-visualeditor": "Activer l'ÉditeurVisuel pour les extensions BlueSpice",
-	"bs-visualeditorconnector-simple-save-process-desc": "Activer le processus de sauvegarde simplifiée",
 	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-upload-type-simple": "Simple",
 	"bs-visualeditorconnector-upload-type-one-click": "En un clic",

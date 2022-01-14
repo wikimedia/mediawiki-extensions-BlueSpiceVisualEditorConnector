@@ -10,7 +10,6 @@
 	},
 	"bs-visualeditorconnector-desc": "以視覺化編輯器連接 BlueSpice",
 	"bs-visualeditorconnector-enable-visualeditor": "啟用用於 BlueSpice 擴充的視覺化編輯器",
-	"bs-visualeditorconnector-simple-save-process-desc": "啟用簡易保存處理",
 	"bs-visualeditorconnector-upload-type-original": "原有",
 	"bs-visualeditorconnector-upload-type-simple": "簡易",
 	"bs-visualeditorconnector-upload-type-one-click": "點擊一次",
