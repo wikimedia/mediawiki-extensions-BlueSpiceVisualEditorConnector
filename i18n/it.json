@@ -56,5 +56,6 @@
 	"bs-vec-table-border-styles": "Stili bordo",
 	"bs-vec-table-border-color": "Colore bordo",
 	"bs-vec-table-border-none": "Nessuno",
-	"bs-vec-table-border-horizontal": "Orizzontale"
+	"bs-vec-table-border-horizontal": "Orizzontale",
+	"bs-vec-table-border-solid": "Solido"
 }

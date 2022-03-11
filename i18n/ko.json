@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"Yunbj"
 		]
 	},
 	"bs-visualeditorconnector-desc": "시각편집기로 블루스파이스에 연결합니다",
@@ -63,5 +64,13 @@
 	"bs-vec-table-border-leftright": "좌우",
 	"bs-vec-table-border-topbottom": "상하",
 	"bs-vec-table-style-cell-text-vert-align": "텍스트 수직 정렬",
-	"bs-vec-insert-softhyphen-title": "소프트 하이픈"
+	"bs-vec-insert-softhyphen-title": "소프트 하이픈",
+	"bs-visualeditorconnector-upload-type-one-click": "한 번 클릭",
+	"bs-vec-table-inspector-column": "열",
+	"bs-vec-table-inspector-row": "행",
+	"bs-vec-table-style-column-width": "열 넓이",
+	"bs-vec-table-style-row-height": "행 높이 (px)",
+	"bs-vec-widget-text-direction-tooltip": "세로 쓰기",
+	"bs-vec-table-border-dotted": "점선",
+	"bs-vec-table-border-double": "겹선"
 }
