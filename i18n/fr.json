@@ -93,5 +93,5 @@
 	"bs-vec-insert-softhyphen-title": "Tiret de césure conditionnel",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Annuler la modification",
 	"bs-visualeditorconnector-cancel-edit-confirm-message": "Voulez-vous vraiment annuler la modification ? Vos modifications non enregistrées seront perdues.",
-	"bs-visualeditorconnector-upload-type-help": "D’origine : Le droit de téléchargement est vérifié. Le nom de fichier, l’espace de nom et la catégorie sont modifiables. La description est obligatoire.\nSimple : Le droit de téléchargement n’est pas vérifié. Le nom de fichier, l’espace de nom et la catégorie sont modifiables. La description est facultatif.\nUn clic : Le droit de téléchargement n’est pas vérifié. Le nom de fichier et la catégorie ne sont pas modifiables. L’espace de nom est modifiable."
+	"bs-visualeditorconnector-upload-type-help": "D’origine : le droit de téléchargement est vérifié. Le nom de fichier, l’espace de noms et la catégorie sont modifiables. La description est obligatoire.\nSimple : le droit de téléchargement n’est pas vérifié. Le nom de fichier, l’espace de noms et la catégorie sont modifiables. La description est facultative.\nUn clic : le droit de téléchargement n’est pas vérifié. Le nom de fichier et la catégorie ne sont pas modifiables. L’espace de noms est modifiable."
 }
