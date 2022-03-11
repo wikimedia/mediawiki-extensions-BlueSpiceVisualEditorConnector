@@ -47,13 +47,12 @@ bs.vec.ui.MWSaveDialog.prototype.getActionProcess = function ( action ) {
 		plugin.getActionProcess( parentProcess, action );
 	}
 
-	if( action === 'save' ) {
-		parentProcess.next( function() {
-			window.location = mw.util.getUrl(
-				mw.config.get( 'wgPageName' )
-			);
+	if ( action === 'save' ) {
+		parentProcess.next( function () {
+			window.location.reload();
 		} );
 	}
+
 	if ( action === 'approve' ) {
 		return new OO.ui.Process( function () {
 			this.swapPanel( 'save' );
