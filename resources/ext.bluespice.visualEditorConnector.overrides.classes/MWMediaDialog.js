@@ -302,8 +302,10 @@ bs.vec.ui.MWMediaDialog.prototype.linkFileMeta = function () {
 
 bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation, type ) {
 	if ( !this.fileAnnotation ) {
+		imageInfoTitle = mw.Title.newFromText( this.selectedImageInfo.title ) || 
+			mw.Title.newFromText( thisn.selectedImageInfo.canonicaltitle );
 		this.getFragment()
-			.insertContent( this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle );
+			.insertContent( imageInfoTitle.getMainText() );
 		this.getFragment().annotateContent( 'set', linkAnnotation );
 	} else {
 		var fragment = this.getFragment().expandLinearSelection( 'annotation', this.fileAnnotation );
