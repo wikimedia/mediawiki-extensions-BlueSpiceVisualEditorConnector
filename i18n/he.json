@@ -2,11 +2,13 @@
 	"@metadata": {
 		"authors": [
 			"Erelon",
+			"Ex-Diktator",
 			"Steeve815",
 			"Strayblues",
 			"נדב ס"
 		]
 	},
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "ביטול העריכה",
 	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה. פעולה זו תגרום לביטול כל השינויים שלא נשמרו.",
 	"bs-visualeditor-nsm-label": "העורך החזותי",
 	"bs-visualeditorconnector-inspector-tab-common-name": "תדיר",
