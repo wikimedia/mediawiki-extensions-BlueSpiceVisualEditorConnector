@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"DiegoAmbrocio",
 			"Fitoschido",
 			"McDutchie",
 			"Unai01"
@@ -53,5 +54,27 @@
 	"bs-vec-row-duplicate-has-merged": "No se puede duplicar la fila seleccionada porque contiene celdas que se extienden por varias filas.",
 	"bs-vec-dialog-media-change-file": "Cambiar archivo",
 	"bs-vec-table-style-cell-text-vert-align": "Alineación vertical del texto",
-	"bs-vec-table-border-horizontal": "Horizontal"
+	"bs-vec-table-border-horizontal": "Horizontal",
+	"bs-visualeditorconnector-upload-type-simple": "Simple",
+	"bs-visualeditorconnector-upload-type-one-click": "Un click",
+	"bs-visualeditorconnector-upload-type": "Tipo de carga",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "¿Realmente quiere cancelar la edición? Sus cambios no guardados serán descartados.",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Enlace a la página de descripción del archivo",
+	"bs-vec-table-style-cell-text-vert-align-bottom": "Abajo",
+	"bs-vec-table-style-cell-text-vert-align-top": "Arriba",
+	"bs-vec-table-style-cell-text-vert-align-middle": "Medio",
+	"bs-vec-table-style-cell-text-hor-align-left": "Izquierda",
+	"bs-vec-table-style-cell-text-hor-align-center": "Centro",
+	"bs-vec-table-style-cell-text-hor-align-right": "Derecha",
+	"bs-vec-table-border-left": "Izquierda",
+	"bs-vec-table-border-top": "Arriba",
+	"bs-vec-table-border-right": "Derecha",
+	"bs-vec-table-border-bottom": "Abajo",
+	"bs-vec-table-border-leftright": "Izquierda-derecha",
+	"bs-vec-table-border-topbottom": "Arriba-abajo",
+	"bs-vec-table-border-round": "Ronda",
+	"bs-vec-table-border-roundhorizontal": "Redondo y horizontal",
+	"bs-vec-table-border-roundvertical": "Redondo y vertical",
+	"bs-vec-table-border-dashed": "Rayado",
+	"bs-vec-table-border-double": "Doble"
 }

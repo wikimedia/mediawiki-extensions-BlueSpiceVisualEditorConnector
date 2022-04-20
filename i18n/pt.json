@@ -91,5 +91,6 @@
 	"bs-vec-table-border-solid": "Sólida",
 	"bs-vec-table-border-dashed": "Tracejada",
 	"bs-vec-table-border-dotted": "Pontilhada",
-	"bs-vec-insert-softhyphen-title": "Hífen de translineação"
+	"bs-vec-insert-softhyphen-title": "Hífen de translineação",
+	"bs-visualeditorconnector-upload-type-help": "Original: o direito de carregamento é verificado. O nome do ficheiro, o espaço nominal e a categoria são editáveis. A descrição é obrigatória.\nSimples: o direito de carregamento não é verificado. O nome do ficheiro, o espaço nominal e a categoria são editáveis. A descrição é opcional.\nUm clique: o direito de carregamento não é verificado. O nome do ficheiro e a categoria não são editáveis. O espaço nominal é editável."
 }
