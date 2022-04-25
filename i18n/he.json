@@ -4,9 +4,11 @@
 			"Erelon",
 			"Steeve815",
 			"Strayblues",
-			"נדב ס"
+			"נדב ס",
+			"Ex-Diktator"
 		]
 	},
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "ביטול העריכה",
 	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה. פעולה זו תגרום לביטול כל השינויים שלא נשמרו.",
 	"bs-visualeditor-nsm-label": "העורך החזותי",
 	"bs-visualeditorconnector-inspector-tab-common-name": "תדיר",
