@@ -60,13 +60,11 @@ table.casablanca tbody tr:hover{
 /*Greyscale Table*/
 table.greyscale {
 	border: 1px solid #000000;
-	border-style:solid;
-	border-width:1px;
 	border-collapse: collapse;
 }
 
 table.greyscale thead tr,
-table.greyscale tbody th{
+table.greyscale th{
 	color:#000000;
 	background-color: #FFFFFF;
 	border: 1px solid black;
@@ -137,14 +135,14 @@ table.contenttable td,table.contenttable tr {
 	border:1px #ccc solid;
 	border-spacing:0;
 	border-collapse:collapse;
-	padding:4px;
+	padding:8px;
 }
 
 table.contenttable thead tr,
 table.contenttable th {
 	background-color:#E0E0E0;
 	border:1px solid #CCC;
-	padding:4px;
+	padding:8px;
 }
 
 /*contenttable-black*/
@@ -158,14 +156,14 @@ table.contenttable-black td, table.contenttable-black tr {
 	border:1px #000 solid;
 	border-spacing:0;
 	border-collapse:collapse;
-	padding:4px;
+	padding:8px;
 }
 
 table.contenttable-black thead tr,
 table.contenttable-black th {
 	background-color:#E0E0E0;
 	border:1px solid #000;
-	padding:4px;
+	padding:8px;
 }
 
 /*contenttable-blue*/
@@ -196,9 +194,14 @@ table.contenttable-darkblue th {
 	background-color:#3E5389;
 	border:1px solid #B1B9CF;
 	color:#FFF;
-	padding:4px;
+	padding:8px;
 }
 
 table.tablefullwidth {
 	width: 100%;
+}
+
+/* wikitable padding ERM 28768 */
+table.wikitable tr > td, table.wikitable tr > th{
+	padding: 8px;
 }
