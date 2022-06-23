@@ -74,24 +74,9 @@ StyleInspector.prototype.onMouseDown = function ( e ) {
 };
 
 StyleInspector.prototype.onMouseUp = function ( e ) {
-	if ( !this.enabled ) {
-		return;
-	}
 	var range;
-	if ( e.which !== 1 ) {
-		return;
-	}
 	var $target = $( e.target );
 	if ( !$target.hasClass( 've-ce-branchNode' ) && !$target.hasClass( 've-ce-textStyleAnnotation' ) ) {
-		return;
-	}
-	this.selection = ve.init.target.getSurface().getModel().getSelection();
-	if( !this.selection || !this.selection.hasOwnProperty( 'range' ) ) {
-		return;
-	}
-	if ( this.selectedNode !== null && this.selectedNode.type !== 'text' ) {
-		// We only show this inspector when plain text is selected,
-		// as soon as there is a node selected, its not plain text
 		return;
 	}
 	this.position.end = {
@@ -99,12 +84,11 @@ StyleInspector.prototype.onMouseUp = function ( e ) {
 		y: e.pageY
 	};
 	range = this.selection.getRange();
-	if ( range.start === range.end ) {
-		// Empty selection - but maybe we could still show the inspector
-		return;
+	var selectedText = window.getSelection().toString();
+	var strLength = selectedText.trim().length ;
+	if ( strLength != 0 && this.enabled ) {
+		this.inspect( range );
 	}
-
-	this.inspect( range );
 };
 
 StyleInspector.prototype.onResize = function() {
