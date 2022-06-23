@@ -25,7 +25,7 @@ bs.vec.dm.MWTableNode.static.toDomElements = function ( dataElement, doc ) {
 		attributes = dataElement.attributes || null,
 		styleParser = new bs.vec.util.StyleAttributeParser( element.getAttribute( 'style' ) || '' );
 
-	if ( !attributes || !attributes.tablewidth ) {
+	if ( !attributes ) {
 		return [ element ];
 	}
 
