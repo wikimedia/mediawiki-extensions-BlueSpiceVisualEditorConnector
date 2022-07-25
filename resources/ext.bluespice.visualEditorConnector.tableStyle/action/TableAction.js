@@ -218,8 +218,8 @@ bs.vec.ui.TableAction.prototype.getTargetCells = function( selection, args, isCo
 	// Clone selection, so that recursive calls don't screw it up
 	selection = $.extend( {}, selection );
 
-	// For modes "clear", "all" and "none" all cells are targeted anyway, so no need to pre-clear them
-	if ( mode !== 'clear' && mode !== 'all' && !args.internal ) {
+	// For modes "clear" and "none" all cells are targeted anyway, so no need to pre-clear them
+	if ( mode === 'clear' || mode === 'none' && !args.internal ) {
 		if ( mode === 'none' ) {
 			// Reset all properties when settings no borders, as it might produce unexpected
 			// results if some borders are set later on
@@ -337,10 +337,7 @@ bs.vec.ui.TableAction.prototype.getTableLine = function( type, selection, index,
 
 	var result = [], i;
 	if ( type === 'row' ) {
-		if (
-			index < 0 ||
-			( selection.hasOwnProperty( 'fromRow' ) && index >= selection.getRowCount() + 1 )
-		) {
+		if ( index < 0 ) {
 			return result;
 		}
 		for( i = selection.startCol; i <= selection.endCol; i++ ) {
@@ -353,10 +350,7 @@ bs.vec.ui.TableAction.prototype.getTableLine = function( type, selection, index,
 			}, args ) );
 		}
 	} else {
-		if (
-			index < 0 ||
-			( selection.hasOwnProperty( 'fromCol' ) && index >= selection.getColCount() + 1 )
-		) {
+		if ( index < 0 ) {
 			return result;
 		}
 		for ( i = selection.startRow; i <= selection.endRow; i++ ) {
