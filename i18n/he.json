@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Erelon",
 			"Ex-Diktator",
 			"Steeve815",
@@ -17,7 +18,7 @@
 	"bs-visualeditorconnector-ve-style-option": "סגנון טבלה",
 	"bs-visualeditorconnector-text-style-tool-color-label": "צבע טקסט",
 	"bs-visualeditorconnector-dialog-media-link": "יצירת קישור אל הקובץ",
-	"bs-visualeditorconnector-dialog-media-embed": "הטמעת קובץ זה",
+	"bs-visualeditorconnector-dialog-media-embed": "הטבעת הקובץ הזה",
 	"bs-vec-table-inspector-column": "עמודה",
 	"bs-vec-table-inspector-row": "שורה",
 	"bs-vec-table-inspector-cell": "תא",
