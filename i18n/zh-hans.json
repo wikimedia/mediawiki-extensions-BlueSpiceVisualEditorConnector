@@ -8,6 +8,7 @@
 			"Lakejason0",
 			"Shuiwater",
 			"Viztor",
+			"Wzl19371",
 			"予弦",
 			"佛壁灯",
 			"沈澄心",
@@ -60,5 +61,10 @@
 	"bs-vec-table-border-top": "顶部",
 	"bs-vec-table-border-right": "右",
 	"bs-vec-table-border-all": "全部",
-	"bs-vec-ve-table-width-label": "表格宽度"
+	"bs-vec-ve-table-width-label": "表格宽度",
+	"bs-vec-table-border-width": "边框宽度",
+	"bs-vec-table-border-styles": "边框样式",
+	"bs-vec-table-border-color": "边框颜色",
+	"bs-vec-table-border-leftright": "左-右",
+	"bs-vec-table-border-topbottom": "上-下"
 }
