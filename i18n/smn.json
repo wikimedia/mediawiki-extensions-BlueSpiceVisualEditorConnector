@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Seipinne"
+			"Seipinne",
+			"Yupik"
 		]
 	},
-	"bs-vec-table-border-all": "Puoh"
+	"bs-vec-table-border-all": "Puoh",
+	"bs-vec-dialog-action-safe": "Jooskâ"
 }
