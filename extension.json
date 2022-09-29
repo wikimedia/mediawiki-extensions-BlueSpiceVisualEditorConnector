@@ -501,12 +501,5 @@
 		],
 		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback"
 	},
-	"RestRoutes": [
-		{
-			"path": "/bsvec/transform/{from}/to/{to}",
-			"factory": "BlueSpice\\VisualEditorConnector\\Rest\\Handler\\Transform::factory",
-			"method": "POST"
-		}
-	],
 	"manifest_version": 2
 }
