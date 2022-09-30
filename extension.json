@@ -499,7 +499,8 @@
 		"NamespaceManager::writeNamespaceConfiguration": [
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerWriteNamespaceConfiguration\\WriteToConfiguration::callback"
 		],
-		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback"
+		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback",
+		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback"
 	},
 	"manifest_version": 2
 }
