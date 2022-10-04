@@ -72,5 +72,15 @@
 	"bs-vec-table-style-cell-text-vert-align": "Verticale tekst-uitlijning",
 	"bs-vec-table-style-cell-text-hor-align": "Tekst-uitlijning",
 	"bs-vec-ve-table-width-value-auto": "Automatisch",
-	"bs-vec-table-border-clear-all": "Alle stijlen resetten"
+	"bs-vec-table-border-clear-all": "Alle stijlen resetten",
+	"bs-visualeditorconnector-upload-type": "Uploadtype",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Wilt u de bewerking echt annuleren? Uw niet-opgeslagen wijzigingen worden gewist.",
+	"bs-visualeditorconnector-ve-style-option-description": "Kies tabelstijl",
+	"bs-visualeditorconnector-upload-dialog-type": "Stappenplan voor het uploaden van bestanden in MediaDialog",
+	"bs-visualeditorconnector-color-annotation-desc": "Voegt kleuren toe aan tekst door de eigenschap \"color\" of \"class\" toe te wijzen",
+	"bs-vec-row-duplicate-has-merged": "De geselecteerde rij bevat cellen die zich over meerdere rijen uitstrekken en daarom niet kunnen worden gedupliceerd.",
+	"bs-vec-table-border-solid": "Effen",
+	"bs-vec-table-border-dotted": "Gestippeld",
+	"bs-vec-insert-softhyphen-title": "Zacht koppelteken",
+	"bs-visualeditorconnector-upload-type-help": "Oorspronkelijk: Er wordt gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is verplicht.\nEenvoudig: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is niet verplicht.\nEén klik: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam en categorie zijn niet te bewerken. De naamruimte is te bewerken."
 }
