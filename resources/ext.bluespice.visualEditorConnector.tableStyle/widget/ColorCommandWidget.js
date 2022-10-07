@@ -31,7 +31,7 @@ bs.vec.ui.widget.ColorCommandWidget.prototype.executeAction = function() {
 		return;
 	}
 	var val = this.colorWidget.getValue();
-	if ( $.isArray( val ) ) {
+	if ( Array.isArray( val ) ) {
 		val = val[0];
 	}
 	this.contextItem.execCommand( this.command, { value: val } );
