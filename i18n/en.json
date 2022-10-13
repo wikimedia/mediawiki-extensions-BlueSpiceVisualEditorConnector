@@ -82,5 +82,10 @@
 	"bs-vec-table-border-dotted": "Dotted",
 	"bs-vec-table-border-double": "Double",
 	"bs-vec-insert-softhyphen-title": "Soft hyphen",
-	"bs-visualeditorconnector-upload-type-help": "Original: Upload-right is verified. File name, namespace and category are editable. Description is required.\nSimple: Upload-right is not verified. File name, namespace and category are editable. Description is optional.\nOne click: Upload-right is not verified. File name and category are not editable. The namespace is editable."
+	"bs-visualeditorconnector-upload-type-help": "Original: Upload-right is verified. File name, namespace and category are editable. Description is required.\nSimple: Upload-right is not verified. File name, namespace and category are editable. Description is optional.\nOne click: Upload-right is not verified. File name and category are not editable. The namespace is editable.",
+	"bs-vec-insert-line-break-title": "Line break (<br />)",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Center align",
+	"bs-visualeditorconnector-align-center-annotation-desc": "Centers selected text",
+	"bs-visualeditorconnector-text-style-indent-label": "Indent",
+	"bs-visualeditorconnector-indent-annotation-desc": "Indents selected text"
 }

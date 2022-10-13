@@ -384,6 +384,52 @@
 			"messages": [
 				"bs-vec-insert-softhyphen-title"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.lineBreak": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.lineBreak/dm/LineBreakNode.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/tool/InsertLineBreak.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.bluespice",
+				"ext.visualEditor.mwcore"
+			],
+			"messages": [
+				"bs-vec-insert-line-break-title"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.textAlignment": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.textAlignment/dm/TextAlignmentCenter.js",
+				"ext.bluespice.visualEditorConnector.textAlignment/ce/TextAlignmentCenter.js",
+				"ext.bluespice.visualEditorConnector.textAlignment/tool/TextAlignmentCenterTool.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.bluespice",
+				"ext.visualEditor.mwcore"
+			],
+			"messages": [
+				"bs-visualeditorconnector-text-style-tool-align-center-label",
+				"bs-visualeditorconnector-align-center-annotation-desc"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.textIndentation": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.textIndentation/dm/IndentText.js",
+				"ext.bluespice.visualEditorConnector.textIndentation/ce/IndentText.js",
+				"ext.bluespice.visualEditorConnector.textIndentation/tool/IndentTextTool.js"
+			],
+			"dependencies": [
+				"oojs-ui",
+				"ext.bluespice",
+				"ext.visualEditor.mwcore"
+			],
+			"messages": [
+				"bs-visualeditorconnector-text-style-indent-label",
+				"bs-visualeditorconnector-indent-annotation-desc"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

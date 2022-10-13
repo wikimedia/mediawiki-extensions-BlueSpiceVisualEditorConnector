@@ -86,5 +86,10 @@
 	"bs-vec-table-border-dotted": "Label for button that set cell border style to dotted",
 	"bs-vec-table-border-double": "Label for button that set cell border style to double",
 	"bs-vec-insert-softhyphen-title": "Label for the tool that inserts word breaks",
-	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\""
+	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\"",
+	"bs-vec-insert-line-break-title": "Label for the line break tool",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Label for the center alignment tool",
+	"bs-visualeditorconnector-align-center-annotation-desc": "Description of the center alignment annotation",
+	"bs-visualeditorconnector-text-style-indent-label": "Label for the indent tool",
+	"bs-visualeditorconnector-indent-annotation-desc": "Description of the indent annotation"
 }
