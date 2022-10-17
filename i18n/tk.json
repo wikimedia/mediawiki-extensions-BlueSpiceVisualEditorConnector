@@ -9,5 +9,7 @@
 	"bs-vec-table-style-cell-text-vert-align-middle": "Orta",
 	"bs-vec-table-style-cell-text-hor-align": "Tekstiň deňleşdirilmegi",
 	"bs-vec-table-style-cell-text-hor-align-left": "Çep",
-	"bs-vec-table-style-cell-text-hor-align-center": "Merkez"
+	"bs-vec-table-style-cell-text-hor-align-center": "Merkez",
+	"bs-visualeditorconnector-upload-type-original": "Asyl",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Redaktirlemegi ýatyryň"
 }
