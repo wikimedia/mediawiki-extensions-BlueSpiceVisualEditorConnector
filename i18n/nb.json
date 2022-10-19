@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Telaneo"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Kobler BlueSpice med VisualEditor",
@@ -88,5 +89,6 @@
 	"bs-vec-table-border-double": "Dobbel",
 	"bs-vec-insert-softhyphen-title": "Myk bindestrek",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Avbryt redigering",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ønsker du virkelig å avbryte redigeringen? Ulagrede endringer blir forkastet."
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ønsker du virkelig å avbryte redigeringen? Ulagrede endringer blir forkastet.",
+	"bs-vec-insert-line-break-title": "Linjeskift (<br />)"
 }

@@ -4,5 +4,10 @@
 			"Eleassar"
 		]
 	},
-	"bs-vec-dialog-action-safe": "Prekliči"
+	"bs-vec-dialog-action-safe": "Prekliči",
+	"bs-vec-insert-line-break-title": "Prelom vrstice (<br />)",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Poravnaj na sredino",
+	"bs-visualeditorconnector-align-center-annotation-desc": "Osredini izbrano besedilo",
+	"bs-visualeditorconnector-text-style-indent-label": "Zamik",
+	"bs-visualeditorconnector-indent-annotation-desc": "Zamakne izbrano besedilo"
 }
