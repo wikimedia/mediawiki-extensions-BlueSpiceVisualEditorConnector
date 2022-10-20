@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Alexander Yukal",
+			"Kareyac",
 			"Katunchik",
 			"Megakott",
 			"Nk88",
@@ -17,5 +18,6 @@
 	"bs-vec-dialog-action-safe": "Отмена",
 	"bs-visualeditor-linkcontext-label-change": "Изменить метку",
 	"bs-visualeditor-linkcontext-label-label": "Метка",
-	"bs-vec-insert-softhyphen-title": "Мягкий дефис"
+	"bs-vec-insert-softhyphen-title": "Мягкий дефис",
+	"bs-vec-insert-line-break-title": "Разрыв строки (<br />)"
 }
