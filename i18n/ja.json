@@ -1,8 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tmv"
+			"Tmv",
+			"MathXplore"
 		]
 	},
-	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "編集のキャンセル"
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "編集のキャンセル",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "中央揃え",
+	"bs-visualeditorconnector-text-style-indent-label": "インデント"
 }

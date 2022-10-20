@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"Telaneo"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Kobler BlueSpice med VisualEditor",
@@ -77,5 +78,6 @@
 	"bs-vec-table-border-dashed": "Perforert",
 	"bs-vec-table-border-dotted": "Prikkete",
 	"bs-vec-table-border-double": "Dobbel",
-	"bs-vec-insert-softhyphen-title": "Myk bindestrek"
+	"bs-vec-insert-softhyphen-title": "Myk bindestrek",
+	"bs-vec-insert-line-break-title": "Linjeskift (<br />)"
 }
