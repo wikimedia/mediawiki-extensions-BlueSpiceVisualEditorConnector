@@ -11,5 +11,6 @@
 	"bs-vec-dialog-action-safe": "منسوخ",
 	"bs-vec-dialog-media-change-file": "فائل وٹاؤ",
 	"bs-visualeditor-linkcontext-label-change": "لیبل وٹاؤ",
-	"bs-visualeditor-linkcontext-label-label": "لیبل"
+	"bs-visualeditor-linkcontext-label-label": "لیبل",
+	"bs-visualeditorconnector-text-style-indent-label": "حاشیہ"
 }
