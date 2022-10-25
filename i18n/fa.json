@@ -79,5 +79,10 @@
 	"bs-vec-table-border-dashed": "خط‌چین",
 	"bs-vec-table-border-dotted": "نقطه‌چین",
 	"bs-vec-table-border-double": "دوگانه",
-	"bs-vec-insert-softhyphen-title": "خط ربط نرم"
+	"bs-vec-insert-softhyphen-title": "خط ربط نرم",
+	"bs-vec-insert-line-break-title": "شکست خط (<br />)",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "تراز وسط",
+	"bs-visualeditorconnector-align-center-annotation-desc": "متن انتخاب‌شده را در وسط قرار می‌دهد",
+	"bs-visualeditorconnector-text-style-indent-label": "تورفتگی",
+	"bs-visualeditorconnector-indent-annotation-desc": "تورفتگی متن انتخاب‌شده"
 }
