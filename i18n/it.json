@@ -50,5 +50,8 @@
 	"bs-vec-table-border-right": "Destra",
 	"bs-vec-table-border-bottom": "In fondo",
 	"bs-vec-table-border-horizontal": "Orizzontale",
-	"bs-vec-table-border-solid": "Solido"
+	"bs-vec-table-border-solid": "Solido",
+	"bs-vec-insert-line-break-title": "Interruzione di linea (<br /> )",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Allinea al centro",
+	"bs-visualeditorconnector-text-style-indent-label": "Indenta"
 }

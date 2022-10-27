@@ -6,7 +6,8 @@
 			"Megakott",
 			"Nk88",
 			"Okras",
-			"Vlad5250"
+			"Vlad5250",
+			"Kareyac"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Отменить изменения",
@@ -17,5 +18,6 @@
 	"bs-vec-dialog-action-safe": "Отмена",
 	"bs-visualeditor-linkcontext-label-change": "Изменить метку",
 	"bs-visualeditor-linkcontext-label-label": "Метка",
-	"bs-vec-insert-softhyphen-title": "Мягкий дефис"
+	"bs-vec-insert-softhyphen-title": "Мягкий дефис",
+	"bs-vec-insert-line-break-title": "Разрыв строки (<br />)"
 }
