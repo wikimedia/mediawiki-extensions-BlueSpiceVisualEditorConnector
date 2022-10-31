@@ -302,8 +302,9 @@ bs.vec.ui.MWMediaDialog.prototype.linkFileMeta = function () {
 
 bs.vec.ui.MWMediaDialog.prototype.doLinkFile = function ( linkAnnotation, type ) {
 	if ( !this.fileAnnotation ) {
-		imageInfoTitle = mw.Title.newFromText( this.selectedImageInfo.title ) || 
-			mw.Title.newFromText( thisn.selectedImageInfo.canonicaltitle );
+		imageInfoTitle = mw.Title.newFromText(
+			this.selectedImageInfo.title || this.selectedImageInfo.canonicaltitle
+		);
 		this.getFragment()
 			.insertContent( imageInfoTitle.getMainText() );
 		this.getFragment().annotateContent( 'set', linkAnnotation );
