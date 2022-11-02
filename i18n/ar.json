@@ -86,5 +86,7 @@
 	"bs-vec-table-border-solid": "صلب",
 	"bs-vec-table-border-dashed": "متقطع",
 	"bs-vec-table-border-dotted": "منقط",
-	"bs-vec-table-border-double": "مزدوج"
+	"bs-vec-table-border-double": "مزدوج",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "إلغاء عمليات التحرير",
+	"bs-visualeditorconnector-text-style-indent-label": "إزاحة"
 }
