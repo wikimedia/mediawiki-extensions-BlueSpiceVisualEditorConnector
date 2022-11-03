@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Abbas dhothar"
+			"Abbas dhothar",
+			"Bgo eiu"
 		]
 	},
-	"bs-visualeditorconnector-upload-type": "اپلوڈ قسم",
+	"bs-visualeditorconnector-upload-type": "چڑھاوݨ دی قسم",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "تبدیلیاں مکاؤ",
 	"bs-visualeditor-nsm-label": "ویژوئل اڈیٹر",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "اضافی",

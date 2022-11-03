@@ -11,6 +11,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "بسيط",
 	"bs-visualeditorconnector-upload-type-one-click": "نقره واحدة",
 	"bs-visualeditorconnector-upload-type": "نوع الرفع",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "إلغاء عمليات التحرير",
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
 	"bs-visualeditor-nsm-label": "محرر مرئي",
 	"bs-visualeditorconnector-inspector-tab-common-name": "شائع",
@@ -75,5 +76,6 @@
 	"bs-vec-table-border-solid": "صلب",
 	"bs-vec-table-border-dashed": "متقطع",
 	"bs-vec-table-border-dotted": "منقط",
-	"bs-vec-table-border-double": "مزدوج"
+	"bs-vec-table-border-double": "مزدوج",
+	"bs-visualeditorconnector-text-style-indent-label": "إزاحة"
 }
