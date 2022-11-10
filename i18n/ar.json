@@ -13,6 +13,7 @@
 	"bs-visualeditorconnector-upload-type": "نوع الرفع",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "إلغاء عمليات التحرير",
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "هل تريد حقًا إلغاء التعديل؟ سيتم تجاهل تغييراتك غير المحفوظة.",
 	"bs-visualeditor-nsm-label": "محرر مرئي",
 	"bs-visualeditorconnector-inspector-tab-common-name": "شائع",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم",
@@ -77,5 +78,11 @@
 	"bs-vec-table-border-dashed": "متقطع",
 	"bs-vec-table-border-dotted": "منقط",
 	"bs-vec-table-border-double": "مزدوج",
-	"bs-visualeditorconnector-text-style-indent-label": "إزاحة"
+	"bs-vec-insert-softhyphen-title": "واصلة ناعمة",
+	"bs-visualeditorconnector-upload-type-help": "الأصل: تم التحقق من حق التحميل. يمكن تحرير اسم الملف ومساحة الاسم والفئة. الوصف مطلوب.! N! بسيط: لم يتم التحقق من حق التحميل. يمكن تحرير اسم الملف ومساحة الاسم والفئة. الوصف اختياري.! نقرة واحدة: لم يتم التحقق من حق التحميل. اسم الملف والفئة غير قابلة للتحرير. مساحة الاسم قابلة للتحرير.",
+	"bs-vec-insert-line-break-title": "الخط مقطوع (<br /> )",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "محاذاة للوسط",
+	"bs-visualeditorconnector-align-center-annotation-desc": "توسيط النص المحدد",
+	"bs-visualeditorconnector-text-style-indent-label": "إزاحة",
+	"bs-visualeditorconnector-indent-annotation-desc": "المسافة البادئة للنص المحدد"
 }
