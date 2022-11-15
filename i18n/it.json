@@ -3,6 +3,7 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Beta16",
+			"GpieroMW",
 			"Stefano"
 		]
 	},
@@ -53,5 +54,8 @@
 	"bs-vec-table-border-solid": "Solido",
 	"bs-vec-insert-line-break-title": "Interruzione di linea (<br /> )",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Allinea al centro",
-	"bs-visualeditorconnector-text-style-indent-label": "Indenta"
+	"bs-visualeditorconnector-text-style-indent-label": "Indenta",
+	"bs-vec-table-style-cell-text-hor-align-justify": "Giustificato",
+	"bs-vec-ve-table-width-label": "Larghezza tabella",
+	"bs-vec-table-border-leftright": "Sinistra-destra"
 }
