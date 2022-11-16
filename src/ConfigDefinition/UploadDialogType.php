@@ -3,7 +3,6 @@
 namespace BlueSpice\VisualEditorConnector\ConfigDefinition;
 
 use BlueSpice\ConfigDefinition;
-
 use HTMLSelectField;
 
 class UploadDialogType extends ConfigDefinition {
