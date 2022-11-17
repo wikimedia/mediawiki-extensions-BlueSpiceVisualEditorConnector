@@ -3,7 +3,8 @@
 		"authors": [
 			"Ajeje Brazorf",
 			"Beta16",
-			"Stefano"
+			"Stefano",
+			"GpieroMW"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Connette BlueSpice con VisualEditor",
@@ -41,6 +42,8 @@
 	"bs-vec-table-style-cell-text-hor-align-left": "Sinistra",
 	"bs-vec-table-style-cell-text-hor-align-center": "Centro",
 	"bs-vec-table-style-cell-text-hor-align-right": "Destra",
+	"bs-vec-table-style-cell-text-hor-align-justify": "Giustificato",
+	"bs-vec-ve-table-width-label": "Larghezza tabella",
 	"bs-vec-table-border-borders": "Bordi cella",
 	"bs-vec-table-border-width": "Larghezza bordo",
 	"bs-vec-table-border-styles": "Stili bordo",
@@ -49,6 +52,7 @@
 	"bs-vec-table-border-left": "Sinistra",
 	"bs-vec-table-border-right": "Destra",
 	"bs-vec-table-border-bottom": "In fondo",
+	"bs-vec-table-border-leftright": "Sinistra-destra",
 	"bs-vec-table-border-horizontal": "Orizzontale",
 	"bs-vec-table-border-solid": "Solido",
 	"bs-vec-insert-line-break-title": "Interruzione di linea (<br /> )",
