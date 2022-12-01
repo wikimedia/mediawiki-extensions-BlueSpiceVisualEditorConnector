@@ -69,11 +69,15 @@
 			// calls. Hence, we need to provide a synchronous function here.
 			target.getWikiTextSync = function() {
 				var textToSubmit = this.getSurface().getHtml(),
-					result = false;
+					result = false,
+					// Remove trailing slash
+					origin = window.location.origin.replace( /\/$/, "" ),
+					// Remove leading slash
+					apiPath = mw.util.wikiScript( 'api' ).replace( /^\//, "" );
 
  				$.ajax( {
 					type: 'POST',
-					url: [ window.location.origin, '/', mw.util.wikiScript( 'api' ) ].join( '' ),
+					url: [ origin, '/', apiPath ].join( '' ),
 					data: {
 						action: 'visualeditoredit',
 						page: 'NEWVISUALEDITORCONTEXT',
