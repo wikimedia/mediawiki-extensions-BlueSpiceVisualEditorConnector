@@ -82,5 +82,10 @@
 	"bs-vec-table-border-solid": "Effen",
 	"bs-vec-table-border-dotted": "Gestippeld",
 	"bs-vec-insert-softhyphen-title": "Zacht koppelteken",
-	"bs-visualeditorconnector-upload-type-help": "Oorspronkelijk: Er wordt gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is verplicht.\nEenvoudig: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is niet verplicht.\nEén klik: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam en categorie zijn niet te bewerken. De naamruimte is te bewerken."
+	"bs-visualeditorconnector-upload-type-help": "Oorspronkelijk: Er wordt gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is verplicht.\nEenvoudig: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam, naamruimte en categorie zijn te bewerken. Beschrijving is niet verplicht.\nEén klik: Er wordt niet gecontroleerd op uploadrechten. Bestandsnaam en categorie zijn niet te bewerken. De naamruimte is te bewerken.",
+	"bs-vec-insert-line-break-title": "Regeleinde (<br /> )",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Midden uitlijnen",
+	"bs-visualeditorconnector-align-center-annotation-desc": "Centreert geselecteerde tekst",
+	"bs-visualeditorconnector-text-style-indent-label": "Inspringen",
+	"bs-visualeditorconnector-indent-annotation-desc": "Laat geselecteerde tekst inspringen"
 }
