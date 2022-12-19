@@ -6,6 +6,7 @@
 			"A Retired User",
 			"Josephine W.",
 			"Lakejason0",
+			"LittlePaw365",
 			"Shuiwater",
 			"Viztor",
 			"Wzl19371",
@@ -66,5 +67,6 @@
 	"bs-vec-table-border-styles": "边框样式",
 	"bs-vec-table-border-color": "边框颜色",
 	"bs-vec-table-border-leftright": "左-右",
-	"bs-vec-table-border-topbottom": "上-下"
+	"bs-vec-table-border-topbottom": "上-下",
+	"bs-vec-insert-line-break-title": "换行（<br />）"
 }
