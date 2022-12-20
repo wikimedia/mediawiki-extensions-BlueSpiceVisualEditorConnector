@@ -13,7 +13,8 @@
 			"佛壁灯",
 			"沈澄心",
 			"神樂坂秀吉",
-			"科劳"
+			"科劳",
+			"LittlePaw365"
 		]
 	},
 	"bs-visualeditorconnector-desc": "将 VisualEditor 与 BlueSpice 相连",
@@ -57,5 +58,6 @@
 	"bs-vec-table-border-all": "全部",
 	"bs-vec-table-border-leftright": "左-右",
 	"bs-vec-table-border-topbottom": "上-下",
-	"bs-vec-table-border-double": "两倍"
+	"bs-vec-table-border-double": "两倍",
+	"bs-vec-insert-line-break-title": "换行（<br />）"
 }

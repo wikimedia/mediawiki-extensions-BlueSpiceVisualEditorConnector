@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
-			"Милан Јелисавчић"
+			"Милан Јелисавчић",
+			"Milicevic01"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Повезује Parsoid са Визелним уређивачем",
@@ -15,5 +16,7 @@
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредно",
 	"bs-vec-table-inspector-row": "Ред",
 	"bs-vec-contextitem-table-additional-options": "Додатне опције",
-	"bs-vec-dialog-table-create-number-of-rows": "Број редова"
+	"bs-vec-dialog-table-create-number-of-rows": "Број редова",
+	"bs-vec-dialog-action-done": "Урађено",
+	"bs-vec-dialog-action-safe": "Откажи"
 }
