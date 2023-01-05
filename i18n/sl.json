@@ -9,5 +9,12 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Poravnaj na sredino",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Osredini izbrano besedilo",
 	"bs-visualeditorconnector-text-style-indent-label": "Zamik",
-	"bs-visualeditorconnector-indent-annotation-desc": "Zamakne izbrano besedilo"
+	"bs-visualeditorconnector-indent-annotation-desc": "Zamakne izbrano besedilo",
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Prekliči urejanje",
+	"bs-visualeditorconnector-ve-style-option-description": "Izberite slog tabele",
+	"bs-visualeditorconnector-ve-style-option": "Slog tabele",
+	"bs-vec-dialog-table-create-number-of-rows": "Število vrstic",
+	"bs-vec-dialog-create-table-title": "Vstavi tabelo",
+	"bs-vec-row-duplicate-has-merged": "Izbrana vrstica vsebuje celice, ki se raztezajo čez več vrstic, zato je ni mogoče podvojiti.",
+	"bs-vec-ve-table-width-label": "Širina tabele"
 }
