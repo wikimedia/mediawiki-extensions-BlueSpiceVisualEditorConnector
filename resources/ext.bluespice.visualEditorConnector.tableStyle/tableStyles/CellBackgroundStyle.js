@@ -16,7 +16,20 @@ bs.vec.ui.CellBackgroundStyle.prototype.getUnit = function() {
 	return bs.vec.ui.TableStyle.static.UNIT_NONE;
 };
 
+bs.vec.ui.CellBackgroundStyle.prototype.cleanColor = function ( $element ) {
+	var classes = $element[0].classList.values();
+	for (const cellClass of classes) {
+		if (cellClass.match(/col-\S+/)) {
+			$element[0].classList.remove(cellClass);
+		}
+	}
+	$element[0].style.backgroundColor = "";
+	$element[0].removeAttribute('style');
+	return $element;
+};
+
 bs.vec.ui.CellBackgroundStyle.prototype.decorate = function ( $element ) {
+	$element = this.cleanColor($element);
 	if ( this.value.hasOwnProperty( 'colorCode' ) ) {
 		return $element.css( this.getAttribute(), this.value.colorCode );
 	} else if ( this.value.hasOwnProperty( 'colorClass' ) ) {
@@ -93,25 +106,31 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataE
 	if ( !this.applies( section ) ) {
 		return;
 	}
-
+	// if no changes were done with background-color property in current cell
 	if ( !dataElement.hasOwnProperty( 'cellBackgroundColor' ) ) {
 		return;
 	}
 
 	value = dataElement.cellBackgroundColor;
-	style = domElement.getAttribute( 'style' ) || '';
+	style = domElement.getAttribute( 'style' );
+	if ( !style ) {
+		style = '';
+	}
 	styleParser = new bs.vec.util.StyleAttributeParser( style );
-	if ( $.isEmptyObject( value ) ) {
-		styleParser.removeFromStyle( this.getAttribute() );
-		domElement.removeAttribute( 'class' );
-	}
-	if ( value.hasOwnProperty( 'colorCode' ) ) {
-		styleParser.addToStyle( this.getAttribute(), value.colorCode );
 
-	} else if ( value.hasOwnProperty( 'colorClass' ) ) {
-		return domElement.setAttribute( 'class', value.colorClass );
-	}
+	// clearing background style and colors from domElement
+	// if bg-color was fully cleared from cell value will be an empty object
+	styleParser.addToStyle( this.getAttribute(), "" );
 	domElement.setAttribute( 'style', styleParser.toString() );
+	domElement.setAttribute( 'class', "" );
+
+	if ( !$.isEmptyObject( value ) && value.hasOwnProperty( 'colorCode' ) ) {
+		styleParser.addToStyle( this.getAttribute(), value.colorCode );
+		domElement.setAttribute( 'style', styleParser.toString() );
+	} else if ( !$.isEmptyObject( value ) && value.hasOwnProperty( 'colorClass' ) ) {
+		domElement.setAttribute( 'class', value.colorClass );
+	}
+	return domElement;
 };
 
 bs.vec.registry.TableStyle.register( "cellBackgroundColor", new bs.vec.ui.CellBackgroundStyle() );
