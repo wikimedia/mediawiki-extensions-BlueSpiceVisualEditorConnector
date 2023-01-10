@@ -4,7 +4,16 @@
 			"Eleassar"
 		]
 	},
+	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Prekliči urejanje",
+	"bs-visualeditorconnector-ve-style-option-description": "Izberite slog tabele",
+	"bs-visualeditorconnector-ve-style-option": "Slog tabele",
+	"bs-vec-dialog-table-create-number-of-rows": "Število vrstic",
 	"bs-vec-dialog-action-safe": "Prekliči",
+	"bs-vec-dialog-create-table-title": "Vstavi tabelo",
+	"bs-vec-row-duplicate-has-merged": "Izbrana vrstica vsebuje celice, ki se raztezajo čez več vrstic, zato je ni mogoče podvojiti.",
+	"bs-vec-dialog-media-change-file": "Spremeni datoteko",
+	"bs-visualeditor-linkcontext-label-change": "Spremeni oznako",
+	"bs-vec-ve-table-width-label": "Širina tabele",
 	"bs-vec-insert-line-break-title": "Prelom vrstice (<br />)",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Poravnaj na sredino",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Osredini izbrano besedilo",
