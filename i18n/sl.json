@@ -18,5 +18,10 @@
 	"bs-vec-row-duplicate-has-merged": "Izbrana vrstica vsebuje celice, ki se raztezajo čez več vrstic, zato je ni mogoče podvojiti.",
 	"bs-vec-ve-table-width-label": "Širina tabele",
 	"bs-vec-dialog-media-change-file": "Spremeni datoteko",
-	"bs-visualeditor-linkcontext-label-change": "Spremeni oznako"
+	"bs-visualeditor-linkcontext-label-change": "Spremeni oznako",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Barva besedila",
+	"bs-visualeditorconnector-dialog-media-meta-link": "Povezava do opisne strani datoteke",
+	"bs-vec-widget-text-direction-tooltip": "Navpično besedilo",
+	"bs-vec-table-style-cell-text-vert-align": "Navpična poravnava besedila",
+	"bs-vec-table-style-cell-text-hor-align": "Poravnava besedila"
 }
