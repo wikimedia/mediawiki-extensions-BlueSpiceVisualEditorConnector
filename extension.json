@@ -47,6 +47,7 @@
 				"ColorPickerColorsBackground": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\ColorPickerColorsBackground::factory",
 				"CellBorderColors": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\CellBorderColors::factory",
 				"PluginModules": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\PluginModules::factory",
+				"StandalonePluginModules": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\StandalonePluginModules::factory",
 				"TableStyleRegistry": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TableStyleRegistry::factory",
 				"TagDefinitions": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\TagDefinitions::factory",
 				"UploadType": "\\BlueSpice\\VisualEditorConnector\\ClientConfig\\UploadType::factory",
@@ -57,7 +58,8 @@
 		"VisualEditor": {
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.plugin"
-			]
+			],
+			"StandalonePluginModules": []
 		},
 		"BlueSpiceSaferEdit": {
 			"EnvironmentCheckers": {
