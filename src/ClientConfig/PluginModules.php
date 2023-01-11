@@ -10,9 +10,7 @@ class PluginModules extends ConfigBase {
 	 * @inheritDoc
 	 */
 	public function getValue() {
-		$registry = new ExtensionAttributeBasedRegistry(
-			'BlueSpiceVisualEditorConnectorPluginModules'
-		);
+		$registry = new ExtensionAttributeBasedRegistry( $this->getAttribute() );
 
 		$pluginModules = [];
 		foreach ( $registry->getAllKeys() as $key ) {
@@ -21,5 +19,12 @@ class PluginModules extends ConfigBase {
 		}
 
 		return $pluginModules;
+	}
+
+	/**
+	 * @return string
+	 */
+	protected function getAttribute() {
+		return 'BlueSpiceVisualEditorConnectorPluginModules';
 	}
 }
