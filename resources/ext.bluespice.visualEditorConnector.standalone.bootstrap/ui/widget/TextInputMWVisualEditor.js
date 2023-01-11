@@ -64,18 +64,24 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.makeVisualEditor = function( conf
 	config = config || me.config;
 
 	this.loading = true;
-	mw.loader.using( 'ext.bluespice.visualEditorConnector.standalone' ).done( function() {
-		me.emit( 'editorStartup', this );
-		bs.vec.createEditor( config.id, {
-			renderTo: config.selector,
-			value: me.currentValue,
-			format: config.format
-		} ).done( function( target ){
-			me.visualEditor = target;
-			me.visualEditor.getSurface().getModel().on( 'history', me.onHistoryChange, [], me );
-		} ).then( function() {
-			me.emit( 'editorStartupComplete', this );
-			me.loading = false;
+	bs.config.getDeferred( 'BlueSpiceVisualEditorConfig' ).done( function( bsVecConfig ) {
+		var modules = [
+			'ext.bluespice.visualEditorConnector.standalone'
+		].concat( bsVecConfig.StandalonePluginModules || [] );
+
+		mw.loader.using( modules ).done( function() {
+			me.emit( 'editorStartup', me );
+			bs.vec.createEditor( config.id, {
+				renderTo: config.selector,
+				value: me.currentValue,
+				format: config.format
+			} ).done( function( target ){
+				me.visualEditor = target;
+				me.visualEditor.getSurface().getModel().on( 'history', me.onHistoryChange, [], me );
+			} ).then( function() {
+				me.emit( 'editorStartupComplete', me );
+				me.loading = false;
+			} );
 		} );
 	} );
 };
