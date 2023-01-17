@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Patriot Kur"
+			"Patriot Kur",
+			"Patriot Kor"
 		]
 	},
-	"bs-vec-dialog-action-safe": "Ləğv karde"
+	"bs-vec-dialog-action-safe": "Ləğv karde",
+	"bs-vec-table-style-cell-text-vert-align-middle": "Miyonə"
 }

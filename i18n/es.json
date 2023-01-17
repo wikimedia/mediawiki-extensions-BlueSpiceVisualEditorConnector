@@ -76,5 +76,10 @@
 	"bs-vec-table-border-dashed": "Rayado",
 	"bs-vec-table-border-dotted": "Punteado",
 	"bs-vec-table-border-double": "Doble",
-	"bs-vec-insert-softhyphen-title": "Guion discrecional"
+	"bs-vec-insert-softhyphen-title": "Guion discrecional",
+	"bs-vec-insert-line-break-title": "Salto de renglón (<br />)",
+	"bs-visualeditorconnector-text-style-tool-align-center-label": "Alinear al centro",
+	"bs-visualeditorconnector-align-center-annotation-desc": "Centra el texto seleccionado",
+	"bs-visualeditorconnector-text-style-indent-label": "Sangrar",
+	"bs-visualeditorconnector-indent-annotation-desc": "Sangra el texto seleccionado"
 }
