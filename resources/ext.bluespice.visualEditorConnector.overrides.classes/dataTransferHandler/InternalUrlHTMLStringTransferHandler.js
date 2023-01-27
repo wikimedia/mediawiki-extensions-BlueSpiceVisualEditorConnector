@@ -66,7 +66,7 @@ bs.vec.ui.InternalUrlHTMLStringTransferHandler.prototype.process = function () {
 				remove: ['sup.reference:not( [typeof] )', 'o:p'],
 				unwrap: ['fieldset', 'legend']
 			},
-			removeOriginalDomElements: true,
+			removeOriginalDomElements: false,
 			nodeSanitization: true
 		},
 		all: null
