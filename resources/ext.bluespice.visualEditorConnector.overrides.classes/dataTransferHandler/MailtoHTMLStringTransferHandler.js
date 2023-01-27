@@ -19,7 +19,7 @@ bs.vec.ui.MailtoHTMLStringTransferHandler.static.handlesPaste = true;
  * @property {RegExp}
  * @private
  */
-bs.vec.ui.MailtoHTMLStringTransferHandler.static.urlRegExp = /^<a.*href=\"(mailto:.*)\".*>(.*)<\/a>$/i; // Initialized below
+bs.vec.ui.MailtoHTMLStringTransferHandler.static.urlRegExp = /<a.*href=\"(mailto:.*)\".*>(.*)<\/a>$/i; // Initialized below
 
 /**
  * Checks input item with urlRegExp expression
