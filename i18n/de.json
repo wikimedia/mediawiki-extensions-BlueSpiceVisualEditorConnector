@@ -87,5 +87,7 @@
 	"bs-visualeditorconnector-upload-type-help": "Original: Hochlade-Recht wird geprüft. Dateiname, Namensraum und Kategorie sind editierbar. Die Beschreibung ist erforderlich.\nEinfach: Hochlade-Recht wird nicht geprüft. Dateiname, Namensraum und Kategorie sind editierbar. Beschreibung ist optional.\nEin Klick: Hochlade-Recht wird nicht geprüft. Dateiname und Kategorie sind nicht editierbar. Der Namensraum ist editierbar.",
 	"bs-vec-insert-line-break-title": "Zeilenumbruch (<br /> )",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Mittig ausrichten",
-	"bs-visualeditorconnector-align-center-annotation-desc": "Zentriert ausgewählten Text"
+	"bs-visualeditorconnector-align-center-annotation-desc": "Zentriert ausgewählten Text",
+	"bs-visualeditorconnector-text-style-indent-label": "Einrücken",
+	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken"
 }
