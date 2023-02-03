@@ -26,7 +26,8 @@ bs.vec.dm.ColorAnnotation.static.toDataElement = function ( domElements ) {
 		type: this.name,
 		attributes: {
 			'class': domElements[ 0 ].getAttribute( 'class' ) || '',
-			code: this.getCodeFromElement( domElements[ 0 ] )
+			code: this.getCodeFromElement( domElements[ 0 ] ),
+			style: domElements[ 0 ].getAttribute( 'style' ) || ''
 		}
 	};
 };
@@ -61,8 +62,8 @@ bs.vec.dm.ColorAnnotation.static.toDomElements = function ( dataElement, doc ) {
 	if ( dataElement.attributes.class ) {
 		domElement.setAttribute( 'class', dataElement.attributes.class );
 	}
-	if ( dataElement.attributes.code ) {
-		domElement.setAttribute( 'style', 'color: ' + dataElement.attributes.code );
+	if ( dataElement.attributes.style ) {
+		domElement.setAttribute( 'style', dataElement.attributes.style );
 	}
 
 	return [ domElement ];
