@@ -4,6 +4,7 @@
 			"Ajeje Brazorf",
 			"Beta16",
 			"GpieroMW",
+			"Ontsed",
 			"Stefano"
 		]
 	},
@@ -52,6 +53,7 @@
 	"bs-vec-table-border-left": "Sinistra",
 	"bs-vec-table-border-right": "Destra",
 	"bs-vec-table-border-bottom": "In fondo",
+	"bs-vec-table-border-all": "Tutti",
 	"bs-vec-table-border-leftright": "Sinistra-destra",
 	"bs-vec-table-border-horizontal": "Orizzontale",
 	"bs-vec-table-border-solid": "Solido",
