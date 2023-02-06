@@ -10,11 +10,8 @@ OO.inheritClass( bs.vec.dm.LineBreakNode, ve.dm.BreakNode );
 
 
 bs.vec.dm.LineBreakNode.static.toDomElements = function ( data, doc ) {
-	// Its impossible to create a <br> element in DOM directly,
-	// it must be wrapped in another element
-	var el = doc.createElement('span');
-	el.innerHTML = '<br>';
-	return [ el ];
+	var el = doc.createElement('br');
+	return [ el ] ;
 };
 
 /* Registration */
