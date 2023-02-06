@@ -4,6 +4,7 @@
 			"Ajeje Brazorf",
 			"Beta16",
 			"GpieroMW",
+			"Ontsed",
 			"Stefano"
 		]
 	},
@@ -57,5 +58,6 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Indenta",
 	"bs-vec-table-style-cell-text-hor-align-justify": "Giustificato",
 	"bs-vec-ve-table-width-label": "Larghezza tabella",
-	"bs-vec-table-border-leftright": "Sinistra-destra"
+	"bs-vec-table-border-leftright": "Sinistra-destra",
+	"bs-vec-table-border-all": "Tutti"
 }
