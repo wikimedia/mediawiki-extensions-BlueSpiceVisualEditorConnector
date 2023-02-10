@@ -33,47 +33,19 @@ bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.types = ['text/html', 'app
 bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.handlesPaste = true;
 
 /**
- * RegExp matching an external url.
- * @property {RegExp}
- * @private
- */
-bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.urlRegExp = null; // Initialized below
-
-ve.init.Platform.static.initializedPromise.then( function () {} );
-
-bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.matchFunction = function( item ) {
-	// Do not handle table data
-	var regex = new RegExp( '\<table.*\<\/table\>$' );
-	return !regex.test( item.stringData || '' );
-};
-
-/**
  * @inheritdoc
  */
 bs.vec.ui.InternalUrlHTMLStringTransferHandler.prototype.process = function () {
-	var commentRegex = /<!--.*?-->/gms,
-		text = this.item.getAsString();
-	text = text.replace( commentRegex, '' );
-	let newRules = {
-		external: {
-			blacklist: [
-				// Annotations
-				'textStyle/span', 'textStyle/font', 'textStyle/underline', 'meta/language', 'textStyle/datetime',
-				// Nodes
-				'article', 'section', 'div', 'alienInline', 'alienBlock', 'comment'
-			],
-			htmlBlacklist: {
-				remove: ['sup.reference:not( [typeof] )', 'o:p'],
-				unwrap: ['fieldset', 'legend']
-			},
-			removeOriginalDomElements: true,
-			nodeSanitization: true
-		},
-		all: null
-	};
-	let doc = this.surface.getModel().getDocument().newFromHtml( text, newRules );
-	this.resolve( doc );
-
+	var text = this.item.getAsString().trim()
+	var articlePath = mw.config.get( 'wgArticlePath' );
+	// Check if articlePath contains `/index.php/$1`
+	if ( articlePath.indexOf( '/index.php/$1' ) === -1 ) {
+		// no, skip
+		return;
+	}
+	// Replace `index.php/$1` with `index.php?title=$1` in text
+	this.item.stringData = text.replaceAll( /index.php\/(.*)/g, 'index.php?title=$1' );
+	bs.vec.ui.InternalUrlHTMLStringTransferHandler.super.prototype.process.call( this );
 };
 
 /* Registration */
