@@ -16,5 +16,6 @@
 	"bs-vec-table-border-double": "Duopla",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Abrogar redakturo",
 	"bs-visualeditorconnector-cancel-edit": "Abrogar redakturo. Modifikuri ne konservata eliminesos",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ka tu fakte deziras abrogar la redakturo? Vua modifikuri nekonservata eliminesos."
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ka tu fakte deziras abrogar la redakturo? Vua modifikuri nekonservata eliminesos.",
+	"bs-vec-dialog-action-safe": "Anular"
 }
