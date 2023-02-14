@@ -15,6 +15,9 @@ bs.vec.dm.MWTableNode.static.toDataElement = function ( domElements ) {
 	if ( styleParser.getValueForAttr( 'width' ) !== null && dataElement.hasOwnProperty( 'attributes' ) ) {
 		dataElement.attributes.tablewidth = styleParser.getValueForAttr( 'width' );
 	}
+	if ( styleParser.value && dataElement.hasOwnProperty( 'attributes' ) ) {
+		dataElement.attributes.style = styleParser.value;
+	}
 
 	return dataElement;
 };
@@ -22,20 +25,21 @@ bs.vec.dm.MWTableNode.static.toDataElement = function ( domElements ) {
 bs.vec.dm.MWTableNode.static.toDomElements = function ( dataElement, doc ) {
 	var elements = ve.dm.MWTableNode.static.toDomElements( dataElement, doc ),
 		element = elements[0],
-		attributes = dataElement.attributes || null,
-		styleParser = new bs.vec.util.StyleAttributeParser( element.getAttribute( 'style' ) || '' );
+		attributes = dataElement.attributes || null;
 
 	if ( !attributes ) {
 		return [ element ];
 	}
 
-	if ( attributes.tablewidth ) {
-		styleParser.addToStyle( 'width', attributes.tablewidth );
-	} else {
-		styleParser.removeFromStyle( 'width' );
+	if ( attributes.style ) {
+		element.setAttribute( 'style', attributes.style.toString() );
 	}
 
-	element.setAttribute( 'style', styleParser.toString() );
+	if ( attributes.tablewidth ) {
+		element.style[ 'width' ] = attributes.tablewidth;
+	} else {
+		element.style[ 'width' ] = '';
+	}
 
 	return [ element ];
 };
