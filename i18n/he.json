@@ -77,5 +77,16 @@
 	"bs-vec-insert-softhyphen-title": "מקף רך",
 	"bs-vec-insert-line-break-title": "מעבר שורה (<br />)",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "יישור למרכז",
-	"bs-visualeditorconnector-text-style-indent-label": "הזחה"
+	"bs-visualeditorconnector-text-style-indent-label": "הזחה",
+	"bs-visualeditorconnector-desc": "חיבור BlueSpice עם העורך החזותי",
+	"bs-visualeditorconnector-enable-visualeditor": "להפעיל את העורך החזותי עבור הרחבות BlueSpice",
+	"bs-visualeditorconnector-upload-type": "סוג העלאה",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "האם באמת לבטל את העריכה? השינויים שלא נשמרו יושלכו.",
+	"bs-visualeditorconnector-upload-dialog-type": "זרימת עבודה להעלאת קבצים ב־MediaDialog",
+	"bs-visualeditorconnector-color-annotation-desc": "הוספת צבעים לטקסט על־ידי השמת מאפיין \"צבע\" או \"מחלקה\"",
+	"bs-visualeditorconnector-dialog-media-meta-link": "קישור לדף תיאור הקובץ",
+	"bs-vec-table-style-cell-text-vert-align": "יישור אנכי של טקסט",
+	"bs-visualeditorconnector-upload-type-help": "מקורי: ההרשאה להעלות מאומתת. אפשר לערוך את שם הקובץ, את מרחב השם ואת הקטגוריות. נדרש תיאור.\nפשוט: ההרשאה להעלות לא מאומתת. אפשר לערוך את שם הקובץ, את מרחב השם ואת הקטגוריות. לא נדרש תיאור.\nלחיצה אחת: ההרשאה להעלות לא מאומתת. אי־אפשר לערוך את שם הקובץ ואת הקטגוריות. אפשר לערוך את מרחב השם.",
+	"bs-visualeditorconnector-align-center-annotation-desc": "מרכוז טקסט נבחר",
+	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר"
 }
