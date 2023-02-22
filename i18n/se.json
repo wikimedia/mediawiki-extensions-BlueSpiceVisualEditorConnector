@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
+			"Kimberli Mäkäräinen (WMNO)",
 			"Yupik"
 		]
 	},
 	"bs-vec-dialog-create-table-title": "Lasit tabealla",
-	"bs-vec-ve-table-width-label": "Tabealla govdodat"
+	"bs-vec-ve-table-width-label": "Tabealla govdodat",
+	"bs-vec-dialog-action-safe": "Šluhtte"
 }
