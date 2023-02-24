@@ -11,6 +11,8 @@ class AddStaticStyles extends BeforePageDisplay {
 		$this->out->addModuleStyles( 'ext.bluespice.visualEditorConnector.colors' );
 		// These are common styles for tables like contenttable, cuscosky, ...
 		$this->out->addModuleStyles( 'ext.bluespice.visualEditorConnector.tables' );
+		// Custom line break node
+		$this->out->addModuleStyles( 'ext.bluespice.visualEditorConnector.styles.lineBreak' );
 		return true;
 	}
 }
