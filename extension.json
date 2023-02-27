@@ -396,6 +396,7 @@
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.lineBreak/ce/ExplicitLineBreak.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/dm/ExplicitLineBreakNode.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/dm/RemoveLineBreakSign.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/tool/InsertLineBreak.js"
 			],
 			"dependencies": [
