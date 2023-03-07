@@ -51,7 +51,7 @@ bs.vec.ui.InternalUrlHTMLStringTransferHandler.static.matchFunction = function( 
  * @inheritdoc
  */
 bs.vec.ui.InternalUrlHTMLStringTransferHandler.prototype.process = function () {
-	var commentRegex = /<!--.*?-->/gms,
+	var commentRegex = /<!--.*?-->|<o:p>/gms,
 		text = this.item.getAsString();
 	text = text.replace( commentRegex, '' );
 	let newRules = {
