@@ -10,6 +10,7 @@ bs.ui.widget.TextInputMWVisualEditor = function ( config ) {
 	this.config = config;
 	this.loading = false;
 	this.currentValue = config.value || '';
+	this.bsVecConfig = require( './config.json' );
 };
 
 OO.inheritClass( bs.ui.widget.TextInputMWVisualEditor, OO.ui.MultilineTextInputWidget );
@@ -64,24 +65,22 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.makeVisualEditor = function( conf
 	config = config || me.config;
 
 	this.loading = true;
-	bs.config.getDeferred( 'BlueSpiceVisualEditorConfig' ).done( function( bsVecConfig ) {
 		var modules = [
-			'ext.bluespice.visualEditorConnector.standalone'
-		].concat( bsVecConfig.StandalonePluginModules || [] );
+		'ext.bluespice.visualEditorConnector.standalone'
+	].concat( this.bsVecConfig.StandalonePluginModules || [] );
 
-		mw.loader.using( modules ).done( function() {
-			me.emit( 'editorStartup', me );
-			bs.vec.createEditor( config.id, {
-				renderTo: config.selector,
-				value: me.currentValue,
-				format: config.format
-			} ).done( function( target ){
-				me.visualEditor = target;
-				me.visualEditor.getSurface().getModel().on( 'history', me.onHistoryChange, [], me );
-			} ).then( function() {
-				me.emit( 'editorStartupComplete', me );
-				me.loading = false;
-			} );
+	mw.loader.using( modules ).done( function() {
+		me.emit( 'editorStartup', me );
+		bs.vec.createEditor( config.id, {
+			renderTo: config.selector,
+			value: me.currentValue,
+			format: config.format
+		} ).done( function( target ){
+			me.visualEditor = target;
+			me.visualEditor.getSurface().getModel().on( 'history', me.onHistoryChange, [], me );
+		} ).then( function() {
+			me.emit( 'editorStartupComplete', me );
+			me.loading = false;
 		} );
 	} );
 };

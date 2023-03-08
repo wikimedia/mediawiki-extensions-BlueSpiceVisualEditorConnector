@@ -29,9 +29,6 @@
 			"ConfigDefinitionRegistry": {
 				"VisualEditorConnectorEnableVisualEditor": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\EnableVisualEditor::getInstance",
 				"VisualEditorConnectorUploadDialogType": "\\BlueSpice\\VisualEditorConnector\\ConfigDefinition\\UploadDialogType::getInstance"
-			},
-			"JSConfigVars": {
-				"BlueSpiceVisualEditorConfig": "\\BlueSpice\\VisualEditorConnector\\ClientConfig::factory"
 			}
 		},
 		"BlueSpiceVisualEditorConnector": {
@@ -78,8 +75,12 @@
 	},
 	"ResourceModules": {
 		"ext.bluespice.visualEditorConnector": {
-			"scripts": [
-				"ext.bluespice.visualEditorConnector.js"
+			"packageFiles": [
+				"ext.bluespice.visualEditorConnector.js",
+				{
+					"name": "config.json",
+					"callback": "\\BlueSpice\\VisualEditorConnector\\ClientConfigProvider::packageFilesCallback"
+				}
 			],
 			"styles": [
 				"ext.bluespice.visualEditorConnector.css"
@@ -108,7 +109,13 @@
 			]
 		},
 		"ext.bluespice.visualEditorConnector.standalone.bootstrap": {
-			"scripts": "ext.bluespice.visualEditorConnector.standalone.bootstrap/ui/widget/TextInputMWVisualEditor.js",
+			"packageFiles": [
+				"ext.bluespice.visualEditorConnector.standalone.bootstrap/ui/widget/TextInputMWVisualEditor.js",
+				{
+					"name": "config.json",
+					"callback": "\\BlueSpice\\VisualEditorConnector\\ClientConfigProvider::packageFilesCallback"
+				}
+			],
 			"dependencies": [
 				"ext.bluespice",
 				"oojs-ui"

@@ -30,16 +30,14 @@
 
 			//Step 2: Load all plugin modules that may want to register to
 			//those classes
-			bs.vec.config.load().done( function( config ) {
-				var bsvecTagDefinitions = config.get( 'TagDefinitions' );
-				if( bsvecTagDefinitions.length === 0 ) {
-					return;
-				}
+			var bsvecTagDefinitions = bs.vec.config.get( 'TagDefinitions' );
+			if( bsvecTagDefinitions.length === 0 ) {
+				return;
+			}
 
-				mw.loader.using( bsvecTagDefinitions ).done( function() {
-					//Step 3: There is no step three
-					tagRegistry.initialize();
-				} );
+			mw.loader.using( bsvecTagDefinitions ).done( function() {
+				//Step 3: There is no step three
+				tagRegistry.initialize();
 			} );
 		} );
 })( mediaWiki, jQuery, blueSpice );
