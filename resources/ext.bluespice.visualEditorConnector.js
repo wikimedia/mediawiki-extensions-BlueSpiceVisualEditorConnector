@@ -228,31 +228,8 @@
 	} );
 
 	// VisualEditorConnector config
-	var config = function() {
-		this.loaded = false;
-		mw.Map.call( this );
-	};
-
-	config.prototype = Object.create( mw.Map.prototype );
-
-	config.prototype.load = function() {
-		var dfd = $.Deferred();
-
-		if ( this.loaded ) {
-			dfd.resolve( this );
-			return dfd.promise();
-		}
-
-		bs.config.getDeferred( 'BlueSpiceVisualEditorConfig' ).done( function( values ) {
-			this.set( values );
-			this.loaded = true;
-			dfd.resolve( this );
-		}.bind( this ) );
-
-		return dfd.promise();
-	};
-
-	bs.vec.config = new config();
-	bs.vec.config.load();
+	var configValues = require( './config.json' );
+	bs.vec.config = new mw.Map();
+	bs.vec.config.set( configValues );
 
 })( mediaWiki, jQuery, blueSpice );

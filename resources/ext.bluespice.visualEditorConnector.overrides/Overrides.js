@@ -25,15 +25,13 @@ mw.loader.using( "ext.visualEditor.desktopArticleTarget.init" )
 
 						//Step 2: Load all plugin modules that may want to register to
 						//those classes
-						bs.vec.config.load().done( function( config ) {
-							var bsvecPluginModules = config.get( 'PluginModules' );
-							if( bsvecPluginModules.length === 0 ) {
-								dfd.resolve();
-							}
-							mw.loader.using( bsvecPluginModules ).done( function() {
-								//Step 3: There is no step three
-								dfd.resolve();
-							} );
+						var bsvecPluginModules = bs.vec.config.get( 'PluginModules' );
+						if( bsvecPluginModules.length === 0 ) {
+							dfd.resolve();
+						}
+						mw.loader.using( bsvecPluginModules ).done( function() {
+							//Step 3: There is no step three
+							dfd.resolve();
 						} );
 					} );
 				} );
