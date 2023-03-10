@@ -371,11 +371,6 @@
 				"ext.bluespice.visualEditorConnector.tables.less"
 			]
 		},
-		"ext.bluespice.visualEditorConnector.styles.lineBreak": {
-			"styles": [
-				"ext.bluespice.visualEditorConnector.lineBreak.css"
-			]
-		},
 		"ext.bluespice.visualEditorConnector.softHyphen": {
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.softHyphen/command/SoftHyphen.js",
@@ -394,9 +389,8 @@
 		},
 		"ext.bluespice.visualEditorConnector.lineBreak": {
 			"scripts": [
-				"ext.bluespice.visualEditorConnector.lineBreak/ce/ExplicitLineBreak.js",
-				"ext.bluespice.visualEditorConnector.lineBreak/dm/ExplicitLineBreakNode.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/dm/RemoveLineBreakSign.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/dm/LineBreakNode.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/tool/InsertLineBreak.js"
 			],
 			"dependencies": [
