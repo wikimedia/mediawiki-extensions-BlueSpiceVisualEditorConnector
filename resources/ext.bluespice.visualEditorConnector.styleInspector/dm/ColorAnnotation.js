@@ -19,6 +19,25 @@ bs.vec.dm.ColorAnnotation.static.name = 'textStyle/color';
 
 bs.vec.dm.ColorAnnotation.static.matchTagNames = [ 'span' ];
 
+bs.vec.dm.ColorAnnotation.static.matchFunction = function ( element ) {
+	let colorClasses = [];
+	let textColors = bs.vec.config.get( 'ColorPickerColors' );
+	let bgColors = bs.vec.config.get( 'ColorPickerColorsBackground' );
+	colorClasses.concat( textColors, bgColors );
+	for ( let i = 0; i < colorClasses.length; i++ ) {
+		let className = colorClasses[i].class;
+		if ( element.classList.contains( className ) ) {
+			return true;
+		}
+	}
+
+	let colorCode = this.getCodeFromElement( element );
+	if ( colorCode !== '' ) {
+		return true;
+	}
+	return false;
+};
+
 bs.vec.dm.ColorAnnotation.static.applyToAppendedContent = true;
 
 bs.vec.dm.ColorAnnotation.static.toDataElement = function ( domElements ) {
