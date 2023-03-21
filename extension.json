@@ -97,6 +97,9 @@
 				"ext.visualEditor.icons",
 				"ext.visualEditor.mwlink",
 				"mediawiki.api"
+			],
+			"targets": [
+				"desktop"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.standalone": {
@@ -106,6 +109,9 @@
 			"dependencies": [
 				"ext.visualEditor.standalone",
 				"ext.bluespice.visualEditorConnector"
+			],
+			"targets": [
+				"desktop"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.standalone.bootstrap": {
@@ -154,6 +160,9 @@
 				"bs-visualeditorconnector-cancel-edit",
 				"bs-visualeditorconnector-cancel-edit-no-unsaved-changes",
 				"bs-visualeditorconnector-cancel-edit-confirm-message"
+			],
+			"targets": [
+				"desktop"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.internalLink": {
