@@ -112,7 +112,7 @@
 			"packageFiles": [
 				"ext.bluespice.visualEditorConnector.standalone.bootstrap/ui/widget/TextInputMWVisualEditor.js",
 				{
-					"name": "config.json",
+					"name": "ext.bluespice.visualEditorConnector.standalone.bootstrap/ui/widget/config.json",
 					"callback": "\\BlueSpice\\VisualEditorConnector\\ClientConfigProvider::packageFilesCallback"
 				}
 			],
