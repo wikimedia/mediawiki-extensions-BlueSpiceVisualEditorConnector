@@ -81,6 +81,9 @@ bs.vec.dm.ColorAnnotation.static.toDomElements = function ( dataElement, doc ) {
 	if ( dataElement.attributes.class ) {
 		domElement.setAttribute( 'class', dataElement.attributes.class );
 	}
+	if ( dataElement.attributes.code ) {
+		domElement.setAttribute( 'style', 'color: ' + dataElement.attributes.code );
+	}
 	if ( dataElement.attributes.style ) {
 		domElement.setAttribute( 'style', dataElement.attributes.style );
 	}
