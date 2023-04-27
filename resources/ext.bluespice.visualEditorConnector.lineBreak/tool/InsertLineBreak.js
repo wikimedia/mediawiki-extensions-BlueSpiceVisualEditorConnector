@@ -36,3 +36,7 @@ ve.ui.wikitextCommandRegistry.register(
 		supportedSelections: [ 'linear' ]
 	} )
 );
+
+ve.ui.triggerRegistry.register(
+	'bsInsertLineBreak', { mac: new ve.ui.Trigger( 'cmd+enter' ), pc: new ve.ui.Trigger( 'ctrl+enter' ) }
+);
