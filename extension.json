@@ -388,9 +388,16 @@
 		},
 		"ext.bluespice.visualEditorConnector.lineBreak": {
 			"scripts": [
+				"ext.bluespice.visualEditorConnector.lineBreak/ce/ExplicitLineBreak.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/ce/DeprecatedExplicitLineBreak.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/dm/ExplicitLineBreakNode.js",
+				"ext.bluespice.visualEditorConnector.lineBreak/dm/DeprecatedExplicitLineBreakNode.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/dm/RemoveLineBreakSign.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/dm/LineBreakNode.js",
 				"ext.bluespice.visualEditorConnector.lineBreak/tool/InsertLineBreak.js"
+			],
+			"styles": [
+				"ext.bluespice.visualEditorConnector.lineBreak/styles.css"
 			],
 			"dependencies": [
 				"oojs-ui",
