@@ -1,32 +1,25 @@
 bs.util.registerNamespace( 'bs.vec.dm' );
 
-bs.vec.dm.ExplicitLineBreakNode = function () {
-	// Parent constructor
-	bs.vec.dm.ExplicitLineBreakNode .super.apply( this, arguments );
+bs.vec.dm.ExplicitLineBreak = function() {
+	// Parent InternalFileLinkAnnotation
+	bs.vec.dm.ExplicitLineBreak.super.apply( this, arguments );
 };
 
-/* Inheritance */
-OO.inheritClass( bs.vec.dm.ExplicitLineBreakNode, ve.dm.LeafNode );
+OO.inheritClass( bs.vec.dm.ExplicitLineBreak, ve.dm.BreakNode );
 
-bs.vec.dm.ExplicitLineBreakNode.static.name = 'explicitBreak';
-
-bs.vec.dm.ExplicitLineBreakNode.static.isContent = true;
-
-bs.vec.dm.ExplicitLineBreakNode.static.matchTagNames = [ 'span' ];
-
-bs.vec.dm.ExplicitLineBreakNode.static.matchFunction = function ( element ) {
-	return element.classList.contains( 'bs-vec-line-break' );
+bs.vec.dm.ExplicitLineBreak.static.name = 'explicitBreak';
+bs.vec.dm.ExplicitLineBreak.static.matchFunction = function( element ) {
+	// We never want to match <br> nodes, that is handled by VE by default
+	// if <br> comes from wikitext. This node is only for inserting from Visual mode
+	return false;
 };
 
-
-bs.vec.dm.ExplicitLineBreakNode.static.toDomElements = function ( data, doc ) {
-	// Its impossible to create a <br> element in DOM directly,
-	// it must be wrapped in another element
-	var el = doc.createElement('span');
-	// Add class
-	el.classList.add( 'bs-vec-line-break' );
-	return [ el ];
+bs.vec.dm.ExplicitLineBreak.static.toDomElements = function ( dataElement, doc ) {
+	var node = doc.createElement( 'br' );
+	// Add this explicitly to "mark" the break as coming from HTML, so that it won't get stripped by Parsoid
+	node.setAttribute( 'data-parsoid', JSON.stringify( { stx: 'html' } ) );
+	return [ node ];
 };
 
 /* Registration */
-ve.dm.modelRegistry.register( bs.vec.dm.ExplicitLineBreakNode );
+ve.dm.modelRegistry.register( bs.vec.dm.ExplicitLineBreak );
