@@ -78,6 +78,11 @@ bs.vec.ui.ColorAnnotationCommand.prototype.showPicker = function () {
 	offset.left -= 50;
 	picker.$element.offset( offset );
 
+	// Added mousedown event listener in case of Chrome not triggered
+	picker.$element.on('mousedown', function(e) {
+		e.preventDefault();
+	});
+
 	return picker;
 };
 
