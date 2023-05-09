@@ -5,7 +5,8 @@
 			"Gomoko",
 			"Thibaut120094",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Urhixidur"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec l’ÉditeurVisuel",
@@ -53,7 +54,7 @@
 	"bs-vec-table-style-cell-text-vert-align-bottom": "Bas",
 	"bs-vec-table-style-cell-text-vert-align-top": "Haut",
 	"bs-vec-table-style-cell-text-vert-align-middle": "Milieu",
-	"bs-vec-table-style-cell-text-hor-align": "Alignement du texte",
+	"bs-vec-table-style-cell-text-hor-align": "Justification du texte",
 	"bs-vec-table-style-cell-text-hor-align-left": "Gauche",
 	"bs-vec-table-style-cell-text-hor-align-center": "Centré",
 	"bs-vec-table-style-cell-text-hor-align-right": "Droite",
