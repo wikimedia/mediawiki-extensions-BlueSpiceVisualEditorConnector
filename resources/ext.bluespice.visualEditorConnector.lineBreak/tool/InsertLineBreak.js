@@ -42,6 +42,15 @@ ve.ui.wikitextCommandRegistry.register(
 	} )
 );
 
-ve.ui.triggerRegistry.register(
-	'bsInsertLineBreak', { mac: new ve.ui.Trigger( 'cmd+enter' ), pc: new ve.ui.Trigger( 'ctrl+enter' ) }
-);
+document.addEventListener('keydown', function (event) {
+	if ( event.keyCode === 13 && event.shiftKey ) {
+		event.preventDefault();
+		var surface = ve.init.target.getSurface();
+		if ( !surface ) {
+			return;
+		}
+
+		surface.getModel().undo();
+		surface.executeCommand('bsInsertLineBreak');
+	}
+});
