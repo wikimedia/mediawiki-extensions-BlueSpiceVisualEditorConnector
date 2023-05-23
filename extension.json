@@ -566,11 +566,14 @@
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
-		"NamespaceManager::writeNamespaceConfiguration": [
-			"\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerWriteNamespaceConfiguration\\WriteToConfiguration::callback"
-		],
+		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
 		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback",
 		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback"
+	},
+	"HookHandlers": {
+		"writeNamespaceConfiguration": {
+			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\WriteNamespaceConfiguration"
+		}
 	},
 	"manifest_version": 2
 }
