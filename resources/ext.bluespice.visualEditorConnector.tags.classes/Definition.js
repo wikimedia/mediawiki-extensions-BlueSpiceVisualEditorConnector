@@ -149,6 +149,12 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 				value: attribute.default
 			});
 			break;
+		case 'title' :
+			widget = new mw.widgets.TitleInputWidget({
+				value: attribute.default,
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
+			});
+			break;
 		case 'text' :
 		default :
 			widget = new OO.ui.TextInputWidget({
