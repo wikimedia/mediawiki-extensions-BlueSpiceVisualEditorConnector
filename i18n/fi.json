@@ -12,5 +12,6 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Tekstin väri",
 	"bs-vec-table-inspector-column": "Sarake",
 	"bs-vec-table-inspector-row": "Rivi",
-	"bs-vec-table-inspector-cell": "Solu"
+	"bs-vec-table-inspector-cell": "Solu",
+	"bs-vec-dialog-action-safe": "Peruuta"
 }
