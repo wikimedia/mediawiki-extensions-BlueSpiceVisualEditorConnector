@@ -545,7 +545,7 @@
 			]
 		},
 		"VisualEditorConnectorPasteFilename": {
-			"value": "{{timestamp}}",
+			"value": "{{pagename}}_{{timestamp}}",
 			"description": [
 				"Default name pasted files will receive.",
 				"Tokens {{timestamp}}, {{random}} and {{pagename}} can be used to generate unique parts of the name.",
