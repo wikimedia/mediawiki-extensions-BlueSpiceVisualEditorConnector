@@ -12,6 +12,8 @@
 namespace BlueSpice\VisualEditorConnector\Hook\UnitTestsList;
 
 use BlueSpice\Hook;
+use Config;
+use IContextSource;
 
 class DisableFlaggedRevsTests extends Hook {
 
@@ -41,19 +43,22 @@ class DisableFlaggedRevsTests extends Hook {
 	 * @param IContextSource $context
 	 * @param Config $config
 	 * @param array &$paths A list of paths to extension unit test folders
-	 * @return bool
+	 *
+	 * @return void
 	 */
 	public function __construct( $context, $config, &$paths ) {
 		parent::__construct( $context, $config );
 		$this->paths = &$paths;
 	}
 
+	/**
+	 * @return bool
+	 */
 	protected function doProcess() {
-		foreach ( $this->paths as $key => $path ) {
-			if ( str_contains( $path, 'FlaggedRevs/tests/phpunit' ) ) {
-				unset( $this->paths[$key] );
-			}
-		}
-		return $this->paths;
+		$this->paths = array_filter( $this->paths, static function ( $path ) {
+			return !str_contains( $path, 'FlaggedRevs/tests/phpunit' );
+		} );
+
+		return true;
 	}
 }
