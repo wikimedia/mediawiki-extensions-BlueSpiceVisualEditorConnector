@@ -49,29 +49,26 @@ bs.vec.ui.DataTransferItem.prototype.getFormattedFileName = function () {
 };
 
 bs.vec.ui.DataTransferItem.prototype.substitute = function ( filename ) {
-	var regex = /{{(.*?)}}/gi,
-		matches;
+	var regex = /{{(.*?)}}/g,
+		matches = Array.from( filename.matchAll( regex ), m => ( { fullMatch: m[ 0 ], group: m[ 1 ] }));
 
-	do {
-		matches = regex.exec( filename );
-		if ( matches ) {
-			var key = matches[1];
-			switch ( key ) {
-				case 'pagename':
-					filename = filename.replace( matches[0], this.getEscapedPageName() );
-					break;
-				case 'timestamp':
-					filename = filename.replace( matches[0], Date.now() );
-					break;
-				case 'random':
-					filename = filename.replace(
-						matches[0],
-						Math.floor( Math.random() * ( 999999 - 999 + 1 ) ) + 999
-					);
-					break;
-			}
+	matches.forEach( match => {
+		var key = match.group;
+		switch ( key ) {
+			case 'pagename':
+				filename = filename.replace( match.fullMatch, this.getEscapedPageName() );
+				break;
+			case 'timestamp':
+				filename = filename.replace( match.fullMatch, Date.now() );
+				break;
+			case 'random':
+				filename = filename.replace(
+					match.fullMatch,
+					Math.floor( Math.random() * ( 999999 - 999 + 1 ) ) + 999
+				);
+				break;
 		}
-	} while ( matches );
+	});
 
 	return filename;
 };
