@@ -50,7 +50,6 @@ document.addEventListener('keydown', function (event) {
 			return;
 		}
 
-		surface.getModel().undo();
 		surface.executeCommand('bsInsertLineBreak');
 	}
 });
