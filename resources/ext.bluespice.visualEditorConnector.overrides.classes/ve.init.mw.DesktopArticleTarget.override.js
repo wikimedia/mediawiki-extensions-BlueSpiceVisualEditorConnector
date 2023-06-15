@@ -2,7 +2,9 @@
  * Backport of https://github.com/wikimedia/mediawiki-extensions-VisualEditor/commit/f8cebb8f5156b1fb012f6532ad950e90b4a89da6
  */
 mw.hook( 've.activationComplete' ).add( function () {
-
+	if ( ve.init.target.$element.hasClass( 've-init-mw-collabTarget' ) ) {
+		return;
+	}
 	/**
 	 * Set temporary redirect interface to match the current state of redirection in the editor.
 	 *
