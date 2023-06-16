@@ -5,6 +5,9 @@ mw.hook( 've.activationComplete' ).add( function () {
 	if ( ve.init.target.$element.hasClass( 've-init-sa-target' ) ) {
 		return;
 	}
+	if ( ve.init.target.$element.hasClass( 've-init-mw-collabTarget' ) ) {
+		return;
+	}
 	var cancelButton = new OO.ui.ButtonWidget(
 		{
 			label: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
