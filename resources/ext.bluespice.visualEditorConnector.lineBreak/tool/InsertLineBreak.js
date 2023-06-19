@@ -30,17 +30,22 @@ ve.ui.commandRegistry.register(
 	} )
 );
 
-ve.ui.wikitextCommandRegistry.register(
-	new ve.ui.Command( 'bsInsertLineBreak', 'content', 'insert', {
-		args: [
-			[
-				{ type: 'explicitBreak' },
-				{ type: '/explicitBreak' }
-			]
-		],
-		supportedSelections: [ 'linear' ]
-	} )
-);
+if ( this.collabpad ) {
+	// DO NOTHING when entering CollabPad edit mode
+	// reason: don't have wikitextCommandRegistry
+} else {
+	ve.ui.wikitextCommandRegistry.register(
+		new ve.ui.Command( 'bsInsertLineBreak', 'content', 'insert', {
+			args: [
+				[
+					{ type: 'explicitBreak' },
+					{ type: '/explicitBreak' }
+				]
+			],
+			supportedSelections: [ 'linear' ]
+		} )
+	);
+}
 
 document.addEventListener('keydown', function (event) {
 	if ( event.keyCode === 13 && event.shiftKey ) {
