@@ -12,9 +12,6 @@ bs.vec.dm.RemoveLineBreakSign.static.toDataElement = function (domElement, doc) 
 	if (domElement[0].nextSibling) {
 		domElement[0].nextSibling.textContent = domElement[0].nextSibling.textContent.trim();
 	}
-	if (domElement[0].previousSibling) {
-		domElement[0].previousSibling.textContent = domElement[0].previousSibling.textContent.trim();
-	}
 };
 
 /* Registration */

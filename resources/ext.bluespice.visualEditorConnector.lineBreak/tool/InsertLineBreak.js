@@ -42,14 +42,6 @@ ve.ui.wikitextCommandRegistry.register(
 	} )
 );
 
-document.addEventListener('keydown', function (event) {
-	if ( event.keyCode === 13 && event.shiftKey ) {
-		event.preventDefault();
-		var surface = ve.init.target.getSurface();
-		if ( !surface ) {
-			return;
-		}
-
-		surface.executeCommand('bsInsertLineBreak');
-	}
-});
+ve.ui.triggerRegistry.register(
+	'bsInsertLineBreak', { mac: new ve.ui.Trigger( 'cmd+enter' ), pc: new ve.ui.Trigger( 'ctrl+enter' ) }
+);
