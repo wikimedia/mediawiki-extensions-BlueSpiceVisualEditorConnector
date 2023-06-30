@@ -13,7 +13,10 @@ class WriteNamespaceConfiguration implements NamespaceManagerBeforePersistSettin
 		array &$configuration, int $id, array $definition, array $mwGlobals
 	): void {
 		$enabledNamespaces = $mwGlobals['wgVisualEditorAvailableNamespaces'] ?? [];
-		$currentlyActivated = in_array( $id, $enabledNamespaces );
+		$currentlyActivated = false;
+		if ( isset( $enabledNamespaces[$id] ) && $enabledNamespaces[$id] === true ) {
+			$currentlyActivated = true;
+		}
 
 		$explicitlyDeactivated = false;
 		if ( isset( $definition['visualeditor'] ) && $definition['visualeditor'] === false ) {
