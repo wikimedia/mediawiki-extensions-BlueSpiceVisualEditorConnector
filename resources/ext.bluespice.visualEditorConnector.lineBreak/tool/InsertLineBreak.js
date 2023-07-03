@@ -30,10 +30,9 @@ ve.ui.commandRegistry.register(
 	} )
 );
 
-if ( this.collabpad ) {
-	// DO NOTHING when entering CollabPad edit mode
-	// reason: don't have wikitextCommandRegistry
-} else {
+// There are cases when "ve.ui.wikitextCommandRegistry" is not defined,
+// for example, in collaborative editing mode.
+if ( ve.ui.wikitextCommandRegistry ) {
 	ve.ui.wikitextCommandRegistry.register(
 		new ve.ui.Command( 'bsInsertLineBreak', 'content', 'insert', {
 			args: [
