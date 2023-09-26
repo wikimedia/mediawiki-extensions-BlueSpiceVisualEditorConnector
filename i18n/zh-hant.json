@@ -82,6 +82,7 @@
 	"bs-vec-table-border-dotted": "點線",
 	"bs-vec-table-border-double": "雙線",
 	"bs-vec-insert-softhyphen-title": "軟連字元",
+	"bs-vec-insert-line-break-title": "換行（<br />）",
 	"bs-visualeditorconnector-text-style-indent-label": "縮排",
 	"bs-visualeditorconnector-indent-annotation-desc": "縮排已選取的文字"
 }
