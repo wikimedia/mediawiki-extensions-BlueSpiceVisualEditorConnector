@@ -16,7 +16,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.getUnit = function() {
 	return bs.vec.ui.TableStyle.static.UNIT_NONE;
 };
 
-bs.vec.ui.CellBackgroundStyle.prototype.cleanColor = function ( $element ) {
+bs.vec.ui.CellBackgroundStyle.prototype.clearColor = function ( $element ) {
 	var classes = $element[0].classList.values();
 	for (const cellClass of classes) {
 		if (cellClass.match(/col-\S+/)) {
@@ -29,11 +29,11 @@ bs.vec.ui.CellBackgroundStyle.prototype.cleanColor = function ( $element ) {
 };
 
 bs.vec.ui.CellBackgroundStyle.prototype.decorate = function ( $element ) {
-	$element = this.cleanColor($element);
-	if ( this.value.hasOwnProperty( 'colorCode' ) ) {
-		return $element.css( this.getAttribute(), this.value.colorCode );
-	} else if ( this.value.hasOwnProperty( 'colorClass' ) ) {
-		return $element.addClass( this.value.colorClass );
+	$element = this.clearColor( $element );
+	if ( this.value.hasOwnProperty( 'code' ) ) {
+		return $element.css( this.getAttribute(), this.value.code );
+	} else if ( this.value.hasOwnProperty( 'class' ) ) {
+		return $element.addClass( this.value['class'] );
 	}
 };
 
@@ -42,29 +42,6 @@ bs.vec.ui.CellBackgroundStyle.prototype.getTool = function() {
 		widget: bs.vec.ui.widget.CellBackgroundWidget,
 		displaySection: bs.vec.ui.TableStyle.static.TYPE_QUICK
 	};
-};
-
-/**
- * This is called when command related to this tableStyle is executed
- * context: bs.vec.ui.TableAction
- *
- * @param Object subject
- * @param Object args
- */
-bs.vec.ui.CellBackgroundStyle.prototype.executeAction = function( subject, args ) {
-	if ( !args.hasOwnProperty( 'value' ) ) {
-		return;
-	}
-	var	data = {};
-
-	if ( args.value.hasOwnProperty( 'code' ) ) {
-		data = { colorCode: args.value.code };
-	} else if ( args.value.hasOwnProperty( 'class' ) ) {
-		data = { colorClass: args.value.class };
-	}
-
-	subject.node.element.cellBackgroundColor = data;
-	return subject;
 };
 
 bs.vec.ui.CellBackgroundStyle.prototype.getModelProperty = function() {
@@ -81,7 +58,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDataElement = function( section, domEl
 		styleParser = new bs.vec.util.StyleAttributeParser( style );
 		if ( styleParser.getValueForAttr( this.getAttribute() ) ) {
 			result.cellBackgroundColor = {
-				colorCode: styleParser.getValueForAttr( this.getAttribute() )
+				code: styleParser.getValueForAttr( this.getAttribute() )
 			};
 		}
 	} else {
@@ -95,7 +72,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDataElement = function( section, domEl
 		}
 
 		result.cellBackgroundColor = {
-			colorClass: classes[0]
+			'class': classes[0]
 		};
 	}
 };
@@ -107,11 +84,11 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataE
 		return;
 	}
 	// if no changes were done with background-color property in current cell
-	if ( !dataElement.hasOwnProperty( 'cellBackgroundColor' ) ) {
+	if ( !dataElement.attributes.hasOwnProperty( 'cellBackgroundColor' ) ) {
 		return;
 	}
 
-	value = dataElement.cellBackgroundColor;
+	value = dataElement.attributes.cellBackgroundColor;
 	style = domElement.getAttribute( 'style' );
 	if ( !style ) {
 		style = '';
@@ -124,11 +101,14 @@ bs.vec.ui.CellBackgroundStyle.prototype.toDomElements = function( section, dataE
 	domElement.setAttribute( 'style', styleParser.toString() );
 	domElement.setAttribute( 'class', "" );
 
-	if ( !$.isEmptyObject( value ) && value.hasOwnProperty( 'colorCode' ) ) {
-		styleParser.addToStyle( this.getAttribute(), value.colorCode );
+	if ( $.isEmptyObject( value ) ) {
+		return domElement;
+	}
+	if ( value.hasOwnProperty( 'code' ) ) {
+		styleParser.addToStyle( this.getAttribute(), value.code );
 		domElement.setAttribute( 'style', styleParser.toString() );
-	} else if ( !$.isEmptyObject( value ) && value.hasOwnProperty( 'colorClass' ) ) {
-		domElement.setAttribute( 'class', value.colorClass );
+	} else if ( value.hasOwnProperty( 'class' ) ) {
+		domElement.setAttribute( 'class', value['class'] );
 	}
 	return domElement;
 };

@@ -24,15 +24,6 @@ bs.vec.ui.RowHeightStyle.prototype.getTool = function() {
 	};
 };
 
-bs.vec.ui.RowHeightStyle.prototype.executeAction = function( subject, args ) {
-	if ( !args.hasOwnProperty( 'rowHeight' ) ) {
-		return;
-	}
-	var height = args.rowHeight;
-
-	return ve.dm.TableRowNode.static.applyStylings( subject, { rowHeight: height } );
-};
-
 bs.vec.ui.RowHeightStyle.prototype.getModelProperty = function() {
 	return 'rowHeight';
 };
