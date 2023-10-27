@@ -144,17 +144,16 @@ bs.vec.ui.CellBorderStyle.prototype.toDataElement = function( section, domElemen
 
 bs.vec.ui.CellBorderStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
 	var value, style, styleParser;
-
 	if ( section !== this.applyTo ) {
 		return;
 	}
 
-	if ( !dataElement.hasOwnProperty( this.getModelProperty() ) ) {
+	if ( !dataElement.attributes.hasOwnProperty( this.getModelProperty() ) ) {
 		return domElement;
 	}
 	style = domElement.getAttribute( 'style' ) || '';
 	styleParser = new bs.vec.util.StyleAttributeParser( style );
-	styleParser = this.translateToStyle( styleParser, dataElement[this.getModelProperty()] );
+	styleParser = this.translateToStyle( styleParser, dataElement.attributes[this.getModelProperty()] );
 
 	domElement.setAttribute( 'style', styleParser.toString() );
 };

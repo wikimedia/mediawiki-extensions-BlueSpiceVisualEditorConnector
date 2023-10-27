@@ -5,10 +5,9 @@ bs.vec.ce.TableRowNode = function VeCeTableRowNode( options ) {
 	bs.vec.ce.TableRowNode.super.apply( this, arguments );
 
 	var applicator = new bs.vec.ui.TableStyleApplicator( {
-		model: options.element,
 		domEl: this.$element
 	} );
-	applicator.apply();
+	applicator.apply( options.element );
 };
 
 /* Inheritance */

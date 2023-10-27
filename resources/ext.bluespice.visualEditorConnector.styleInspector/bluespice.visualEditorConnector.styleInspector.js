@@ -83,6 +83,9 @@ StyleInspector.prototype.onMouseUp = function ( e ) {
 		x: e.pageX,
 		y: e.pageY
 	};
+	if ( !this.selection ) {
+		return;
+	}
 	range = this.selection.getRange();
 	var selectedText = window.getSelection().toString();
 	var strLength = selectedText.trim().length ;

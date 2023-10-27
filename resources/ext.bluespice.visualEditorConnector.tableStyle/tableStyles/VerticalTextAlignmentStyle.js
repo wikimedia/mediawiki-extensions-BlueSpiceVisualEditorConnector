@@ -24,17 +24,6 @@ bs.vec.ui.VerticalTextAlignmentStyle.prototype.getTool = function() {
 	};
 };
 
-bs.vec.ui.VerticalTextAlignmentStyle.prototype.executeAction = function( subject, args ) {
-	var value = args.hasOwnProperty( 'verticalTextAlignment' ) ? args.verticalTextAlignment : null;
-
-	if ( value === null ) {
-		delete( subject.node.element.verticalTextAlignment );
-	} else {
-		subject.node.element.verticalTextAlignment = value;
-	}
-	return subject;
-};
-
 bs.vec.ui.VerticalTextAlignmentStyle.prototype.getModelProperty = function() {
 	return 'verticalTextAlignment';
 };
