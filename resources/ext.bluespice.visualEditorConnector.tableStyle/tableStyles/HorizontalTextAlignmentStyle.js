@@ -24,17 +24,6 @@ bs.vec.ui.HorizontalTextAlignmentStyle.prototype.getTool = function() {
 	};
 };
 
-bs.vec.ui.HorizontalTextAlignmentStyle.prototype.executeAction = function( subject, args ) {
-	var value = args.hasOwnProperty( 'horizontalTextAlignment' ) ? args.horizontalTextAlignment : null;
-
-	if ( value === null ) {
-		delete( subject.node.element.horizontalTextAlignment );
-	} else {
-		subject.node.element.horizontalTextAlignment = value;
-	}
-	return subject;
-};
-
 bs.vec.ui.HorizontalTextAlignmentStyle.prototype.getModelProperty = function() {
 	return 'horizontalTextAlignment';
 };

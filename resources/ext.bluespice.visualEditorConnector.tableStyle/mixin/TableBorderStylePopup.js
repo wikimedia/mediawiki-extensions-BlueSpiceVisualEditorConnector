@@ -203,7 +203,7 @@ bs.vec.mixin.TableBorderStylePopup.prototype.makeBorderPositions = function() {
 				return;
 			}
 
-			this.emit( 'change', { mode: item.data, prop: { style: 'init' } } );
+			this.emit( 'change', { mode: item.data, prop: { style: 'solid' } } );
 		}
 	} );
 	this.items.position = this.positionWidget;

@@ -36,9 +36,9 @@ bs.vec.dm.MWTableNode.static.toDomElements = function ( dataElement, doc ) {
 	}
 
 	if ( attributes.tablewidth ) {
-		element.style[ 'width' ] = attributes.tablewidth;
+		element.style.width = attributes.tablewidth;
 	} else {
-		element.style[ 'width' ] = '';
+		element.style.width = '';
 	}
 
 	return [ element ];

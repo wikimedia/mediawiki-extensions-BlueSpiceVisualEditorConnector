@@ -48,7 +48,8 @@ bs.vec.dm.TableRowNode.static.toDataElement = function ( domElements ) {
 	this.runTableStyles( 'toDataElement', [ domElements[0], result ] );
 
 	result = $.extend( result, {
-		type: this.name
+		type: this.name,
+		attributes: result
 	} );
 	return result;
 };
@@ -59,6 +60,10 @@ bs.vec.dm.TableRowNode.static.toDomElements = function ( dataElement, doc ) {
 	this.runTableStyles( 'toDomElements', [ dataElement, domElement ] );
 
 	return [ domElement ];
+};
+
+bs.vec.dm.TableRowNode.prototype.reportChanged = function () {
+	this.emit( 'attributeChange' );
 };
 
 bs.vec.dm.TableRowNode.static.runTableStyles = function( func, params ) {

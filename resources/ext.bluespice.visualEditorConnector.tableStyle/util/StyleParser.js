@@ -44,7 +44,11 @@ bs.vec.util.StyleAttributeParser.prototype.parseStyle = function() {
 };
 
 bs.vec.util.StyleAttributeParser.prototype.addToStyle = function( attr, value ) {
-	this.formatted[attr] = value;
+	if ( !value ) {
+		this.removeFromStyle( attr );
+	} else {
+		this.formatted[attr] = value;
+	}
 };
 
 bs.vec.util.StyleAttributeParser.prototype.removeFromStyle = function( attr ) {
