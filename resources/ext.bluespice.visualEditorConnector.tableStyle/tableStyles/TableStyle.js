@@ -82,27 +82,6 @@ bs.vec.ui.TableStyle.prototype.getTool = function() {
 	return {};
 };
 
-/**
- * FIXME: Point of confusion. This will get called with different "subject"s.
- * Depending on section it will be cellNode or a rowNode
- * Also, return values depend on the section
- *
- * @param subject
- * @param params
- * @return mixed
- */
-bs.vec.ui.TableStyle.prototype.executeAction = function( subject, params ) {
-	// STUB
-};
-
-bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, result ) {
-	// STUB
-};
-
-bs.vec.ui.TableStyle.prototype.toDomElements = function( section, dataElement, domElement, attributes ) {
-	// STUB
-};
-
 bs.vec.ui.TableStyle.prototype.getModelProperty = function() {
 	// STUB
 };
@@ -119,15 +98,20 @@ bs.vec.ui.TableStyle.prototype.toDataElement = function( section, domElement, re
 	if ( !style ) {
 		return;
 	}
+	var applied = [];
 	styleParser = new bs.vec.util.StyleAttributeParser( style );
 	if ( styleParser.getValueForAttr( this.getAttribute() ) ) {
 		result[modelProperty] = this.splitValue(
 			styleParser.getValueForAttr( this.getAttribute() )
 		);
+		applied.push( this.getAttribute() );
 	}
 	parsed = styleParser.getParsed();
 	for ( var key in parsed ) {
 		if ( !parsed.hasOwnProperty( key ) ) {
+			continue;
+		}
+		if ( applied.indexOf( key ) !== -1 ) {
 			continue;
 		}
 		externalStyle[key] = parsed[key];
@@ -145,11 +129,14 @@ bs.vec.ui.TableStyle.prototype.toDomElements = function( section, dataElement, d
 		return;
 	}
 
-	if ( !dataElement.hasOwnProperty( this.getModelProperty() ) ) {
+	if ( !dataElement.hasOwnProperty( 'attributes' ) ) {
+		return;
+	}
+	if ( !dataElement.attributes.hasOwnProperty( this.getModelProperty() ) ) {
 		return;
 	}
 
-	value = dataElement[this.getModelProperty()];
+	value = dataElement.attributes[this.getModelProperty()];
 	this.setValue( value );
 
 	style = domElement.getAttribute( 'style' );

@@ -9,6 +9,7 @@ for( key in registry ) {
 			{ supportedSelections: [ 'table' ] }
 		)
 	);
+
 }
 
 ve.ui.commandRegistry.register(

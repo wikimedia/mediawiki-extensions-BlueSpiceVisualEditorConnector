@@ -242,7 +242,6 @@
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/TableStyle.js",
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/RowHeightStyle.js",
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/CellBackgroundStyle.js",
-				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/TextDirectionStyle.js",
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/VerticalTextAlignmentStyle.js",
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/HorizontalTextAlignmentStyle.js",
 				"ext.bluespice.visualEditorConnector.tableStyle/tableStyles/CellBorderStyle.js",

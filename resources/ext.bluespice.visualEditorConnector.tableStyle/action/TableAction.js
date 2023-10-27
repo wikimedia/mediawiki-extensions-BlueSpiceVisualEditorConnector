@@ -3,21 +3,6 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.TableAction = function () {
 	// Parent constructor
 	ve.ui.TableAction.super.apply( this, arguments );
-	this.tableStyleRegistry =  bs.vec.registry.TableStyle.registry;
-
-	var action = this;
-	for( var key in this.tableStyleRegistry ) {
-		if ( !this.tableStyleRegistry.hasOwnProperty( key ) ) {
-			continue;
-		}
-		var handler = this.tableStyleRegistry[key];
-		if ( handler.shouldOverrideAction() === true ) {
-			// This will create a function for each command
-			bs.vec.ui.TableAction.prototype[key] = function( args ) {
-				action.executeAction.call( this, action, args );
-			}.bind( handler );
-		}
-	}
 };
 
 /* Inheritance */
@@ -28,85 +13,130 @@ OO.inheritClass( bs.vec.ui.TableAction, ve.ui.TableAction );
 
 bs.vec.ui.TableAction.static.name = 'bs-vec-table';
 
-bs.vec.ui.TableAction.static.methods = Object.keys( bs.vec.registry.TableStyle.registry ) + [
-	'duplicateRow', 'duplicateColumn'
+bs.vec.ui.TableAction.static.methods = [
+	'duplicate', 'cellBackgroundColor', 'cellBorder', 'columnWidth',
+	'horizontalTextAlignment', 'rowHeight', 'verticalTextAlignment'
 ];
 
-/**
- * Gets the selection and runs each appropriate node( row, cell ) though
- * the handler's executeAction method, afterwards, restores the original selection
- *
- * Context here is handler for the action, one of this.tableStyleRegistry handlers
- *
- * @param bs.vec.ui.TableAction action
- * @param array args
- */
-bs.vec.ui.TableAction.prototype.executeAction = function( action, args ) {
-	var surfaceModel = action.surface.getModel(),
-		selection = surfaceModel.getSelection(),
-		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
-		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
-		section;
-
-	section = this.getSection();
-	if ( section ) {
-		action.forEach( section, selection, surfaceModel, tableNode, this.executeAction.bind( action ), args );
-	}
-
-	action.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
+bs.vec.ui.TableAction.prototype.cellBackgroundColor = function( args ) {
+	this.setAttributes( 'cellBackgroundColor', args.value );
 };
 
-bs.vec.ui.TableAction.prototype.forEach = function( what, selection, surfaceModel, tableNode, cb, cbParams ) {
-	var matrix = tableNode.getMatrix(),
-		cellIndex = 0, rowIndex, colIndex, newRow, rowNode, cells;
+bs.vec.ui.TableAction.prototype.columnWidth = function( args ) {
+	// We need to apply to every cell in the column
+	var origSelection = this.selectSection( 'column' );
+	this.setAttributes( 'columnWidth', args.columnWidth );
+	this.restoreOriginalSelection( origSelection );
+};
 
-	if ( what === 'col' ) {
-		cells = [];
-		for( colIndex = selection.startCol; colIndex <= selection.endCol; colIndex++ ) {
-			cells = matrix.getColumn( colIndex );
-			for ( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
-				cells[cellIndex] = cb( cells[cellIndex], cbParams, this );
-			}
-			this.replace( selection, surfaceModel.getDocument(), what, colIndex, { cells: cells } );
-		}
-		return;
-	} else {
-		for( rowIndex = selection.startRow; rowIndex <= selection.endRow; rowIndex++ ) {
-			cells = matrix.getRow( rowIndex );
-			rowNode = matrix.getRowNode( rowIndex );
-			if ( what === 'row' ) {
-				newRow = {
-					row: cb( rowNode, cbParams, this ),
-					cells: cells
-				};
-			} else if ( what === 'cell' ) {
-				for ( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
-					if ( cellIndex >= selection.startCol && cellIndex <= selection.endCol ) {
-						cells[cellIndex] = cb( cells[cellIndex], cbParams, this );
-					}
-				}
 
-				newRow = {
-					row: ve.dm.TableRowNode.static.applyStylings( matrix.getRowNode( rowIndex ), {} ),
-					cells: cells
-				};
-			}
-			this.replace( selection, surfaceModel.getDocument(), 'row', rowIndex, newRow );
+bs.vec.ui.TableAction.prototype.rowHeight = function( args ) {
+	// This is a different way to apply attributes to nodes
+	// Since this is a RowNode (not a CellNode), we need to use a different approach
+	var surfaceModel = this.surface.getModel(),
+		selection = surfaceModel.getSelection(),
+		node = selection.getTableNode( surfaceModel.getDocument() ),
+		startRow = selection.startRow,
+		endRow = selection.endRow;
+
+	for ( var i = startRow; i <= endRow; i++ ) {
+		var row = node.matrix.getRowNode( i );
+		if ( !row ) {
+			continue;
 		}
+		row.element.attributes = row.element.attributes || {};
+		row.element.attributes.rowHeight = args.rowHeight;
+	}
+	// Just here to update CEs, model already updated at this point
+	this.setAttributes( 'rowHeight', args.rowHeight );
+};
+
+bs.vec.ui.TableAction.prototype.verticalTextAlignment = function( args ) {
+	this.setAttributes( 'verticalTextAlignment', args.verticalTextAlignment );
+};
+
+bs.vec.ui.TableAction.prototype.horizontalTextAlignment = function( args ) {
+	this.setAttributes( 'horizontalTextAlignment', args.horizontalTextAlignment );
+};
+
+bs.vec.ui.TableAction.prototype.selectSection = function( type, start, end ) {
+	var surfaceModel = this.surface.getModel(),
+		selection = surfaceModel.getSelection(),
+		node = selection.getTableNode( surfaceModel.getDocument() ),
+		matrix = node.getMatrix(),
+		orig = {
+			startRow: selection.startRow,
+			endRow: selection.endRow,
+			startCol: selection.startCol,
+			endCol: selection.endCol
+		};
+
+	if ( type === 'row' ) {
+		if ( start ) {
+			selection.startRow = start;
+		}
+		if ( end ) {
+			selection.endRow = end;
+		}
+		// Select whole row
+		selection.startCol = 0;
+		selection.endCol = matrix.matrix[ 0 ].length - 1;
+	}
+	if ( type === 'column' ) {
+		if ( start ) {
+			selection.startCol = start;
+		}
+		if ( end ) {
+			selection.endCol = end;
+		}
+		// Select whole column
+		selection.startRow = 0;
+		selection.endRow = matrix.matrix.length - 1;
+	}
+	return orig;
+};
+
+bs.vec.ui.TableAction.prototype.restoreOriginalSelection = function( data ) {
+	var surfaceModel = this.surface.getModel(),
+		selection = surfaceModel.getSelection();
+
+	selection.startRow = data.startRow;
+	selection.endRow = data.endRow;
+	selection.startCol = data.startCol;
+	selection.endCol = data.endCol;
+};
+
+bs.vec.ui.TableAction.prototype.setAttributes = function( key, value ) {
+	var surfaceModel = this.surface.getModel(),
+		selection = surfaceModel.getSelection();
+
+	if ( !( selection instanceof ve.dm.TableSelection ) ) {
+		return false;
 	}
 
+	var attributes = {};
+	attributes[key] = value;
+	var txBuilders = [];
+	var documentModel = surfaceModel.getDocument();
+	var ranges = selection.getOuterRanges( documentModel );
+
+	for ( var i = ranges.length - 1; i >= 0; i-- ) {
+		txBuilders.push(
+			ve.dm.TransactionBuilder.static.newFromAttributeChanges.bind( null,
+				documentModel, ranges[ i ].start, attributes
+			)
+		);
+	}
+	txBuilders.forEach( function ( txBuilder ) {
+		surfaceModel.change( txBuilder() );
+	} );
+	ve.track( 'activity.table', { action: key } );
+
+	//this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
 	return true;
 };
 
-bs.vec.ui.TableAction.prototype.restoreSelection = function( surfaceModel, selection, tableNode, oldSelection ) {
-	surfaceModel.setSelection( new ve.dm.TableSelection(
-		// tableNode range was changed by deletion
-		tableNode.getOuterRange(),
-		oldSelection[ 0 ], oldSelection[ 1 ], oldSelection[ 2 ], oldSelection[ 3 ]
-	) );
-};
-
-bs.vec.ui.TableAction.prototype.hasMutliRowCells = function( cells ) {
+bs.vec.ui.TableAction.prototype.hasMultiRowCells = function( cells ) {
 	var cellIndex, cell;
 
 	for( cellIndex = 0; cellIndex < cells.length; cellIndex++ ) {
@@ -124,68 +154,59 @@ bs.vec.ui.TableAction.prototype.hasMutliRowCells = function( cells ) {
 
 bs.vec.ui.TableAction.prototype.duplicate = function( mode ) {
 	var surfaceModel = this.surface.getModel(),
-		document = surfaceModel.getDocument(),
 		selection = surfaceModel.getSelection(),
 		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		matrix = tableNode.getMatrix(),
 		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
-		newRow, cells, itemIndex, indexAfterAddditions;
+		newRow, cells, itemIndex, indexAfterAdditions;
 
 	if ( !( selection instanceof ve.dm.TableSelection ) ) {
 		return false;
 	}
-
 	if ( mode === 'row' ) {
-		indexAfterAddditions = selection.toRow;
-		for ( itemIndex = selection.fromRow; itemIndex <= indexAfterAddditions; itemIndex++ ) {
+		indexAfterAdditions = selection.endRow;
+		for ( itemIndex = selection.startRow; itemIndex <= indexAfterAdditions; itemIndex++ ) {
 			cells = matrix.getRow( itemIndex );
 			// If row contains cells that span over multiple rows, we cannot duplicate - alert user
-			if ( this.hasMutliRowCells( cells ) ) {
+			if ( this.hasMultiRowCells( cells ) ) {
 				OO.ui.alert( OO.ui.deferMsg( 'bs-vec-row-duplicate-has-merged' ) );
 				return;
 			}
 			newRow = {
 				row: ve.dm.TableRowNode.static.applyStylings( matrix.getRowNode( itemIndex ), {} ),
-				cells: cells
+				cells: cells.map( function ( ce ) {
+					// This will set `cell.data` to "data", eg. `{tableCell}data{/tableCell}`. This is expected by
+					// "insertRowOrCol" method.
+					if ( ce && !ce.isPlaceholder() ) {
+						ce.data = surfaceModel.getDocument().getData( ce.node.getOuterRange(), true );
+					}
+					return ce;
+				} )
 			};
-			// Don't ask...
-			this.replace( selection, document, 'row', itemIndex, newRow );
 			this.insertRowOrCol( tableNode, 'row', itemIndex, 'after', null, newRow );
 			// Number of rows changed
 			itemIndex++;
-			indexAfterAddditions++;
+			indexAfterAdditions++;
 		}
 	} else if ( mode === 'col' ) {
-		indexAfterAddditions = selection.toCol;
-		for ( itemIndex = selection.fromCol; itemIndex <= indexAfterAddditions; itemIndex++ ) {
+		indexAfterAdditions = selection.toCol;
+		for ( itemIndex = selection.fromCol; itemIndex <= indexAfterAdditions; itemIndex++ ) {
 			cells = matrix.getColumn( itemIndex );
-			this.replace( selection, document, mode, itemIndex, { cells: cells }  );
+			cells = cells.map( function ( ce ) {
+				// This will set `cell.data` to "data", eg. `{tableCell}data{/tableCell}`. This is expected by
+				// "insertRowOrCol" method.
+				if ( ce && !ce.isPlaceholder() ) {
+					ce.data = surfaceModel.getDocument().getData( ce.node.getOuterRange(), true );
+				}
+				return ce;
+			} );
 			this.insertRowOrCol( tableNode, mode, itemIndex, 'after', null, { cells: cells } );
 			itemIndex++;
-			indexAfterAddditions++;
+			indexAfterAdditions++;
 		}
 	}
-	this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
-};
-
-bs.vec.ui.TableAction.prototype.replace = function( selection, document, mode, index, replacement ) {
-	var tableNode = selection.getTableNode( document ),
-		matrix = tableNode.getMatrix(),
-		position;
-
-	if ( !( selection instanceof ve.dm.TableSelection ) ) {
-		return false;
-	}
-	this.deleteRowsOrColumns( matrix, mode, index, index );
-
-	position = 'after';
-	if ( index === 0 ) {
-		position = 'before';
-	} else {
-		index--;
-	}
-
-	this.insertRowOrCol( tableNode, mode, index, position, null, replacement );
+	matrix.update();
+	this.restoreComplexSelection( surfaceModel, selection, tableNode, oldSelection );
 };
 
 bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
@@ -193,7 +214,7 @@ bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
 		selection = surfaceModel.getSelection(),
 		tableNode = selection.getTableNode( surfaceModel.getDocument() ),
 		oldSelection = [ selection.fromCol, selection.fromRow, selection.toCol, selection.toRow ],
-		handler = this.tableStyleRegistry.cellBorder, isCollapsed;
+		handler = bs.vec.registry.TableStyle.registry.cellBorder, isCollapsed;
 
 	if ( args.hasOwnProperty( 'value' ) ) {
 		// Normalization
@@ -210,7 +231,7 @@ bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
 
 	this.execBorderStyle( targets, surfaceModel, selection, handler.executeAction.bind( this ), args );
 
-	this.restoreSelection( surfaceModel, selection, tableNode, oldSelection );
+	this.restoreComplexSelection( surfaceModel, selection, tableNode, oldSelection );
 };
 
 bs.vec.ui.TableAction.prototype.getTargetCells = function( selection, args, isCollapsed ) {
@@ -315,7 +336,7 @@ bs.vec.ui.TableAction.prototype.getTargetCells = function( selection, args, isCo
 		case 'none':
 		case 'clear':
 			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'round', internal: true } ), isCollapsed ) );
-			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'inner', internal:true } ), isCollapsed ) );
+			cells = cells.concat( this.getTargetCells( selection, $.extend( args, { mode: 'inner', internal: true } ), isCollapsed ) );
 			break;
 	}
 
@@ -388,18 +409,6 @@ bs.vec.ui.TableAction.prototype.getCellIndex = function( row, col, cells ) {
 	return -1;
 };
 
-bs.vec.ui.TableAction.prototype.getTargetForCell = function( cells, row, col ) {
-	for ( var i = 0; i < cells.length; i++ ) {
-		if ( cells[i].row === row && cells[i].col === col ) {
-			var data = $.extend( cells[i], {} );
-			delete( data.row );
-			delete( data.col );
-			return data;
-		}
-	}
-	return false;
-};
-
 bs.vec.ui.TableAction.prototype.parseArgs = function( args ) {
 	var res = {}, basePositions = [ 'left', 'right', 'top', 'bottom' ], i;
 	if ( basePositions.indexOf( args.mode ) !== -1 ) {
@@ -417,38 +426,25 @@ bs.vec.ui.TableAction.prototype.parseArgs = function( args ) {
 
 bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, surfaceModel, selection, cb, args ) {
 	var tableNode = selection.getTableNode( surfaceModel.getDocument() ),
-		matrix = tableNode.getMatrix(),
-		cellIndex = 0, rowIndex, newRow, cells;
+		matrix = tableNode.getMatrix();
 
-	for( rowIndex = selection.startRow - 1; rowIndex <= selection.endRow + 1; rowIndex++ ) {
-		cells = matrix.getRow( rowIndex );
-		if ( !cells ) {
-			// Row not there - could be out of bounds
+	for ( var i = 0; i < targets.length; i++ ) {
+		var cell = matrix.getCell( targets[i].row, targets[i].col );
+		if ( !cell ) {
 			continue;
 		}
-		for ( cellIndex = 0; cellIndex < cells.length + 1; cellIndex++ ) {
-			if ( !cells[cellIndex] ) {
-				// Cell out of bounds
-				continue;
-			}
-			var targetIndex = this.getCellIndex( rowIndex, cellIndex, targets );
-			if ( targetIndex === -1 ) {
-				continue;
-			}
 
-			var data = $.extend( targets[targetIndex], {} );
-			delete( data.row );
-			delete( data.col );
-			cells[cellIndex] = cb( cells[cellIndex], data, this );
-		}
-
-		newRow = {
-			row: ve.dm.TableRowNode.static.applyStylings( matrix.getRowNode( rowIndex ), {} ),
-			cells: cells
-		};
-
-		this.replace( selection, surfaceModel.getDocument(),'row', rowIndex, newRow );
+		cell.node.element.attributes.cellBorder = targets[i];
+		cell.node.reportChanged();
 	}
+};
+
+bs.vec.ui.TableAction.prototype.restoreComplexSelection = function( surfaceModel, selection, tableNode, oldSelection ) {
+	surfaceModel.setSelection( new ve.dm.TableSelection(
+		// tableNode range was changed by deletion
+		tableNode.getOuterRange(),
+		oldSelection[ 0 ], oldSelection[ 1 ], oldSelection[ 2 ], oldSelection[ 3 ]
+	) );
 };
 
 ve.ui.actionFactory.register( bs.vec.ui.TableAction );

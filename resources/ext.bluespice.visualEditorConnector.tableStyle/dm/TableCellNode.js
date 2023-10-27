@@ -27,6 +27,23 @@ bs.vec.dm.TableCellNode.static.toDataElement = function ( domElements ) {
 	return result;
 };
 
+bs.vec.dm.TableCellNode.static.createData = function ( options ) {
+	options = options || {};
+	var opening = {
+		type: 'tableCell',
+		attributes: {
+			style: options.style || 'data',
+			rowspan: options.rowspan || 1,
+			colspan: options.colspan || 1
+		}
+	};
+	var content = options.content || [
+		{ type: 'paragraph', internal: { generated: 'wrapper' } },
+		{ type: '/paragraph' }
+	];
+	return [ opening ].concat( content ).concat( [ { type: '/tableCell' } ] );
+};
+
 bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 	var tag = dataElement.attributes && dataElement.attributes.style === 'header' ? 'th' : 'td',
 		domElement = doc.createElement( tag ),
@@ -67,10 +84,15 @@ bs.vec.dm.TableCellNode.static.runTableStyles = function( func, params ) {
 		if ( !registry.hasOwnProperty( tableStyleKey ) ) {
 			continue;
 		}
+
 		scope = registry[tableStyleKey];
 		callback = scope[func];
 		callback.apply( scope, callbackParams );
 	}
+};
+
+bs.vec.dm.TableCellNode.prototype.reportChanged = function () {
+	this.emit( 'attributeChange' );
 };
 
 ve.dm.modelRegistry.register( bs.vec.dm.TableCellNode );
