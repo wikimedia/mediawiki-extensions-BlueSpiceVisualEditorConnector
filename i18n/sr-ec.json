@@ -2,10 +2,10 @@
 	"@metadata": {
 		"authors": [
 			"BadDog",
-			"Милан Јелисавчић",
-			"Milicevic01",
 			"Kizule",
-			"Zenfiric"
+			"Milicevic01",
+			"Zenfiric",
+			"Милан Јелисавчић"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Повезује Parsoid са Визелним уређивачем",

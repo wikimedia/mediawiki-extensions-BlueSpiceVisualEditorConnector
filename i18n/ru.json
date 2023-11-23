@@ -2,12 +2,12 @@
 	"@metadata": {
 		"authors": [
 			"Alexander Yukal",
+			"Kareyac",
 			"Katunchik",
 			"Megakott",
 			"Nk88",
 			"Okras",
-			"Vlad5250",
-			"Kareyac"
+			"Vlad5250"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Отменить изменения",
