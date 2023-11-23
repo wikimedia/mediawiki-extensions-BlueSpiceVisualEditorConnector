@@ -1,13 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Markus Glaser <glaser@hallowelt.com>",
 			"Metalhead64",
 			"Mglaser",
 			"Mirzali",
 			"Sushi",
-			"TMg",
-			"Justman10000"
+			"TMg"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Verbindet BlueSpice mit dem VisualEditor",
