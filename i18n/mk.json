@@ -43,5 +43,7 @@
 	"bs-vec-widget-text-direction-tooltip": "Вертикален текст",
 	"bs-vec-dialog-media-change-file": "Смени податотека",
 	"bs-visualeditor-linkcontext-label-change": "Промени натпис",
-	"bs-visualeditor-linkcontext-label-label": "Натпис"
+	"bs-visualeditor-linkcontext-label-label": "Натпис",
+	"bs-visualeditorconnector-text-style-indent-label": "Отстап",
+	"bs-visualeditorconnector-indent-annotation-desc": "Отстапува избран текст"
 }
