@@ -7,7 +7,6 @@
 	},
 	"bs-visualeditorconnector-desc": "Поврзува BlueSpice со нагледниот уредник",
 	"bs-visualeditorconnector-enable-visualeditor": "Овозможи го нагледниот уредник за BlueSpаce-додатоците",
-	"bs-visualeditorconnector-simple-save-process-desc": "Овозможи проста постапка за зачувување",
 	"bs-visualeditorconnector-upload-type-original": "Изворно",
 	"bs-visualeditorconnector-upload-type-simple": "Просто",
 	"bs-visualeditorconnector-upload-type-one-click": "Еден стисок",
@@ -18,16 +17,6 @@
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Напредни",
 	"bs-visualeditorconnector-ve-style-option-description": "Изберете стил на табела",
 	"bs-visualeditorconnector-ve-style-option": "Стил на табела",
-	"apihelp-bs-vec-transformtowikitext-description": "Преобразува HTML на VisuаlEditor во WikiText",
-	"apihelp-bs-vec-transformtowikitext-summary": "Преобразува HTML на VisuаlEditor во WikiText",
-	"apihelp-bs-vec-transformtohtml-description": "Преобразува WikiText во HTML на VisuаlEditor",
-	"apihelp-bs-vec-transformtohtml-summary": "Преобразува WikiText во HTML на VisuаlEditor",
-	"apihelp-bs-vec-transformtowikitext-param-html": "HTML за VisuаlEditor што треба да се преобразува во WikiText",
-	"apihelp-bs-vec-transformtohtml-param-wikitext": "WikiText што треба да се преобразува во HTML за VisuаlEditor",
-	"apihelp-bs-vec-restbase-mock-description": "Осигурува примерни податоци за повикувања до RESTBase на VisualEditor",
-	"apihelp-bs-vec-restbase-mock-summary": "Осигурува примерни податоци за повикувања до RESTBase на VisualEditor",
-	"apihelp-bs-vec-restbase-mock-param-path": "Патека на RESTBase за којашто да се дадат примерни податоци",
-	"apihelp-bs-vec-restbase-mock-param-wikitext": "Викитекст за обработка",
 	"bs-visualeditorconnector-upload-dialog-type": "Работен тек за подигање на податотеки во MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Боја на текстот",
 	"bs-visualeditorconnector-color-annotation-desc": "Додава бои во текстот задавајќи му својство „color“ или „class“",
@@ -43,5 +32,7 @@
 	"bs-vec-widget-text-direction-tooltip": "Вертикален текст",
 	"bs-vec-dialog-media-change-file": "Смени податотека",
 	"bs-visualeditor-linkcontext-label-change": "Промени натпис",
-	"bs-visualeditor-linkcontext-label-label": "Натпис"
+	"bs-visualeditor-linkcontext-label-label": "Натпис",
+	"bs-visualeditorconnector-text-style-indent-label": "Отстап",
+	"bs-visualeditorconnector-indent-annotation-desc": "Отстапува избран текст"
 }
