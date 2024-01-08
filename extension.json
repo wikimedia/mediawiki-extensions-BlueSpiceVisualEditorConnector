@@ -9,11 +9,11 @@
 	"descriptionmsg": "bs-visualeditorconnector-desc",
 	"type": "bluespice",
 	"requires": {
-		"MediaWiki": ">= 1.36.0",
+		"MediaWiki": ">= 1.39.0",
 		"extensions": {
-			"BlueSpiceFoundation": ">= 4.1",
-			"VisualEditor": "*",
-			"OOJSPlus": "*"
+			"BlueSpiceFoundation": ">= 4.3",
+			"VisualEditor": ">= 0.1.2",
+			"OOJSPlus": ">= 2.0.0"
 		}
 	},
 	"attributes": {
