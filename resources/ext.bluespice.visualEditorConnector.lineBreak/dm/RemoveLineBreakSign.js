@@ -10,7 +10,10 @@ OO.inheritClass(bs.vec.dm.RemoveLineBreakSign, ve.dm.BreakNode);
 
 bs.vec.dm.RemoveLineBreakSign.static.toDataElement = function (domElement, doc) {
 	if (domElement[0].nextSibling) {
-		domElement[0].nextSibling.textContent = domElement[0].nextSibling.textContent.trim();
+		var prevSibling = domElement[0].previousSibling;
+		if ( prevSibling && prevSibling.textContent === "\n" ) {
+			domElement[0].nextSibling.textContent = domElement[0].nextSibling.textContent.trim();
+		}
 	}
 };
 
