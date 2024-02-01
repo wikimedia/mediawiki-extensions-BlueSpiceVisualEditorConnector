@@ -13,12 +13,15 @@ OO.inheritClass( bs.vec.dm.IndentText, ve.dm.Annotation );
 
 bs.vec.dm.IndentText.static.name = 'textStyle/indent-text';
 
-bs.vec.dm.IndentText.static.matchTagNames = [ 'dd' ];
-
 bs.vec.dm.IndentText.static.applyToAppendedContent = true;
 
 bs.vec.dm.IndentText.static.toDomElements = function( data, doc ) {
-	return [ doc.createElement( 'dd' ) ];
+	// Create <dl><dd></dd></dl> structure
+	var dl = doc.createElement( 'dl' ),
+		dd = doc.createElement( 'dd' );
+
+	dl.appendChild( dd );
+	return [ dl ];
 };
 
 /* Registration */
