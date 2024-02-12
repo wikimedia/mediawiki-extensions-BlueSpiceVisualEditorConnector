@@ -13,7 +13,8 @@
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.3",
 			"VisualEditor": ">= 0.1.2",
-			"OOJSPlus": ">= 2.0.0"
+			"OOJSPlus": ">= 2.0.0",
+			"BlueSpiceVisualEditorConnector": "*"
 		}
 	},
 	"attributes": {
@@ -361,8 +362,7 @@
 				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Strikethrough.js",
 				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Underline.js",
 				"ext.bluespice.visualEditorConnector.styleInspector/TextStyleToolRegistry.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/widget/TextStylePopup.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/bluespice.visualEditorConnector.styleInspector.js"
+				"ext.bluespice.visualEditorConnector.styleInspector/Inspector.js"
 			],
 			"messages": [
 				"bs-visualeditorconnector-text-style-tool-color-label",
@@ -372,7 +372,8 @@
 				"oojs-ui",
 				"ext.visualEditor.mwcore",
 				"ext.oOJSPlus.widgets.colorPicker",
-				"ext.bluespice"
+				"ext.bluespice",
+				"ext.visualEditorPlus.inlineTextInspector"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.colors": {

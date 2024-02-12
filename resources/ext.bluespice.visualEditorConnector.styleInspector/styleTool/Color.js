@@ -63,6 +63,9 @@ bs.vec.ui.ColorStyleTool.prototype.getData = function() {
 };
 
 bs.vec.ui.ColorStyleTool.prototype.changeActive = function() {
+	if ( !this.fragment ) {
+		return false;
+	}
 	if ( this.isActive() ) {
 		let annotations = this.fragment.getAnnotations().getAnnotationsByName( this.getName() );
 		let annotation = annotations.get()[0];

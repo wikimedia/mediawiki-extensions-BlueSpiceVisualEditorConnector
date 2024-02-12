@@ -3,10 +3,8 @@ bs.util.registerNamespace( 'bs.vec.ui' );
 bs.vec.ui.ButtonStyleTool = function( config ) {
 	config = config || {};
 
-	this.fragment = config.fragment;
 	this.surface = config.surface;
 	this.surfaceModel = config.surface.model;
-	this.popup = config.popup;
 
 	this.annotationAction = config.annotationAction || null;
 
@@ -20,6 +18,9 @@ bs.vec.ui.ButtonStyleTool = function( config ) {
 
 	this.connect( this, {
 		click: 'annotate'
+	} );
+	this.$element.css( {
+		margin: '0 5px 0 0'
 	} );
 };
 
@@ -42,6 +43,11 @@ bs.vec.ui.ButtonStyleTool.prototype.annotate = function() {
 	if ( this.annotationAction[method]( this.getName(), annotationData ) ) {
 		this.changeActive();
 	}
+};
+
+bs.vec.ui.ButtonStyleTool.prototype.setFragment = function( fragment ) {
+	this.fragment = fragment;
+	this.changeActive();
 };
 
 bs.vec.ui.ButtonStyleTool.prototype.clearAnnotation = function() {
@@ -81,6 +87,9 @@ bs.vec.ui.ButtonStyleTool.prototype.changeActive = function() {
 };
 
 bs.vec.ui.ButtonStyleTool.prototype.isActive = function() {
+	if ( !this.fragment ) {
+		return false;
+	}
 	var annotations = this.fragment.getAnnotations().getAnnotationsByName( this.getName() );
 	if ( annotations.getHashes().length > 0 ) {
 		return true;
