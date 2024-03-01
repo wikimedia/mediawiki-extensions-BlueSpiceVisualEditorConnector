@@ -12,7 +12,7 @@
 		"MediaWiki": ">= 1.39.0",
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.3",
-			"VisualEditor": ">= 0.1.2",
+			"VisualEditor": "*",
 			"OOJSPlus": ">= 2.0.0",
 			"BlueSpiceVisualEditorConnector": "*"
 		}
