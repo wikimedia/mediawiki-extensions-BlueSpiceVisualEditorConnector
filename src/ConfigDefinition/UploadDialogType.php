@@ -14,7 +14,7 @@ class UploadDialogType extends ConfigDefinition {
 	public function getPaths() {
 		return [
 			static::MAIN_PATH_FEATURE . '/' . static::FEATURE_EDITOR . '/BlueSpiceVisualEditorConnector',
-			static::MAIN_PATH_EXTENSION . '/BlueSpiceVisualEditorConnector/' . static::FEATURE_EDITOR ,
+			static::MAIN_PATH_EXTENSION . '/BlueSpiceVisualEditorConnector/' . static::FEATURE_EDITOR,
 			static::MAIN_PATH_PACKAGE . '/' . static::PACKAGE_FREE . '/BlueSpiceVisualEditorConnector',
 		];
 	}
