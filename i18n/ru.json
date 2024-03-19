@@ -7,7 +7,8 @@
 			"Megakott",
 			"Nk88",
 			"Okras",
-			"Vlad5250"
+			"Vlad5250",
+			"Yurina Tatiana"
 		]
 	},
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Отменить изменения",
@@ -19,5 +20,25 @@
 	"bs-visualeditor-linkcontext-label-change": "Изменить метку",
 	"bs-visualeditor-linkcontext-label-label": "Метка",
 	"bs-vec-insert-softhyphen-title": "Мягкий дефис",
-	"bs-vec-insert-line-break-title": "Разрыв строки (<br />)"
+	"bs-vec-insert-line-break-title": "Разрыв строки (<br />)",
+	"bs-visualeditorconnector-ve-style-option": "Стиль таблицы",
+	"bs-visualeditorconnector-text-style-tool-color-label": "Цвет текста",
+	"bs-vec-table-inspector-column": "Столбец",
+	"bs-vec-table-inspector-row": "Строка",
+	"bs-vec-table-inspector-cell": "Ячейка",
+	"bs-vec-table-style-column-width": "Ширина столбца",
+	"bs-vec-table-style-row-height": "Высота строки (px)",
+	"bs-vec-contextitem-cell-style-add-options-title": "Параметры ячейки",
+	"bs-vec-contextitem-column-style-add-options-title": "Параметры столбца",
+	"bs-vec-contextitem-row-style-add-options-title": "Параметры строки",
+	"bs-vec-dialog-action-done": "Готово",
+	"bs-vec-table-style-cell-text-hor-align": "Выравнивание текста",
+	"bs-vec-ve-table-width-label": "Ширина таблицы",
+	"bs-vec-ve-table-width-value-auto": "Авто",
+	"bs-vec-table-border-clear-all": "Сбросить все стили",
+	"bs-vec-table-border-borders": "Границы ячеек",
+	"bs-vec-table-border-width": "Ширина границы",
+	"bs-vec-table-border-styles": "Стили границы",
+	"bs-vec-table-border-color": "Цвет границы",
+	"bs-vec-table-border-none": "Нет"
 }
