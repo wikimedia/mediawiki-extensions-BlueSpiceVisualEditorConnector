@@ -45,6 +45,22 @@ bs.vec.dm.TableCellNode.static.createData = function ( options ) {
 };
 
 bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
+	var registry = bs.vec.registry.TableStyle.registry;
+	for ( tableStyleKey in registry ) {
+		if ( registry[tableStyleKey].applyTo != 'cell' ) {
+			continue;
+		}
+		if ( dataElement.hasOwnProperty( tableStyleKey ) ) {
+			let style = registry[tableStyleKey].getAttribute();
+			let value = dataElement[tableStyleKey];
+			if ( typeof value !== 'string' || value === '' ) {
+				continue;
+			}
+
+			dataElement.externalStyle[style] = value;
+		}
+	}
+
 	var tag = dataElement.attributes && dataElement.attributes.style === 'header' ? 'th' : 'td',
 		domElement = doc.createElement( tag ),
 		attributes = dataElement.attributes;
