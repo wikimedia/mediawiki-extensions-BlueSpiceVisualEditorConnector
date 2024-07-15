@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"सरोज कुमार ढकाल"
+			"सरोज कुमार ढकाल",
+			"पर्वत सुबेदी"
 		]
 	},
 	"bs-visualeditorconnector-inspector-tab-common-name": "कमन्स",
-	"bs-visualeditorconnector-inspector-tab-advanced-name": "उन्नत"
+	"bs-visualeditorconnector-inspector-tab-advanced-name": "उन्नत",
+	"bs-vec-dialog-action-safe": "रद्द गर्नुहोस्"
 }
