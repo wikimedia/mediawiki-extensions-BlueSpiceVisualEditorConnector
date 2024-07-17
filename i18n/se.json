@@ -7,5 +7,6 @@
 	},
 	"bs-vec-dialog-action-safe": "Gaskkalduhte",
 	"bs-vec-dialog-create-table-title": "Lasit tabealla",
-	"bs-vec-ve-table-width-label": "Tabealla govdodat"
+	"bs-vec-ve-table-width-label": "Tabealla govdodat",
+	"bs-visualeditorconnector-text-style-indent-label": "Siskkit"
 }
