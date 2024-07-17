@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Robby"
+			"Robby",
+			"Volvox"
 		]
 	},
 	"bs-visualeditorconnector-upload-type-original": "Original",
@@ -17,12 +18,12 @@
 	"bs-visualeditorconnector-text-style-tool-color-label": "Faarf vum Text",
 	"bs-visualeditorconnector-dialog-media-embed": "Dës Fichier abannen",
 	"bs-vec-table-inspector-column": "Kolonn",
-	"bs-vec-table-inspector-row": "Rei",
+	"bs-vec-table-inspector-row": "Zeil",
 	"bs-vec-table-inspector-cell": "Zell",
 	"bs-vec-contextitem-cell-style-add-options-title": "Optioune vun der Zell",
-	"bs-vec-contextitem-row-style-add-options-title": "Optioune vun de Reien",
+	"bs-vec-contextitem-row-style-add-options-title": "Zeilenoptiounen",
 	"bs-vec-contextitem-table-additional-options": "Zousätzlech Optiounen",
-	"bs-vec-dialog-table-create-number-of-rows": "Zuel vun de Reien",
+	"bs-vec-dialog-table-create-number-of-rows": "Zuel vun den Zeilen",
 	"bs-vec-dialog-table-create-number-of-columns": "Zuel vun de Kolonnen",
 	"bs-vec-dialog-action-done": "Fäerdeg",
 	"bs-vec-dialog-action-safe": "Ofbriechen",
@@ -52,5 +53,10 @@
 	"bs-vec-table-border-roundvertical": "Ronderëm a vertikal",
 	"bs-vec-table-border-dashed": "Gestrichelt",
 	"bs-vec-table-border-dotted": "Mat Pnukten",
-	"bs-vec-table-border-double": "Duebel"
+	"bs-vec-table-border-double": "Duebel",
+	"bs-vec-table-style-column-width": "Kolonnebreet",
+	"bs-vec-table-style-row-height": "Zeilenhéicht (px)",
+	"bs-vec-contextitem-column-style-add-options-title": "Kolonnenoptiounen",
+	"bs-vec-contextitem-row-duplicate": "Zeil duplizéieren",
+	"bs-vec-contextitem-column-duplicate": "Kolonn duplizéieren"
 }
