@@ -95,3 +95,16 @@ ve.init.sa.BlueSpiceTarget.prototype.parseWikitextFragment = function ( wikitext
 		pst: pst
 	} );
 };
+
+/*
+ * Tab key has a trigger in VE which is blocked, so focus is trapped in input field.
+ * To not block tabbing through read mode and VE used in social topic and comments editor
+ * tab key event will be prevented for WCAG
+ * ERM36359
+*/
+ve.init.sa.BlueSpiceTarget.prototype.onDocumentKeyDown = function ( e ) {
+	if ( e.keyCode === '9' ) {
+		e.preventDefault();
+	}
+	ve.init.sa.BlueSpiceTarget.super.prototype.onDocumentKeyDown.call( this, e );
+};
