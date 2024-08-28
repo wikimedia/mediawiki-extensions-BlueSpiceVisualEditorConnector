@@ -6,9 +6,6 @@ bs.vec.ui.TextStyleInspector = function ( inspector, config ) {
 	this.buttons = {};
 	this.addedTools = {};
 	this.$element.addClass( 'bs-vec-ui-TextStyleInspector' );
-	this.$element.css( {
-		padding: '0 5px 0 5px'
-	} );
 };
 
 OO.inheritClass( bs.vec.ui.TextStyleInspector, ext.visualEditorPlus.ui.InlineTextInspectorElement );
