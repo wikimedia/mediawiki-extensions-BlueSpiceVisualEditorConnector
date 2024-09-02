@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Tofeiku"
+			"Tofeiku",
+			"Hakimi97"
 		]
 	},
+	"bs-visualeditor-nsm-label": "Alat sunting visual",
 	"bs-vec-dialog-media-change-file": "Ubah fail"
 }
