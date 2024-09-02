@@ -22,6 +22,7 @@ bs.ui.widget.TextInputMWVisualEditor.prototype.onFocus = function() {
 
 	this.makeVisualEditor( this.config );
 	$( this.config.selector ).hide();
+	$( this.config.selector ).attr( 'tabindex', '-1' );
 };
 
 /**
