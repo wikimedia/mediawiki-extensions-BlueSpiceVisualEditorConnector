@@ -183,7 +183,6 @@
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
 			"scripts": [
-				"ext.bluespice.visualEditorConnector.overrides.classes/MWHelpPopupTool.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWLinkAnnotationInspector.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWMediaDialog.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWTableDialog.js",
@@ -567,11 +566,16 @@
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
 		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback",
-		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback"
+		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback",
+		"MessagesPreLoad": "overrideMessage"
 	},
 	"HookHandlers": {
 		"writeNamespaceConfiguration": {
 			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\WriteNamespaceConfiguration"
+		},
+		"overrideMessage": {
+			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\Messages\\PreLoadMessages",
+			"services": [ "ConfigFactory" ]
 		}
 	},
 	"manifest_version": 2
