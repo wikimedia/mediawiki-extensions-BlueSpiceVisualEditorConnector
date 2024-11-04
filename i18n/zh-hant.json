@@ -85,8 +85,5 @@
 	"bs-vec-insert-softhyphen-title": "軟連字元",
 	"bs-vec-insert-line-break-title": "換行（<br />）",
 	"bs-visualeditorconnector-text-style-indent-label": "縮排",
-	"bs-visualeditorconnector-indent-annotation-desc": "縮排已選取的文字",
-	"bs-visualeditorconnector-upload-type-help": "原文：上傳權限已驗證。檔案名稱、命名空間和類別是可編輯的。需要描述。！N！簡單：上傳權限未驗證。檔案名稱、命名空間和類別是可編輯的。描述是可選的。！N！點擊一下：上傳權限未驗證。檔案名稱和類別不可編輯。命名空間是可編輯的。",
-	"bs-visualeditorconnector-text-style-tool-align-center-label": "居中對齊",
-	"bs-visualeditorconnector-align-center-annotation-desc": "縮排已選取的文字"
+	"bs-visualeditorconnector-indent-annotation-desc": "縮排已選取的文字"
 }
