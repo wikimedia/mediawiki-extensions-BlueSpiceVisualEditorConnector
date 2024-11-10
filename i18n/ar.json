@@ -80,7 +80,7 @@
 	"bs-vec-table-border-dotted": "منقط",
 	"bs-vec-table-border-double": "مزدوج",
 	"bs-vec-insert-softhyphen-title": "واصلة ناعمة",
-	"bs-visualeditorconnector-upload-type-help": "الأصل: تم التحقق من حق التحميل. يمكن تحرير اسم الملف ومساحة الاسم والفئة. الوصف مطلوب.! N! بسيط: لم يتم التحقق من حق التحميل. يمكن تحرير اسم الملف ومساحة الاسم والفئة. الوصف اختياري.! نقرة واحدة: لم يتم التحقق من حق التحميل. اسم الملف والفئة غير قابلة للتحرير. مساحة الاسم قابلة للتحرير.",
+	"bs-visualeditorconnector-upload-type-help": "الأصل: تم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف مطلوب.\nSimple: لم يتم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف اختياري.\nنقرة واحدة: لم يتم التحقق من صحة Upload-right. لا يمكن تعديل اسم الملف والفئة. المساحة قابلة للتحرير.",
 	"bs-vec-insert-line-break-title": "الخط مقطوع (<br /> )",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "محاذاة للوسط",
 	"bs-visualeditorconnector-align-center-annotation-desc": "توسيط النص المحدد",
