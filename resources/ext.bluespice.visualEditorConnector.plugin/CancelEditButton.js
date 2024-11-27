@@ -44,8 +44,24 @@ mw.hook( 've.activationComplete' ).add( function () {
 	// there are edits in session storage in the browser).
 	ve.init.target.isSaveable() ? cancelButton.setFlags( 'destructive' ) : null ;
 
-	// Position 3 is just before the save button
-	ve.init.target.getActions().addItems( [ cancelButton ], 3 );
+	var items = ve.init.target.getToolbar().items;
+	for ( var i = 0; i < items.length; i++ ) {
+		if ( !items[i] instanceof OO.ui.ToolGroup ) {
+			continue;
+		}
+		for ( var j = 0; j < items[i].include.length; j++ ) {
+			if (
+				items[i].include[j] === 'save' ||
+				(
+					typeof items[i].include[j] === 'object' &&
+					items[i].include[j].hasOwnProperty( 'group' ) &&
+					items[i].include[j].group === 'save'
+				)
+			) {
+				items[i].addItems( [ cancelButton ], 0 );
+			}
+		}
+	}
 
 	ve.init.target.cancelButton = cancelButton;
 	// This override is dangerous, since it is hard to identify. It shouldn't be
