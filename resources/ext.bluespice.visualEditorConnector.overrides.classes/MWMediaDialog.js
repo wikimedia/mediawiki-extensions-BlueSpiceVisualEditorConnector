@@ -364,3 +364,12 @@ bs.vec.ui.MWMediaDialog.prototype.fitLabel = function (  ) {
 
 	return this;
 };
+
+bs.vec.ui.MWMediaDialog.prototype.setBodyHeight = function ( height ) {
+	this.bodySize = height;
+};
+
+bs.vec.ui.MWMediaDialog.prototype.getBodyHeight = function () {
+	// 600 is default from parent
+	return this.bodySize || 600;
+};
