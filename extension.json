@@ -567,7 +567,8 @@
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
 		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback",
 		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback",
-		"MessagesPreLoad": "overrideMessage"
+		"MessagesPreLoad": "overrideMessage",
+		"MessageCacheFetchOverrides": "changeMessages"
 	},
 	"HookHandlers": {
 		"writeNamespaceConfiguration": {
@@ -576,6 +577,9 @@
 		"overrideMessage": {
 			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\Messages\\PreLoadMessages",
 			"services": [ "ConfigFactory" ]
+		},
+		"changeMessages": {
+			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\Messages\\MessageCacheFetchGetOverrides"
 		}
 	},
 	"manifest_version": 2
