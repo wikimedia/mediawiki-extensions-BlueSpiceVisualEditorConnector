@@ -13,11 +13,9 @@ mw.hook( 've.activationComplete' ).add( function () {
 			label: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
 			invisibleLabel: true,
 			title: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
-			icon: 'cancel',
+			icon: 'close',
 			classes: [ 'bs-visualeditorconnector-cancel-edit' ],
-			framed: false,
-			disabled: false,
-			active: true
+			framed: false
 		}
 	);
 
@@ -55,10 +53,12 @@ mw.hook( 've.activationComplete' ).add( function () {
 				(
 					typeof items[i].include[j] === 'object' &&
 					items[i].include[j].hasOwnProperty( 'group' ) &&
-					items[i].include[j].group === 'save'
+					items[i].include[j].group === 'history'
 				)
 			) {
 				items[i].addItems( [ cancelButton ], 0 );
+				// Necessary to enable cancel tool
+				items[i].updateDisabled();
 			}
 		}
 	}

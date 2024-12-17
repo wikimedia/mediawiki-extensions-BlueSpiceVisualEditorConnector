@@ -44,18 +44,27 @@
 	padding-top: 5px;
 	height: 42px;
 	width: 42px;
-	text-align:center;
-	background-color: #eaecf0;
+	text-align: center;
 }
 
 article#content .bs-visualeditorconnector-cancel-edit {
 	/* fix height for discovery skin */
 	height: 45px;
 	width: 45px;
+	margin-left: 0;
+	border-right: 1px solid #eaecf0;
 }
 
 .bs-visualeditorconnector-cancel-edit:hover {
-	background-color: #c8ccd1;
+	background-color: #eaecf0;
+}
+
+.bs-visualeditorconnector-cancel-edit.oo-ui-buttonElement-frameless.oo-ui-widget-enabled > .oo-ui-buttonElement-button:hover {
+	background-color: transparent;
+}
+
+.bs-visualeditorconnector-cancel-edit .oo-ui-icon-Element {
+	opacity: 0.87;
 }
 
 .bs-vec-color-widget {
