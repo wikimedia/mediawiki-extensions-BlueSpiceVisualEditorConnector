@@ -15,14 +15,17 @@ bs.vec.util.tag.Definition.prototype.createFields = function( inspector, cfg ) {
 		}
 		inspector[ attributes[i].name + 'Input' ] =
 			bs.vec.util.tag.Definition.prototype.createInputWidget( inspector, attributes[i] );
+
+		var inspectorData = {
+			align: 'left',
+			$overlay: inspector.$body,
+			label: ve.msg( attributes[i].labelMsg )
+		};
+		if ( attributes[i].helpMsg ) {
+			inspectorData.help = ve.msg( attributes[i].helpMsg );
+		}
 		inspector[ attributes[i].name + 'Layout' ] = new OO.ui.FieldLayout(
-			inspector[ attributes[i].name + 'Input' ],
-			{
-				align: 'left',
-				$overlay: inspector.$body,
-				label: ve.msg( attributes[i].labelMsg ),
-				help: ve.msg( attributes[i].helpMsg )
-			}
+			inspector[ attributes[i].name + 'Input' ], inspectorData
 		);
 		if ( cfg.tabbed === true ) {
 			var tabName = attributes[i].tab;
@@ -117,12 +120,12 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 		case 'tab' :
 			break;
 		case 'custom' :
-			widget = new attribute.widgetClass({
+			widget = new attribute.widgetClass( $.extend( {
 				inspector: inspector,
 				attribute: attribute,
-				options: attribute.options,
-				value: attribute.default
-			});
+				options: attribute.options || [],
+				value: attribute.default || false
+			}, attribute.widgetCfg || {} ) );
 			break;
 		case 'dropdown' :
 			widget = new OO.ui.DropdownInputWidget({
@@ -132,36 +135,36 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 			break;
 		case 'toggle' :
 			widget = new OO.ui.ToggleSwitchWidget({
-				value: attribute.default
+				value: attribute.default || false
 			});
 			break;
 		case 'number' :
 			widget = new OO.ui.NumberInputWidget({
 				min: attribute.min || -Infinity,
 				max: attribute.max || Infinity,
-				value: attribute.default
+				value: attribute.default || 0
 			});
 			break;
 		case 'percent' :
 			widget = new OO.ui.NumberInputWidget({
 				min: 0,
 				max: 100,
-				value: attribute.default
+				value: attribute.default || 0
 			});
 			break;
 		case 'title' :
 			widget = new mw.widgets.TitleInputWidget({
-				value: attribute.default,
+				value: attribute.default || '',
 				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			});
 			break;
 		case 'text' :
 		default :
 			widget = new OO.ui.TextInputWidget({
-				value: attribute.default,
+				value: attribute.default || '',
 				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			});
-	};
+	}
 	return widget;
 }
 
