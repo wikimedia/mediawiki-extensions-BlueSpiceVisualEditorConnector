@@ -85,5 +85,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "محاذاة للوسط",
 	"bs-visualeditorconnector-align-center-annotation-desc": "توسيط النص المحدد",
 	"bs-visualeditorconnector-text-style-indent-label": "إزاحة",
-	"bs-visualeditorconnector-indent-annotation-desc": "المسافة البادئة للنص المحدد"
+	"bs-visualeditorconnector-indent-annotation-desc": "المسافة البادئة للنص المحدد",
+	"bs-visualeditor-save-label": "حفظ"
 }
