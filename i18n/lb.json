@@ -58,5 +58,6 @@
 	"bs-vec-table-border-roundvertical": "Ronderëm a vertikal",
 	"bs-vec-table-border-dashed": "Gestrichelt",
 	"bs-vec-table-border-dotted": "Mat Pnukten",
-	"bs-vec-table-border-double": "Duebel"
+	"bs-vec-table-border-double": "Duebel",
+	"bs-visualeditor-save-label": "Späicheren"
 }

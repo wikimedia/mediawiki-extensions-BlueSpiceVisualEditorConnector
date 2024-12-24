@@ -6,7 +6,8 @@
 			"Thibaut120094",
 			"Urhixidur",
 			"Verdy p",
-			"Wladek92"
+			"Wladek92",
+			"Mahabarata"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Se connecter à BlueSpice avec l’ÉditeurVisuel",
@@ -88,5 +89,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Centrer",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centre le texte sélectionné",
 	"bs-visualeditorconnector-text-style-indent-label": "Indenter",
-	"bs-visualeditorconnector-indent-annotation-desc": "Indente le texte sélectionné"
+	"bs-visualeditorconnector-indent-annotation-desc": "Indente le texte sélectionné",
+	"bs-visualeditor-save-label": "Enregistrer"
 }
