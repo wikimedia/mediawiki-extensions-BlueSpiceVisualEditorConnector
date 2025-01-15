@@ -58,5 +58,6 @@
 	"bs-vec-table-style-row-height": "Zeilenhéicht (px)",
 	"bs-vec-contextitem-column-style-add-options-title": "Kolonnenoptiounen",
 	"bs-vec-contextitem-row-duplicate": "Zeil duplizéieren",
-	"bs-vec-contextitem-column-duplicate": "Kolonn duplizéieren"
+	"bs-vec-contextitem-column-duplicate": "Kolonn duplizéieren",
+	"bs-visualeditor-save-label": "Späicheren"
 }

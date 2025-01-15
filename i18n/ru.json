@@ -73,5 +73,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Выровнять по центру",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Центрирует выделенный текст",
 	"bs-visualeditorconnector-text-style-indent-label": "Отступ",
-	"bs-visualeditorconnector-indent-annotation-desc": "Отступ выделенного текста"
+	"bs-visualeditorconnector-indent-annotation-desc": "Отступ выделенного текста",
+	"bs-visualeditor-save-label": "Сохранить"
 }

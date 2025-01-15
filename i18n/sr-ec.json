@@ -38,5 +38,6 @@
 	"bs-vec-table-border-top": "Врх",
 	"bs-vec-table-border-right": "Десно",
 	"bs-vec-table-border-bottom": "Дно",
-	"bs-vec-table-border-all": "Све"
+	"bs-vec-table-border-all": "Све",
+	"bs-visualeditor-save-label": "Сачувај"
 }

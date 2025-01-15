@@ -91,5 +91,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Label for the center alignment tool",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Description of the center alignment annotation",
 	"bs-visualeditorconnector-text-style-indent-label": "Label for the indent tool",
-	"bs-visualeditorconnector-indent-annotation-desc": "Description of the indent annotation"
+	"bs-visualeditorconnector-indent-annotation-desc": "Description of the indent annotation",
+	"bs-visualeditor-save-label": "Label for button to save edit\n{{Identical:Save}}"
 }
