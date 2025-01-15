@@ -136,7 +136,7 @@
 				"../../VisualEditor/lib/ve/src/init/sa/ve.init.sa.DesktopTarget.js"
 			],
 			"styles": [
-				"../../VisualEditor/lib/ve/src/init/sa/styles/ve.init.sa.css"
+				"../../VisualEditor/lib/ve/src/init/sa/styles/ve.init.sa.less"
 			],
 			"dependencies": [
 				"ext.visualEditor.mediawiki"
