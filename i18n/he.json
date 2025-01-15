@@ -88,5 +88,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "יישור למרכז",
 	"bs-visualeditorconnector-align-center-annotation-desc": "מרכוז טקסט נבחר",
 	"bs-visualeditorconnector-text-style-indent-label": "הזחה",
-	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר"
+	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר",
+	"bs-visualeditor-save-label": "שמירה"
 }

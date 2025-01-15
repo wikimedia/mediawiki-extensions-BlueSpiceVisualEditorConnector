@@ -89,5 +89,6 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Mittig ausrichten",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Zentriert ausgewählten Text",
 	"bs-visualeditorconnector-text-style-indent-label": "Einrücken",
-	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken"
+	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken",
+	"bs-visualeditor-save-label": "Speichern"
 }
