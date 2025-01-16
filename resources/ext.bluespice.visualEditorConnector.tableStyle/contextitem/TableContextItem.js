@@ -112,6 +112,9 @@ bs.vec.ui.TableContextItem.prototype.execCommand = function ( command, args ) {
 	var cmd = this.getCommand( command );
 	args = args || cmd.getArgs();
 
+	if ( !Array.isArray( args ) ) {
+		args = [ args ];
+	}
 	if ( cmd ) {
 		cmd.execute( this.context.getSurface(), args );
 		this.emit( 'command' );
