@@ -46,8 +46,8 @@ bs.vec.dm.TableCellNode.static.createData = function ( options ) {
 
 bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 	var registry = bs.vec.registry.TableStyle.registry;
-	for ( tableStyleKey in registry ) {
-		if ( registry[tableStyleKey].applyTo != 'cell' ) {
+	for ( var tableStyleKey in registry ) {
+		if ( registry[tableStyleKey].applyTo !== 'cell' ) {
 			continue;
 		}
 		if ( dataElement.hasOwnProperty( tableStyleKey ) ) {
@@ -82,9 +82,9 @@ bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 			}
 			styleParser.addToStyle( styleKey, externalStyle[styleKey] );
 		}
-
-		domElement.setAttribute( 'style', styleParser.toString() );
 	}
+
+	domElement.setAttribute( 'style', styleParser.toString() );
 
 	return [ domElement ];
 };
