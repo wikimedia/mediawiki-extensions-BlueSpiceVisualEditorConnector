@@ -36,6 +36,7 @@ bs.vec.ui.widget.CellBorderWidget.prototype.executeAction = function() {
 	if ( !this.shouldExecute() ) {
 		return;
 	}
+
 	// Get value and set
 	this.contextItem.execCommand( 'cellBorder', { value: this.value } );
 };

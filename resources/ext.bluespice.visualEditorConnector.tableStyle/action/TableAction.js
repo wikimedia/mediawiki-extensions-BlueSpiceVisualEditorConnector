@@ -229,7 +229,7 @@ bs.vec.ui.TableAction.prototype.cellBorder = function( args ) {
 	// multiple times, once for top and once for left, and returns single cell that has both top and left set
 	var targets = this.getTargetCells( selection, args, isCollapsed );
 
-	this.execBorderStyle( targets, surfaceModel, selection, handler.executeAction.bind( this ), args );
+	this.execBorderStyle( targets, surfaceModel, selection, handler.executeAction.bind( handler ), args );
 
 	this.restoreComplexSelection( surfaceModel, selection, tableNode, oldSelection );
 };
@@ -433,8 +433,7 @@ bs.vec.ui.TableAction.prototype.execBorderStyle = function( targets, surfaceMode
 		if ( !cell ) {
 			continue;
 		}
-
-		cell.node.element.attributes.cellBorder = targets[i];
+		cell = cb( cell, targets[i] );
 		cell.node.reportChanged();
 	}
 };
