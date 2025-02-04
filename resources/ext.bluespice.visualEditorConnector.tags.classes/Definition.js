@@ -158,6 +158,9 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function( inspector, at
 				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			});
 			break;
+		case 'user':
+			widget = new OOJSPlus.ui.widget.UserPickerWidget( );
+			break;
 		case 'text' :
 		default :
 			widget = new OO.ui.TextInputWidget({
