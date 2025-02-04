@@ -203,6 +203,7 @@ bs.vec.ui.MWMediaDialog.prototype.getImageInfoRemote = function ( pagename ) {
 };
 
 bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchRequery ) {
+	this.emit( 'beforePanelSwitch', panel );
 	switch ( panel ) {
 		case 'search':
 			this.setSize( 'larger' );
@@ -232,6 +233,7 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 			}
 			break;
 	}
+	this.emit( 'panelSwitch', panel );
 	this.currentPanel = panel || 'imageinfo';
 };
 
