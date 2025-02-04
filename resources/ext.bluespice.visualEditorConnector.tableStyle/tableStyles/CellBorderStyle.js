@@ -1,9 +1,11 @@
 bs.util.registerNamespace( 'bs.vec.ui' );
 
 bs.vec.ui.CellBorderStyle = function() {
+	this.matrix = {};
 	bs.vec.ui.CellBorderStyle.super.apply( this );
 	this.section = bs.vec.ui.TableStyle.static.SECTION_CELL;
 	this.applyTo = bs.vec.ui.TableStyle.static.ELEMENT_CELL;
+
 };
 
 OO.inheritClass( bs.vec.ui.CellBorderStyle , bs.vec.ui.TableStyle );
@@ -41,6 +43,7 @@ bs.vec.ui.CellBorderStyle.prototype.translateToStyle = function( styleParser, va
 			}
 		}
 	}.bind( this ) );
+
 	return styleParser;
 };
 
@@ -73,8 +76,10 @@ bs.vec.ui.CellBorderStyle.prototype.getTool = function() {
 bs.vec.ui.CellBorderStyle.prototype.executeAction = function( subject, args ) {
 	// Point of the code below is to deep merge existing and new properties,
 	// in order to now affect borders that we are not trying to currently set
-	var existing = subject.node.element.cellBorder || {},
+	const fromMatrix = this.matrix[ args.row ] ? this.matrix[ args.row ][ args.col ] : null;
+	var existing = fromMatrix || subject.node.element.cellBorder || {},
 		merged = $.extend( $.extend( {}, existing ), args );
+
 	for( var prop in merged ) {
 		if (
 			existing.hasOwnProperty( prop ) && args.hasOwnProperty( prop ) &&
@@ -110,7 +115,11 @@ bs.vec.ui.CellBorderStyle.prototype.executeAction = function( subject, args ) {
 		}
 	}
 
-	subject.node.element.cellBorder = merged;
+	if ( !this.matrix.hasOwnProperty( merged.row ) ) {
+		this.matrix[merged.row] = {};
+	}
+	this.matrix[merged.row][merged.col] = merged;
+	subject.node.element.attributes.cellBorder = merged;
 
 	return subject;
 };
