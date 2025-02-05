@@ -34,11 +34,8 @@ ve.dm.MWInternalLinkAnnotation.static.getTargetDataFromHref = function ( href, d
 	// since others are not recognized by Parsoid and would not be treated
 	// like media links
 	data.title = data.title.replace( 'Special:FilePath/', 'Media:' );
-	data.rawTitle = data.rawTitle.replace( 'Special:FilePath/', 'Media:' );
-
 	return {
 		title: data.title,
-		rawTitle: data.rawTitle,
 		hrefPrefix: data.hrefPrefix,
 		isInternal: isInternal
 	};
