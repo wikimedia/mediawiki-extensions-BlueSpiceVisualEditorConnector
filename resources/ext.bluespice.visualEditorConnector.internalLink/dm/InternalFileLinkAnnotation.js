@@ -46,11 +46,9 @@ bs.vec.dm.InternalFileLinkAnnotation.static.toDataElement = function ( domElemen
 	return {
 		type: this.name,
 		attributes: {
-			hrefPrefix: targetData.hrefPrefix,
 			title: targetData.title,
 			normalizedTitle: this.normalizeTitle( targetData.title ),
 			lookupTitle: this.getLookupTitle( targetData.title ),
-			origTitle: targetData.rawTitle
 		}
 	};
 };
