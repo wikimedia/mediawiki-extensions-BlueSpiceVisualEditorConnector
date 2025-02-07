@@ -63,6 +63,14 @@
 			"EnvironmentCheckers": {
 				"veaction": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VeActionChecker::factory"
 			}
+		},
+		"PDFCreator": {
+			"StyleBlocksProvider": {
+				"VisualEditorColors": {
+					"class": "\\BlueSpice\\VisualEditorConnector\\Integration\\PDFCreator\\StyleBlockProvider\\Colors",
+					"services": [ "ResourceLoader" ]
+				}
+			}
 		}
 	},
 	"callback": "\\BlueSpice\\VisualEditorConnector\\Extension::onRegistration",
@@ -556,7 +564,6 @@
 		}
 	},
 	"Hooks": {
-		"BSSocialModuleDepths": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSSocialModuleDepths\\AddVECModules::callback",
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
 			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback"
@@ -565,7 +572,6 @@
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
-		"BSUEModulePDFBeforeAddingStyleBlocks": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSUEModulePDFBeforeAddingStyleBlock\\AddColors::callback",
 		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback",
 		"MessagesPreLoad": "overrideMessage",
 		"MessageCacheFetchOverrides": "changeMessages"
