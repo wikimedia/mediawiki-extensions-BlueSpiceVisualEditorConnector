@@ -3,7 +3,7 @@
 namespace BlueSpice\VisualEditorConnector\ConfigDefinition;
 
 use BlueSpice\ConfigDefinition;
-use HTMLSelectField;
+use MediaWiki\HTMLForm\Field\HTMLSelectField;
 
 class UploadDialogType extends ConfigDefinition {
 
