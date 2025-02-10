@@ -4,6 +4,7 @@ namespace BlueSpice\VisualEditorConnector\ConfigDefinition;
 
 use BlueSpice\ConfigDefinition;
 use MediaWiki\HTMLForm\Field\HTMLSelectField;
+use MediaWiki\HTMLForm\HTMLFormField;
 
 class UploadDialogType extends ConfigDefinition {
 
@@ -20,7 +21,7 @@ class UploadDialogType extends ConfigDefinition {
 	}
 
 	/**
-	 * @return \HTMLFormField
+	 * @return HTMLFormField
 	 */
 	public function getHtmlFormField() {
 		return new HTMLSelectField( $this->makeFormFieldParams() );
