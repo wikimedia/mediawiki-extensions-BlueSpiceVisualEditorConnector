@@ -13,7 +13,6 @@
 	"bs-visualeditorconnector-upload-type-original": "Label for an option to set the upload type in VisualEditor be unchanged",
 	"bs-visualeditorconnector-upload-type-simple": "Label for an option to set the upload type in VisualEditor reduce requirements",
 	"bs-visualeditorconnector-upload-type-one-click": "Label for an option to set the upload type in VisualEditor to require just one click",
-	"bs-visualeditorconnector-upload-type": "Label for preference to set the upload type in VisualEditor",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Label for visual editor tool to stop editing and go back to view mode. Shown when there are no unsaved changes to the article and the action is safe",
 	"bs-visualeditorconnector-cancel-edit": "Label for visual editor tool to stop editing and go back to view mode. Shown when there are unsaved changes to the article and the action results in losing data",
 	"bs-visualeditorconnector-cancel-edit-confirm-message": "Warning text in confirmation dialog that pops up when there are unsaved changes to the article and the action results in losing data",
@@ -86,11 +85,12 @@
 	"bs-vec-table-border-dotted": "Label for button that set cell border style to dotted",
 	"bs-vec-table-border-double": "Label for button that set cell border style to double",
 	"bs-vec-insert-softhyphen-title": "Label for the tool that inserts word breaks",
-	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\"",
 	"bs-vec-insert-line-break-title": "Label for the line break tool",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Label for the center alignment tool",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Description of the center alignment annotation",
 	"bs-visualeditorconnector-text-style-indent-label": "Label for the indent tool",
 	"bs-visualeditorconnector-indent-annotation-desc": "Description of the indent annotation",
-	"bs-visualeditor-save-label": "Label for button to save edit\n{{Identical:Save}}"
+	"bs-visualeditor-save-label": "Label for button to save edit\n{{Identical:Save}}",
+	"bs-visualeditorconnector-upload-dlg-type": "Label for preference to set the upload type in VisualEditor",
+	"bs-visualeditorconnector-upload-dlg-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\""
 }

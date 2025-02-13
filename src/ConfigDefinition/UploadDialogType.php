@@ -47,7 +47,7 @@ class UploadDialogType extends ConfigDefinition {
 	 * @return string
 	 */
 	public function getLabelMessageKey() {
-		return 'bs-visualeditorconnector-upload-type';
+		return 'bs-visualeditorconnector-upload-dlg-type';
 	}
 
 	/**
@@ -55,7 +55,7 @@ class UploadDialogType extends ConfigDefinition {
 	 * @return string
 	 */
 	public function getHelpMessageKey() {
-		return 'bs-visualeditorconnector-upload-type-help';
+		return 'bs-visualeditorconnector-upload-dlg-type-help';
 	}
 
 }
