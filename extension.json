@@ -59,6 +59,11 @@
 			],
 			"StandalonePluginModules": []
 		},
+		"CollabPads": {
+			"PluginModules": [
+				"ext.bluespice.visualEditorConnector.tags"
+			]
+		},
 		"BlueSpiceSaferEdit": {
 			"EnvironmentCheckers": {
 				"veaction": "\\BlueSpice\\VisualEditorConnector\\SaferEdit\\EnvironmentChecker\\VeActionChecker::factory"
