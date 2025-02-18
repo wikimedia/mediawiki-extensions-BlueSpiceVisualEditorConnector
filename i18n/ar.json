@@ -11,7 +11,6 @@
 	"bs-visualeditorconnector-upload-type-original": "الأصل",
 	"bs-visualeditorconnector-upload-type-simple": "بسيط",
 	"bs-visualeditorconnector-upload-type-one-click": "نقره واحدة",
-	"bs-visualeditorconnector-upload-type": "نوع الرفع",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "إلغاء عمليات التحرير",
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
 	"bs-visualeditorconnector-cancel-edit-confirm-message": "هل تريد حقًا إلغاء التعديل؟ سيتم تجاهل تغييراتك غير المحفوظة.",
@@ -80,11 +79,12 @@
 	"bs-vec-table-border-dotted": "منقط",
 	"bs-vec-table-border-double": "مزدوج",
 	"bs-vec-insert-softhyphen-title": "واصلة ناعمة",
-	"bs-visualeditorconnector-upload-type-help": "الأصل: تم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف مطلوب.\nSimple: لم يتم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف اختياري.\nنقرة واحدة: لم يتم التحقق من صحة Upload-right. لا يمكن تعديل اسم الملف والفئة. المساحة قابلة للتحرير.",
 	"bs-vec-insert-line-break-title": "الخط مقطوع (<br /> )",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "محاذاة للوسط",
 	"bs-visualeditorconnector-align-center-annotation-desc": "توسيط النص المحدد",
 	"bs-visualeditorconnector-text-style-indent-label": "إزاحة",
 	"bs-visualeditorconnector-indent-annotation-desc": "المسافة البادئة للنص المحدد",
-	"bs-visualeditor-save-label": "حفظ"
+	"bs-visualeditor-save-label": "حفظ",
+	"bs-visualeditorconnector-upload-type": "نوع الرفع",
+	"bs-visualeditorconnector-upload-type-help": "الأصل: تم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف مطلوب.\nSimple: لم يتم التحقق من صحة Upload-right. يمكن تعديل اسم الملف والمساحة والفئة. الوصف اختياري.\nنقرة واحدة: لم يتم التحقق من صحة Upload-right. لا يمكن تعديل اسم الملف والفئة. المساحة قابلة للتحرير."
 }

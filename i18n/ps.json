@@ -7,7 +7,6 @@
 	"bs-visualeditorconnector-upload-type-original": "آرنی",
 	"bs-visualeditorconnector-upload-type-simple": "ساده",
 	"bs-visualeditorconnector-upload-type-one-click": "یو کلیک",
-	"bs-visualeditorconnector-upload-type": "د پورته کولو ډول",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "سمون ناگارل",
 	"bs-visualeditor-nsm-label": "ليدنيز سمون",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "پرمختللی",
@@ -25,5 +24,6 @@
 	"bs-vec-table-border-right": "ښي",
 	"bs-vec-table-border-bottom": "لاندې",
 	"bs-vec-table-border-all": "ټول",
-	"bs-visualeditor-save-label": "خوندي کول"
+	"bs-visualeditor-save-label": "خوندي کول",
+	"bs-visualeditorconnector-upload-type": "د پورته کولو ډول"
 }

@@ -8,7 +8,6 @@
 	"bs-visualeditorconnector-upload-type-original": "Original",
 	"bs-visualeditorconnector-upload-type-simple": "Einfach",
 	"bs-visualeditorconnector-upload-type-one-click": "Ee Klick",
-	"bs-visualeditorconnector-upload-type": "Eropluedtyp",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Ännerung annuléieren",
 	"bs-visualeditorconnector-cancel-edit": "Ännerung annuléieren. Net gespäichert Ännerunge ginn ignoréiert",
 	"bs-visualeditorconnector-cancel-edit-confirm-message": "Wëllt Dir dës Ännerung wierklech ofbriechen? Ärf net gespäichert Ännerunge sinn da verluer.",
@@ -59,5 +58,6 @@
 	"bs-vec-table-border-dashed": "Gestrichelt",
 	"bs-vec-table-border-dotted": "Mat Pnukten",
 	"bs-vec-table-border-double": "Duebel",
-	"bs-visualeditor-save-label": "Späicheren"
+	"bs-visualeditor-save-label": "Späicheren",
+	"bs-visualeditorconnector-upload-type": "Eropluedtyp"
 }
