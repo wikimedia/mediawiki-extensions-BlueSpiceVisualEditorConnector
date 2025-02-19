@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"شاه زمان پټان"
 		]
 	},
 	"bs-visualeditorconnector-upload-type-original": "آرنی",
@@ -12,15 +13,15 @@
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "پرمختللی",
 	"bs-visualeditorconnector-ve-style-option-description": "لښتيال ډول ټاکل",
 	"bs-visualeditorconnector-ve-style-option": "لښتيال ډول",
-	"bs-visualeditorconnector-text-style-tool-color-label": "متن رنگ",
+	"bs-visualeditorconnector-text-style-tool-color-label": "ليک رنګ",
 	"bs-vec-table-style-cell-text-hor-align-left": "کيڼ",
 	"bs-vec-table-style-cell-text-hor-align-center": "منځ",
 	"bs-vec-table-style-cell-text-hor-align-right": "ښي",
 	"bs-vec-ve-table-width-value-auto": "خپلکاره",
 	"bs-vec-table-border-clear-all": "ټول ډولونه بیاځايناستول",
-	"bs-vec-table-border-none": "هېڅ",
+	"bs-vec-table-border-none": "هيڅ",
 	"bs-vec-table-border-left": "کيڼ",
-	"bs-vec-table-border-top": "سر",
+	"bs-vec-table-border-top": "پورته",
 	"bs-vec-table-border-right": "ښي",
 	"bs-vec-table-border-bottom": "لاندې",
 	"bs-vec-table-border-all": "ټول",
