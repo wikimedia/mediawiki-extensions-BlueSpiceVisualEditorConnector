@@ -230,8 +230,7 @@
 		"ext.bluespice.visualEditorConnector.tags.classes": {
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.tags.classes/Definition.js",
-				"ext.bluespice.visualEditorConnector.tags.classes/Registry.js",
-				"ext.bluespice.visualEditorConnector.tags.classes/ui/widget/GroupListInputWidget.js"
+				"ext.bluespice.visualEditorConnector.tags.classes/Registry.js"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.tags": {
