@@ -70,9 +70,9 @@
 			}
 		},
 		"PDFCreator": {
-			"StyleBlocksProvider": {
+			"StylesheetsProvider": {
 				"VisualEditorColors": {
-					"class": "\\BlueSpice\\VisualEditorConnector\\Integration\\PDFCreator\\StyleBlockProvider\\Colors",
+					"class": "\\BlueSpice\\VisualEditorConnector\\Integration\\PDFCreator\\StylesheetsProvider\\Colors",
 					"services": [ "ResourceLoader" ]
 				}
 			}
