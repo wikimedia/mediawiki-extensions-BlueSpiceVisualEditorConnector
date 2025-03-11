@@ -231,6 +231,9 @@
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.tags.classes/Definition.js",
 				"ext.bluespice.visualEditorConnector.tags.classes/Registry.js"
+			],
+			"dependencies": [
+				"ext.bluespice.visualEditorConnector.tags"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.tags": {
