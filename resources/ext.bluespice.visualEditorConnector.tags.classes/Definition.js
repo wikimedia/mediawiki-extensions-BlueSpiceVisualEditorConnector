@@ -73,6 +73,14 @@ bs.vec.util.tag.Definition.prototype.setValues = function ( inspector, attrs, cf
 					attrs[ name ] ? attrs[ name ].replace( '%', '' ) : attributes[ i ].default.replace( '%', '' )
 				);
 				break;
+			case 'multiselect':
+				const val = attrs[ name ] ? attrs[ name ].split( attributes[ i ].valueSeparator || ',' ) : [];
+				inspector[ inputName ].setValue(
+					val.map( function ( item ) {
+						return { data: item.trim(), label: '' };
+					} )
+				);
+				break;
 			default:
 				inspector[ inputName ].setValue(
 					attrs[ name ] || attributes[ i ].default
@@ -99,6 +107,9 @@ bs.vec.util.tag.Definition.prototype.updateMwData = function ( inspector, mwData
 				inspector[ attributes[ i ].name + 'Input' ].getValue() == false ? // eslint-disable-line eqeqeq
 					'false' :
 					'true';
+		} else if ( attributes[ i ].type === 'multiselect' ) {
+			const value = inspector[ attributes[ i ].name + 'Input' ].getValue();
+			mwData.attrs[ attributes[ i ].name ] = value.join( attributes[i].valueSeparator || ',' );
 		} else if ( inspector[ attributes[ i ].name + 'Input' ].getValue() ) {
 			switch ( attributes[ i ].type ) {
 				case 'percent':
@@ -155,6 +166,16 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function ( inspector, a
 		case 'title':
 			widget = new mw.widgets.TitleInputWidget( {
 				value: attribute.default || '',
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : '' // eslint-disable-line mediawiki/msg-doc
+			} );
+			break;
+		case 'multiselect':
+			widget = new OO.ui.MenuTagMultiselectWidget( {
+				options: attribute.options,
+				$overlay: true,
+				allowArbitrary: attribute.allowArbitrary,
+				data: { valueSeparator: attribute.valueSeparator || ',' },
+				value: attribute.default,
 				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : '' // eslint-disable-line mediawiki/msg-doc
 			} );
 			break;
