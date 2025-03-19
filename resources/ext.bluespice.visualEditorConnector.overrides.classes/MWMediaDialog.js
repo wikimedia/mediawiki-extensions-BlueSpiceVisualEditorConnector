@@ -209,7 +209,6 @@ bs.vec.ui.MWMediaDialog.prototype.switchPanels = function ( panel, stopSearchReq
 			this.setSize( 'larger' );
 			this.selectedImageInfo = null;
 			if ( !stopSearchRequery ) {
-				this.search.getQuery().setValue( '*' );
 				this.search.getQuery().focus().select();
 			}
 			// Set the edit panel
