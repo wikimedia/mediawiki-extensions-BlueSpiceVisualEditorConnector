@@ -88,5 +88,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centers selected text",
 	"bs-visualeditorconnector-text-style-indent-label": "Indent",
 	"bs-visualeditorconnector-indent-annotation-desc": "Indents selected text",
-	"bs-visualeditor-save-label": "Save"
+	"bs-visualeditor-save-label": "Save",
+	"bs-visualeditorconnector-tab-file": "Link to file"
 }
