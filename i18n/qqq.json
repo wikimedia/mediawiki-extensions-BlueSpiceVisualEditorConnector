@@ -94,5 +94,6 @@
 	"bs-visualeditorconnector-upload-dlg-type": "Label for preference to set the upload type in VisualEditor",
 	"bs-visualeditorconnector-upload-dlg-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\"",
 	"bs-visualeditorconnector-upload-type": "Label for preference to set the upload type in VisualEditor",
-	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\""
+	"bs-visualeditorconnector-upload-type-help": "Description for config variable \"VisualEditorConnectorUploadDialogType\"",
+	"bs-visualeditorconnector-tab-file": "The title of the tab containing the picker for a file link"
 }
