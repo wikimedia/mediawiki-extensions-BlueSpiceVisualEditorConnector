@@ -35,7 +35,8 @@
 		"BlueSpiceVisualEditorConnector": {
 			"PluginModules": [
 				"ext.bluespice.visualEditorConnector.tableStyle",
-				"ext.bluespice.visualEditorConnector.internalLink"
+				"ext.bluespice.visualEditorConnector.internalLink",
+				"ext.bluespice.visualEditorConnector.fileLink"
 			],
 			"TagDefinitions": [],
 			"PostProcessors": {},
@@ -192,6 +193,15 @@
 				"ext.bluespice",
 				"ext.visualEditor.mwcore",
 				"ext.visualEditor.mwlink"
+			]
+		},
+		"ext.bluespice.visualEditorConnector.fileLink": {
+			"scripts": [
+				"ext.bluespice.visualEditorConnector.fileLink/ui/MWFileLinkAnnotationWidget.js",
+				"ext.bluespice.visualEditorConnector.fileLink/FileLink.js"
+			],
+			"messages": [
+				"bs-visualeditorconnector-tab-file"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
