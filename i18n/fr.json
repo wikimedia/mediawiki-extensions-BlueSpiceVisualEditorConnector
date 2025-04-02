@@ -3,6 +3,7 @@
 		"authors": [
 			"Derugon",
 			"Gomoko",
+			"JLTRY",
 			"Mahabarata",
 			"Thibaut120094",
 			"Urhixidur",
@@ -90,5 +91,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centre le texte sélectionné",
 	"bs-visualeditorconnector-text-style-indent-label": "Indenter",
 	"bs-visualeditorconnector-indent-annotation-desc": "Indente le texte sélectionné",
-	"bs-visualeditor-save-label": "Enregistrer"
+	"bs-visualeditor-save-label": "Enregistrer",
+	"bs-visualeditorconnector-tab-file": "Lien vers le fichier"
 }

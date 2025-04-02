@@ -84,5 +84,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centra le texto seligite",
 	"bs-visualeditorconnector-text-style-indent-label": "Indentar",
 	"bs-visualeditorconnector-indent-annotation-desc": "Indenta le texto seligite",
-	"bs-visualeditor-save-label": "Salveguardar"
+	"bs-visualeditor-save-label": "Salveguardar",
+	"bs-visualeditorconnector-tab-file": "Ligar a un file"
 }
