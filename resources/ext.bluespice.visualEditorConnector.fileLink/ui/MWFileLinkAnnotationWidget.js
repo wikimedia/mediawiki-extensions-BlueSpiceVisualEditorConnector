@@ -1,6 +1,6 @@
 bs.util.registerNamespace( 'bs.vec.ui' );
 
-bs.vec.ui.MWFileLinkAnnotationWidget = function() {
+bs.vec.ui.MWFileLinkAnnotationWidget = function () {
 	bs.vec.ui.MWFileLinkAnnotationWidget.super.apply( this, arguments );
 	this.addOtherTools();
 	this.input.$element.hide();
@@ -14,14 +14,13 @@ bs.vec.ui.MWFileLinkAnnotationWidget.prototype.onTextChange = function ( value )
 	}
 
 	this.internalFilePicker.query.getValidity()
-		.done( function () {
+		.done( () => {
 			this.setAnnotation( this.constructor.static.getAnnotationFromText( value, true ), true );
-		}.bind( this ) )
-		.fail( function () {
+		} )
+		.fail( () => {
 			this.setAnnotation( null, true );
-		}.bind( this ) );
+		} );
 };
-
 
 bs.vec.ui.MWFileLinkAnnotationWidget.prototype.addOtherTools = function () {
 	this.internalFilePicker = new mw.widgets.TitleSearchWidget( {
@@ -56,14 +55,14 @@ bs.vec.ui.MWFileLinkAnnotationWidget.static.getAnnotationFromText = function ( v
 	if ( value === '' ) {
 		return null;
 	} else {
-		var title = mw.Title.makeTitle( bs.ns.NS_FILE, value );
+		const title = mw.Title.makeTitle( bs.ns.NS_FILE, value );
 		return bs.vec.dm.InternalFileLinkAnnotation.static.newFromTitle( title );
 	}
 };
 
 bs.vec.ui.MWFileLinkAnnotationWidget.prototype.setAnnotation = function ( annotation, fromText ) {
 	bs.vec.ui.MWFileLinkAnnotationWidget.parent.prototype.setAnnotation.call( this, annotation, fromText );
-	if ( !this.annotation )  {
+	if ( !this.annotation ) {
 		return;
 	}
 	if ( !fromText ) {
@@ -77,7 +76,7 @@ bs.vec.ui.MWFileLinkAnnotationWidget.static.getTextFromAnnotation = function ( a
 	if ( !annotation ) {
 		return '';
 	}
-	var type = annotation.name;
+	const type = annotation.name;
 	if ( type === 'link/internalFile' ) {
 		return annotation.element.attributes.normalizedTitle;
 	} else {

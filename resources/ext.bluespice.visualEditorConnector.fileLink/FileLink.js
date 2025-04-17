@@ -1,6 +1,6 @@
 bs.vec.registerComponentPlugin(
 	bs.vec.components.LINK_ANNOTATION_INSPECTOR,
-	function( component ) {
+	function ( component ) {
 		component.linkTypeIndex.addTabPanels( [
 			new OO.ui.TabPanelLayout( 'file', {
 				label: ve.msg( 'bs-visualeditorconnector-tab-file' ),
@@ -16,7 +16,7 @@ bs.vec.registerComponentPlugin(
 		component.linkTypeIndex.getTabPanel( 'file' ).$element.append(
 			component.localFileSystemAnnotationInput.$element
 		);
-		component.localFileSystemAnnotationInput.connect( this, { change: function() {
+		component.localFileSystemAnnotationInput.connect( this, { change: function () {
 			this.updateActions();
 		}.bind( component ) } );
 
@@ -31,7 +31,7 @@ bs.vec.registerComponentPlugin(
 // FIXME: Not exactly cool, would be nice to have a better way of overriding, so that plugins
 // would not only be called on initialize, but on every function from prototype
 ve.ui.MWLinkAnnotationInspector.prototype.onLinkTypeIndexSet = function () {
-	var text = this.annotationInput.getTextInputWidget().getValue(),
+	const text = this.annotationInput.getTextInputWidget().getValue(),
 		end = text.length,
 		isExternal = this.isExternal() || this.linkTypeIndex.getCurrentTabPanelName() === 'file',
 		inputHasProtocol = ve.init.platform.getExternalLinkUrlProtocolsRegExp().test( text );
@@ -69,28 +69,29 @@ ve.ui.MWLinkAnnotationInspector.prototype.onLinkTypeIndexSet = function () {
 
 const getInsertionText = ve.ui.LinkAnnotationInspector.prototype.getInsertionText;
 ve.ui.MWLinkAnnotationInspector.prototype.getInsertionText = function () {
-	var annotation = this.annotationInput.getAnnotation();
+	const annotation = this.annotationInput.getAnnotation();
 	if ( !( annotation instanceof bs.vec.dm.InternalFileLinkAnnotation ) ) {
 		return getInsertionText.call( this );
 	}
 	return bs.vec.ui.MWFileLinkAnnotationWidget.static.getTextFromAnnotation( annotation );
 };
 
-var updateAction = ve.ui.LinkAnnotationInspector.prototype.updateActions;
+var updateAction = ve.ui.LinkAnnotationInspector.prototype.updateActions; // eslint-disable-line no-implicit-globals, no-var
 ve.ui.LinkAnnotationInspector.prototype.updateActions = function () {
-	var isValid = false,
-		inspector = this,
-		annotation = this.annotationInput.getAnnotation();
+	let isValid = false;
+	const annotation = this.annotationInput.getAnnotation();
 
 	if ( !( annotation instanceof bs.vec.dm.InternalFileLinkAnnotation ) ) {
 		return updateAction.call( this );
 	}
 
 	this.annotationInput.getInternalFilePicker().query.getValidity()
-		.then( function () { isValid = true; } )
-		.always( function () {
+		.then( () => {
+			isValid = true;
+		} )
+		.always( () => {
 			isValid = isValid && !!annotation;
-			inspector.actions.forEach( { actions: [ 'done', 'insert' ] }, function ( action ) {
+			this.actions.forEach( { actions: [ 'done', 'insert' ] }, ( action ) => {
 				action.setDisabled( !isValid );
 			} );
 		} );
