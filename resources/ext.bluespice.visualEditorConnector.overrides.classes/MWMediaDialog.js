@@ -257,6 +257,7 @@ bs.vec.ui.MWMediaDialog.prototype.isLinkable = function( imageInfo ) {
 		return false;
 	}
 	switch ( imageInfo.mediatype ) {
+		case 'ARCHIVE':
 		case 'OFFICE':
 		case 'TEXT':
 			return true;
