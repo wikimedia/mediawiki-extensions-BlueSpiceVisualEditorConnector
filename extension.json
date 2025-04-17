@@ -83,6 +83,9 @@
 	"AutoloadNamespaces": {
 		"BlueSpice\\VisualEditorConnector\\": "src/"
 	},
+	"TestAutoloadNamespaces": {
+		"BlueSpice\\VisualEditorConnector\\Tests\\": "tests/phpunit/"
+	},
 	"MessagesDirs": {
 		"VisualEditorConnector": [
 			"i18n"
