@@ -1,8 +1,8 @@
 bs.util.registerNamespace( 'bs.vec.ce' );
 
-bs.vec.ce.ColorAnnotation = function() {
+bs.vec.ce.ColorAnnotation = function () {
 	// Parent constructor
-	bs.vec.ce.ColorAnnotation.super.apply( this,  arguments );
+	bs.vec.ce.ColorAnnotation.super.apply( this, arguments );
 
 	// DOM changes
 	this.$element
@@ -14,8 +14,8 @@ bs.vec.ce.ColorAnnotation = function() {
 		} );
 
 	if ( this.model.colorData.hasOwnProperty( 'class' ) ) {
-		this.$element.addClass( this.model.colorData.class );
-	} else if( this.model.colorData.hasOwnProperty( 'code' ) ) {
+		this.$element.addClass( this.model.colorData.class ); // eslint-disable-line mediawiki/class-doc
+	} else if ( this.model.colorData.hasOwnProperty( 'code' ) ) {
 		this.$element.css( 'color', this.model.colorData.code );
 	}
 };
@@ -35,8 +35,8 @@ bs.vec.ce.ColorAnnotation.static.tagName = 'span';
 /**
  * @inheritdoc
  */
-bs.vec.ce.ColorAnnotation.static.getDescription = function ( model ) {
-	return OO.ui.deferMsg( "bs-visualeditorconnector-color-annotation-desc" );
+bs.vec.ce.ColorAnnotation.static.getDescription = function ( model ) { // eslint-disable-line no-unused-vars
+	return OO.ui.deferMsg( 'bs-visualeditorconnector-color-annotation-desc' );
 };
 
 /* Registration */

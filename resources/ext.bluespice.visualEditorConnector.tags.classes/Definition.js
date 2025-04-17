@@ -74,11 +74,9 @@ bs.vec.util.tag.Definition.prototype.setValues = function ( inspector, attrs, cf
 				);
 				break;
 			case 'multiselect':
-				const val = attrs[ name ] ? attrs[ name ].split( attributes[ i ].valueSeparator || ',' ) : [];
+				const val = attrs[ name ] ? attrs[ name ].split( attributes[ i ].valueSeparator || ',' ) : []; // eslint-disable-line no-case-declarations
 				inspector[ inputName ].setValue(
-					val.map( function ( item ) {
-						return { data: item.trim(), label: '' };
-					} )
+					val.map( ( item ) => ( { data: item.trim(), label: '' } ) )
 				);
 				break;
 			default:
@@ -109,7 +107,7 @@ bs.vec.util.tag.Definition.prototype.updateMwData = function ( inspector, mwData
 					'true';
 		} else if ( attributes[ i ].type === 'multiselect' ) {
 			const value = inspector[ attributes[ i ].name + 'Input' ].getValue();
-			mwData.attrs[ attributes[ i ].name ] = value.join( attributes[i].valueSeparator || ',' );
+			mwData.attrs[ attributes[ i ].name ] = value.join( attributes[ i ].valueSeparator || ',' );
 		} else if ( inspector[ attributes[ i ].name + 'Input' ].getValue() ) {
 			switch ( attributes[ i ].type ) {
 				case 'percent':
@@ -131,7 +129,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function ( inspector, a
 		case 'tab':
 			break;
 		case 'custom':
-			widget = new attribute.widgetClass( $.extend( { // eslint-disable-line new-cap
+			widget = new attribute.widgetClass( Object.assign( { // eslint-disable-line new-cap
 				inspector: inspector,
 				attribute: attribute,
 				options: attribute.options || [],

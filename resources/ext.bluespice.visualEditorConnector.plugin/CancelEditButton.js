@@ -1,14 +1,14 @@
 // I tried hard with toolFactory registration, but
 // eventually gave up. This is a hacky but working
 // solution.
-mw.hook( 've.activationComplete' ).add( function () {
+mw.hook( 've.activationComplete' ).add( () => {
 	if ( ve.init.target.$element.hasClass( 've-init-sa-target' ) ) {
 		return;
 	}
 	if ( ve.init.target.$element.hasClass( 've-init-mw-collabTarget' ) ) {
 		return;
 	}
-	var cancelButton = new OO.ui.ButtonWidget(
+	const cancelButton = new OO.ui.ButtonWidget(
 		{
 			label: mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ),
 			invisibleLabel: true,
@@ -19,8 +19,8 @@ mw.hook( 've.activationComplete' ).add( function () {
 		}
 	);
 
-	cancelButton.on( 'click', function () {
-		OO.ui.confirm( ve.msg( 'bs-visualeditorconnector-cancel-edit-confirm-message' ) ).done( function ( confirmed ) {
+	cancelButton.on( 'click', () => {
+		OO.ui.confirm( ve.msg( 'bs-visualeditorconnector-cancel-edit-confirm-message' ) ).done( ( confirmed ) => {
 			if ( confirmed ) {
 				// As this is an intentional act of the user, we assume the user
 				// really wants to discard the changes. So we remove any locally stored
@@ -32,33 +32,33 @@ mw.hook( 've.activationComplete' ).add( function () {
 				window.location.href = mw.util.getUrl();
 			}
 		} );
-	});
+	} );
 
 	// Needed for switching between Visual and Wikitext mode. Otherwise, we get this
 	// error: this.items[i].destroy is not a function
-	cancelButton.destroy = function() {};
+	cancelButton.destroy = function () {};
 
 	// Enable cancel button when the text is already dirty on load (happens when
 	// there are edits in session storage in the browser).
-	ve.init.target.isSaveable() ? cancelButton.setFlags( 'destructive' ) : null ;
+	ve.init.target.isSaveable() ? cancelButton.setFlags( 'destructive' ) : null; // eslint-disable-line no-unused-expressions
 
-	var items = ve.init.target.getToolbar().items;
-	for ( var i = 0; i < items.length; i++ ) {
-		if ( !items[i] instanceof OO.ui.ToolGroup ) {
+	const items = ve.init.target.getToolbar().items;
+	for ( let i = 0; i < items.length; i++ ) {
+		if ( !( items[ i ] instanceof OO.ui.ToolGroup ) ) {
 			continue;
 		}
-		for ( var j = 0; j < items[i].include.length; j++ ) {
+		for ( let j = 0; j < items[ i ].include.length; j++ ) {
 			if (
-				items[i].include[j] === 'save' ||
+				items[ i ].include[ j ] === 'save' ||
 				(
-					typeof items[i].include[j] === 'object' &&
-					items[i].include[j].hasOwnProperty( 'group' ) &&
-					items[i].include[j].group === 'history'
+					typeof items[ i ].include[ j ] === 'object' &&
+					items[ i ].include[ j ].hasOwnProperty( 'group' ) &&
+					items[ i ].include[ j ].group === 'history'
 				)
 			) {
-				items[i].addItems( [ cancelButton ], 0 );
+				items[ i ].addItems( [ cancelButton ], 0 );
 				// Necessary to enable cancel tool
-				items[i].updateDisabled();
+				items[ i ].updateDisabled();
 			}
 		}
 	}
@@ -75,13 +75,13 @@ mw.hook( 've.activationComplete' ).add( function () {
 		this.toolbarSaveButton.onUpdateState();
 		// Added by BlueSpice
 		if ( ve.init.target.isSaveable() ) {
-			this.cancelButton.setFlags( ['destructive'] );
+			this.cancelButton.setFlags( [ 'destructive' ] );
 			this.cancelButton.setLabel( mw.msg( 'bs-visualeditorconnector-cancel-edit' ) );
 			this.cancelButton.setTitle( mw.msg( 'bs-visualeditorconnector-cancel-edit' ) );
 		} else {
-			this.cancelButton.setFlags( { destructive : false } );
+			this.cancelButton.setFlags( { destructive: false } );
 			this.cancelButton.setLabel( mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ) );
 			this.cancelButton.setTitle( mw.msg( 'bs-visualeditorconnector-cancel-edit-no-unsaved-changes' ) );
 		}
 	};
-});
+} );
