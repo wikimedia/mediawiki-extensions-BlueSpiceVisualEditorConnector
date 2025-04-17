@@ -1,12 +1,12 @@
 bs.util.registerNamespace( 'bs.vec.ui.widget' );
 
-bs.vec.ui.widget.CellBorderWidget = function( contextItem ) {
+bs.vec.ui.widget.CellBorderWidget = function ( contextItem ) {
 	this.styles = contextItem.getStyles();
 
 	bs.vec.ui.widget.CellBorderWidget.parent.call( this, contextItem );
 	bs.vec.mixin.TableBorderStylePopup.call( this );
 	this.connect( this, {
-		change: function( value ) {
+		change: function ( value ) {
 			this.value = value;
 			this.executeAction();
 		}
@@ -21,10 +21,10 @@ bs.vec.ui.widget.CellBorderWidget = function( contextItem ) {
 OO.inheritClass( bs.vec.ui.widget.CellBorderWidget, bs.vec.ui.widget.CommandWidget );
 OO.mixinClass( bs.vec.ui.widget.CellBorderWidget, bs.vec.mixin.TableBorderStylePopup );
 
-bs.vec.ui.widget.CellBorderWidget.prototype.makeBorderPicker = function() {
+bs.vec.ui.widget.CellBorderWidget.prototype.makeBorderPicker = function () {
 	this.borderPickerTrigger = new OO.ui.ButtonWidget( {
 		icon: 'cellBorderAll',
-		title: OO.ui.deferMsg( "bs-vec-table-border-borders" ),
+		title: OO.ui.deferMsg( 'bs-vec-table-border-borders' ),
 		framed: false
 	} );
 	this.borderPickerTrigger.connect( this, {
@@ -32,7 +32,7 @@ bs.vec.ui.widget.CellBorderWidget.prototype.makeBorderPicker = function() {
 	} );
 };
 
-bs.vec.ui.widget.CellBorderWidget.prototype.executeAction = function() {
+bs.vec.ui.widget.CellBorderWidget.prototype.executeAction = function () {
 	if ( !this.shouldExecute() ) {
 		return;
 	}
@@ -41,9 +41,9 @@ bs.vec.ui.widget.CellBorderWidget.prototype.executeAction = function() {
 	this.contextItem.execCommand( 'cellBorder', { value: this.value } );
 };
 
-bs.vec.ui.widget.CellBorderWidget.prototype.togglePopup = function() {
+bs.vec.ui.widget.CellBorderWidget.prototype.togglePopup = function () {
 	this.popup.toggle();
-	var $mainPopup = this.$element.parents( '.oo-ui-popupWidget-popup' );
+	const $mainPopup = this.$element.parents( '.oo-ui-popupWidget-popup' );
 	if ( this.popup.isVisible() ) {
 		$mainPopup.css( 'overflow', 'visible' );
 	} else {

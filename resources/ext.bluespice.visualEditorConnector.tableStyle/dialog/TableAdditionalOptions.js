@@ -1,6 +1,6 @@
 bs.util.registerNamespace( 'bs.vec.ui.dialog' );
 
-bs.vec.ui.dialog.TableAdditionalOptions = function( commands, contextItem ) {
+bs.vec.ui.dialog.TableAdditionalOptions = function ( commands, contextItem ) {
 	this.commands = commands;
 	this.contextItem = contextItem;
 	this.styleWidgets = {};
@@ -9,7 +9,7 @@ bs.vec.ui.dialog.TableAdditionalOptions = function( commands, contextItem ) {
 		size: 'medium'
 	} );
 
-	this.$element.on( 'mouseup mousedown', function( e ) {
+	this.$element.on( 'mouseup mousedown', ( e ) => {
 		if ( $( e.target ).hasClass( 'oo-ui-inputWidget-input' ) ) {
 			return;
 		}
@@ -29,8 +29,11 @@ bs.vec.ui.dialog.TableAdditionalOptions.static.actions = [
 
 bs.vec.ui.dialog.TableAdditionalOptions.static.title = '';
 
-bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function() {
-	var command, config, indLayout, mainLayout = new OO.ui.PanelLayout( {
+bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function () {
+	let command;
+	let config;
+	let indLayout;
+	const mainLayout = new OO.ui.PanelLayout( {
 		padded: true,
 		expanded: false
 	} );
@@ -41,10 +44,10 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function() {
 		if ( !this.commands.hasOwnProperty( command ) ) {
 			continue;
 		}
-		config = this.commands[command];
-		this.styleWidgets[command] = this.contextItem.getWidgetFromConfig( command, config );
-		this.styleWidgets[command].setShouldExecute( false );
-		indLayout = new OO.ui.FieldLayout( this.styleWidgets[command], {
+		config = this.commands[ command ];
+		this.styleWidgets[ command ] = this.contextItem.getWidgetFromConfig( command, config );
+		this.styleWidgets[ command ].setShouldExecute( false );
+		indLayout = new OO.ui.FieldLayout( this.styleWidgets[ command ], {
 			label: config.label || ''
 		} );
 		mainLayout.$element.append( indLayout.$element );
@@ -52,7 +55,7 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function() {
 	this.$body.append( mainLayout.$element );
 };
 
-bs.vec.ui.dialog.TableAdditionalOptions.prototype.getSetupProcess = function( data ) {
+bs.vec.ui.dialog.TableAdditionalOptions.prototype.getSetupProcess = function ( data ) {
 	data = data || {};
 	data.title = this.contextItem.getAdditionalOptionsTitle();
 
@@ -60,11 +63,8 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.getSetupProcess = function( da
 };
 
 bs.vec.ui.dialog.TableAdditionalOptions.prototype.getActionProcess = function ( action ) {
-	var dialog = this;
 	if ( action === 'save' ) {
-		return new OO.ui.Process( function () {
-			return dialog.close( { action: action, actionsToExecute: dialog.styleWidgets } );
-		} );
+		return new OO.ui.Process( () => this.close( { action: action, actionsToExecute: this.styleWidgets } ) );
 	}
 	return bs.vec.ui.dialog.TableAdditionalOptions.parent.prototype.getActionProcess.call( this, action );
 };
