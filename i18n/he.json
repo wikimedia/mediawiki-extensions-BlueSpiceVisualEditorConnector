@@ -89,5 +89,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "מרכוז טקסט נבחר",
 	"bs-visualeditorconnector-text-style-indent-label": "הזחה",
 	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר",
-	"bs-visualeditor-save-label": "שמירה"
+	"bs-visualeditor-save-label": "שמירה",
+	"bs-visualeditorconnector-tab-file": "קישור לקובץ"
 }

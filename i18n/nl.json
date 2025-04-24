@@ -88,5 +88,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centreert geselecteerde tekst",
 	"bs-visualeditorconnector-text-style-indent-label": "Inspringen",
 	"bs-visualeditorconnector-indent-annotation-desc": "Laat geselecteerde tekst inspringen",
-	"bs-visualeditor-save-label": "Opslaan"
+	"bs-visualeditor-save-label": "Opslaan",
+	"bs-visualeditorconnector-tab-file": "Koppeling naar bestand"
 }

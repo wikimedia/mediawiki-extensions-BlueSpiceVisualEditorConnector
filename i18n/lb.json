@@ -59,5 +59,6 @@
 	"bs-vec-contextitem-column-style-add-options-title": "Kolonnenoptiounen",
 	"bs-vec-contextitem-row-duplicate": "Zeil duplizéieren",
 	"bs-vec-contextitem-column-duplicate": "Kolonn duplizéieren",
-	"bs-visualeditor-save-label": "Späicheren"
+	"bs-visualeditor-save-label": "Späicheren",
+	"bs-visualeditorconnector-tab-file": "Link op de Fichier"
 }
