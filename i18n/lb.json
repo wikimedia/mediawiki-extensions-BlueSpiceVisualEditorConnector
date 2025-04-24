@@ -59,5 +59,6 @@
 	"bs-vec-table-border-dotted": "Mat Pnukten",
 	"bs-vec-table-border-double": "Duebel",
 	"bs-visualeditor-save-label": "Späicheren",
-	"bs-visualeditorconnector-upload-type": "Eropluedtyp"
+	"bs-visualeditorconnector-upload-type": "Eropluedtyp",
+	"bs-visualeditorconnector-tab-file": "Link op de Fichier"
 }

@@ -84,5 +84,6 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "Indenta le texto seligite",
 	"bs-visualeditor-save-label": "Salveguardar",
 	"bs-visualeditorconnector-upload-type": "Typo de incargamento",
-	"bs-visualeditorconnector-upload-type-help": "Original: Derecto de incargamento es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es obligatori.\nSimple: Derecto de incargamento non es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es optional.\nUn clic: Derecto de incargamento non es verificate. Nomine de file e categoria non es modificabile. Le spatio de nomines es modificabile."
+	"bs-visualeditorconnector-upload-type-help": "Original: Derecto de incargamento es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es obligatori.\nSimple: Derecto de incargamento non es verificate. Nomine de file, spatio de nomines e categoria es modificabile. Description es optional.\nUn clic: Derecto de incargamento non es verificate. Nomine de file e categoria non es modificabile. Le spatio de nomines es modificabile.",
+	"bs-visualeditorconnector-tab-file": "Ligar a un file"
 }
