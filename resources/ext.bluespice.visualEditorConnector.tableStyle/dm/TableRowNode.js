@@ -47,8 +47,7 @@ bs.vec.dm.TableRowNode.static.toDataElement = function ( domElements ) {
 	this.runTableStyles( 'toDataElement', [ domElements[ 0 ], result ] );
 
 	result = Object.assign( result, {
-		type: this.name,
-		attributes: result
+		type: this.name
 	} );
 	return result;
 };
