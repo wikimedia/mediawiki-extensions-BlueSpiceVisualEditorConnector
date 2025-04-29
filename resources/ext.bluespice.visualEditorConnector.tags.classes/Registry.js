@@ -216,6 +216,18 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function ( cfg ) {
 		return cfg.inspector.methods.getNewElement( this, element );
 	};
 
+	for ( const [ method, callable ] of Object.entries( cfg.inspector.methods ) ) {
+		// Skip predefined methods
+		if ( method === 'createFields'
+			|| method === 'setValues'
+			|| method === 'updateMwData'
+			|| method === 'getNewElement' ) {
+			continue;
+		}
+
+		bs.vec.ui[ classname ].prototype[ method ] = callable;
+	}
+
 	ve.ui.windowFactory.register( bs.vec.ui[ classname ] );
 };
 
