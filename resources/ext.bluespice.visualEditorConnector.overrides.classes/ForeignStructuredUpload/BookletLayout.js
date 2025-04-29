@@ -86,6 +86,20 @@ bs.vec.ui.ForeignStructuredUpload.BookletLayout.prototype.getErrorMessageForStat
 		stateDetails = this.upload.getStateDetails(),
 		warnings = stateDetails.upload && stateDetails.upload.warnings;
 
+	if ( state === mw.Upload.State.ERROR ) {
+		const $error = ( new mw.Api() ).getErrorMessage( stateDetails );
+		if ( stateDetails.exception === 'Request Entity Too Large' ) {
+			if ( $error[ 0 ] ) {
+				$error[ 0 ].textContent = mw.msg( 'bs-visualeditor-request-entity-too-large' );
+			}
+		}
+
+		return $.Deferred().resolve( new OO.ui.Error(
+			$error,
+			{ recoverable: false }
+		) );
+	}
+
 	if ( state === mw.Upload.State.WARNING ) {
 		if ( warnings.exists !== undefined ) {
 			return $.Deferred().resolve( new OO.ui.Error(
