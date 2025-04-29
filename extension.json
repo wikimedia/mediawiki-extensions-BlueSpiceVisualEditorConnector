@@ -223,7 +223,8 @@
 			],
 			"messages": [
 				"bs-visualeditor-linkcontext-label-label",
-				"bs-visualeditor-linkcontext-label-change"
+				"bs-visualeditor-linkcontext-label-change",
+				"bs-visualeditor-request-entity-too-large"
 			],
 			"dependencies": [
 				"ext.bluespice"
