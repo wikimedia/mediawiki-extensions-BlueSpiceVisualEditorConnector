@@ -6,6 +6,7 @@
 			"Metalhead64",
 			"Mglaser",
 			"Mirzali",
+			"Mschlindwein",
 			"Sushi",
 			"TMg"
 		]
@@ -90,5 +91,6 @@
 	"bs-visualeditorconnector-align-center-annotation-desc": "Zentriert ausgewählten Text",
 	"bs-visualeditorconnector-text-style-indent-label": "Einrücken",
 	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken",
-	"bs-visualeditor-save-label": "Speichern"
+	"bs-visualeditor-save-label": "Speichern",
+	"bs-visualeditorconnector-tab-file": "Link auf Datei"
 }
