@@ -60,5 +60,6 @@
 	"bs-vec-table-border-double": "Duebel",
 	"bs-visualeditor-save-label": "Späicheren",
 	"bs-visualeditorconnector-upload-type": "Eropluedtyp",
-	"bs-visualeditorconnector-tab-file": "Link op de Fichier"
+	"bs-visualeditorconnector-tab-file": "Link op de Fichier",
+	"bs-visualeditor-request-entity-too-large": "De Fichier ass ze grouss fir eropgelueden ze ginn."
 }
