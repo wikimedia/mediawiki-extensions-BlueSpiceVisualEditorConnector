@@ -85,7 +85,9 @@ bs.vec.dm.TableCellNode.static.toDomElements = function ( dataElement, doc ) {
 		}
 	}
 
-	domElement.setAttribute( 'style', styleParser.toString() );
+	if ( styleParser.toString().length > 0 ) {
+		domElement.setAttribute( 'style', styleParser.toString() );
+	}
 
 	return [ domElement ];
 };
