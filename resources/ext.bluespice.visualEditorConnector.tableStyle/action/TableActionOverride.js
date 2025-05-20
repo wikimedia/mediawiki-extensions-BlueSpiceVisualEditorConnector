@@ -1,4 +1,4 @@
-var orig = ve.ui.TableAction.prototype.create; // eslint-disable-line no-implicit-globals, no-var
+var orig = ve.ui.TableAction.prototype.create; // eslint-disable-line no-var
 
 ve.ui.TableAction.prototype.create = function ( options ) {
 	const optionsDialog = new bs.vec.ui.dialog.CreateTableOptions(),
