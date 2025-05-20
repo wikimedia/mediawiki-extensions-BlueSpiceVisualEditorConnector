@@ -218,10 +218,10 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function ( cfg ) {
 
 	for ( const [ method, callable ] of Object.entries( cfg.inspector.methods ) ) {
 		// Skip predefined methods
-		if ( method === 'createFields'
-			|| method === 'setValues'
-			|| method === 'updateMwData'
-			|| method === 'getNewElement' ) {
+		if ( method === 'createFields' ||
+			method === 'setValues' ||
+			method === 'updateMwData' ||
+			method === 'getNewElement' ) {
 			continue;
 		}
 

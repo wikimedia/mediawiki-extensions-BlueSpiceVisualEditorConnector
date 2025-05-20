@@ -76,7 +76,7 @@ ve.ui.MWLinkAnnotationInspector.prototype.getInsertionText = function () {
 	return bs.vec.ui.MWFileLinkAnnotationWidget.static.getTextFromAnnotation( annotation );
 };
 
-var updateAction = ve.ui.LinkAnnotationInspector.prototype.updateActions; // eslint-disable-line no-implicit-globals, no-var
+var updateAction = ve.ui.LinkAnnotationInspector.prototype.updateActions; // eslint-disable-line no-var
 ve.ui.LinkAnnotationInspector.prototype.updateActions = function () {
 	let isValid = false;
 	const annotation = this.annotationInput.getAnnotation();

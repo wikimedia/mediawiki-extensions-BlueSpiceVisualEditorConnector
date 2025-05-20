@@ -1,4 +1,4 @@
-var registry = bs.vec.registry.TableStyle.registry, key; // eslint-disable-line no-implicit-globals, no-var
+var registry = bs.vec.registry.TableStyle.registry, key; // eslint-disable-line no-var
 for ( key in registry ) {
 	if ( !registry.hasOwnProperty( key ) ) {
 		continue;
