@@ -90,5 +90,6 @@
 	"bs-visualeditorconnector-text-style-indent-label": "הזחה",
 	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר",
 	"bs-visualeditor-save-label": "שמירה",
-	"bs-visualeditorconnector-tab-file": "קישור לקובץ"
+	"bs-visualeditorconnector-tab-file": "קישור לקובץ",
+	"bs-visualeditor-request-entity-too-large": "הקובץ הזה גדול מדי להעלאה."
 }
