@@ -85,5 +85,6 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Indentar",
 	"bs-visualeditorconnector-indent-annotation-desc": "Indenta le texto seligite",
 	"bs-visualeditor-save-label": "Salveguardar",
-	"bs-visualeditorconnector-tab-file": "Ligar a un file"
+	"bs-visualeditorconnector-tab-file": "Ligar a un file",
+	"bs-visualeditor-request-entity-too-large": "Le file es troppo grande pro esser incargate."
 }
