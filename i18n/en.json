@@ -38,7 +38,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Number of columns",
 	"bs-vec-dialog-action-done": "Done",
 	"bs-vec-dialog-action-safe": "Cancel",
-	"bs-vec-dialog-create-table-title": "Insert table",
 	"bs-vec-widget-text-direction-tooltip": "Vertical text",
 	"bs-vec-row-duplicate-has-merged": "Selected row contains cells that span over multiple rows, and therefore cannot be duplicated.",
 	"bs-vec-dialog-media-change-file": "Change file",
@@ -89,5 +88,7 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "Indents selected text",
 	"bs-visualeditor-save-label": "Save",
 	"bs-visualeditorconnector-tab-file": "Link to file",
-	"bs-visualeditor-request-entity-too-large": "The file is too large to upload."
+	"bs-visualeditor-request-entity-too-large": "The file is too large to upload.",
+	"bs-visualeditorconnector-dialog-table-title": "Table",
+	"bs-visualeditorconnector-dialog-action-insert": "Insert"
 }

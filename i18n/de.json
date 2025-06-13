@@ -91,5 +91,7 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Einrücken",
 	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken",
 	"bs-visualeditor-save-label": "Speichern",
-	"bs-visualeditorconnector-tab-file": "Link auf Datei"
+	"bs-visualeditorconnector-tab-file": "Link auf Datei",
+	"bs-visualeditorconnector-dialog-table-title": "Tabelle",
+	"bs-visualeditorconnector-dialog-action-insert": "Einfügen"
 }
