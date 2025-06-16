@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Krisztina"
+			"Krisztina",
+			"Tacsipacsi"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Összeköti a BlueSpice-t a VisualEditor-ral",
@@ -20,7 +21,7 @@
 	"bs-visualeditorconnector-ve-style-option": "Táblázat stílusa",
 	"bs-visualeditorconnector-upload-dialog-type": "Fájl feltöltés workflow-ja a MediaDialog-ban",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Szöveg színe",
-	"bs-visualeditorconnector-color-annotation-desc": "Színeket ad a szöveghez a \"color\" vagy \"class\" tulajdonság hozzárendelésével",
+	"bs-visualeditorconnector-color-annotation-desc": "Színeket ad a szöveghez a „color” vagy „class” tulajdonság hozzárendelésével",
 	"bs-visualeditorconnector-dialog-media-link": "Fájl kapcsolása",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Fájl részletes oldalának kapcsolása",
 	"bs-visualeditorconnector-dialog-media-embed": "Fájl beágyazása",
