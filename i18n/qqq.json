@@ -24,7 +24,6 @@
 	"bs-visualeditorconnector-ve-style-option": "Label for the table css class selection input in VE",
 	"bs-visualeditorconnector-upload-dialog-type": "Configuration variable determining upload dialog's behaviour",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Label for the tool \"color\" in the text style popup",
-	"bs-visualeditorconnector-color-annotation-desc": "Description of ve.ui.ColorAnnotation class",
 	"bs-visualeditorconnector-dialog-media-link": "Label for button to link the selected file",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Label for button to link the selected file's meta page",
 	"bs-visualeditorconnector-dialog-media-embed": "Label for button to embed the selected file",
