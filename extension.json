@@ -392,8 +392,7 @@
 				"ext.bluespice.visualEditorConnector.styleInspector/Inspector.js"
 			],
 			"messages": [
-				"bs-visualeditorconnector-text-style-tool-color-label",
-				"bs-visualeditorconnector-color-annotation-desc"
+				"bs-visualeditorconnector-text-style-tool-color-label"
 			],
 			"dependencies": [
 				"oojs-ui",
