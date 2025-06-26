@@ -25,7 +25,6 @@
 	"bs-visualeditorconnector-ve-style-option": "表格類型",
 	"bs-visualeditorconnector-upload-dialog-type": "用於在 MediaDialog 上傳檔案的工作流",
 	"bs-visualeditorconnector-text-style-tool-color-label": "文字色彩",
-	"bs-visualeditorconnector-color-annotation-desc": "透過分配「color」或「class」屬性來添加色彩到文字",
 	"bs-visualeditorconnector-dialog-media-link": "連結至檔案",
 	"bs-visualeditorconnector-dialog-media-meta-link": "連結檔案描述頁面",
 	"bs-visualeditorconnector-dialog-media-embed": "嵌入此檔案",
