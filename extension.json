@@ -595,7 +595,8 @@
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
 		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback",
 		"MessagesPreLoad": "overrideMessage",
-		"MessageCacheFetchOverrides": "changeMessages"
+		"MessageCacheFetchOverrides": "changeMessages",
+		"APIAfterExecute": "removeTocPlaceholder"
 	},
 	"HookHandlers": {
 		"writeNamespaceConfiguration": {
@@ -607,6 +608,9 @@
 		},
 		"changeMessages": {
 			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\Messages\\MessageCacheFetchGetOverrides"
+		},
+		"removeTocPlaceholder": {
+			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\RemoveTocPlaceholder"
 		}
 	},
 	"manifest_version": 2
