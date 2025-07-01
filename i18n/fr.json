@@ -26,7 +26,6 @@
 	"bs-visualeditorconnector-ve-style-option": "Style de tableau",
 	"bs-visualeditorconnector-upload-dialog-type": "Flux de travail pour téléverser des fichiers dans MediaDialog",
 	"bs-visualeditorconnector-text-style-tool-color-label": "Couleur du texte",
-	"bs-visualeditorconnector-color-annotation-desc": "Ajouter des couleurs au texte en initialisant « color » ou la propriété « class »",
 	"bs-visualeditorconnector-dialog-media-link": "Lier ce fichier",
 	"bs-visualeditorconnector-dialog-media-meta-link": "Lier la page de description du fichier",
 	"bs-visualeditorconnector-dialog-media-embed": "Inclure ce fichier",
