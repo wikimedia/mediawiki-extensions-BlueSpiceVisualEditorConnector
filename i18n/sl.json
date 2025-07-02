@@ -38,7 +38,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Število stolpcev",
 	"bs-vec-dialog-action-done": "Končano",
 	"bs-vec-dialog-action-safe": "Prekliči",
-	"bs-vec-dialog-create-table-title": "Vstavi tabelo",
 	"bs-vec-widget-text-direction-tooltip": "Navpično besedilo",
 	"bs-vec-row-duplicate-has-merged": "Izbrana vrstica vsebuje celice, ki se raztezajo čez več vrstic, zato je ni mogoče podvojiti.",
 	"bs-vec-dialog-media-change-file": "Spremeni datoteko",

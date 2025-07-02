@@ -39,7 +39,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Antall kolonner",
 	"bs-vec-dialog-action-done": "Ferdig",
 	"bs-vec-dialog-action-safe": "Avbryt",
-	"bs-vec-dialog-create-table-title": "Sett inn tabell",
 	"bs-vec-widget-text-direction-tooltip": "Vertikal tekst",
 	"bs-vec-row-duplicate-has-merged": "Den valgte raden inneholder celler som strekker seg over flere kolonner, og kan derfor ikke dupliseres.",
 	"bs-vec-dialog-media-change-file": "Endre fil",

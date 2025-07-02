@@ -44,7 +44,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Кількість колонок",
 	"bs-vec-dialog-action-done": "Готово",
 	"bs-vec-dialog-action-safe": "Скасувати",
-	"bs-vec-dialog-create-table-title": "Вставити таблицю",
 	"bs-vec-widget-text-direction-tooltip": "Вертикальний текст",
 	"bs-vec-row-duplicate-has-merged": "Вибрані рядки містять комірки, що займають кілька рядків, і тому не можуть бути продубльовані.",
 	"bs-vec-dialog-media-change-file": "Змінити файл",

@@ -32,7 +32,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Zuel vun de Kolonnen",
 	"bs-vec-dialog-action-done": "Fäerdeg",
 	"bs-vec-dialog-action-safe": "Ofbriechen",
-	"bs-vec-dialog-create-table-title": "Tabell drasetzen",
 	"bs-vec-widget-text-direction-tooltip": "Vertikalen Text",
 	"bs-vec-dialog-media-change-file": "Fichier änneren",
 	"bs-visualeditor-linkcontext-label-change": "Etikett änneren",
@@ -61,5 +60,7 @@
 	"bs-vec-table-border-double": "Duebel",
 	"bs-visualeditor-save-label": "Späicheren",
 	"bs-visualeditorconnector-tab-file": "Link op de Fichier",
-	"bs-visualeditor-request-entity-too-large": "De Fichier ass ze grouss fir eropgelueden ze ginn."
+	"bs-visualeditor-request-entity-too-large": "De Fichier ass ze grouss fir eropgelueden ze ginn.",
+	"bs-visualeditorconnector-dialog-table-title": "Tabell",
+	"bs-visualeditorconnector-dialog-action-insert": "Drasetzen"
 }

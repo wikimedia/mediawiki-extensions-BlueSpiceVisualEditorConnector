@@ -41,7 +41,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Sütun sayısı",
 	"bs-vec-dialog-action-done": "Yapıldı",
 	"bs-vec-dialog-action-safe": "İptal",
-	"bs-vec-dialog-create-table-title": "Tablo ekle",
 	"bs-vec-widget-text-direction-tooltip": "Dikey metin",
 	"bs-vec-row-duplicate-has-merged": "Seçilen satır, birden çok satıra yayılan hücreler içerdiğinden çoğaltılamaz.",
 	"bs-vec-dialog-media-change-file": "Dosyayı değiştir",

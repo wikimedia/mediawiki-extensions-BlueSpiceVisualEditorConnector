@@ -40,7 +40,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "تعداد ستون‌ها",
 	"bs-vec-dialog-action-done": "انجام شد",
 	"bs-vec-dialog-action-safe": "لغو",
-	"bs-vec-dialog-create-table-title": "درج جدول",
 	"bs-vec-widget-text-direction-tooltip": "متن عمودی",
 	"bs-vec-row-duplicate-has-merged": "ردیف‌های انتخاب‌شده شامل خانه‌هایی می‌شوند که در طول چندین ردیف گسترده شده‌اند و در نتیجه قابل تکثیر نیستند.",
 	"bs-vec-dialog-media-change-file": "تغییر پرونده",

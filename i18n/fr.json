@@ -45,7 +45,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Nombre de colonnes",
 	"bs-vec-dialog-action-done": "Fait",
 	"bs-vec-dialog-action-safe": "Annuler",
-	"bs-vec-dialog-create-table-title": "Insérer un tableau",
 	"bs-vec-widget-text-direction-tooltip": "Texte vertical",
 	"bs-vec-row-duplicate-has-merged": "Les lignes sélectionnées contiennent des cellules s’étendant sur plusieurs rangées et ne peuvent donc pas être dupliquées.",
 	"bs-vec-dialog-media-change-file": "Modifier le fichier",
