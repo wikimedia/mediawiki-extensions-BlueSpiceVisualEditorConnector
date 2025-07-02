@@ -26,5 +26,7 @@
 	"bs-vec-table-border-bottom": "لاندې",
 	"bs-vec-table-border-all": "ټول",
 	"bs-visualeditor-save-label": "خوندي کول",
-	"bs-visualeditorconnector-upload-type": "د پورته کولو ډول"
+	"bs-visualeditorconnector-upload-type": "د پورته کولو ډول",
+	"bs-visualeditorconnector-dialog-table-title": "لښتيال",
+	"bs-visualeditorconnector-dialog-action-insert": "ورټومبل"
 }
