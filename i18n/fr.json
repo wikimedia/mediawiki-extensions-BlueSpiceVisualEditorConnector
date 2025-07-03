@@ -93,5 +93,7 @@
 	"bs-visualeditorconnector-upload-type": "Type de téléversement",
 	"bs-visualeditorconnector-upload-type-help": "D’origine : le droit de téléchargement est vérifié. Le nom de fichier, l’espace de noms et la catégorie sont modifiables. La description est obligatoire.\nSimple : le droit de téléchargement n’est pas vérifié. Le nom de fichier, l’espace de noms et la catégorie sont modifiables. La description est facultative.\nUn clic : le droit de téléchargement n’est pas vérifié. Le nom de fichier et la catégorie ne sont pas modifiables. L’espace de noms est modifiable.",
 	"bs-visualeditorconnector-tab-file": "Lien vers le fichier",
-	"bs-visualeditor-request-entity-too-large": "Le fichier est trop volumineux pour être téléchargé."
+	"bs-visualeditor-request-entity-too-large": "Le fichier est trop volumineux pour être téléchargé.",
+	"bs-visualeditorconnector-dialog-table-title": "Tableau",
+	"bs-visualeditorconnector-dialog-action-insert": "Insérer"
 }
