@@ -91,5 +91,7 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "Indente le texte sélectionné",
 	"bs-visualeditor-save-label": "Enregistrer",
 	"bs-visualeditorconnector-tab-file": "Lien vers le fichier",
-	"bs-visualeditor-request-entity-too-large": "Le fichier est trop volumineux pour être téléchargé."
+	"bs-visualeditor-request-entity-too-large": "Le fichier est trop volumineux pour être téléchargé.",
+	"bs-visualeditorconnector-dialog-table-title": "Tableau",
+	"bs-visualeditorconnector-dialog-action-insert": "Insérer"
 }
