@@ -6,6 +6,7 @@
 			"Ex-Diktator",
 			"Steeve815",
 			"Strayblues",
+			"YaronSh",
 			"נדב ס"
 		]
 	},
@@ -89,5 +90,7 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר",
 	"bs-visualeditor-save-label": "שמירה",
 	"bs-visualeditorconnector-tab-file": "קישור לקובץ",
-	"bs-visualeditor-request-entity-too-large": "הקובץ הזה גדול מדי להעלאה."
+	"bs-visualeditor-request-entity-too-large": "הקובץ הזה גדול מדי להעלאה.",
+	"bs-visualeditorconnector-dialog-table-title": "טבלה",
+	"bs-visualeditorconnector-dialog-action-insert": "הוספה"
 }
