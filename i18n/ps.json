@@ -62,5 +62,14 @@
 	"bs-vec-insert-line-break-title": "ماته کرښه (<br />)",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "منځالی پرليکه‌کول",
 	"bs-visualeditorconnector-align-center-annotation-desc": "منځالی ټاکلی ليک",
-	"bs-visualeditorconnector-text-style-indent-label": "کوږوالی"
+	"bs-visualeditorconnector-text-style-indent-label": "کوږوالی",
+	"bs-visualeditorconnector-cancel-edit": "سمون ناگارل. ناخوندي‌شوي بدلونونه به وغورځول شي",
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "اټا تاسو په رښتيا سمون ناگارل غواړئ؟ ستاسو ناخوندي‌شوي بدلونونه به وغورځول شي.",
+	"bs-visualeditorconnector-upload-dialog-type": "په رسنيزبکس کې د دوتنو راپورته‌کولو کاري‌جريان",
+	"bs-visualeditorconnector-dialog-media-embed": "دا دوتنه رادننه کول",
+	"bs-vec-table-inspector-column": "ستون",
+	"bs-vec-table-inspector-row": "کتار",
+	"bs-visualeditorconnector-upload-type-help": "آر: د راپورته‌کولو رښته تاييد‌شوې. \nد دوتنې نوم، نوم‌تشيال او وېشنيزه د سمون وړ دي. څرگنداوی اړين دی.\nساده: راپورته‌کولو رښته تاييد‌شوې نه ده. \nد دوتنې نوم، نوم‌تشيال او وېشنيزه د سمون وړ دي. څرگنداوی اختياري دی.\nيو کليک: راپورته‌کولو رښته تاييد‌شوې نه ده. د دوتنې نوم او وېشنيزه د سمون وړ نه دي. نوم‌تشيال د سمون وړ دی.",
+	"bs-visualeditorconnector-tab-file": "د دوتنې وېبتړ",
+	"bs-visualeditor-request-entity-too-large": "دوتنه د پورته‌کولو لپاره ډېره لويه ده."
 }
