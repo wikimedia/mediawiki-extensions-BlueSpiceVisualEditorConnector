@@ -44,7 +44,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Anzahl der Spalten",
 	"bs-vec-dialog-action-done": "Fertig",
 	"bs-vec-dialog-action-safe": "Abbrechen",
-	"bs-vec-dialog-create-table-title": "Tabelle einfügen",
 	"bs-vec-widget-text-direction-tooltip": "Vertikaler Text",
 	"bs-vec-row-duplicate-has-merged": "Die ausgewählte Zeile enthält Zellen, die sich über mehrere Zeilen erstrecken und kann daher nicht dupliziert werden.",
 	"bs-vec-dialog-media-change-file": "Datei ändern",

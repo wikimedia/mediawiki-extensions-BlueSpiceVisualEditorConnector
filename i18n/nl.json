@@ -41,7 +41,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Aantal kolommen",
 	"bs-vec-dialog-action-done": "Afgerond",
 	"bs-vec-dialog-action-safe": "Annuleren",
-	"bs-vec-dialog-create-table-title": "Tabel invoegen",
 	"bs-vec-widget-text-direction-tooltip": "Verticale tekst",
 	"bs-vec-row-duplicate-has-merged": "De geselecteerde rij bevat cellen die zich over meerdere rijen uitstrekken en daarom niet kunnen worden gedupliceerd.",
 	"bs-vec-dialog-media-change-file": "Bestand wijzigen",

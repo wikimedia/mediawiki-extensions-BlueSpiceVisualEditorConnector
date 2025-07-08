@@ -39,7 +39,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "عدد الأعمدة",
 	"bs-vec-dialog-action-done": "تم",
 	"bs-vec-dialog-action-safe": "إلغاء",
-	"bs-vec-dialog-create-table-title": "إدراج جدول",
 	"bs-vec-widget-text-direction-tooltip": "نص عمودي",
 	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها.",
 	"bs-vec-dialog-media-change-file": "تغيير الملف",

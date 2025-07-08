@@ -39,7 +39,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "Antal kolumner",
 	"bs-vec-dialog-action-done": "Klar",
 	"bs-vec-dialog-action-safe": "Avbryt",
-	"bs-vec-dialog-create-table-title": "Infoga tabell",
 	"bs-vec-widget-text-direction-tooltip": "Vertikal text",
 	"bs-vec-row-duplicate-has-merged": "Markerade rader innehåller celler som sträcker sig över flera rader och kan därför inte dupliceras.",
 	"bs-vec-dialog-media-change-file": "Ändra fil",

@@ -42,7 +42,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "直行數目",
 	"bs-vec-dialog-action-done": "完成",
 	"bs-vec-dialog-action-safe": "取消",
-	"bs-vec-dialog-create-table-title": "插入表格",
 	"bs-vec-widget-text-direction-tooltip": "垂直文字",
 	"bs-vec-row-duplicate-has-merged": "所選的橫列包含單元格而橫跨成多個橫列，因此不能做出複製。",
 	"bs-vec-dialog-media-change-file": "變更檔案",

@@ -43,7 +43,6 @@
 	"bs-vec-dialog-table-create-number-of-columns": "מספר עמודות",
 	"bs-vec-dialog-action-done": "סיום",
 	"bs-vec-dialog-action-safe": "ביטול",
-	"bs-vec-dialog-create-table-title": "הוספת טבלה",
 	"bs-vec-widget-text-direction-tooltip": "טקסט מאונך",
 	"bs-vec-row-duplicate-has-merged": "השורה שנבחרה מכילה תאים שמתפרסים לאורך מספר שורות, ולכן היא לא יכולה להיות משוכפלת.",
 	"bs-vec-dialog-media-change-file": "שינוי קובץ",
