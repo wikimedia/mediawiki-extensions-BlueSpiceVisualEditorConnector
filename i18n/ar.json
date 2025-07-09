@@ -86,5 +86,7 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "المسافة البادئة للنص المحدد",
 	"bs-visualeditor-save-label": "حفظ",
 	"bs-visualeditorconnector-tab-file": "رابط للملف",
-	"bs-visualeditor-request-entity-too-large": "الملف كبير جدًا بحيث لا يمكن تحميله."
+	"bs-visualeditor-request-entity-too-large": "الملف كبير جدًا بحيث لا يمكن تحميله.",
+	"bs-visualeditorconnector-dialog-table-title": "جدول",
+	"bs-visualeditorconnector-dialog-action-insert": "إدراج"
 }
