@@ -84,5 +84,7 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Alinhar ao centro",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centra o texto selecionado",
 	"bs-visualeditorconnector-text-style-indent-label": "Indentar",
-	"bs-visualeditorconnector-indent-annotation-desc": "Indenta (afasta da margem) o texto selecionado"
+	"bs-visualeditorconnector-indent-annotation-desc": "Indenta (afasta da margem) o texto selecionado",
+	"bs-visualeditorconnector-dialog-table-title": "Tabela",
+	"bs-visualeditorconnector-dialog-action-insert": "Inserir"
 }
