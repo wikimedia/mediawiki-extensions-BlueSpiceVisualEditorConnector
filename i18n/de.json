@@ -8,7 +8,8 @@
 			"Mirzali",
 			"Mschlindwein",
 			"Sushi",
-			"TMg"
+			"TMg",
+			"Vhoesl"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Verbindet BlueSpice mit dem VisualEditor",
@@ -91,6 +92,7 @@
 	"bs-visualeditorconnector-indent-annotation-desc": "Ausgewählten Text einrücken",
 	"bs-visualeditor-save-label": "Speichern",
 	"bs-visualeditorconnector-tab-file": "Link auf Datei",
+	"bs-visualeditor-request-entity-too-large": "Die Datei ist zu groß, um hochgeladen zu werden.",
 	"bs-visualeditorconnector-dialog-table-title": "Tabelle",
 	"bs-visualeditorconnector-dialog-action-insert": "Einfügen"
 }
