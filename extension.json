@@ -599,7 +599,6 @@
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
 		"NamespaceManager::editNamespace": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerEditNamespace\\SetVisualEditorValues::callback",
 		"NamespaceManagerBeforePersistSettings": "writeNamespaceConfiguration",
-		"UnitTestsList": "\\BlueSpice\\VisualEditorConnector\\Hook\\UnitTestsList\\DisableFlaggedRevsTests::callback",
 		"MessagesPreLoad": "overrideMessage",
 		"MessageCacheFetchOverrides": "changeMessages",
 		"APIAfterExecute": "removeTocPlaceholder"
