@@ -87,5 +87,8 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Inspringen",
 	"bs-visualeditorconnector-indent-annotation-desc": "Laat geselecteerde tekst inspringen",
 	"bs-visualeditor-save-label": "Opslaan",
-	"bs-visualeditorconnector-tab-file": "Koppeling naar bestand"
+	"bs-visualeditorconnector-tab-file": "Koppeling naar bestand",
+	"bs-visualeditor-request-entity-too-large": "Het bestand is te groot om te uploaden.",
+	"bs-visualeditorconnector-dialog-table-title": "Tabel",
+	"bs-visualeditorconnector-dialog-action-insert": "Invoegen"
 }
