@@ -92,5 +92,8 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Label for the indent tool",
 	"bs-visualeditorconnector-indent-annotation-desc": "Description of the indent annotation",
 	"bs-visualeditor-save-label": "Label for button to save edit\n{{Identical:Save}}",
-	"bs-visualeditorconnector-tab-file": "The title of the tab containing the picker for a file link"
+	"bs-visualeditorconnector-tab-file": "The title of the tab containing the picker for a file link",
+	"bs-visualeditor-request-entity-too-large": "Error message when \"Request Entity Too Large\" exception occurs",
+	"bs-visualeditorconnector-dialog-table-title": "Title for the dialog that inserts the table",
+	"bs-visualeditorconnector-dialog-action-insert": "Process dialog \"insert\" action button\n{{Identical:Insert}}"
 }
