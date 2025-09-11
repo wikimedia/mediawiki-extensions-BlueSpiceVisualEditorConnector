@@ -13,8 +13,7 @@
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.3",
 			"VisualEditor": "*",
-			"OOJSPlus": ">= 2.0.0",
-			"BlueSpiceVisualEditorConnector": "*"
+			"OOJSPlus": ">= 2.0.0"
 		}
 	},
 	"attributes": {
