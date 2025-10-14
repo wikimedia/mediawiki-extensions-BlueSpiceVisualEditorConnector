@@ -3,7 +3,8 @@
 		"authors": [
 			"LaMagiaaa",
 			"Meno25",
-			"ديفيد"
+			"ديفيد",
+			"Mohammed Qays"
 		]
 	},
 	"bs-visualeditorconnector-desc": "يربط BlueSpice بالمحرر المرئي",
@@ -37,7 +38,7 @@
 	"bs-vec-contextitem-table-additional-options": "خيارات إضافية",
 	"bs-vec-dialog-table-create-number-of-rows": "عدد الصفوف",
 	"bs-vec-dialog-table-create-number-of-columns": "عدد الأعمدة",
-	"bs-vec-dialog-action-done": "تم",
+	"bs-vec-dialog-action-done": "نُفّذ",
 	"bs-vec-dialog-action-safe": "إلغاء",
 	"bs-vec-widget-text-direction-tooltip": "نص عمودي",
 	"bs-vec-row-duplicate-has-merged": "يحتوي الصف المحدد على خلايا تمتد عبر صفوف متعددة، وبالتالي لا يمكن تكرارها.",
