@@ -88,5 +88,6 @@
 	"bs-visualeditorconnector-text-style-indent-label": "Indentar",
 	"bs-visualeditorconnector-indent-annotation-desc": "Indenta (afasta da margem) o texto selecionado",
 	"bs-visualeditorconnector-dialog-table-title": "Tabela",
-	"bs-visualeditorconnector-dialog-action-insert": "Inserir"
+	"bs-visualeditorconnector-dialog-action-insert": "Inserir",
+	"bs-visualeditor-save-label": "Guardar"
 }
