@@ -12,8 +12,8 @@
 		"MediaWiki": ">= 1.39.0",
 		"extensions": {
 			"BlueSpiceFoundation": ">= 4.3",
-			"VisualEditor": "*",
-			"OOJSPlus": ">= 2.0.0"
+			"OOJSPlus": ">= 3.2",
+			"VisualEditorPlus": "*"
 		}
 	},
 	"attributes": {
@@ -189,12 +189,15 @@
 				"ext.bluespice.visualEditorConnector.internalLink/dm/InternalMediaLinkAnnotation.js",
 				"ext.bluespice.visualEditorConnector.internalLink/ce/InternalMediaLinkAnnotation.js",
 				"ext.bluespice.visualEditorConnector.internalLink/contextitem/InternalFileLinkContextItem.js",
-				"ext.bluespice.visualEditorConnector.internalLink/dm/MWInternalLinkAnnotation.override.js"
+				"ext.bluespice.visualEditorConnector.internalLink/dm/MWInternalLinkAnnotation.override.js",
+				"ext.bluespice.visualEditorConnector.internalLink/ui/OOJSPlusTitleAnnotationWidget.js",
+				"ext.bluespice.visualEditorConnector.internalLink/overrideLinkInputWidget.js"
 			],
 			"dependencies": [
 				"ext.bluespice",
 				"ext.visualEditor.mwcore",
-				"ext.visualEditor.mwlink"
+				"ext.visualEditor.mwlink",
+				"ext.oOJSPlus.widgets"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.fileLink": {
