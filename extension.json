@@ -480,6 +480,11 @@
 				"bs-visualeditorconnector-text-style-indent-label",
 				"bs-visualeditorconnector-indent-annotation-desc"
 			]
+		},
+		"ext.bluespice.visualEditorConnector.vEForAll.removeSwitchEditor": {
+			"packageFiles": [
+				"vEForAll/RemoveSwitchEditor.js"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {
@@ -586,7 +591,8 @@
 	"Hooks": {
 		"BSPageTemplatesModifyTargetUrl": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSPageTemplatesModifyTargetUrl\\UseVisualEditor::callback",
 		"BeforePageDisplay": [
-			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback"
+			"\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\AddStaticStyles::callback",
+			"removeSwitchEditor"
 		],
 		"NamespaceManager::getMetaFields": "\\BlueSpice\\VisualEditorConnector\\Hook\\NamespaceManagerGetMetaFields\\RegisterMetaFields::callback",
 		"BSApiNamespaceStoreMakeData": "\\BlueSpice\\VisualEditorConnector\\Hook\\BSApiNamespaceStoreMakeData\\AddData::callback",
@@ -610,6 +616,9 @@
 		},
 		"removeTocPlaceholder": {
 			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\RemoveTocPlaceholder"
+		},
+		"removeSwitchEditor": {
+			"class": "\\BlueSpice\\VisualEditorConnector\\Hook\\BeforePageDisplay\\RemoveSwitchEditor"
 		}
 	},
 	"manifest_version": 2
