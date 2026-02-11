@@ -24,7 +24,7 @@ bs.vec.ui.ColorStyleTool = function ( config ) {
 	this.$element = this.colorPicker.$element;
 };
 
-OO.inheritClass( bs.vec.ui.ColorStyleTool, bs.vec.ui.ButtonStyleTool );
+OO.inheritClass( bs.vec.ui.ColorStyleTool, ext.visualEditorPlus.ui.ButtonStyleTool );
 
 bs.vec.ui.ColorStyleTool.prototype.getName = function () {
 	return 'textStyle/color';
@@ -93,3 +93,5 @@ bs.vec.ui.ColorStyleTool.prototype.onPickerToggle = function ( visible ) {
 		$mainPopup.css( 'overflow', 'hidden' );
 	}
 };
+
+ext.visualEditorPlus.registry.TextStyleTool.register( 'textStyle/color', { constructor: bs.vec.ui.ColorStyleTool } );

@@ -379,17 +379,7 @@
 				"ext.bluespice.visualEditorConnector.styleInspector/tool/ColorAnnotationTool.js",
 				"ext.bluespice.visualEditorConnector.styleInspector/dm/ColorAnnotation.js",
 				"ext.bluespice.visualEditorConnector.styleInspector/ce/ColorAnnotation.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/ButtonTool.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Bold.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Italic.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Color.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Code.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Small.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Big.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Strikethrough.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Underline.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/TextStyleToolRegistry.js",
-				"ext.bluespice.visualEditorConnector.styleInspector/Inspector.js"
+				"ext.bluespice.visualEditorConnector.styleInspector/styleTool/Color.js"
 			],
 			"messages": [
 				"bs-visualeditorconnector-text-style-tool-color-label"
@@ -399,7 +389,7 @@
 				"ext.visualEditor.mwcore",
 				"ext.oOJSPlus.widgets.colorPicker",
 				"ext.bluespice",
-				"ext.visualEditorPlus.inlineTextInspector"
+				"ext.visualEditorPlus.styleInspector"
 			]
 		},
 		"ext.bluespice.visualEditorConnector.colors": {
