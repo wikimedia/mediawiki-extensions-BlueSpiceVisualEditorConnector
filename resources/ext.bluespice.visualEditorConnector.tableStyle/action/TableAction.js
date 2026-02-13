@@ -14,8 +14,8 @@ OO.inheritClass( bs.vec.ui.TableAction, ve.ui.TableAction );
 bs.vec.ui.TableAction.static.name = 'bs-vec-table';
 
 bs.vec.ui.TableAction.static.methods = [
-	'duplicate', 'cellBackgroundColor', 'cellBorder', 'columnWidth',
-	'horizontalTextAlignment', 'rowHeight', 'verticalTextAlignment'
+	'duplicate', 'cellBackgroundColor', 'cellBorder', 'setColumnWidth',
+	'horizontalTextAlignment', 'setRowHeight', 'verticalTextAlignment'
 ];
 
 bs.vec.ui.TableAction.prototype.cellBackgroundColor = function ( args ) {
@@ -27,6 +27,89 @@ bs.vec.ui.TableAction.prototype.columnWidth = function ( args ) {
 	const origSelection = this.selectSection( 'column' );
 	this.setAttributes( 'columnWidth', args.columnWidth );
 	this.restoreOriginalSelection( origSelection );
+};
+
+bs.vec.ui.TableAction.prototype.openTableOptionDialog = function ( {
+	widget,
+	labelMsg,
+	titleMsg,
+	validateNode,
+	onApply
+} ) {
+	const surfaceModel = this.surface.getModel();
+	const nodeModel = surfaceModel.selectedNode;
+
+	if ( !validateNode( nodeModel ) ) {
+		return;
+	}
+
+	const dialog = new bs.vec.ui.dialog.TableAdditionalOptions(
+		[ {
+			widget,
+			label: mw.msg( labelMsg ) // eslint-disable-line mediawiki/msg-doc
+		} ],
+		nodeModel,
+		mw.msg( titleMsg ) // eslint-disable-line mediawiki/msg-doc
+	);
+
+	const windowManager = this.getWindowManager();
+	windowManager.addWindows( [ dialog ] );
+
+	const selection = surfaceModel.getSelection();
+
+	windowManager.openWindow( dialog ).closed.then( ( data ) => {
+		surfaceModel.setSelection( selection );
+
+		if ( !data || !data.actionsToExecute || data.actionsToExecute.length < 1 ) {
+			return;
+		}
+
+		const action = data.actionsToExecute[ 0 ];
+		onApply( action );
+	} );
+};
+
+bs.vec.ui.TableAction.prototype.getWindowManager = function () {
+	if ( !this.windowManager ) {
+		this.windowManager = new OO.ui.WindowManager();
+		$( document.body ).append( this.windowManager.$element );
+	}
+	return this.windowManager;
+};
+
+bs.vec.ui.TableAction.prototype.setColumnWidth = function () {
+	this.openTableOptionDialog( {
+		widget: bs.vec.ui.widget.ColumnWidthWidget,
+		labelMsg: 'bs-vec-table-style-column-width',
+		titleMsg: 'bs-vec-contextitem-column-style-add-options-title',
+
+		validateNode: ( node ) => node && node.element && node.element.type === 'tableCell',
+
+		onApply: ( action ) => {
+			this.columnWidth( {
+				columnWidth:
+					action.numberWidget.getValue() + action.unit
+			} );
+		}
+	} );
+};
+
+bs.vec.ui.TableAction.prototype.setRowHeight = function () {
+	this.openTableOptionDialog( {
+		widget: bs.vec.ui.widget.RowHeightWidget,
+		labelMsg: 'bs-vec-table-style-row-height',
+		titleMsg: 'bs-vec-contextitem-row-style-add-options-title',
+
+		validateNode: ( node ) => node &&
+				node.parent &&
+				node.parent.element &&
+				node.parent.element.type === 'tableRow',
+		onApply: ( action ) => {
+			this.rowHeight( {
+				rowHeight: action.numberWidget.getValue()
+			} );
+		}
+	} );
 };
 
 bs.vec.ui.TableAction.prototype.rowHeight = function ( args ) {

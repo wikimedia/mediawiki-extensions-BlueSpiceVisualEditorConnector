@@ -25,3 +25,17 @@ ve.ui.commandRegistry.register(
 		{ supportedSelections: [ 'table' ], args: [ 'col' ] }
 	)
 );
+
+ve.ui.commandRegistry.register(
+	new ve.ui.Command(
+		'heightRow', 'bs-vec-table', 'setRowHeight',
+		{ supportedSelections: [ 'table' ], args: [ 'row' ] }
+	)
+);
+
+ve.ui.commandRegistry.register(
+	new ve.ui.Command(
+		'widthColumn', 'bs-vec-table', 'setColumnWidth',
+		{ supportedSelections: [ 'table' ], args: [ 'col' ] }
+	)
+);
