@@ -1,9 +1,10 @@
 bs.util.registerNamespace( 'bs.vec.ui.dialog' );
 
-bs.vec.ui.dialog.TableAdditionalOptions = function ( commands, contextItem ) {
+bs.vec.ui.dialog.TableAdditionalOptions = function ( commands, tableElement, title ) {
 	this.commands = commands;
-	this.contextItem = contextItem;
 	this.styleWidgets = {};
+	this.tableElement = tableElement;
+	this.titleLabel = title;
 
 	bs.vec.ui.dialog.TableAdditionalOptions.parent.call( this, {
 		size: 'medium'
@@ -33,8 +34,6 @@ bs.vec.ui.dialog.TableAdditionalOptions.static.actions = [
 	}
 ];
 
-bs.vec.ui.dialog.TableAdditionalOptions.static.title = '';
-
 bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function () {
 	let command;
 	let config;
@@ -51,7 +50,7 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function () {
 			continue;
 		}
 		config = this.commands[ command ];
-		this.styleWidgets[ command ] = this.contextItem.getWidgetFromConfig( command, config );
+		this.styleWidgets[ command ] = this.getWidgetFromConfig( command, config );
 		this.styleWidgets[ command ].setShouldExecute( false );
 		indLayout = new OO.ui.FieldLayout( this.styleWidgets[ command ], {
 			label: config.label || ''
@@ -61,10 +60,28 @@ bs.vec.ui.dialog.TableAdditionalOptions.prototype.initialize = function () {
 	this.$body.append( mainLayout.$element );
 };
 
+bs.vec.ui.dialog.TableAdditionalOptions.prototype.getWidgetFromConfig = function ( cmd, commandConfig ) {
+	let widgetClass;
+
+	if ( commandConfig.hasOwnProperty( 'widget' ) ) {
+		widgetClass = commandConfig.widget;
+		return new widgetClass( this.tableElement ); // eslint-disable-line new-cap
+	} else {
+		return new bs.vec.ui.widget.ButtonCommandWidget( this, {
+			icon: commandConfig.icon,
+			title: commandConfig.label,
+			framed: false,
+			command: cmd,
+			expensive: commandConfig.expensive || false
+		} );
+	}
+};
+
 bs.vec.ui.dialog.TableAdditionalOptions.prototype.getSetupProcess = function ( data ) {
 	data = data || {};
-	data.title = this.contextItem.getAdditionalOptionsTitle();
-
+	data = Object.assign( data, {
+		title: this.titleLabel
+	} );
 	return bs.vec.ui.dialog.TableAdditionalOptions.parent.prototype.getSetupProcess.call( this, data );
 };
 

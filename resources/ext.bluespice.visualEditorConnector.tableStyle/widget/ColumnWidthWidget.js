@@ -1,15 +1,15 @@
 bs.util.registerNamespace( 'bs.vec.ui.widget' );
 
-bs.vec.ui.widget.ColumnWidthWidget = function ( contextItem ) {
+bs.vec.ui.widget.ColumnWidthWidget = function ( tableNode ) {
 
-	bs.vec.ui.widget.ColumnWidthWidget.parent.call( this, contextItem );
+	bs.vec.ui.widget.ColumnWidthWidget.parent.call( this, tableNode );
 
 	this.property = 'columnWidth';
 	this.command = 'columnWidth';
 
 	this.units = [ 'px', '%' ];
 	this.unit = this.units[ 0 ];
-	this.value = contextItem.getStyles()[ this.property ] || 0;
+	this.value = tableNode.element.attributes[ this.property ] || 0;
 	this.splitValue();
 	this.min = 0;
 	this.step = 5;
