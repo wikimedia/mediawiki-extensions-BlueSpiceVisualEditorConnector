@@ -14,5 +14,6 @@
 	"bs-visualeditor-linkcontext-label-label": "Etykieta",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Anuluj edycję",
 	"bs-visualeditorconnector-cancel-edit": "Anuluj edycję. Niezapisane zmiany zostaną utracone.",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Na pewno chcesz anulować tę edycję? Niezapisane zmiany zostaną utracone."
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "Na pewno chcesz anulować tę edycję? Niezapisane zmiany zostaną utracone.",
+	"bs-visualeditorconnector-dialog-action-insert": "Wstaw"
 }

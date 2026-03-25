@@ -7,5 +7,9 @@
 	},
 	"bs-vec-dialog-create-table-title": "Lasit tabealla",
 	"bs-vec-ve-table-width-label": "Tabealla govdodat",
-	"bs-vec-dialog-action-safe": "Gaskkalduhte"
+	"bs-vec-dialog-action-safe": "Gaskkalduhte",
+	"bs-vec-table-inspector-column": "Čuolda",
+	"bs-vec-table-style-column-width": "Čuoldda govdodat",
+	"bs-visualeditorconnector-text-style-indent-label": "Siskkit",
+	"bs-visualeditor-save-label": "Vurke"
 }

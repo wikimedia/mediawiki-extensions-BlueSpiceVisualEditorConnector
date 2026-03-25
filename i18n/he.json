@@ -6,6 +6,7 @@
 			"Ex-Diktator",
 			"Steeve815",
 			"Strayblues",
+			"YaronSh",
 			"נדב ס"
 		]
 	},
@@ -88,5 +89,10 @@
 	"bs-vec-table-style-cell-text-vert-align": "יישור אנכי של טקסט",
 	"bs-visualeditorconnector-upload-type-help": "מקורי: ההרשאה להעלות מאומתת. אפשר לערוך את שם הקובץ, את מרחב השם ואת הקטגוריות. נדרש תיאור.\nפשוט: ההרשאה להעלות לא מאומתת. אפשר לערוך את שם הקובץ, את מרחב השם ואת הקטגוריות. לא נדרש תיאור.\nלחיצה אחת: ההרשאה להעלות לא מאומתת. אי־אפשר לערוך את שם הקובץ ואת הקטגוריות. אפשר לערוך את מרחב השם.",
 	"bs-visualeditorconnector-align-center-annotation-desc": "מרכוז טקסט נבחר",
-	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר"
+	"bs-visualeditorconnector-indent-annotation-desc": "הזחת טקסט נבחר",
+	"bs-visualeditor-save-label": "שמירה",
+	"bs-visualeditorconnector-tab-file": "קישור לקובץ",
+	"bs-visualeditor-request-entity-too-large": "הקובץ הזה גדול מדי להעלאה.",
+	"bs-visualeditorconnector-dialog-table-title": "טבלה",
+	"bs-visualeditorconnector-dialog-action-insert": "הוספה"
 }

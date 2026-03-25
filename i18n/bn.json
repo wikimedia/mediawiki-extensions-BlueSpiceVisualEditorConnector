@@ -14,5 +14,6 @@
 	"bs-visualeditor-linkcontext-label-change": "নামাঙ্কন পরিবর্তন করুন",
 	"bs-visualeditor-linkcontext-label-label": "নামাঙ্ককন",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "সম্পাদনা বাতিল করুন",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "আপনি কি সত্যিই সম্পাদনা বাতিল করতে চান? আপনার অসংরক্ষিত সম্পাদনগুলি পরিত্যাগ করা হবে।"
+	"bs-visualeditorconnector-cancel-edit-confirm-message": "আপনি কি সত্যিই সম্পাদনা বাতিল করতে চান? আপনার অসংরক্ষিত সম্পাদনগুলি পরিত্যাগ করা হবে।",
+	"bs-visualeditorconnector-dialog-action-insert": "যোগ করুন"
 }

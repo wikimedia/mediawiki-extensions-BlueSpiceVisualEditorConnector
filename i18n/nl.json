@@ -5,7 +5,8 @@
 			"Elroy",
 			"Mainframe98",
 			"McDutchie",
-			"Romaine"
+			"Romaine",
+			"Siebrand"
 		]
 	},
 	"bs-visualeditorconnector-desc": "Koppelt BlueSpice aan VisualEditor",
@@ -68,7 +69,7 @@
 	"bs-visualeditorconnector-upload-type-simple": "Eenvoudig",
 	"bs-visualeditorconnector-upload-type-one-click": "Een klik",
 	"bs-visualeditorconnector-ve-style-option": "Tabelstijl",
-	"bs-visualeditorconnector-dialog-media-link": "Link naar dit bestand",
+	"bs-visualeditorconnector-dialog-media-link": "Koppeling naar dit bestand",
 	"bs-vec-table-style-cell-text-vert-align": "Verticale tekst-uitlijning",
 	"bs-vec-table-style-cell-text-hor-align": "Tekst-uitlijning",
 	"bs-vec-ve-table-width-value-auto": "Automatisch",
@@ -87,5 +88,10 @@
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "Midden uitlijnen",
 	"bs-visualeditorconnector-align-center-annotation-desc": "Centreert geselecteerde tekst",
 	"bs-visualeditorconnector-text-style-indent-label": "Inspringen",
-	"bs-visualeditorconnector-indent-annotation-desc": "Laat geselecteerde tekst inspringen"
+	"bs-visualeditorconnector-indent-annotation-desc": "Laat geselecteerde tekst inspringen",
+	"bs-visualeditor-save-label": "Opslaan",
+	"bs-visualeditorconnector-tab-file": "Koppeling naar bestand",
+	"bs-visualeditor-request-entity-too-large": "Het bestand is te groot om te uploaden.",
+	"bs-visualeditorconnector-dialog-table-title": "Tabel",
+	"bs-visualeditorconnector-dialog-action-insert": "Invoegen"
 }
