@@ -79,5 +79,9 @@
 	"bs-vec-insert-line-break-title": "줄바꿈 (<br />)",
 	"bs-visualeditorconnector-text-style-tool-align-center-label": "가운데 정렬",
 	"bs-visualeditorconnector-text-style-indent-label": "들여쓰기",
-	"bs-visualeditor-request-entity-too-large": "파일 크기가 너무 커서 업로드할 수 없습니다."
+	"bs-visualeditor-request-entity-too-large": "파일 크기가 너무 커서 업로드할 수 없습니다.",
+	"bs-vec-table-border-round": "둥근 모서리",
+	"bs-vec-table-border-horizontal": "수평",
+	"bs-vec-table-border-roundhorizontal": "둥근 모서리 및 수평",
+	"bs-vec-table-border-roundvertical": "둥근 모서리 및 수직"
 }
