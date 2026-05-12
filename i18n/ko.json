@@ -66,6 +66,10 @@
 	"bs-vec-table-border-all": "모두",
 	"bs-vec-table-border-leftright": "좌우",
 	"bs-vec-table-border-topbottom": "상하",
+	"bs-vec-table-border-round": "둥근 모서리",
+	"bs-vec-table-border-horizontal": "수평",
+	"bs-vec-table-border-roundhorizontal": "둥근 모서리 및 수평",
+	"bs-vec-table-border-roundvertical": "둥근 모서리 및 수직",
 	"bs-vec-table-border-solid": "실선",
 	"bs-vec-table-border-dashed": "파선",
 	"bs-vec-table-border-dotted": "점선",
@@ -78,9 +82,5 @@
 	"bs-visualeditorconnector-upload-type": "업로드 유형",
 	"bs-visualeditor-request-entity-too-large": "파일 크기가 너무 커서 업로드할 수 없습니다.",
 	"bs-visualeditorconnector-dialog-table-title": "표",
-	"bs-visualeditorconnector-dialog-action-insert": "넣기",
-	"bs-vec-table-border-round": "둥근 모서리",
-	"bs-vec-table-border-horizontal": "수평",
-	"bs-vec-table-border-roundhorizontal": "둥근 모서리 및 수평",
-	"bs-vec-table-border-roundvertical": "둥근 모서리 및 수직"
+	"bs-visualeditorconnector-dialog-action-insert": "넣기"
 }
