@@ -82,5 +82,11 @@
 	"bs-visualeditorconnector-upload-type": "업로드 유형",
 	"bs-visualeditor-request-entity-too-large": "파일 크기가 너무 커서 업로드할 수 없습니다.",
 	"bs-visualeditorconnector-dialog-table-title": "표",
-	"bs-visualeditorconnector-dialog-action-insert": "넣기"
+	"bs-visualeditorconnector-dialog-action-insert": "넣기",
+	"bs-visualeditorconnector-upload-dialog-type": "MediaDialog에서의 파일 업로드를 위한 워크플로",
+	"bs-vec-row-duplicate-has-merged": "선택한 행에는 여러 행에 걸쳐 있는 셀이 포함되어 있으므로 복제할 수 없습니다.",
+	"bs-visualeditorconnector-upload-type-help": "원본: 업로드 권한이 확인됩니다. 파일 이름, 이름공간 및 분류를 편집할 수 있습니다. 설명은 필수입니다.\n간단: 업로드 권한이 확인되지 않습니다. 파일 이름, 이름공간 및 분류를 편집할 수 있습니다. 설명은 선택 사항입니다.\n한 번 클릭: 업로드 권한이 확인되지 않습니다. 파일 이름과 분류는 편집할 수 없습니다. 이름공간은 편집할 수 있습니다.",
+	"bs-visualeditorconnector-align-center-annotation-desc": "선택된 텍스트 가운데 정렬",
+	"bs-visualeditorconnector-indent-annotation-desc": "선택된 텍스트 들여쓰기",
+	"bs-visualeditorconnector-tab-file": "파일의 링크"
 }
