@@ -15,6 +15,7 @@ bs.vec.registerComponentPlugin(
 			updateActions: function () {
 				const inputWidget = this.oojsplusTitleInput;
 				if (
+					this.linkTypeIndex.getCurrentTabPanelName() !== 'internal' ||
 					!inputWidget ||
 					!inputWidget.getAnnotation() ||
 					!( inputWidget.getAnnotation() instanceof ve.dm.MWInternalLinkAnnotation )
