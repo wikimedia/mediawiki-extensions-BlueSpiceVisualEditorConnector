@@ -22,6 +22,40 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init' )
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWMetaDialog );
 
+						// Keep the context popup's anchor attached to its dialog box.
+						if (
+							ve.ui.DesktopContext &&
+							!ve.ui.DesktopContext.prototype.bsAnchorClampPatched
+						) {
+							ve.ui.DesktopContext.prototype.bsAnchorClampPatched = true;
+							const origSetPopupSizeAndPosition =
+								ve.ui.DesktopContext.prototype.setPopupSizeAndPosition;
+							ve.ui.DesktopContext.prototype.setPopupSizeAndPosition = function () {
+								origSetPopupSizeAndPosition.apply( this, arguments );
+
+								const popup = this.popup;
+								if ( !popup || !popup.isVisible() || !popup.hasAnchor() ) {
+									return;
+								}
+								const popupWidth = popup.$popup.outerWidth();
+								const margin = Math.max( popup.$anchor[ 0 ].scrollWidth, 12 );
+
+								[ 'left', 'right' ].forEach( ( side ) => {
+									const value = parseFloat( popup.$anchor.css( side ) );
+									if ( isNaN( value ) ) {
+										return;
+									}
+									const clamped = Math.min(
+										Math.max( value, margin ),
+										popupWidth - margin
+									);
+									if ( clamped !== value ) {
+										popup.$anchor.css( side, clamped );
+									}
+								} );
+							};
+						}
+
 						// Step 2: Load all plugin modules that may want to register to
 						// those classes
 						const bsvecPluginModules = bs.vec.config.get( 'PluginModules' );
