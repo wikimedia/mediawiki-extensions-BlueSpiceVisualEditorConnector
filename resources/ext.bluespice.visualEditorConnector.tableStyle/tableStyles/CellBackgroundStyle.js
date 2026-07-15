@@ -20,7 +20,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.clearColor = function ( $element ) {
 	const classes = $element[ 0 ].classList.values();
 	for ( const cellClass of classes ) {
 		if ( cellClass.match( /col-\S+/ ) ) {
-			$element[ 0 ].classList.remove( cellClass ); // eslint-disable-line mediawiki/class-doc
+			$element[ 0 ].classList.remove( cellClass );
 		}
 	}
 	$element[ 0 ].style.backgroundColor = '';
@@ -33,7 +33,7 @@ bs.vec.ui.CellBackgroundStyle.prototype.decorate = function ( $element ) {
 	if ( this.value.hasOwnProperty( 'code' ) ) {
 		return $element.css( this.getAttribute(), this.value.code );
 	} else if ( this.value.hasOwnProperty( 'class' ) ) {
-		return $element.addClass( this.value.class ); // eslint-disable-line mediawiki/class-doc
+		return $element.addClass( this.value.class );
 	}
 };
 

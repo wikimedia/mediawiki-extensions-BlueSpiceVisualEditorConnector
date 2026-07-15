@@ -112,7 +112,7 @@ bs.vec.ui.TableStyle.prototype.toDataElement = function ( section, domElement, r
 		if ( !parsed.hasOwnProperty( key ) ) {
 			continue;
 		}
-		if ( applied.indexOf( key ) !== -1 ) {
+		if ( applied.indexOf( key ) !== -1 ) { // eslint-disable-line unicorn/prefer-includes
 			continue;
 		}
 		externalStyle[ key ] = parsed[ key ];

@@ -22,7 +22,7 @@ OO.inheritClass( bs.vec.ui.widget.CellBorderWidget, bs.vec.ui.widget.CommandWidg
 OO.mixinClass( bs.vec.ui.widget.CellBorderWidget, bs.vec.mixin.TableBorderStylePopup );
 
 bs.vec.ui.widget.CellBorderWidget.prototype.makeBorderPicker = function () {
-	this.borderPickerTrigger = new OO.ui.ButtonWidget( {
+	this.borderPickerTrigger = new OO.ui.ButtonWidget( { // eslint-disable-line mediawiki/no-unlabeled-buttonwidget
 		icon: 'cellBorderAll',
 		title: OO.ui.deferMsg( 'bs-vec-table-border-borders' ),
 		framed: false

@@ -94,7 +94,7 @@ bs.vec.util.tag.Registry.prototype.createToolForTag = function ( cfg ) {
 	bs.vec.ui[ classname ].static.group = cfg.toolGroup;
 	bs.vec.ui[ classname ].static.autoAddToCatchall = false;
 	bs.vec.ui[ classname ].static.icon = cfg.icon;
-	bs.vec.ui[ classname ].static.title = OO.ui.deferMsg( // eslint-disable-line mediawiki/msg-doc
+	bs.vec.ui[ classname ].static.title = OO.ui.deferMsg(
 		cfg.menuItemMsg
 	);
 	bs.vec.ui[ classname ].static.modelClasses = [ bs.vec.dm[ cfg.classname + 'Node' ] ];
@@ -111,7 +111,7 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function ( cfg ) {
 	OO.inheritClass( bs.vec.ui[ classname ], ve.ui.MWLiveExtensionInspector );
 
 	bs.vec.ui[ classname ].static.name = cfg.name + 'Inspector';
-	bs.vec.ui[ classname ].static.title = OO.ui.deferMsg( cfg.menuItemMsg ); // eslint-disable-line mediawiki/msg-doc
+	bs.vec.ui[ classname ].static.title = OO.ui.deferMsg( cfg.menuItemMsg );
 	bs.vec.ui[ classname ].static.modelClasses = [ bs.vec.dm[ cfg.classname + 'Node' ] ];
 	if ( cfg.rendersEmpty ) {
 		bs.vec.ui[ classname ].static.allowedEmpty = true;
@@ -140,7 +140,7 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function ( cfg ) {
 				OO.inheritClass( ve.ui[ tabClassName ], OO.ui.TabPanelLayout );
 
 				ve.ui[ tabClassName ].prototype.setupTabItem = function () {
-					this.tabItem.setLabel( mw.message( this.data.labelMsg ).plain() ); // eslint-disable-line mediawiki/msg-doc
+					this.tabItem.setLabel( mw.message( this.data.labelMsg ).plain() );
 				};
 
 				this[ tabClassName ] =
@@ -171,7 +171,7 @@ bs.vec.util.tag.Registry.prototype.createInspectorForTag = function ( cfg ) {
 
 		// Add description field
 		this.descriptionField = new OO.ui.LabelWidget( {
-			label: $( '<div class="bs-vec-inspector-desc">' + mw.message( cfg.descriptionMsg ).plain() + '</div>' ) // eslint-disable-line mediawiki/msg-doc
+			label: $( '<div class="bs-vec-inspector-desc">' + mw.message( cfg.descriptionMsg ).plain() + '</div>' )
 		} );
 		this.descriptionLayout = new OO.ui.PanelLayout( { padded: true, expanded: false, scrollable: false } );
 		this.descriptionLayout.$element.append( this.descriptionField.$element );

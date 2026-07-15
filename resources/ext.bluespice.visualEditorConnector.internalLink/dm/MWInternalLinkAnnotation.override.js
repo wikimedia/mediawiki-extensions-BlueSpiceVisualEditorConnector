@@ -19,7 +19,7 @@ ve.dm.MWInternalLinkAnnotation.static.getTargetDataFromHref = function ( href, d
 	// Check if this matches the server's article path
 	const matches = relativeHref.match( relativeBaseRegex );
 
-	if ( matches && matches[ 1 ].indexOf( '?' ) === -1 ) {
+	if ( matches && matches[ 1 ].indexOf( '?' ) === -1 ) { // eslint-disable-line unicorn/prefer-includes
 		// Take the relative path
 		href = matches[ 1 ];
 		isInternal = true;

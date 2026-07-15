@@ -46,10 +46,10 @@ bs.vec.ui.TableAction.prototype.openTableOptionDialog = function ( {
 	const dialog = new bs.vec.ui.dialog.TableAdditionalOptions(
 		[ {
 			widget,
-			label: mw.msg( labelMsg ) // eslint-disable-line mediawiki/msg-doc
+			label: mw.msg( labelMsg )
 		} ],
 		nodeModel,
-		mw.msg( titleMsg ) // eslint-disable-line mediawiki/msg-doc
+		mw.msg( titleMsg )
 	);
 
 	const windowManager = this.getWindowManager();
@@ -497,7 +497,7 @@ bs.vec.ui.TableAction.prototype.parseArgs = function ( args ) {
 	const res = {};
 	const basePositions = [ 'left', 'right', 'top', 'bottom' ];
 	let i;
-	if ( basePositions.indexOf( args.mode ) !== -1 ) {
+	if ( basePositions.indexOf( args.mode ) !== -1 ) { // eslint-disable-line unicorn/prefer-includes
 		// Only set current mode, others will be filled from existing props
 		res[ args.mode ] = args.prop;
 		return res;

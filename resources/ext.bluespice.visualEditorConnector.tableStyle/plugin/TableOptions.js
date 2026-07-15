@@ -52,7 +52,7 @@ bs.ui.plugin.TableOptions.prototype.getActiveClass = function ( fragment, fromOr
 		const originalClasses = options.originalClasses.split( ' ' );
 		for ( let x = 0; x < originalClasses.length; x++ ) {
 			if (
-				Object.values( this.styleclasses ).indexOf( originalClasses[ x ] ) !== -1 &&
+				Object.values( this.styleclasses ).indexOf( originalClasses[ x ] ) !== -1 && // eslint-disable-line unicorn/prefer-includes
 				!options.hasOwnProperty( originalClasses[ x ] )
 			) {
 				options[ originalClasses[ x ] ] = true;

@@ -29,7 +29,7 @@ bs.vec.ui.MailtoHTMLStringTransferHandler.static.urlRegExp = /<a.*href="(mailto:
  * @return {boolean|undefined} Whether item matches against urlRegExp
  */
 bs.vec.ui.MailtoHTMLStringTransferHandler.static.matchFunction = function ( item ) {
-	if ( bs.vec.ui.MailtoHTMLStringTransferHandler.static.types.indexOf( item.type ) >= 0 ) {
+	if ( bs.vec.ui.MailtoHTMLStringTransferHandler.static.types.indexOf( item.type ) >= 0 ) { // eslint-disable-line unicorn/prefer-includes
 		return bs.vec.ui.MailtoHTMLStringTransferHandler.static.urlRegExp.test(
 			item.getAsString()
 		);

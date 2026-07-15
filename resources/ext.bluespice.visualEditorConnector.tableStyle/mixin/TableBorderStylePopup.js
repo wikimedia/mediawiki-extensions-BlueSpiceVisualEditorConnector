@@ -1,3 +1,4 @@
+/* eslint-disable mediawiki/no-unlabeled-buttonwidget */
 bs.util.registerNamespace( 'bs.vec.mixin' );
 
 bs.vec.mixin.TableBorderStylePopup = function ( cfg ) {

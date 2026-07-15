@@ -19,10 +19,10 @@ bs.vec.util.tag.Definition.prototype.createFields = function ( inspector, cfg ) 
 		const inspectorData = {
 			align: 'left',
 			$overlay: inspector.$body,
-			label: ve.msg( attributes[ i ].labelMsg ) // eslint-disable-line mediawiki/msg-doc
+			label: ve.msg( attributes[ i ].labelMsg )
 		};
 		if ( attributes[ i ].helpMsg ) {
-			inspectorData.help = ve.msg( attributes[ i ].helpMsg ); // eslint-disable-line mediawiki/msg-doc
+			inspectorData.help = ve.msg( attributes[ i ].helpMsg );
 		}
 		inspector[ attributes[ i ].name + 'Layout' ] = new OO.ui.FieldLayout(
 			inspector[ attributes[ i ].name + 'Input' ], inspectorData
@@ -168,7 +168,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function ( inspector, a
 		case 'title':
 			widget = new mw.widgets.TitleInputWidget( {
 				value: attribute.default || '',
-				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : '' // eslint-disable-line mediawiki/msg-doc
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			} );
 			break;
 		case 'multiselect':
@@ -178,7 +178,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function ( inspector, a
 				allowArbitrary: attribute.allowArbitrary,
 				data: { valueSeparator: attribute.valueSeparator || ',' },
 				value: attribute.default,
-				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : '' // eslint-disable-line mediawiki/msg-doc
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			} );
 			break;
 		case 'user':
@@ -194,7 +194,7 @@ bs.vec.util.tag.Definition.prototype.createInputWidget = function ( inspector, a
 		default:
 			widget = new OO.ui.TextInputWidget( {
 				value: attribute.default || '',
-				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : '' // eslint-disable-line mediawiki/msg-doc
+				placeholder: attribute.placeholderMsg ? mw.msg( attribute.placeholderMsg ) : ''
 			} );
 	}
 	return widget;

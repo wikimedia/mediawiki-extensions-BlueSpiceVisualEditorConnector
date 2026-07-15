@@ -14,7 +14,7 @@ bs.vec.ce.ColorAnnotation = function () {
 		} );
 
 	if ( this.model.colorData.hasOwnProperty( 'class' ) ) {
-		this.$element.addClass( this.model.colorData.class ); // eslint-disable-line mediawiki/class-doc
+		this.$element.addClass( this.model.colorData.class );
 	} else if ( this.model.colorData.hasOwnProperty( 'code' ) ) {
 		this.$element.css( 'color', this.model.colorData.code );
 	}

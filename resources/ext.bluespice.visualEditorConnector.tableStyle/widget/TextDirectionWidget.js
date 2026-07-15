@@ -7,7 +7,7 @@ bs.vec.ui.widget.TextDirectionwidget = function ( contextItem ) {
 	const styles = contextItem.getStyles();
 	this.textDirection = styles.hasOwnProperty( 'textDirection' ) ? styles.textDirection : null;
 
-	this.directionToggle = new OO.ui.ToggleButtonWidget( {
+	this.directionToggle = new OO.ui.ToggleButtonWidget( { // eslint-disable-line mediawiki/no-unlabeled-buttonwidget
 		title: OO.ui.deferMsg( 'bs-vec-widget-text-direction-tooltip' ),
 		framed: false,
 		icon: 'textDirVert',

@@ -48,7 +48,7 @@ bs.vec.ui.widget.ButtonCommandWidget.prototype.setWaiting = function ( isWaiting
 };
 
 bs.vec.ui.widget.ButtonCommandWidget.prototype.initWidget = function () {
-	this.buttonWidget = new OO.ui.ButtonWidget( {
+	this.buttonWidget = new OO.ui.ButtonWidget( { // eslint-disable-line mediawiki/no-unlabeled-buttonwidget
 		title: this.title,
 		icon: this.icon,
 		framed: this.framed
