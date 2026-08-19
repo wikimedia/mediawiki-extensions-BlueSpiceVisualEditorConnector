@@ -1,6 +1,10 @@
 bs.vec.registerComponentPlugin(
 	bs.vec.components.LINK_ANNOTATION_INSPECTOR,
 	function ( component ) {
+		if ( !component.linkTypeIndex || !component.linkTypeIndex.addTabPanels ) {
+			return {};
+		}
+
 		component.linkTypeIndex.addTabPanels( [
 			new OO.ui.TabPanelLayout( 'file', {
 				label: ve.msg( 'bs-visualeditorconnector-tab-file' ),
@@ -13,7 +17,11 @@ bs.vec.registerComponentPlugin(
 		component.localFileSystemAnnotationInput =
 			new bs.vec.ui.MWFileLinkAnnotationWidget();
 
-		component.linkTypeIndex.getTabPanel( 'file' ).$element.append(
+		const filePanel = component.linkTypeIndex.getTabPanel( 'file' );
+		if ( !filePanel ) {
+			return {};
+		}
+		filePanel.$element.append(
 			component.localFileSystemAnnotationInput.$element
 		);
 		component.localFileSystemAnnotationInput.connect( this, { change: function () {
@@ -28,9 +36,14 @@ bs.vec.registerComponentPlugin(
 	}
 );
 
+const linkInspectorConstructors = [
+	ve.ui.MWLinkAnnotationInspector,
+	ve.ui.MWWikitextLinkAnnotationInspector
+].filter( ( constructor, index, list ) => constructor && list.indexOf( constructor ) === index );
+
 // FIXME: Not exactly cool, would be nice to have a better way of overriding, so that plugins
 // would not only be called on initialize, but on every function from prototype
-ve.ui.MWLinkAnnotationInspector.prototype.onLinkTypeIndexSet = function () {
+const onLinkTypeIndexSet = function () {
 	const text = this.annotationInput.getTextInputWidget().getValue(),
 		end = text.length,
 		isExternal = this.isExternal() || this.linkTypeIndex.getCurrentTabPanelName() === 'file',
@@ -67,14 +80,23 @@ ve.ui.MWLinkAnnotationInspector.prototype.onLinkTypeIndexSet = function () {
 	this.updateActions();
 };
 
-const getInsertionText = ve.ui.LinkAnnotationInspector.prototype.getInsertionText;
-ve.ui.MWLinkAnnotationInspector.prototype.getInsertionText = function () {
+for ( let i = 0; i < linkInspectorConstructors.length; i++ ) {
+	const constructor = linkInspectorConstructors[ i ];
+	constructor.prototype.onLinkTypeIndexSet = onLinkTypeIndexSet;
+}
+
+const getInsertionText = function () {
 	const annotation = this.annotationInput.getAnnotation();
 	if ( !( annotation instanceof bs.vec.dm.InternalFileLinkAnnotation ) ) {
-		return getInsertionText.call( this );
+		return ve.ui.LinkAnnotationInspector.prototype.getInsertionText.call( this );
 	}
 	return bs.vec.ui.MWFileLinkAnnotationWidget.static.getTextFromAnnotation( annotation );
 };
+
+for ( let i = 0; i < linkInspectorConstructors.length; i++ ) {
+	const constructor = linkInspectorConstructors[ i ];
+	constructor.prototype.getInsertionText = getInsertionText;
+}
 
 var updateAction = ve.ui.LinkAnnotationInspector.prototype.updateActions; // eslint-disable-line no-var
 ve.ui.LinkAnnotationInspector.prototype.updateActions = function () {

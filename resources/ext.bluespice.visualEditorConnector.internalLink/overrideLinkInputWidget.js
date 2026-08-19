@@ -1,9 +1,17 @@
 bs.vec.registerComponentPlugin(
 	bs.vec.components.LINK_ANNOTATION_INSPECTOR,
 	( component ) => {
+		if ( !component.linkTypeIndex || !component.linkTypeIndex.getTabPanel ) {
+			return {};
+		}
+		const internalPanel = component.linkTypeIndex.getTabPanel( 'internal' );
+		if ( !internalPanel ) {
+			return {};
+		}
+
 		component.oojsplusTitleInput = new bs.vec.ui.OOJSPlusTitleAnnotationWidget();
 
-		component.linkTypeIndex.getTabPanel( 'internal' ).$element.empty().append(
+		internalPanel.$element.empty().append(
 			component.oojsplusTitleInput.$element
 		);
 		component.oojsplusTitleInput.connect( component, { change: function () {
@@ -15,6 +23,8 @@ bs.vec.registerComponentPlugin(
 			updateActions: function () {
 				const inputWidget = this.oojsplusTitleInput;
 				if (
+					!this.linkTypeIndex ||
+					!this.linkTypeIndex.getCurrentTabPanelName ||
 					this.linkTypeIndex.getCurrentTabPanelName() !== 'internal' ||
 					!inputWidget ||
 					!inputWidget.getAnnotation() ||

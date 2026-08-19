@@ -17,6 +17,9 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init' )
 				.done( () => {
 					mw.loader.using( 'ext.visualEditor.mwcore' ).done( () => {
 						ve.ui.windowFactory.register( bs.vec.ui.MWLinkAnnotationInspector );
+						if ( bs.vec.ui.MWWikitextLinkAnnotationInspector ) {
+							ve.ui.windowFactory.register( bs.vec.ui.MWWikitextLinkAnnotationInspector );
+						}
 						ve.ui.windowFactory.register( bs.vec.ui.MWMediaDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWSaveDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
