@@ -213,6 +213,7 @@
 		"ext.bluespice.visualEditorConnector.overrides.classes": {
 			"scripts": [
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWLinkAnnotationInspector.js",
+				"ext.bluespice.visualEditorConnector.overrides.classes/MWWikitextLinkAnnotationInspector.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWMediaDialog.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWTableDialog.js",
 				"ext.bluespice.visualEditorConnector.overrides.classes/MWMetaDialog.js",
