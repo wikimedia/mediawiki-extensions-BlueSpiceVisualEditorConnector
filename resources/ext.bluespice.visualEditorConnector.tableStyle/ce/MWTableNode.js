@@ -7,6 +7,8 @@ bs.vec.ce.MWTableNode = function BsVecCeMWTableNode() {
 	this.model.connect( this, {
 		attributeChange: 'updateWidth'
 	} );
+
+	this.updateWidth();
 };
 
 OO.inheritClass( bs.vec.ce.MWTableNode, ve.ce.MWTableNode );

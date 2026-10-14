@@ -19,6 +19,9 @@ ve.ui.TableAction.prototype.create = function ( options ) {
 		}
 		options.cols = parseInt( data.cols );
 		options.rows = parseInt( data.rows );
+		options.attributes = ve.extendObject( {}, options.attributes, {
+			tablewidth: bs.ui.plugin.TableWidth.DEFAULT_WIDTH
+		} );
 		ve.init.target.surface.model.selection = preselection;
 		return orig.call( this, options );
 	} );

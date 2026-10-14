@@ -9,61 +9,60 @@ ve.dm.MWTableNode.static.classAttributes.tablefullwidth = { tablefullwidth: true
 
 OO.inheritClass( bs.ui.plugin.TableWidth, bs.vec.ui.plugin.MWTableDialog );
 
+bs.ui.plugin.TableWidth.DEFAULT_WIDTH = '100%';
+
+/**
+ * Normalizes user input to a CSS width. A missing unit defaults to %.
+ *
+ * @param {string} input
+ * @return {string|null} null if the input is not a valid width
+ */
+bs.ui.plugin.TableWidth.normalize = function ( input ) {
+	const trimmed = ( input || '' ).trim();
+	if ( !trimmed ) {
+		return bs.ui.plugin.TableWidth.DEFAULT_WIDTH;
+	}
+	const match = trimmed.match( /^(\d+(?:\.\d+)?)\s*(%|px)?$/i );
+	if ( !match || parseFloat( match[ 1 ] ) <= 0 ) {
+		return null;
+	}
+	return match[ 1 ] + ( match[ 2 ] || '%' ).toLowerCase();
+};
+
 bs.ui.plugin.TableWidth.prototype.initialize = function () {
-	this.component.widthSlider = new OOJSPlus.ui.widget.RangeWidget( {
-		min: 0,
-		max: 100,
-		valueMask: '%v %',
-		nullValue: ve.msg( 'bs-vec-ve-table-width-value-auto' )
+	this.component.widthInput = new OO.ui.TextInputWidget( {
+		value: bs.ui.plugin.TableWidth.DEFAULT_WIDTH
 	} );
 
-	this.widthLayout = new OO.ui.FieldLayout( this.component.widthSlider, {
+	this.widthLayout = new OO.ui.FieldLayout( this.component.widthInput, {
 		align: 'left',
 		label: ve.msg( 'bs-vec-ve-table-width-label' )
 	} );
 
-	this.component.widthSlider.connect( this, { change: 'onWidthChange' } );
+	this.component.widthInput.connect( this, { change: 'onWidthChange' } );
+	this.component.widthInput.$input.on( 'blur', this.onWidthBlur.bind( this ) );
 	this.component.panel.$element.prepend( this.widthLayout.$element );
 };
 
 bs.ui.plugin.TableWidth.prototype.onWidthChange = function () {
 	this.widthChanged = true;
+	const valid = bs.ui.plugin.TableWidth.normalize( this.component.widthInput.getValue() ) !== null;
+	this.component.widthInput.setValidityFlag( valid );
 	this.component.updateActions();
 };
 
-/**
- * Width as CSS value. Until the slider is moved, a width the slider cannot
- * express (e.g. "880px") is kept as is.
- *
- * @return {string} Empty string for "auto"
- */
-bs.ui.plugin.TableWidth.prototype.getWidth = function () {
-	if ( !this.widthChanged && this.foreignWidth ) {
-		return this.foreignWidth;
-	}
-	const value = this.component.widthSlider.getValue();
-	return value > 0 ? value.toString() + '%' : '';
+bs.ui.plugin.TableWidth.prototype.onWidthBlur = function () {
+	this.component.widthInput.setValue( this.getWidth() );
 };
 
 /**
- * Rendered width of the table relative to its container, to place the slider
- * for widths given in other units than %.
+ * Width as CSS value. Invalid input falls back to the width the dialog was opened with.
  *
- * @param {ve.dm.Node} tableNode
- * @return {number}
+ * @return {string}
  */
-bs.ui.plugin.TableWidth.prototype.getRenderedPercentage = function ( tableNode ) {
-	const surface = ve.init.target.getSurface();
-	if ( !surface ) {
-		return 100;
-	}
-	const ceNode = surface.getView().getDocument()
-		.getBranchNodeFromOffset( tableNode.getOuterRange().start + 1 );
-	const table = ceNode && ceNode.$element.find( 'table' ).addBack( 'table' )[ 0 ];
-	if ( !table || !table.parentElement || !table.parentElement.clientWidth ) {
-		return 100;
-	}
-	return Math.min( 100, Math.round( table.offsetWidth / table.parentElement.clientWidth * 100 ) );
+bs.ui.plugin.TableWidth.prototype.getWidth = function () {
+	const width = bs.ui.plugin.TableWidth.normalize( this.component.widthInput.getValue() );
+	return width !== null ? width : this.initialWidth;
 };
 
 bs.ui.plugin.TableWidth.prototype.getValues = function ( values ) {
@@ -81,28 +80,22 @@ bs.ui.plugin.TableWidth.prototype.getSetupProcess = function ( parentProcess, da
 
 		const tableNode = this.component.getFragment().getSelection().getTableNode( this.fragment.document );
 		const rawWidth = ( tableNode.getAttribute( 'tablewidth' ) || '' ).trim();
-		const isPercent = /^\d+(\.\d+)?\s*%$/.test( rawWidth );
-		let tableWidth = isPercent ? parseInt( rawWidth ) : 0;
-
-		this.widthChanged = false;
-		this.foreignWidth = rawWidth && !isPercent ? rawWidth : '';
+		let width = bs.ui.plugin.TableWidth.normalize( rawWidth ) || rawWidth;
 
 		// Backwards compatibility
 		if ( tableNode.getAttribute( 'tablefullwidth' ) ) {
-			tableWidth = 100;
-			this.foreignWidth = '';
+			width = bs.ui.plugin.TableWidth.DEFAULT_WIDTH;
 		}
 
-		if ( this.foreignWidth ) {
-			this.component.widthSlider.setValue( this.getRenderedPercentage( tableNode ) );
-			this.component.widthSlider.$value.text( this.foreignWidth );
-		} else {
-			this.component.widthSlider.setValue( tableWidth );
-		}
+		this.initialWidth = width;
+		this.component.widthInput.setValue( width );
+		this.widthChanged = !rawWidth && !tableNode.getAttribute( 'tablefullwidth' );
+		this.component.widthInput.setValidityFlag( true );
 
 		ve.extendObject( this.component.initialValues, {
-			tablewidth: this.getWidth()
+			tablewidth: this.widthChanged ? rawWidth : this.getWidth()
 		} );
+		this.component.updateActions();
 	}, this );
 	return parentProcess;
 };
