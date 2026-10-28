@@ -177,7 +177,10 @@
 			"messages": [
 				"bs-visualeditorconnector-cancel-edit",
 				"bs-visualeditorconnector-cancel-edit-no-unsaved-changes",
-				"bs-visualeditorconnector-cancel-edit-confirm-message"
+				"mw-widgets-abandonedit",
+				"mw-widgets-abandonedit-title",
+				"mw-widgets-abandonedit-discard",
+				"mw-widgets-abandonedit-keep"
 			],
 			"targets": [
 				"desktop"

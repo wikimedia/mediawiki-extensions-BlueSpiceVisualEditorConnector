@@ -30,7 +30,20 @@ mw.hook( 've.activationComplete' ).add( () => {
 
 		if ( ve.init.target.isSaveable() ) {
 			// Unsaved changes: show confirmation
-			OO.ui.confirm( ve.msg( 'bs-visualeditorconnector-cancel-edit-confirm-message' ) ).done( ( confirmed ) => {
+			OO.ui.confirm( ve.msg( 'mw-widgets-abandonedit' ),
+				{
+					title: mw.msg( 'mw-widgets-abandonedit-title' ),
+					actions: [ {
+						action: 'discard',
+						label: OO.ui.deferMsg( 'mw-widgets-abandonedit-discard' ),
+						flags: 'destructive'
+					},
+					{
+						action: 'keep',
+						label: OO.ui.deferMsg( 'mw-widgets-abandonedit-keep' ),
+						flags: [ 'primary', 'safe' ]
+					}
+					] } ).done( ( confirmed ) => {
 				if ( confirmed ) {
 					// User confirmed: discard any unsaved local changes
 					surface.getModel().removeDocStateAndChanges();

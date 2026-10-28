@@ -12,7 +12,6 @@
 	"bs-visualeditorconnector-upload-type": "Upload type",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Cancel edit",
 	"bs-visualeditorconnector-cancel-edit": "Cancel edit. Unsaved changes will be discarded",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Do you really want to cancel the edit? Your unsaved changes will be discarded.",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Common",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Advanced",
