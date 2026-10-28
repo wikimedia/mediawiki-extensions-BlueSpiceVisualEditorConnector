@@ -17,7 +17,6 @@
 	"bs-visualeditorconnector-upload-type": "Label for preference to set the upload type in VisualEditor",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Label for visual editor tool to stop editing and go back to view mode. Shown when there are no unsaved changes to the article and the action is safe",
 	"bs-visualeditorconnector-cancel-edit": "Label for visual editor tool to stop editing and go back to view mode. Shown when there are unsaved changes to the article and the action results in losing data",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Warning text in confirmation dialog that pops up when there are unsaved changes to the article and the action results in losing data",
 	"bs-visualeditor-nsm-label": "Label for visual editor setting in namespace manager",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Label for inspector tab for commonly used parameters",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Label for inspector tab for advanced parameters",
