@@ -17,7 +17,6 @@
 	"bs-visualeditorconnector-upload-type": "Uploadtype",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Bewerking annuleren",
 	"bs-visualeditorconnector-cancel-edit": "Bewerking annuleren. Niet-opgeslagen wijzigingen worden verwijderd",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Wilt u de bewerking echt annuleren? Uw niet-opgeslagen wijzigingen worden gewist.",
 	"bs-visualeditor-nsm-label": "Visueel bewerkingsprogramma",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gangbaar",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Uitgebreid",

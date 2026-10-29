@@ -13,7 +13,6 @@
 	"bs-visualeditorconnector-upload-type": "Feltöltés típusa",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Szerkesztések visszavonása",
 	"bs-visualeditorconnector-cancel-edit": "Szerkesztések visszavonása. A mentés nélküli változtatások elvesznek.",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Tényleg visszavonja a szerkesztéseket? A mentés nélküli változtatásai elvesznek.",
 	"bs-visualeditor-nsm-label": "Visual editor",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Általános",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Haladó",

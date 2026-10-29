@@ -14,7 +14,6 @@
 	"bs-visualeditorconnector-upload-type": "نوع بارگذاری",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "لغو ویرایش",
 	"bs-visualeditorconnector-cancel-edit": "لغو ویرایش. تغییرات ذخیره‌نشده دور ریخته می‌شوند.",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "آیا از لغو ویرایش مطمئن هستید؟ تغییرات ذخیره‌نشدهٔ شما دور ریخته خواهند شد.",
 	"bs-visualeditor-nsm-label": "ویرایشگر دیداری",
 	"bs-visualeditorconnector-inspector-tab-common-name": "متداول",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "پیشرفته",

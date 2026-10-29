@@ -13,7 +13,6 @@
 	"bs-visualeditorconnector-upload-type": "Vrsta nalaganja",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Prekliči urejanje",
 	"bs-visualeditorconnector-cancel-edit": "Prekliči urejanje. Neshranjene spremembe bodo zavržene.",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Ali res želite preklicati urejanje? Vaše neshranjene spremembe bodo zavržene.",
 	"bs-visualeditor-nsm-label": "Vizualni urejevalnik",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Splošno",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Napredno",

@@ -27,7 +27,6 @@
 	"bs-visualeditorconnector-upload-type": "上传类型",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "取消编辑",
 	"bs-visualeditorconnector-cancel-edit": "取消编辑。未保存的编辑将被舍弃",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "你真的要取消这次的编辑吗？你未保存的部分将被销毁。",
 	"bs-visualeditor-nsm-label": "可视化编辑器",
 	"bs-visualeditorconnector-inspector-tab-common-name": "普通",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "高级",
