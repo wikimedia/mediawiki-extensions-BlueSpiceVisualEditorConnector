@@ -11,7 +11,6 @@
 	"bs-visualeditorconnector-upload-type": "Eropluedtyp",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "Ännerung annuléieren",
 	"bs-visualeditorconnector-cancel-edit": "Ännerung annuléieren. Net gespäichert Ännerunge ginn ignoréiert",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "Wëllt Dir dës Ännerung wierklech ofbriechen? Ärf net gespäichert Ännerunge sinn da verluer.",
 	"bs-visualeditor-nsm-label": "Visuellen Editeur",
 	"bs-visualeditorconnector-inspector-tab-common-name": "Gemeinsam",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "Erweidert",

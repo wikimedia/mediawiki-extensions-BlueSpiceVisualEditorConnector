@@ -15,7 +15,6 @@
 	"bs-visualeditorconnector-upload-type": "نوع الرفع",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "إلغاء عمليات التحرير",
 	"bs-visualeditorconnector-cancel-edit": "إلغاء التعديل",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "هل تريد حقًا إلغاء التعديل؟ سيتم تجاهل تغييراتك غير المحفوظة.",
 	"bs-visualeditor-nsm-label": "محرر مرئي",
 	"bs-visualeditorconnector-inspector-tab-common-name": "شائع",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "متقدم",

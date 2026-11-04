@@ -18,7 +18,6 @@
 	"bs-visualeditorconnector-upload-type": "סוג העלאה",
 	"bs-visualeditorconnector-cancel-edit-no-unsaved-changes": "ביטול העריכה",
 	"bs-visualeditorconnector-cancel-edit": "ביטול העריכה. פעולה זו תגרום לביטול כל השינויים שלא נשמרו.",
-	"bs-visualeditorconnector-cancel-edit-confirm-message": "האם באמת לבטל את העריכה? השינויים שלא נשמרו יושלכו.",
 	"bs-visualeditor-nsm-label": "העורך החזותי",
 	"bs-visualeditorconnector-inspector-tab-common-name": "תדיר",
 	"bs-visualeditorconnector-inspector-tab-advanced-name": "מתקדם",
