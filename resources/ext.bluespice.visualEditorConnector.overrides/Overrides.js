@@ -16,10 +16,6 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init' )
 			mw.loader.using( 'ext.bluespice.visualEditorConnector.overrides.classes' )
 				.done( () => {
 					mw.loader.using( 'ext.visualEditor.mwcore' ).done( () => {
-						ve.ui.windowFactory.register( bs.vec.ui.MWLinkAnnotationInspector );
-						if ( bs.vec.ui.MWWikitextLinkAnnotationInspector ) {
-							ve.ui.windowFactory.register( bs.vec.ui.MWWikitextLinkAnnotationInspector );
-						}
 						ve.ui.windowFactory.register( bs.vec.ui.MWMediaDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWSaveDialog );
 						ve.ui.windowFactory.register( bs.vec.ui.MWTableDialog );
@@ -76,42 +72,14 @@ mw.loader.using( 'ext.visualEditor.desktopArticleTarget.init' )
 		} );
 	} );
 
-mw.loader.using( 'ext.bluespice' )
+mw.loader.using( [ 'ext.bluespice', 'ext.visualEditorPlus.componentPlugins' ] )
 	.done( () => {
 		const bs = blueSpice;
-		const componentPlugins = {};
+		const plus = ext.visualEditorPlus;
 
-		/**
-		 * @param {string} componentKey
-		 * @param {Function} pluginCallback
-		 */
-		function registerComponentPlugin( componentKey, pluginCallback ) {
-			if ( !componentPlugins[ componentKey ] ) {
-				componentPlugins[ componentKey ] = [];
-			}
-			componentPlugins[ componentKey ].push( pluginCallback );
-		}
-
-		/**
-		 * @param {string} componentKey
-		 * @return {Array} of callbacks
-		 */
-		function getComponentPlugins( componentKey ) {
-			if ( !componentPlugins[ componentKey ] ) {
-				componentPlugins[ componentKey ] = [];
-			}
-
-			return componentPlugins[ componentKey ];
-		}
-
+		// Moved to VisualEditorPlus; kept as aliases for existing plugin consumers.
 		bs.util.registerNamespace( 'bs.vec' );
-		bs.vec.registerComponentPlugin = registerComponentPlugin;
-		bs.vec.getComponentPlugins = getComponentPlugins;
-		bs.vec.components = {
-			LINK_ANNOTATION_INSPECTOR: 'link-annotation-inspector',
-			MEDIA_DIALOG: 'media-dialog',
-			SAVE_DIALOG: 'save-dialog',
-			TABLE_DIALOG: 'table-dialog',
-			META_DIALOG: 'meta-dialog'
-		};
+		bs.vec.registerComponentPlugin = plus.componentPlugins.register;
+		bs.vec.getComponentPlugins = plus.componentPlugins.get;
+		bs.vec.components = plus.components;
 	} );
